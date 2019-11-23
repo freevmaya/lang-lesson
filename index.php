@@ -191,7 +191,3 @@
     </script>
   </body>
 </html>
-<?
-
-  print_r($_GET);
-?>

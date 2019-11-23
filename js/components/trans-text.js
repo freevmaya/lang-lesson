@@ -167,7 +167,7 @@ TransText.Editor = function(parent, onChange) {
   var This = this;
   var lang_text = layer.find('[name="lang-text"]');
   var transfer_text = layer.find('[name="transfer-text"]');
-  var stopcb = layer.find('.stop');
+  var stopcb = parent.find('.stop');
   var This = this;
   var conformity = [];
   var ix;

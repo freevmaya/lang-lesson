@@ -31,7 +31,7 @@
 
 		function showClip(data) {
 			doc.loadVideo(data.id, ()=>{
-				scrollTo($('#videoPlayer'));
+				scrollTo($('.videoPlayer'));
 			});
 		}
 
@@ -132,15 +132,18 @@
 
 	var myLibrary = new Library();
 
+	<?
+	if ($controller->uid && $controller->pl) {
+	?>
+	$(window).ready(()=>{
+		myLibrary.show('<?=$controller->pl?>', <?=$controller->uid?>);
+	});
+	<?			
+	}
+	?>
+
 	$(window).on('onLoginUser', (e, user)=>{
 		myLibrary.uid = user.uid;
-		<?
-		if ($controller->uid && $controller->pl) {
-		?>
-		myLibrary.show('<?=$controller->pl?>', <?=$controller->uid?>);
-		<?			
-		}
-		?>
 	});
 
 </script>

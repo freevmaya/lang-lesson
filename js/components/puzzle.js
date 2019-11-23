@@ -1,4 +1,4 @@
-var CPuzzle = function() {
+var CPuzzle = function(player) {
 	var layer = $(
 	'<div class="CPuzzle">'+
 		'<div class="top"></div>'+
@@ -12,7 +12,9 @@ var CPuzzle = function() {
   	var top = layer.find('.top');
   	var bottom = layer.find('.bottom');
   	var phrase;
-  	var nextBtn = $('#nextBtn');
+  	var nextBtn = player.layout.find('.nextBtn');
+  	var index = -1;
+  	var completeList = {};
 
   	top.droppable({drop: (e, ui)=>{
   		let d = ui.draggable;
@@ -25,6 +27,7 @@ var CPuzzle = function() {
   	function complete() {
   		nextBtn.prop('disabled', '');
   		layer.addClass('complete');
+  		completeList[index] = true;
   	}
 
   	function getWords(puzzle, order) {
@@ -37,7 +40,8 @@ var CPuzzle = function() {
 		return words;
   	}
 
-  	function start(puzzle) {
+  	function start(puzzle, tindex) {
+  		index = tindex;
 		top.empty();
 		bottom.empty();
 		let words = getWords(puzzle);
@@ -45,7 +49,7 @@ var CPuzzle = function() {
 		if (words.length > 0) {
 			for (let i=0; i<words.length; i++) wordCtrl(words, i);
 
-	      	nextBtn.prop('disabled', true);
+	      	nextBtn.prop('disabled', !completeList[index]?true:'');
 	  		layer.removeClass('complete');
   		}
       	layer.show();
@@ -125,11 +129,16 @@ var CPuzzle = function() {
 	}
 
 	this.updateContent = (content, tindex)=>{
-		if ((tindex > -1) && (content[tindex].puzzle)) {
-			start(content[tindex].puzzle);
-	    } else {
-	    	layer.hide();
-	    }
+		if ((index > -1) && (!completeList[index]) && (!completeList[tindex])) {
+			player.setIndex(index, true);
+		}
+		else {
+			if ((tindex > -1) && (content[tindex].puzzle)) {
+				start(content[tindex].puzzle, tindex);
+		    } else {
+		    	layer.hide();
+		    }
+		}
 	}
 
 	this.getCaption = (content, tindex)=>{
@@ -138,9 +147,8 @@ var CPuzzle = function() {
 
 	function onChangeIndex(e, player) {
 		let cn = player.content[player.index];
-		if (cn && cn.puzzle) {
-			nextBtn.prop('disabled', true);
-		} else nextBtn.prop('disabled', '');
+		let dis = cn && cn.puzzle && !completeList[player.index];
+		nextBtn.prop('disabled', dis?true:'');
 	}
 
 	$(window).on('onChangeIndex', onChangeIndex);
@@ -148,6 +156,7 @@ var CPuzzle = function() {
 	this.dispose = ()=>{
 		$(window).off('onChangeIndex', onChangeIndex);
 		layer.remove();
+		completeList = {};
 	}
 
 	this.stop = (player, index)=>{

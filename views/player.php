@@ -2,27 +2,27 @@
   <div class="playerContainer">
     <div>
       <div class="playerSeptum"><div class="vclose"></div></div>
-      <div id="videoPlayer">
+      <div class="videoPlayer">
         <div class="yt-button"></div>
       </div>
     </div>
     <div class="separator"></div>
-    <div id="controlsBlock">
-      <div class="langControls" id="langControls">
-        <button type="button" class="btn left hint" id="backBtn" data-hint="Back marker">
+    <div class="controlsBlock">
+      <div class="langControls">
+        <button type="button" class="btn left hint backBtn" data-hint="Back marker">
           <span class="glyphicon glyphicon-triangle-left"></span>
         </button>
         <div class="player-area">            
         </div>
-        <button type="button" class="btn right hint" id="nextBtn" data-hint="Next marker">
+        <button type="button" class="btn right hint nextBtn" data-hint="Next marker">
           <span class="glyphicon glyphicon-triangle-right"></span>
         </button>
       </div>
-      <div id="controls" class="controls">
-        <select id="timeList">
+      <div class="controls">
+        <select class="timeList">
           <option>---</option>>
         </select>
-        <div class="btn stop hint" id="stopBtn" data-hint="Stops playing">hold</div>
+        <div class="btn stop hint stopBtn" data-hint="Stops playing">hold</div>
       </div>
       <?include(dirname(__FILE__).'/editor.php');?>
     </div>
@@ -34,10 +34,10 @@
 <script type="text/javascript">
   var doc;
 
-  var PlayerDoc = function() {
+  var PlayerDoc = function(container) {
     var This = this;
     var vdata, player = null, layout;
-    var playerApp = new playerInit();
+    var playerApp = new playerInit(container);
     var params = {};
     var seg = [];
     var _vid = 0;
@@ -153,24 +153,24 @@
         vh = wh;
       }
 
-      let delta = $('#videoPlayer').offset().top + vh + $('#controlsBlock').height() - $(window).height();
+      let delta = container.find('.videoPlayer').offset().top + vh + container.find('.controlsBlock').height() - 
+                  ($(window).height() * 0.9);
       if (delta > 0) vh -= delta;      
 
       return {width: w, height: Math.round(vh)};
     }
 
     this.setPlayerSize = (w, h)=>{
-      let s = {width: w, height: h};
       if (player) player.originSetSize(w, h);
-      else layout.css(s);
-      $('.playerSeptum').css('height', $('#videoPlayer').height());
+      else layout.css({width: w, height: h});
+      container.find('.playerSeptum').css('height', h);
     }
 
     this.setPlayerSizeRate = (rate)=>{
       let size = calcPlayerSize(rate);
 
-      $('.playerContainer').css('width', size.width);
-      $('.langControls').css('width', size.width);
+      container.css('width', size.width);
+      container.find('.langControls').css('width', size.width);
 
       let usersize = layout.data('usersize');
       if (usersize) size.height = usersize;
@@ -252,9 +252,9 @@
           onReady: ()=>{
             let usersize = layout.data('usersize');
 
-            layout = $('#videoPlayer');
-            let clcss = {width: ''};
-            if (!usersize) clcss.height = usersize;
+            layout = container.find('.videoPlayer');
+            let clcss = {width: '', height: ''};
+            if (usersize != undefined) clcss.height = usersize;
             layout.css(clcss);
 
             if (vdata.info) This.resetFromInfo(vdata.info);
@@ -267,7 +267,7 @@
         }
       }
 
-      player = new YT.Player('videoPlayer', initdata);
+      player = new YT.Player(container.find('.videoPlayer')[0], initdata);
       player.originSetSize = player.setSize;
       player.setSize = This.setPlayerSize;
       playerApp.init(player, -1);
@@ -282,8 +282,8 @@
     function checkAndCreateEditor() {
       if (!This.langapp) {
         This.langapp = new LangApp(playerApp, {onChange: onChange});
-        $('.Editor').css('display', 'block');
-        $('.playerContainer').addClass('editContaier');
+        container.find('.Editor').css('display', 'block');
+        container.addClass('editContaier');
       }
     }
 
@@ -361,7 +361,7 @@
       if (vdata) {
         playerApp.setData(vdata);
         if (vdata.info) {
-          layout = $('#videoPlayer');
+          layout = container.find('.videoPlayer');
           let w = <?=$width?>;
           let res = This.getSize(vdata.info);
           layout.css('background-image', 'url(' + res.url + ')');
@@ -400,7 +400,7 @@
   }
   //END DOC CLASS
 
-  doc = new PlayerDoc();
+  doc = new PlayerDoc($('.playerContainer'));
   function onYouTubeIframeAPIReady() {doc.YouTubeReady();}
 
 </script>

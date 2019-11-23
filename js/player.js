@@ -1,16 +1,16 @@
-function playerInit(options) {
+function playerInit(parent, options) {
 
   var This = this;
 
   this.videoEl;  
   this.options = options?options:{};
 
-  var vidControls = $('#controls'),
-    backBtn = $('#backBtn'),
-    nextBtn = $('#nextBtn'),
-    stopBtn = $('#stopBtn'),
-    timeList = $('#timeList'),
-    langControls = $('#langControls'),
+  var vidControls = parent.find('.controls'),
+    backBtn = parent.find('.backBtn'),
+    nextBtn = parent.find('.nextBtn'),
+    stopBtn = parent.find('.stopBtn'),
+    timeList = parent.find('.timeList'),
+    langControls = parent.find('.langControls'),
     separator = $('.playerContainer .separator'),
     septum = $('.playerContainer .playerSeptum');
 
@@ -23,7 +23,8 @@ function playerInit(options) {
   var components = {};
 
   Object.defineProperty(this, 'content', {get: ()=>{return content;}});    
-  Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});
+  Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});   
+  Object.defineProperty(this, 'layout', {get: ()=>{return parent;}});
 
   separator.draggable({
     axis: "y",
@@ -31,7 +32,7 @@ function playerInit(options) {
     stop: ()=>{septum.hide();},
     drag: ()=>{
       let minh = Math.round($(window).height() * 0.2);
-      let vp = $('#videoPlayer');
+      let vp = $('.videoPlayer');
       let ph = separator.offset().top - vp.offset().top;
       if (ph > minh) {
         doc.setPlayerSize(vp.width(), ph);
@@ -84,7 +85,7 @@ function playerInit(options) {
       partStopped = false;
   }
 
-  function setIndex(index, seekSet, startPlay) {
+  var setIndex = this.setIndex = function setIndex(index, seekSet, startPlay) {
     if (seekSet) This.videoEl.seekTo(tlist[index], true);
 
     if (tindex != index) {
@@ -116,7 +117,7 @@ function playerInit(options) {
           ci = content[i].c[n] = Components.defaultComponent;
         
         if (components[ci] == undefined)
-          components[ci] = new Components[ci]();
+          components[ci] = new Components[ci](This);
       }
     }
   }
@@ -217,7 +218,9 @@ function playerInit(options) {
   }
 
   timeList.change(()=>{
-    afterYTPlayer(()=>{setIndex(parseInt(timeList.val()), true, partStopped);});
+    afterYTPlayer(()=>{
+      setIndex(parseInt(timeList.val()), true, partStopped);
+    });
   });
 
   stopBtn.click(()=>{
@@ -284,9 +287,12 @@ function playerInit(options) {
     };
     $(window).trigger('beforePayerIndex', edata);
 
-    let stop = false, c = content[tindex].c;
-    for (var i = 0; i < c.length; i++) {
-      stop = stop || components[c[i]].stop(This, tindex);
+    let stop = false;
+    if (tindex > -1) {
+      let c = content[tindex].c;
+      for (var i = 0; i < c.length; i++) {
+        stop = stop || components[c[i]].stop(This, tindex);
+      }
     }
 
     if (stop && partStop && (a_tindex == tindex + 1)) stopPart();
