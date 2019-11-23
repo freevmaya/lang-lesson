@@ -1,0 +1,89 @@
+.timeline {
+    border-radius: 0.5em;
+    padding: 5px;
+    position: relative;
+    margin: 5px 2px 2px 2px;
+}
+
+.timeline-bar {
+    height: 10px;
+    padding: 0px;    
+    margin-top: 16px;
+}
+
+.timeline-bar .cursor {
+    position: absolute;
+    width: 1px;
+    height: 30px;
+    background: #d40000;
+    margin-left: 100px;
+    margin-top: -10px;
+}
+
+.timeline-container {
+    height: 34px;
+    padding: 0px;
+    margin-right: 75px;
+    overflow: hidden;
+}
+
+.timeline .delete:disabled {
+    opacity: 0.2;
+    cursor: default !important;
+}
+
+
+.is-selected-marker .delete {
+    opacity: 1;
+}
+
+
+.marker {
+	width: 10px;
+	height: 20px;
+	position: relative;
+	margin-top: -5px;
+    display: block;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.timeline .buttons {
+    position: absolute;
+    top: 0px;
+    right: 0px; 
+    text-align: right;
+    margin: 2px;
+    display: flex;
+    justify-content: center;
+}
+
+.is-selected-marker .buttons {
+}
+
+.timeline a.btn {
+    margin: 2px;
+    width: 35px;
+}
+
+.timeline .slider {
+    margin: 5px 8px 0px 8px    
+}
+
+.timeline .ui-slider-handle {
+}
+
+.timeline .dropdown-submenu:hover .dropdown-menu {
+    display: block;
+}
+
+.timeline .dropdown-menu {
+    margin: 0px !important;
+    left: auto;
+    right: 0px;
+    float: none;
+}
+
+.timeline .dropdown-menu a {
+    cursor: pointer;
+}

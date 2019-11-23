@@ -1,0 +1,144 @@
+.itemEditor {
+	width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.itemEditor .component {
+    border-radius: 0.5em;
+    padding: 5px;
+    margin: 2px;
+    flex-grow: 1;
+}
+
+.component .trash {
+    color: #929292 !important;
+    height: 1.75rem !important;
+    order: 100;
+}
+
+.component .trash:hover {
+    color: red !important;
+}
+
+.component.class-0 {
+    flex-grow: 0;
+}
+
+.component .separate {
+    height: 5px;
+}
+
+.component.translate {
+    min-width: 400px;
+    flex-grow: 1;
+}
+
+.component .btn-primary {
+    flex-grow: 0 !important;
+    margin-left: 5px;
+}
+
+.component >> div {
+    display: flex;
+}
+
+.component input {
+    flex-grow: 1;    
+}
+
+.itemEditor >> table {
+    border-spacing: 5px;
+}
+
+.itemEditor table {
+	width: 100%;
+}
+
+.itemEditor table td {
+    vertical-align: bottom;
+}
+
+.itemEditor input,
+.input-layer {
+	resize: none;
+    font-size: 1.5em;
+    border: 1px solid #3336;
+    line-height: 1.5em;    
+    border-radius: 5px;
+    padding: 0px 10px;
+}
+
+.itemEditor input[type="text"] {
+    color: #2e2e2e;
+}
+
+.itemEditor input::placeholder {
+    color: #AAA;
+}
+
+.input-layer {
+    cursor: text;
+}
+
+.itemEditor input.text {
+    width: 100%
+}
+
+.input-layer {
+    padding-top: 1px;
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    overflow-wrap: unset;
+}
+
+.itemEditor input.time {
+    text-align: right;
+    width: 5em;
+}
+
+.itemEditor input {
+}
+
+.itemEditor h3 {
+    margin: 0px !important;
+    color: #767676;
+    user-select: none;
+    flex-grow: 1;
+}
+
+.input-layer {
+  position: absolute;
+  background: white;
+}
+
+button.send {
+    margin-bottom: 4px;
+}
+
+.td-button {
+    width: 30px;
+}
+
+.component .head {
+    justify-content: space-between;
+    display: flex;
+}
+
+.component .ftable {
+    display: flex;
+}
+
+.component .right {
+    line-height: 2em;
+    margin: 0px 5px;
+}
+
+.component .right span {
+    color: #5e5e5e;
+    padding: 0px 10px;
+}
+

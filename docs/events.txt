@@ -1,0 +1,18 @@
+
+window
+	afterSetItemData 		ix
+	requireYTPlayer			callback
+	onAppError				response
+	onLoginUser				user
+	newContent				video ID
+	onGetVideoContent		vdata
+	onAfterSaveToLibrary	result
+	onOpenVideoContent		vdata
+	onStopPart				player
+	onChangeIndex			player
+	ToEditMode				
+	onAppendComponent		{time, type}
+
+CommandManager
+	onCommandPointer		
+	onBeforeExecuteCommand  command

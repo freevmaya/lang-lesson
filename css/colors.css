@@ -1,0 +1,150 @@
+langControls
+body, .controls {  
+  background-color: white !important;
+}
+
+.timeline, .component {
+    background-color: #e9ecef;
+    /*box-shadow: inset 1px 1px 2px #00000088;*/
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+.timeline-bar {
+	background: #9ea7ae;
+}
+
+.marker {
+	background: white;
+  box-shadow: 1px 1px 3px #000000AA;
+}
+
+.timeline-bar .selected {
+    background: #ffdf69;
+}
+
+.timeline .buttons .delete {
+    background: red;
+}
+
+.page-footer a {
+	color: #3f51b5;
+}
+
+.navbar-dark .navbar-brand {
+	color: #64a205 !important;
+}
+
+.navbar-toggler {
+}
+
+.langControls .btn {
+  background: #7b7b7b96;
+}
+
+.langControls .btn:hover {
+  background: #dec487d4;
+}
+
+.transText {
+  color: black;
+}
+
+.transTextAll {
+  color: #7c7300;
+}
+
+.transText a {
+  color: #353535 !important;
+}
+
+.transText a:hover {
+  color: red !important;
+}
+
+.pause {
+    background: #ffffffad;
+} 
+
+.playerSeptum:hover .langControls {
+}
+
+.langControls {
+}
+
+.dropdown-item span {
+    float: right;
+    color: darkgray;
+}
+
+.btn:hover {
+  color: yellow !important;
+}
+
+.controls .btn {
+  background-color: gray;
+}
+
+.pfocus {
+  background-color: #00ff00fa !important;
+}
+
+.empty .empty-content {
+  color: #00000038;
+}
+
+.sel {
+  background: #EEE;
+  color: red;
+}
+
+.clip-list .controls .btn {
+  background: #584d3459;
+}
+
+.clip-list .controls .selected {
+  color: white;
+  background: red;
+}
+
+.langControls .btn:disabled {
+  background: #8080804f !important;
+  color: white !important;
+  cursor: auto;
+}
+
+.CTitle h2 {
+  color: #444;  
+}
+
+.CPuzzle .top {
+  border-bottom: 1px dashed gray;
+}
+
+.CPuzzle .top .word {
+  background: #7b7b7b96;
+  color: white;
+}
+
+.CPuzzle .cont {
+  border: 1px solid white;
+  background: #ffd59c52;
+}
+
+.CPuzzle .word {
+  border: 1px solid #959595;
+  box-shadow: 1px 1px 4px #0000003d;
+  background: white;
+}
+
+.CPuzzle.complete .top .word {
+  background: white;
+  color: black;
+}
+
+.CPuzzle.complete .bottom .word {
+  opacity: 0.5;
+}
+
+.CPuzzle.complete {
+  background: #f2fff2;
+}

@@ -1,0 +1,456 @@
+html {
+  font-family: Tahoma, Arial;
+  height: 100vh;
+}
+
+body {
+  height: 100% !important;
+  overflow-x: hidden;
+}
+
+main {
+  margin: auto;
+}
+
+nav {
+  width: 100%;
+  position: fixed !important;
+  z-index: 3;
+  transition: background-color 0.4s;
+}
+
+.player-wrap {
+  display: flex;
+  margin: 56px auto 0 auto;
+  align-items: flex-start;
+  max-width: 1300px;
+}
+
+#videoPlayer {
+  display: block;
+  background-size: cover;
+  display: flex;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-color: black;
+}
+
+.yt-button {
+  position: relative;
+  margin: auto;
+  width: 68px;
+  height: 48px;
+  background: url(images/ytb.png);
+  cursor: pointer;
+}
+
+#videoPlayer:hover .yt-button {
+  width: 68px;
+  height: 48px;
+  background: url(images/ytb-focus.png);
+}
+
+.page-wrapper {
+  min-height: 100%;
+}
+
+.Editor {
+  display: none;
+  padding-bottom: 5px;
+}
+
+.playerContainer {
+  margin: 0 auto 0 auto;
+  position: relative;
+}
+
+.editContaier {
+  left: 0px;
+  right: 0px;
+  width: 100%;
+}
+
+.separator {
+  height: 9px;
+  cursor: row-resize;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+}
+
+.separator:after {
+  border-bottom: 1px solid gray;
+  display: block;
+  height: 3px;
+  width: 20px;
+  content: '';
+  margin: 3px auto 0 auto;
+  border-top: 1px solid gray;
+}
+
+.btn {
+  color: white !important;
+  cursor: pointer;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.btn span {
+  font-size: 1.5em;
+}
+
+.btn:hover {
+}
+
+.controls .btn {
+  font-size: 1.5em;
+}
+
+.controls .btn, .controls select {
+  border-radius: 8px;
+}
+
+.stop {
+  background-color: #FFAD40 !important;
+}
+
+.empty {
+  background-color: #00800000 !important;  
+}
+
+.hidden {
+  display: none;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.2em;
+  position: relative;
+}
+
+.editContaier .controls {
+}
+
+.controls, .controls select {
+  font-size: 1em;
+}
+
+.langControls .btn {
+  opacity: 0 !important;
+}
+
+.langControls:hover .btn, .pause .btn {
+  opacity: 1 !important;
+}
+
+.playerSeptum {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  top: 0px;
+  bottom: 0px;
+  background: #FFF0;
+  display: none;
+}
+
+.langControls {
+  margin-left: 0px;
+  margin-right: 0px;
+  margin-top: 9px;
+  position: relative;
+  top: 0px;
+  display: flex;
+  bottom: 0px;  
+  min-height: 6em;
+}
+
+.trans-text {
+  justify-content: space-evenly;
+  display: flex;
+  flex-direction: column;
+  min-height: 6em;  
+}
+
+.empty-content, .empty .transText, .empty .transTextAll {
+  display: none;
+}
+
+.empty .empty-content {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.player-area {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;  
+}
+
+.transText {
+  font-size: 1.6em;
+  line-height: 1.2em;
+}
+
+.transTextAll {
+  font-size: 1.2em;
+  line-height: 1em;
+}
+
+.langControls .btn {
+  padding: 0px 0.5em; 
+  margin: 0px 3px;
+}
+
+.langControls .left {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.langControls .right {
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.transText, .transTextAll {
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transText a {
+  display: inline-block;
+  margin: 0px 0.1em;
+  cursor: pointer;
+}
+
+.transText a:hover {
+}
+
+iframe .ytp-chrome-top {
+  display: none;
+}
+
+.editor {
+  display: none;
+}
+
+.editContaier .player-area .add {
+  display: none;
+}
+
+.editContaier .editor {
+  display: block;
+}
+
+#timeList {
+  display: block;
+  width: 100%;
+  margin-right: 5px;
+}
+
+.tooltip {
+  background:white;
+  color:#333;
+  text-align:center;
+  padding:6px 0;
+  position:absolute;
+  max-width:250px;
+  z-index:9999;
+  display:none;
+  border-radius:3px;
+  box-shadow: 6px 6px 3px rgba(0, 0, 0, 0.8);
+  padding: 10px 15px;
+  font-size: 1.5em;
+  text-shadow:none;
+}
+
+.tooltip:before {
+  position: absolute;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  border: 10px dashed white;
+  bottom: -10px;
+  left:15px;
+  border-bottom-style: solid;
+  border-top: none;
+  border-left-color: transparent;
+  border-right-color: transparent;
+  content:'';
+  transform: rotate(180deg);
+}
+
+.file-menu {
+  display: none;
+}
+
+main .content {
+  margin: 1em;
+}
+
+main .content .item {
+  margin: 1em 0.5em;
+}
+
+#uLogin {
+  padding: 1em;
+}
+
+.my-clips {
+  margin: 1em;
+}
+
+.list-container {
+  overflow-y: auto;
+}
+
+.clip-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.clip-list .image {
+  height: 7em;
+  margin: auto;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+
+.clip-list .item {
+  text-align: center;
+  padding: 0.3em;
+  flex-grow: 1;  
+  max-width: 250px;
+}
+
+.clip-list .item .title {
+  font-size: 0.8em;
+}
+
+.navbar-nav .user {
+  display: none;
+}
+
+.item-controls {
+  text-align: right;
+  height: 0px;
+}
+
+.item-controls .btn {
+  background: #7e6c6c73;
+  margin-top: -60px;
+  margin-left: 3px;
+  margin-right: 3px;
+  font-size: 0.6em;
+}
+
+.item {
+  cursor: pointer;
+}
+
+.item .trash {
+  font-size: 0.8em;
+  padding: 4px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.item:hover .trash {
+  opacity: 1;
+}
+
+.selected .trash {
+  opacity: 1 !important;
+  background: red !important;
+}
+
+.my-clips h2 {
+  margin: 2px 0px;
+  font-size: 1.5rem;
+}
+
+.my-clips .delete {
+  display: none;
+}
+
+.visible {
+  display: block !important;
+}
+
+.select {
+  text-align: right;
+  display: block;
+}
+
+.select .dropdown-item {
+  cursor: pointer;
+}
+
+.playlist {
+  margin-top: 1em;
+}
+
+.playlist-title {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.select .dropdown-toggle-split {
+}
+
+input[name="playlist-input"] {
+  position: absolute;
+  width: calc(100% - 56px);
+  left: 0px;
+  display: none;
+}
+
+.CTitle h2 {
+  margin: 0px;  
+  user-select: none;
+}
+
+.CPuzzle {
+  padding: 0 1em;
+}
+
+.CPuzzle .top, .CPuzzle .bottom {
+  min-height: 3em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;  
+  align-content: center;
+}
+
+.CPuzzle .top {
+  border-bottom: 1px dashed gray;
+}
+
+.CPuzzle .top .word {
+  margin: 0.1em;
+}
+
+.CPuzzle .cont {
+  margin: 0.1em;
+  border-radius: 8px;
+}
+
+.CPuzzle .word {
+  border-radius: 8px;
+  font-size: 1.4em;
+  cursor: pointer;
+  padding: 0 0.4em;
+}
+
+.CPuzzle > div {
+  display: flex;
+}

@@ -1,0 +1,3 @@
+var markerCommand = function() {
+	
+}
