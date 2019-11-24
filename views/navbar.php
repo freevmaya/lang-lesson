@@ -254,7 +254,8 @@
           reader.onload = function (e) {
             if (e.target.readyState == 2) {
               try {
-                $(window).trigger('onOpenVideoContent', JSON.parse(e.target.result));
+                let data = JSON.parse(e.target.result);
+                $(window).trigger('onOpenVideoContent', data);
               } catch {
                 $(window).trigger('onAppError', {code: 101, message: 'Error read file ' + file.name});
               }

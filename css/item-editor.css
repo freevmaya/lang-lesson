@@ -142,3 +142,6 @@ button.send {
     padding: 0px 10px;
 }
 
+.CPuzzleEdit input.trans {
+    width: 100%
+}

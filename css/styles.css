@@ -454,3 +454,8 @@ input[name="playlist-input"] {
 .CPuzzle > div {
   display: flex;
 }
+
+.CPuzzle .trans {
+  color: #b8b8b8;
+  text-align: center;
+}

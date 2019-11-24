@@ -310,11 +310,18 @@ var LangApp = function(playerApp, options) {
   var newVideoData = null;
 
   function onNewVideoStateChange(e) {  
-    if ((newVideoID !== false) && (e.data == YT.PlayerState.PLAYING)) {
+    if (newVideoID !== false) {
+      function onCheckLoaded() {
+        let len = playerApp.videoEl.getDuration();
+        if (len > 0) {
+          This.setData(newVideoData, playerApp.videoEl.getDuration());
+          clearTimeout(timerId);
+          newVideoData = null;
+        }
+      }
       if (newVideoData == null) newVideoData = {id: newVideoID, timeline: [], content: []};
-      This.setData(newVideoData, playerApp.videoEl.getDuration());
+      var timerId = setInterval(onCheckLoaded, 100);
       newVideoID = false;
-      newVideoData = null;
     }
   }
 

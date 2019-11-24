@@ -4,6 +4,7 @@ var CPuzzle = function(player) {
 		'<div class="top"></div>'+
 		'<div class="after"></div>' +
 		'<div class="bottom"></div>'+
+		'<div class="trans"></div>'+
 	'</div>');
 
 	var parea = $('.player-area');
@@ -11,6 +12,7 @@ var CPuzzle = function(player) {
 
   	var top = layer.find('.top');
   	var bottom = layer.find('.bottom');
+  	var trans = layer.find('.trans');
   	var phrase;
   	var nextBtn = player.layout.find('.nextBtn');
   	var index = -1;
@@ -32,6 +34,7 @@ var CPuzzle = function(player) {
 
   	function getWords(puzzle, order) {
   		let words = [], p = puzzle;
+  		phrase = [];
 		if (p[0].trim()) {
 			words = (phrase = p[0].split(/\s/)).slice(0);
 			if (p[1].trim()) words = words.concat(p[1].split(/\s/));
@@ -44,6 +47,7 @@ var CPuzzle = function(player) {
   		index = tindex;
 		top.empty();
 		bottom.empty();
+		trans.empty();
 		let words = getWords(puzzle);
 		doc.prepareSpeech(words);
 		if (words.length > 0) {
@@ -52,6 +56,7 @@ var CPuzzle = function(player) {
 	      	nextBtn.prop('disabled', !completeList[index]?true:'');
 	  		layer.removeClass('complete');
   		}
+  		if (puzzle[2]) trans.text(puzzle[2]);
       	layer.show();
   	}
 
@@ -170,9 +175,13 @@ CPuzzle.Editor = function(parent, onChange) {
 
 	var This = this;
 	var layer = $(
-    '<div>' +
+    '<div class="CPuzzleEdit">' +
       '<div>' +
       	'<input type="text" class="text" placeholder="Phrase"/>' +
+      '</div>' +
+      '<div class="separate"></div>' +
+      '<div>' +
+      	'<input type="text" class="trans" placeholder="Translation"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
@@ -185,6 +194,7 @@ CPuzzle.Editor = function(parent, onChange) {
 	var phrase = layer.find('.text');
 	var words = layer.find('[name="words"]');
 	var input = layer.find('.input'); 
+	var trans = layer.find('.trans'); 
 	var ix;
 
 	function doChange() {
@@ -199,6 +209,7 @@ CPuzzle.Editor = function(parent, onChange) {
     	ix = a_ix;
 		phrase.val(a_data?a_data.content[ix].puzzle[0]:'');
 		words.val(a_data?a_data.content[ix].puzzle[1]:'');
+		trans.val(a_data?a_data.content[ix].puzzle[2]:'');
 	}
 
 	this.clearData = (a_data, a_ix)=>{
@@ -206,7 +217,7 @@ CPuzzle.Editor = function(parent, onChange) {
 	}
 
 	this.defaultData = ()=>{
-		return {puzzle: ['', '']};
+		return {puzzle: ['', '', '']};
 	}
 
 	this.setTime = function(a_time) {}
@@ -217,7 +228,7 @@ CPuzzle.Editor = function(parent, onChange) {
 
 	function getData() {
 		return {
-			puzzle: [phrase.val(), words.val()]
+			puzzle: [phrase.val(), words.val(), trans.val()]
 		}
 	}
 

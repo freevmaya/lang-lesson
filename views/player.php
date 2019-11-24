@@ -46,11 +46,7 @@
     var speechList = {};
 
 
-    Object.defineProperty(this, 'vid', {
-      get: ()=>{
-        return _vid;
-      }
-    });   
+    Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.find('.itemEditor').length > 0;}});
 
     this.langapp = null;
@@ -306,7 +302,7 @@
       }
     });
 
-    $(window).on('onOpenVideoContent', (e, a_data)=>{
+    This.openVideoContent = (a_data)=>{
       function afterYTLoad() {
         vdata = a_data;
 
@@ -324,11 +320,14 @@
           playerApp.setData(vdata);
         }
       }
+
       if (a_data.id) {
         if (!This.isYTLoaded()) This.YouTubeAPILoad(afterYTLoad); 
         else afterYTLoad();
       }
-    });
+    }
+
+    $(window).on('onOpenVideoContent', (e, a_data)=>{This.openVideoContent(a_data);});
 
     $(window).on('newContent', (e, videoID)=>{
       function afterYTLoad() {
