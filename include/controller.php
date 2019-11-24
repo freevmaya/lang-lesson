@@ -7,6 +7,7 @@ class Controller extends BaseController {
 	public $user;
 
 	public $uid;
+	public $request_uid;
 	public $cid;
 	public $pl;
 
@@ -43,7 +44,7 @@ class Controller extends BaseController {
 		if (count($params) > 0) {
 			$this->cid = is_numeric($params[count($params) - 1])?$params[count($params) - 1]:null;
 			if (is_numeric($params[0])) {
-				$this->uid = $params[0];
+				$this->request_uid = $params[0];
 				if (isset($params[1]))
 					$this->pl = $params[1];
 			} else $this->cid = $params[0];

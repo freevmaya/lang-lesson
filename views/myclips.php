@@ -9,7 +9,7 @@
 		var cliplist;
 		var playlist;
 
-		this.uid = 0;
+		this.auth_uid = 0;
 
 		function doDelete() {
 			let list = getTrashList();
@@ -19,10 +19,10 @@
 
 			let dlg = $.dialog('Warning!', $('<p>Do you want to delete selected items?</p>'), ()=>{
 				$.post(echoURL + "?task=removeUserClips", {
-					uid: This.uid,
+					uid: This.auth_uid,
 					ids: ids
 				},function(response) {
-					if (response.result == 'ok') This.reload(playlist.id, playlist.uid);
+					if (response.result == 'ok') This.reload(playlist.uid, playlist.id);
 					else $(window).trigger('onAppError', response);
 		        });
 				dlg.close();
@@ -52,7 +52,7 @@
 			item.find('.image').css('background-image', 'url(' + d.preview_url + ')');
 			item.find('.title').text(d.title);
 			item.find('.thumbnail').click(()=>{showClip(d);});
-			if (This.uid != playlist.uid)
+			if (This.auth_uid != playlist.uid)
 				item.find('.trash').remove();
 			else item.find('.trash').click((e)=>{toggleTrash($(e.currentTarget), d);});
 			item.data('id', d.id);
@@ -100,7 +100,7 @@
 
 		this.show = (a_pid, a_uid, is_scroll)=>{
 			if (!isVisible || (a_pid != playlist.id) || (a_uid != playlist.uid)) {
-				if (!a_uid) a_uid = This.uid;
+				if (!a_uid) a_uid = This.auth_uid;
 
 				This.reload(a_uid, a_pid, ()=>{
 					isVisible = true;
@@ -133,17 +133,17 @@
 	var myLibrary = new Library();
 
 	<?
-	if ($controller->uid && $controller->pl) {
+	if ($controller->request_uid && $controller->pl) {
 	?>
 	$(window).ready(()=>{
-		myLibrary.show('<?=$controller->pl?>', <?=$controller->uid?>);
+		myLibrary.show('<?=$controller->pl?>', <?=$controller->request_uid?>);
 	});
 	<?			
 	}
 	?>
 
 	$(window).on('onLoginUser', (e, user)=>{
-		myLibrary.uid = user.uid;
+		myLibrary.auth_uid = user.uid;
 	});
 
 </script>

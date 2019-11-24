@@ -77,7 +77,7 @@ var LangApp = function(playerApp, options) {
 
   function getAbsData() {return data;};
 
-  function onSelect(ix) {
+  function setSelectIndex(ix) {
     if (ix > -1) {
       editLayer.show();
       if (data.content.hasOwnProperty(ix))
@@ -135,12 +135,12 @@ var LangApp = function(playerApp, options) {
   }
 
   function onDeleteComponent(id) {
-    if ((selectIndex > -1) && !data.content[ix].c.includes(selectIndex))
+    if ((selectIndex > -1) && data.content[selectIndex].c.includes(id))
       commandManager.executeCmd(new deleteComponentCommand(selectIndex, id));
     //deleteComponent(selectIndex, id);
   }
 
-  var addComponentCommand = function(ix, componentId) {
+  var addComponentCommand = function(i, componentId) {
 
     var prev = $.extend({}, data.content[ix]);
 
@@ -340,7 +340,7 @@ var LangApp = function(playerApp, options) {
   
   var timeline = this.timeline = new Timeline(tlLayout, {
     markerWidth: 16,
-    onSelect: onSelect,
+    onSelect: setSelectIndex,
     onChange: onChangeTime,
     onChangeMarker: onChangeMarker,
     onChangeCursor: onChangeCursor,
@@ -358,6 +358,8 @@ var LangApp = function(playerApp, options) {
         plyerSetCursor = false;
       }
     }, 100);
+
+    setTimeout(()=>{timeline.setSelectIndex(playerApp.index)}, 100);
   }
 
   setTimeout(This.refreshPlayer, 100);  

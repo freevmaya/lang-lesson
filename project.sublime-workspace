@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"co",
+				"completeList"
+			],
+			[
+				"con",
+				"container"
+			],
+			[
+				"pl",
+				"plid"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
 				"json",
 				"json_encode"
 			],
@@ -108,10 +124,6 @@
 				"word"
 			],
 			[
-				"con",
-				"console"
-			],
-			[
 				"for",
 				"for\tfor (…) {…}"
 			],
@@ -166,10 +178,6 @@
 			[
 				"cle",
 				"clearComponents"
-			],
-			[
-				"pl",
-				"playing"
 			],
 			[
 				"Pl",
@@ -506,42 +514,88 @@
 			[
 				"pub",
 				"is_published"
-			],
-			[
-				"vacan",
-				"vacancy"
-			],
-			[
-				"uis",
-				"user_id"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
+			"file": "/C/Users/vmaya/.ssh/id_rsa.pub",
+			"settings":
+			{
+				"buffer_size": 401,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 57,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/player.js",
+			"settings":
+			{
+				"buffer_size": 8737,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".htaccess",
+			"settings":
+			{
+				"buffer_size": 496,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 6041,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "views/player.php",
 			"settings":
 			{
-				"buffer_size": 11172,
+				"buffer_size": 11193,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/components/trans-text.js",
+			"contents": "Searching 6 files for \"#controls\"\n\n0 matches\n\nSearching 25 files for \"#controls\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player.js:\n    8:   var vidControls = $('#controls'),\n\n1 match in 1 file\n",
 			"settings":
 			{
-				"buffer_size": 7579,
+				"buffer_size": 196,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "views/myclips.php",
+			"settings":
+			{
+				"buffer_size": 4109,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/command/command.js",
+			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 2019,
+				"buffer_size": 5572,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -556,93 +610,21 @@
 			}
 		},
 		{
-			"file": "index.php",
+			"file": "css/colors.css",
 			"settings":
 			{
-				"buffer_size": 6068,
+				"buffer_size": 1951,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/functions.js",
+			"file": "js/components/trans-text.js",
 			"settings":
 			{
-				"buffer_size": 6110,
+				"buffer_size": 7580,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player.js",
-			"settings":
-			{
-				"buffer_size": 8504,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/editor-app.js",
-			"settings":
-			{
-				"buffer_size": 8866,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/components/template component.js",
-			"settings":
-			{
-				"buffer_size": 1001,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/editor.php",
-			"settings":
-			{
-				"buffer_size": 596,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/components/puzzle.js",
-			"settings":
-			{
-				"buffer_size": 5259,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "data-api/download-example.php",
-			"settings":
-			{
-				"buffer_size": 2133,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "# renew_before_expiry = 30 days\nversion = 0.39.0\narchive_dir = /etc/letsencrypt/archive/vmaya.ru\ncert = /etc/letsencrypt/live/vmaya.ru/cert.pem\nprivkey = /etc/letsencrypt/live/vmaya.ru/privkey.pem\nchain = /etc/letsencrypt/live/vmaya.ru/chain.pem\nfullchain = /etc/letsencrypt/live/vmaya.ru/fullchain.pem\n\n# Options used in the renewal process\n[renewalparams]\naccount = a9e5d37f80dafd9f0a2f9a2b019cbc3e\nauthenticator = webroot\nserver = https://acme-v02.api.letsencrypt.org/directory\npost_hook = nginx -s reload\n[[webroot_map]]\nvmaya.ru = /home/vmaya.ru/www",
-			"settings":
-			{
-				"buffer_size": 554,
-				"line_ending": "Windows",
-				"name": "# renew_before_expiry = 30 days"
-			}
-		},
-		{
-			"contents": "Searching 6 files for \"Наши партнеры\"\n\n0 matches",
-			"settings":
-			{
-				"buffer_size": 48,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
 			}
 		}
 	],
@@ -678,12 +660,37 @@
 	},
 	"expanded_folders":
 	[
-		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/tmp",
-		"/C/WebServers/home/lang-lesson.ru/www/views"
+		"/C/WebServers/home/lang-lesson.ru/www"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/views/player.php",
+		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
+		"/C/WebServers/home/lang-lesson.ru/www/index_db.php",
+		"/W/www/.htaccess",
+		"/W/www/index.php",
+		"/W/www/views/myclips.php",
+		"/W/www/include/controller.php",
+		"/W/www/include/BaseController.php",
+		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
+		"/C/WebServers/home/lang-lesson.ru/www/include/engine.php",
+		"/W/www/echo/index.php",
+		"/W/www/views/player.php",
+		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
+		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
+		"/D/documents/numbers.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
+		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/TextToSpeech.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/command/command.js",
+		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
+		"/C/WebServers/home/lang-lesson.ru/www/index.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/template component.js",
+		"/C/WebServers/home/lang-lesson.ru/www/data-api/download-example.php",
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/src/Google/Client.php",
 		"/C/WebServers/home/lang-lesson.ru/www/tmp/Congratulations! Your certificate and chain hav.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/index.php",
@@ -693,17 +700,13 @@
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/vendor/google/apiclient-services/src/Google/Service/PlayMovies/Avail.php",
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/vendor/google/apiclient-services/src/Google/Service/Books.php",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/examples/index.php",
 		"/C/WebServers/home/lang-lesson.ru/www/data-api/src/Google/autoload.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/TextToSpeech.php",
 		"/C/WebServers/home/lang-lesson.ru/google-api-php-client-master/src/Google/autoload.php",
 		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/Gapic/TextToSpeechGapicClient.php",
 		"/C/WebServers/home/lang-lesson.ru/www/.htaccess",
 		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/SynthesizeSpeechRequest.php",
 		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/SsmlVoiceGender.php",
-		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/ts_index.php",
 		"/C/WebServers/usr/local/php5/php.ini",
 		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
@@ -718,22 +721,11 @@
 		"/C/WebServers/home/lang-lesson.ru/www/css/item-editor.css",
 		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
 		"/C/WebServers/home/lang-lesson.ru/www/css/timeline.css",
-		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
-		"/D/documents/numbers.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/command/command.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/command/study-commands.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/template component.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
-		"/C/WebServers/home/lang-lesson.ru/www/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
 		"/C/WebServers/home/lang-lesson.ru/www/views/myclips.php",
 		"/D/Unity/roomEditor/.gitignore",
 		"/D/Unity/SCS_optical/.gitignore",
 		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/player.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/title,js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/item-editor.js",
 		"/C/WebServers/home/lang-lesson.ru/google-api-javascript-client-master/javascripts/main.js",
@@ -750,7 +742,6 @@
 		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor-prev.log",
 		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor.log",
 		"/C/WebServers/home/lang-lesson.ru/www/css/cover.css",
-		"/C/WebServers/home/lang-lesson.ru/www/include/engine.php",
 		"/X/logs/errors.log",
 		"/C/WebServers/home/lang-lesson.ru/www/views/og.php",
 		"/C/Program Files/Android/android-sdk/extras/google/usb_driver/amd64/NOTICE.txt",
@@ -800,18 +791,7 @@
 		"/W/html/games/include/engine.php",
 		"/W/html/speed_text.json",
 		"/W/html/ace.php",
-		"/W/html/games/models/clt26_model.php",
-		"/W/html/games/models/clt01_model.php",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/canvasSave.js",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/pjApp/baseapp.js",
-		"/W/html/index.html_",
-		"/W/html/index.php",
-		"/W/html/dirlist.php",
-		"/C/Users/vmaya/Downloads/video_content (5).txt",
-		"/C/Users/vmaya/Downloads/video_content (4).txt",
-		"/C/Users/vmaya/Downloads/video_content (3).txt",
-		"/C/Users/vmaya/Downloads/video_content (2).txt",
-		"/C/Users/vmaya/Downloads/video_content.txt"
+		"/W/html/games/models/clt26_model.php"
 	],
 	"find":
 	{
@@ -822,6 +802,17 @@
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\data-api\\vendor",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\data-api\\docs",
@@ -938,18 +929,7 @@
 			"D:\\documents\\rabota7\\httpd.2019-07-11_10_06_15\\httpd",
 			"D:\\documents\\rabota7\\nginx",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\subscribe",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\resumeShowPermission",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\webroot\\js",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views"
 		]
 	},
 	"find_state":
@@ -957,6 +937,67 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"start",
+			"setData",
+			"setIndex",
+			"This.setIndex",
+			"this.setIndex",
+			"setIndex",
+			"completeList",
+			"start",
+			"index",
+			"Components",
+			"components",
+			"createComponent",
+			"nextBtn",
+			"complete",
+			"nextBtn",
+			"nextButton",
+			"nextBtn",
+			"Library",
+			"videoPlayer",
+			"PlayerDoc",
+			"bottomSpace",
+			"stopBtn",
+			"#controls",
+			"controls",
+			"backBtn",
+			" id",
+			"langControls",
+			"id",
+			"$(",
+			"playerSeptum",
+			"controlsBlock",
+			"playerContainer",
+			"PlayerDoc",
+			"controlsBlock",
+			"YT.Player",
+			"videoEl",
+			"videoPlayer",
+			"options",
+			"playerContainer",
+			"timeList",
+			"controls",
+			"playerInit",
+			"timeList",
+			"setIndex",
+			"timeList",
+			"stopcb",
+			"beforeChangeIndex",
+			"address",
+			"This.address",
+			"params",
+			"show",
+			"$_GET",
+			"_GET",
+			"plid",
+			"controller",
+			"pl",
+			"uid",
+			"textTo",
+			"$charset",
+			"RESULTTYPE",
+			"sql_query",
 			"Наши партнеры",
 			"z.serveradmin.ru",
 			"/web/sites/vmaya.ru/",
@@ -1023,68 +1064,7 @@
 			"langControls",
 			"playerSeptum",
 			"onDelete",
-			"cursorTime",
-			"setTime",
-			"doSelectMarker",
-			"click",
-			"update",
-			"include",
-			"update",
-			"setItemData",
-			"onAppendComponent",
-			"markerWidth",
-			"dropdown-menu",
-			"CreateMarkerCommand",
-			"createMarkerAndAdd",
-			"createMarker",
-			"CreateMarker",
-			"doSelectMarker",
-			"deleteMarker",
-			"doSelectMarker",
-			"selectMarker",
-			"SelectMarkerCommand",
-			"this.name = ()=>",
-			"[\\w]+Command",
-			"Command",
-			"checkAddComponent",
-			"this.setData ",
-			"checkAddComponent",
-			"selectIndex",
-			"onSelect",
-			"selectIndex",
-			"onAddMarker",
-			"deleteComponent",
-			"commandManager",
-			"deleteComponent",
-			"ApplyItemCommand",
-			"checkAddComponent",
-			"onDeleteComponent",
-			"onDelete",
-			"addComponent",
-			".right",
-			"component",
-			"h3",
-			"addComponent",
-			"input",
-			"visible",
-			"dispose",
-			"hide",
-			"display: flex",
-			"flex",
-			".component .head",
-			".right",
-			"right",
-			".component > div",
-			"time",
-			"setData",
-			"getComponent",
-			"component time",
-			"bin",
-			"zip",
-			"bin",
-			".itemEditor h3",
-			".CTitle h2",
-			"playerSeptum"
+			"cursorTime"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1180,24 +1160,138 @@
 	"groups":
 	[
 		{
-			"selected": 13,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/player.php",
+					"file": "/C/Users/vmaya/.ssh/id_rsa.pub",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11172,
+						"buffer_size": 401,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9319,
-								9319
+								400,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 57,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								57,
+								57
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/player.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8737,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2862,
+								2862
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 355.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".htaccess",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 496,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6041,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6041,
+								6041
 							]
 						],
 						"settings":
@@ -1207,74 +1301,147 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7044.0,
+						"translation.y": 3440.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "js/components/trans-text.js",
+					"buffer": 5,
+					"file": "views/player.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7579,
+						"buffer_size": 11193,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1096,
-								1129
+								4190,
+								4190
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 330.0,
+						"translation.y": 2780.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "js/command/command.js",
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2019,
+						"buffer_size": 196,
 						"regions":
 						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										164,
+										173
+									]
+								],
+								"scope": ""
+							}
 						},
 						"selection":
 						[
 							[
-								1739,
-								1739
+								168,
+								168
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 2,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 1038.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 7,
+					"file": "views/myclips.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4109,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3360,
+								3360
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "js/components/puzzle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5572,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3076,
+								3076
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2533.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
 					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1286,8 +1453,8 @@
 						"selection":
 						[
 							[
-								896,
-								911
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1297,304 +1464,19 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 905.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6068,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/functions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6110,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1556,
-								1595
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1236.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8504,
-						"regions":
-						{
-							"bookmarks":
-							{
-								"flags": 144,
-								"icon": "bookmark",
-								"regions":
-								[
-									[
-										6706,
-										6719
-									]
-								],
-								"scope": "bookmarks"
-							}
-						},
-						"selection":
-						[
-							[
-								8024,
-								8024
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 136.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "js/editor-app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8866,
-						"regions":
-						{
-							"bookmarks":
-							{
-								"flags": 144,
-								"icon": "bookmark",
-								"regions":
-								[
-								],
-								"scope": "bookmarks"
-							}
-						},
-						"selection":
-						[
-							[
-								431,
-								431
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "js/components/template component.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1001,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								898,
-								898
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 598.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "views/editor.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 596,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 10,
-					"file": "js/components/puzzle.js",
+					"file": "css/colors.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5259,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1012,
-								1012
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 528.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "data-api/download-example.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2133,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								689,
-								689
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 66.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 554,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								357,
-								357
-							]
-						],
-						"settings":
-						{
-							"auto_name": "# renew_before_expiry = 30 days",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 48,
+						"buffer_size": 1951,
 						"regions":
 						{
 						},
@@ -1607,20 +1489,45 @@
 						],
 						"settings":
 						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "js/components/trans-text.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7580,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4492,
+								4492
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3127.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
 					"type": "text"
 				}
 			]

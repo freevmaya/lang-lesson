@@ -58,7 +58,7 @@ var CPuzzle = function(player) {
   	function appendWord(d) {
 		top.append(d);
 		checkPhrase();
-      	doc.playSpeech(d.text());
+      	if (!player.playing()) doc.playSpeech(d.text());
   	}
 
   	function removeWord(cont, d) {
@@ -129,7 +129,7 @@ var CPuzzle = function(player) {
 	}
 
 	this.updateContent = (content, tindex)=>{
-		if ((index > -1) && (!completeList[index]) && (!completeList[tindex])) {
+		if ((index > -1) && (!completeList[index]) && (!completeList[tindex]) && !doc.editMode) {
 			player.setIndex(index, true);
 		}
 		else {
@@ -160,7 +160,7 @@ var CPuzzle = function(player) {
 	}
 
 	this.stop = (player, index)=>{
-		return player.content[index].puzzle != undefined;
+		return !completeList[index] && (player.content[index].puzzle != undefined);
 	}
 }
 

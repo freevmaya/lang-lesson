@@ -289,22 +289,27 @@
     }
 
     this.linkShow = ()=>{
-      $(window).trigger('onGetVideoContent', (a_data)=>{
-        let size = doc.getSize(a_data.info);
-        $.post(echoURL + "?task=create", {
-          uid: 0,
-          data: vcode(a_data), 
-          video_id: a_data.id,
-          title: a_data.info.title,
-          preview_url: size.url,
-          thumbnail_width: size.width,
-          thumbnail_height: size.height
-        }, function(result) {
-          if (result && result.id) {
-            showLinkDialog('/' + result.id);
-          }
+      let seg = doc.getSeg();
+      if ((seg.length > 0) && $.isNumeric(seg[seg.length - 1])) {
+        showLinkDialog('/' + doc.getUri());
+      } else {
+        $(window).trigger('onGetVideoContent', (a_data)=>{
+          let size = doc.getSize(a_data.info);
+          $.post(echoURL + "?task=create", {
+            uid: 0,
+            data: vcode(a_data), 
+            video_id: a_data.id,
+            title: a_data.info.title,
+            preview_url: size.url,
+            thumbnail_width: size.width,
+            thumbnail_height: size.height
+          }, function(result) {
+            if (result && result.id) {
+              showLinkDialog('/' + result.id);
+            }
+          });
         });
-      });
+      }
     }
 
     this.copy = ()=>{

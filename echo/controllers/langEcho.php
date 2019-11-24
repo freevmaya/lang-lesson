@@ -104,11 +104,11 @@ class langEcho extends BaseController {
 
 	public function create() {
 		GLOBAL $_COOKIE;
-		if (($data = $_POST['data']) && ($video_id = $_POST['video_id'])) {
+		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
+		if (($data = $_POST['data']) && ($video_id = $_POST['video_id']) && $uid) {
 
 			$pl = $this->safePost('pl', 0); 
-			$id = $this->safePost('id', 0); 
-			$uid = $this->safePost('uid', 0);
+			$id = $this->safePost('id', 0);
 			$data = $this->safePost('data');
 			$title = $this->safePost('title');
 			$preview_url = $this->safePost('preview_url');
@@ -120,6 +120,11 @@ class langEcho extends BaseController {
 				$pllink = $this->safePost('pllink', '');
 				DB::query("INSERT INTO playlist (uid, link, title) VALUES ({$uid}, '{$pllink}', '{$pl}')");
 				$pid = DB::lastID();
+			}
+
+			if ($id) {
+				$clip_uid = DB::one("SELECT uid FROM lang_items WHERE id=:id", [':id'=>$id]);
+				if ($clip_uid != $uid) $id = false;
 			}
 
 			if ($id) {

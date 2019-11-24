@@ -280,7 +280,7 @@ var Timeline = function(elem, options) {
 	}
 
 
-	function doSelectMarker(ix) {
+	let doSelectMarker = this.setSelectIndex = (ix)=>{
 		if (selectIndex != ix) {
 			if (typeof(tlist[ix]) == 'number') {
 				setCursor(tlist[ix]);
@@ -389,15 +389,15 @@ var Timeline = function(elem, options) {
 			cursor.css('margin-left', x);
 
 			if (!rangeDrag) {
-				var offset = x + bar.position().left;
+				var lft = bar.position().left;
+				var offset = x + lft;
 				if ((offset < 0) || (offset > outerBar.width())) {
-					var range = slider.slider('values');
-					var inc = Math.floor((range[1] - range[0]) * 0.1) * (offset < 0?-1:1);
-					if (range[0] + inc < 0) inc = -range[0];
-					if (range[1] + inc > totalLength) inc = totalLength - range[1];
+					let range = slider.slider('values');
 
-					range[0] += inc;
-					range[1] += inc;
+			    	let delta = range[1] - range[0]; 
+    				range[0] = Math.min(Math.max(cursorTime - delta / 2, 0), totalLength - delta);
+    				range[1] = range[0] + delta;
+
 					slider.slider({values: range});				
 	    			applyRange(range);
 				}

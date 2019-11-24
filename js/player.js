@@ -22,9 +22,10 @@ function playerInit(parent, options) {
   var curText = false;
   var components = {};
 
-  Object.defineProperty(this, 'content', {get: ()=>{return content;}});    
-  Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});   
+  Object.defineProperty(this, 'content', {get: ()=>{return content;}});
+  Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});
   Object.defineProperty(this, 'layout', {get: ()=>{return parent;}});
+  Object.defineProperty(this, 'time', {get: ()=>{return tlist[tindex];}});
 
   separator.draggable({
     axis: "y",
@@ -185,14 +186,14 @@ function playerInit(parent, options) {
   }
 
   this.calcTIndex = (time)=>{
-    let pt, t;
+    let pt, t=0;
     for (t in tlist) {
       if (pt) {
         if ((tlist[t] > time) && (tlist[pt] <= time)) return parseInt(pt);
       }
       pt = t;
     }
-    return -1;
+    return (time > 0)?parseInt(t):0;
   }
 
   this.accurateIndex = (time, limit)=>{

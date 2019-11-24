@@ -50,7 +50,8 @@
       get: ()=>{
         return _vid;
       }
-    });
+    });   
+    Object.defineProperty(this, 'editMode', {get: ()=>{return container.find('.itemEditor').length > 0;}});
 
     this.langapp = null;
 
@@ -81,14 +82,20 @@
 
       if (seg1 != undefined) {
         let a = seg1.split('/');
-        if (a.length > 0) seg = a;
-        else seg[0] = seg1;
+        for (let s in a) seg[s] = a[s];
       }
       if (seg2 != undefined) seg[1] = seg2;
       if (seg3 != undefined) seg[2] = seg3;
 
-      let url = '<?=$mainURL?>' + seg.join('/');
-      history.replaceState(null, null, url);
+      history.replaceState(null, null, '<?=$controller->baseURL()?>' + This.getUri());
+    }
+
+    this.getSeg = ()=>{return seg;}
+
+    this.getUri = ()=>{
+      let uri = '';
+      for (let s in seg) if (seg[s]) uri += (uri?'/':'') + seg[s];
+      return uri;
     }
 
     this.setTitle = (title)=>{
@@ -377,6 +384,7 @@
     <?if ($video = $controller->getVideo()) {?>
     vdata = vdecode('<?=$video['data']?>');
     _vid = <?=$video['id']?>;
+    This.address(undefined, undefined, _vid);
     <?} else {?>
     if (!vdata) vdata = This.readInStorage(This.curVideoID());
     <?
