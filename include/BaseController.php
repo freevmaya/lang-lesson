@@ -95,7 +95,7 @@ class BaseController {
 	}
 
 	public function baseURL() {
-		return 'http://'.$_SERVER['HTTP_HOST'].'/';
+		return (@$_SERVER['HTTPS']?'https':'http').'://'.$_SERVER['HTTP_HOST'].'/';
 	}
 }
 ?>
