@@ -60,14 +60,13 @@
 		}
 
 		function resetItems(list) {
-
 			cliplist.empty();
 
 			for (let i=0; i<list.length; i++)
 				cliplist.append(createItem(list[i]));
 
 			del.removeClass('visible');
-			This.resetHeight();
+			resetHeight();
 		}
 
 		function createLayer(list) {
@@ -113,7 +112,7 @@
 			if (layer) layer.remove();
 		}
 
-		this.resetHeight = ()=>{
+		function resetHeight() {
 			if (layer) layer.find('.list-container').css('height', $('.playerContainer').outerHeight());
 		}
 
@@ -128,19 +127,17 @@
 				if (cliplist && (item.pid == playlist.id)) cliplist.append(createItem(item));
 			}
 		});
+
+		$(window).ready(()=>{
+			$('.playerContainer').on('onPlayerSize', resetHeight);
+			<?if ($controller->request_uid && $controller->pl) {?>
+			This.show('<?=$controller->pl?>', <?=$controller->request_uid?>);
+			<?}?>
+
+		})
 	}
 
 	var myLibrary = new Library();
-
-	<?
-	if ($controller->request_uid && $controller->pl) {
-	?>
-	$(window).ready(()=>{
-		myLibrary.show('<?=$controller->pl?>', <?=$controller->request_uid?>);
-	});
-	<?			
-	}
-	?>
 
 	$(window).on('onLoginUser', (e, user)=>{
 		myLibrary.auth_uid = user.uid;

@@ -37,7 +37,8 @@ body, .controls {
 }
 
 .langControls .btn {
-  background: #7b7b7b96;
+  background: #e9ecef;
+  border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .langControls .btn:hover {
@@ -146,4 +147,8 @@ body, .controls {
 
 .CPuzzle.complete {
   background: #f2fff2;
+}
+
+.btn span {
+  text-shadow: 0 0 1px black;
 }

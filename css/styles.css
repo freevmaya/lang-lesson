@@ -303,12 +303,32 @@ main .content .item {
 }
 
 .my-clips {
-  margin: 1em;
+  margin: 0 1em;
 }
 
 .list-container {
   overflow-y: auto;
 }
+
+.list-container::-webkit-scrollbar {
+  width: 10px;
+  border-radius: 5px;
+}
+
+.list-container::-webkit-scrollbar-track {
+  background: #EEE; 
+  border-radius: 5px;
+}
+ 
+.list-container::-webkit-scrollbar-thumb {
+  background: #BBB; 
+  border-radius: 5px;
+}
+
+.list-container::-webkit-scrollbar-thumb:hover {
+  background: #AAA; 
+}
+
 
 .clip-list {
   display: flex;

@@ -164,9 +164,11 @@
     }
 
     this.setPlayerSize = (w, h)=>{
+      let size = {width: w, height: h};
       if (player) player.originSetSize(w, h);
-      else layout.css({width: w, height: h});
+      else layout.css(size);
       container.find('.playerSeptum').css('height', h);
+      container.trigger('onPlayerSize', size);
     }
 
     this.setPlayerSizeRate = (rate)=>{
@@ -179,8 +181,6 @@
       if (usersize) size.height = usersize;
       
       This.setPlayerSize(size.width, size.height);
-
-      if (myLibrary) myLibrary.resetHeight();
     }
 
     this.getSize = (info)=>{
