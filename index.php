@@ -35,12 +35,14 @@
     <script src="<?=$mainURL?>js/jquery-3.4.1.min.js"></script>
     <script src="<?=$mainURL?>js/jquery-ui.js"></script>
     <script src="<?=$mainURL?>js/jquery.maskedinput.min.js"></script>
+    <script src="<?=$mainURL?>js/jquery.cookie.js"></script>
     <script src="<?=$mainURL?>js/timeline.js"></script>
     <script src="<?=$mainURL?>js/player.js"></script>
     <script src="<?=$mainURL?>js/lang-data.js"></script>
     <script src="<?=$mainURL?>js/editor-app.js"></script>
     <script src="<?=$mainURL?>js/template.js"></script>
     <script src="<?=$mainURL?>js/functions.js"></script>
+    <script src="<?=$mainURL?>js/controls.js"></script>
     <script src="<?=$mainURL?>js/command/command.js"></script>
     <script src="<?=$mainURL?>js/command/study-commands.js"></script>
     <script src="<?=$mainURL?>js/components/time-marker.js"></script>
@@ -149,6 +151,10 @@
             </div>
             <div class="modal-body content">                    
             </div>
+            <div class="error">
+              <h3>Error</h3>
+              <span></span>
+            </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary" name="okButton"></button>
@@ -157,6 +163,7 @@
         </div>
       </div>
     </div>
+    <?include_once("views/templates.php")?>
     <div class="d-flex w-100 mx-auto flex-column page-wrapper">
       <?include_once("views/navbar.php")?>
       <?include_once("views/player.php")?>

@@ -12,6 +12,7 @@ window
 	onChangeIndex			player
 	ToEditMode				
 	onAppendComponent		{time, type}
+	applyYTCaptions			[id, items]
 
 CommandManager
 	onCommandPointer		

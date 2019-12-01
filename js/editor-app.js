@@ -17,7 +17,7 @@ $.fn.editor = function(app) {
   var layout = {};
 
   this.setData = (data, ix)=>{
-    if (data.content[ix])
+    if (data && data.content && data.content[ix])
       for (let n in components) {
         let cin = (components[n] instanceof TimeMarker.Editor) || (data && data.content[ix].c.includes(parseInt(n)));
         if (cin) layout[n].show(); else layout[n].hide();
@@ -311,15 +311,18 @@ var LangApp = function(playerApp, options) {
 
   function onNewVideoStateChange(e) {  
     if (newVideoID !== false) {
+
+      let nid = newVideoID;
       function onCheckLoaded() {
         let len = playerApp.videoEl.getDuration();
         if (len > 0) {
-          This.setData(newVideoData, playerApp.videoEl.getDuration());
           clearTimeout(timerId);
+          newVideoData = (newVideoData == null)?{id: nid, timeline: [], content: []}:newVideoData;
+          This.setData(newVideoData, playerApp.videoEl.getDuration());
           newVideoData = null;
         }
       }
-      if (newVideoData == null) newVideoData = {id: newVideoID, timeline: [], content: []};
+
       var timerId = setInterval(onCheckLoaded, 100);
       newVideoID = false;
     }
@@ -333,15 +336,21 @@ var LangApp = function(playerApp, options) {
     playerApp.videoEl.stopVideo();
     playerApp.videoEl.loadVideoById(newVideoID = videoID, -1);
   }
-
+/*
   $(window).on('newContent', (e, videoID)=>{
     This.newVideo(videoID, doc.readInStorage(videoID));    
     editLayer.setData(null);
   });
+*/  
 
   $(window).on('onGetVideoContent', (e, callback)=>{
     callback(This.getData());
-  })
+  });
+
+  $(window).on('applyYTCaptions', (e, cobj)=>{
+    if (cobj.id == data.id)
+      This.setData(cobj.component.parser(data, cobj), playerApp.videoEl.getDuration());
+  });
 
   $(window).trigger('onShowEditor');
   
@@ -366,7 +375,7 @@ var LangApp = function(playerApp, options) {
       }
     }, 100);
 
-    setTimeout(()=>{timeline.setSelectIndex(playerApp.index)}, 100);
+    //setTimeout(()=>{timeline.setSelectIndex(playerApp.index)}, 100);
   }
 
   setTimeout(This.refreshPlayer, 100);  
