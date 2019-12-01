@@ -17,23 +17,12 @@
           <div class="dropdown-divider edit"></div>
           <a class="dropdown-item edit" href="#" onclick="navigate.edit()">Edit</a>
           <div class="dropdown-divider user"></div>
-          <?
-            if ($playlists = $controller->getPlaylists()) {
-          ?>
-            <a class="dropdown-item dropdown-toggle" href="#" id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-item dropdown-toggle" href="#" id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Playlist
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarPlaylist">
-              <a class="dropdown-item user" href="#" onclick="myLibrary.show(0, undefined, true);">My library</a>
-              <?foreach ($playlists as $pl) {?>
-                <a class="dropdown-item user" href="#" onclick="myLibrary.show(<?=$pl['id']?>, undefined, true);"><?=$pl['title']?></a>
-              <?}?>
-            </div>
-          <?
-            } else {
-          ?>
-          <a class="dropdown-item user" href="#" onclick="myLibrary.show(0, undefined, true);">My library</a>
-          <?}?>
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarPlaylist" id="menuPlayList">
+            <a class="dropdown-item" href="#" onclick="myLibrary.show(0, undefined, true);">My library</a>
+          </div>
         </div>
       </li>
       <li class="nav-item dropdown edit-menu">
@@ -41,14 +30,16 @@
           Edit
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarEdit">
-          <a class="dropdown-item" href="#" onclick="commandManager.undo()">Undo<span class="shortcut">Ctrl+Z</span></a>
-          <a class="dropdown-item" href="#" onclick="commandManager.redo()">Redo<span class="shortcut">Ctrl+Y</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="commandManager.undo()">Undo<span>Ctrl+Z</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="commandManager.redo()">Redo<span>Ctrl+Y</span></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="navigate.copy()">Copy<span class="shortcut">Ctrl+C</span></a>
-          <a class="dropdown-item" href="#" onclick="navigate.paste()">Paste<span class="shortcut">Ctrl+V</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="navigate.copy()">Copy<span>Ctrl+C</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="navigate.paste()">Paste<span>Ctrl+V</span></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="if (doc.langapp) doc.langapp.insert();">Insert marker<span class="shortcut">I</span></a>
-          <a class="dropdown-item" href="#" onclick="if (doc.langapp) doc.langapp.delete();">Delete marker<span class="shortcut">Delete</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.insert();">Insert marker<span>I</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.delete();">Delete marker<span>Delete</span></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#" onclick="navigate.captions()">Youtube captions</a>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -80,43 +71,23 @@
   </div>
 </nav>
 
-<div class="hidden">
-  <div class="form-group" id="newVideoTemplate">
-    <label for="recipient-name" class="col-form-label">URL video Youtube or ID:</label>
-    <input type="text" class="form-control" name="link">
-  </div>
-
-
-  <div class="form-group" id="linkVideoTemplate">
-    <label for="recipient-name" class="col-form-label">Link to content:</label>
-    <input type="text" class="form-control" name="link" readonly>
-    <div class="success" style="display:none;">Link copied to clipboard</div>
-  </div>
-
-
-  <div class="form-group" id="saveToLibTemplate">
-    <label for="recipient-text" class="col-form-label">Title video:</label>
-    <input type="text" class="form-control" name="title">
-    <div class="dropdown mr-1 playlist select">
-      <input type="text" class="form-control" placeholder="New playlist" name="playlist-input">
-      <button type="button" class="btn btn-secondary dropdown-toggle title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">Default playlist</button>
-      <div class="dropdown-menu dropdown-menu-right">
-        <div class="list">
-        </div>
-        <div class="dropdown-divider"></div>
-          <a class="dropdown-item" data-id="0">Default playlist</a>
-          <a class="dropdown-item">+</a>
-      </div>
-    </div>
-    <div class="success" style="display:none;">Saved</div>
-  </div>
-</div>
-
 <script type="text/javascript">
+
+  function plMenuUpdate(list) {
+    let plmenu = $('#menuPlayList');
+
+    plmenu.find('.pl').remove();
+
+    for (let i=0; i<list.length; i++) {
+      plmenu.append($('<a class="dropdown-item pl" href="#" onclick="myLibrary.show(' + list[i].id + 
+                  ', undefined, true);">' + list[i].title + '</a>'));
+    }
+  }
 
   function doAfterLogin(user) {
     $('.user').css('display', 'block');
     $(window).trigger('onLoginUser', user);
+    $.getJSON(echoURL + '?task=playlist', plMenuUpdate);
   }
 
   <?if ($controller->user) {?>
@@ -132,7 +103,10 @@
           if(!data.error) {
             $('.user-title').text(data.first_name + " " + data.last_name);
             $.post(echoURL + "?task=login", data, function(user) {
-              doAfterLogin(user);
+              if (user.uid) {
+                $.cookie('uid', user.uid);
+                doAfterLogin(user);
+              }
             });
           }
       }
@@ -337,6 +311,10 @@
 */
     this.edit = ()=>{
       $(window).trigger('ToEditMode');
+    }
+
+    this.captions = ()=>{
+      captionDialog($('#videoCaptions'));
     }
 
     $(window).on('onShowEditor', ()=>{

@@ -479,3 +479,22 @@ input[name="playlist-input"] {
   color: #b8b8b8;
   text-align: center;
 }
+
+.dropdown-item.shortcut {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dropdown-item span {
+  margin-left: 1em;
+}
+
+.modal-dialog .error {
+  display: none;
+  margin: 1em;
+  padding: 1em;
+  border-radius: 8px;
+  box-shadow: 1px 1px 3px #0000004f;
+  border-width: 1px;
+  border-style: solid;
+}

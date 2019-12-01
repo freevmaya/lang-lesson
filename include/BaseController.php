@@ -27,10 +27,12 @@ class BaseController {
 		'title'=>128,
 		'preview_url'=>128,
 		'preview_url'=>128,
+		'cid'=>128,
 		'network'=>64,
 		'ids'=>1024,
 		'pl'=>64,
 
+		'cids'=>'StringArray',
 		'uid'=>'Bigintval',
 		'id'=>'Bigintval',
 		'pid'=>'Bigintval',
@@ -67,6 +69,12 @@ class BaseController {
 
 	protected function safeBigintval($val) {
 		return Bigintval($val);
+	}
+
+	protected function safeStringArray($val) {
+		for ($i=0; $i < count($val); $i++)
+			$val[$i] = $this->safeStr($val[$i]);
+		return $val;
 	}
 
 	protected function safeValue($list, $name, $def = 0) {

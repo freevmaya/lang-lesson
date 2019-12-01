@@ -64,15 +64,10 @@ var TransText = function() {
       curText = content[tindex].text[0];
 
       if (curText) {
-        tw = ltw.split('|');      
+        tw = ltw?ltw.split('|'):null;
         $.each(curText.split('|'), (i, w)=>{
-
-          if (tw && tw[i]) {
-            //var rtw = ((tw && tw[i])?tw[i]:w).replace(/[,\.]/ig, '');
-            //if (/[A-z]/ig.test(w)) w = initWord($('<a>' + w + '</a>'), rtw);
-            //w = w.replace(/(\[.+\])/ig, '$1');
+          if (tw && tw[i])
             transText.append(initWord($('<a>' + w + '</a>'), tw[i].replace(/[,\.]/ig, '')));
-          }
           else transText.append(w);
         });
 
@@ -148,6 +143,12 @@ $.fn.langInput = function() {
 
 TransText.id = 1;
 TransText.title = 'Translate';
+TransText.parser = function(text) {
+  return {
+    text: [text, ''],
+    stop: true
+  }
+}
 TransText.Editor = function(parent, onChange) {
 
   var layer = $(

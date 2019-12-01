@@ -72,7 +72,6 @@ body, .controls {
 }
 
 .dropdown-item span {
-    float: right;
     color: darkgray;
 }
 
@@ -151,4 +150,10 @@ body, .controls {
 
 .btn span {
   text-shadow: 0 0 1px black;
+}
+
+.modal-dialog .error {
+  color: #890000;
+  background: #ffd9d9;
+  border-color: #be8181;
 }

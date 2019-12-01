@@ -12,7 +12,7 @@ var Timeline = function(elem, options) {
 	var cursorTime = 0;
 	var totalLength = 0;
 	var selectIndex = -1;
-	var markerWidth = options.markerWidth;
+	var markerWidth = 0;
 	var curDrag = null;
   	this.options = options;
 
@@ -20,6 +20,7 @@ var Timeline = function(elem, options) {
 	var rangeHandle = elem.find('.ui-slider-range');
 	var rangeDrag = false;
 	var nextIndex = 0;
+	var _range;
 
 	delBtn.prop("disabled", true);
 
@@ -42,10 +43,16 @@ var Timeline = function(elem, options) {
     }).filter('#dragV').draggable("option", "axis", "y");
 
     function applyRange(range) {
-    	var k = outerBar.width() / (range[1] - range[0]);
+    	range[0] = Math.round(range[0]);
+    	range[1] = Math.round(range[1]);
+    	let d = range[1] - range[0];
+    	var k = outerBar.width() / d;
     	bar.parent().css({"margin-left": -range[0] * k, "margin-right": (range[1] - totalLength) * k});
 		cursor.css('margin-left', cursorTime / totalLength * width());
-    	refreshMarkers();
+
+		if (!_range || (d != _range[1] - _range[0]))
+    		refreshMarkers();
+		_range = range;
     }
 
     function calcRange(left) {
@@ -118,8 +125,7 @@ var Timeline = function(elem, options) {
 			}
 		});
 
-		markerWidth = Math.min(min, options.markerWidth);
-
+		markerWidth = Math.round(Math.min(min, options.markerWidth));
 		bar.children('.marker').each((i, m)=>{
 			m = $(m);
 			m.css({width: Math.floor(markerWidth), top: -(5 + i * 15)});
@@ -410,6 +416,7 @@ var Timeline = function(elem, options) {
 	this.setList = function(a_listObj, a_totalLength) {
 		selectIndex = -1;
 		totalLength = a_totalLength;
+		_range = null;
 		bar.empty();
 	    tlist = a_listObj;
 	    let maxTime = 0;

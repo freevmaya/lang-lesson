@@ -37,11 +37,17 @@ function secondsToTime(time, mls) {
 }
 
 function parseTime(val) {
-  if ($.isNumeric(val)) return parseFloat(val);
+  let r = 0;
+  if ($.isNumeric(val)) r = parseFloat(val);
   else if (val) {
-    var a = val.split(':');
-    return parseInt(a[0]) * 60 + parseFloat(a[1]);
-  } else return 0;
+    let a = val.split(':');
+    let t = 1;
+    for (let i=a.length - 1; i>=0; i--) {
+      r += parseFloat(a[i].replace(',', '.')) * t;
+      t *= 60;
+    }
+  }
+  return r;
 }
 
 function wordCount(str, count) { // получаем столько слов сколько нужно
@@ -78,13 +84,13 @@ var YTUrl = 'https://www.googleapis.com/youtube/v3/';
 
 function getVideoInfo(id, callback) {
   $.getJSON(YTUrl + 'videos?id=' + id + '&key=' + YTKey + '&part=snippet', null, (a_data)=>{
-    console.log(a_data);
     if (a_data.items && a_data.items[0])
       callback(a_data.items[0].snippet);
     else callback({title: document.location.host, width: 640, height: 420});
   });
 }
 
+/*
 function getYTCaptions(videoID, callback) {
   $.getJSON(YTUrl + 'captions?part=snippet&videoId=' + videoID + '&key=' + YTKey, 
     null, (a_data)=>{
@@ -100,7 +106,7 @@ function getYTCaptions(videoID, callback) {
         }
       }
   });
-}
+}*/
 
 function isInputActive()
 {
@@ -172,22 +178,6 @@ function scrollTo(elem) {
   $('html, body').animate({
       scrollTop: elem.offset().top - $('nav').outerHeight()
   }, 500);
-}
-
-$.dialog = (title, content, success, okCaption)=>{
-  let dlg = Template.create($('#dialogModal'), {
-    title: title,
-    content: content,
-    okButton: (elem)=>{
-      if (success) {
-        elem.html(okCaption?okCaption:'Ok');
-        elem.click(success);
-      } else elem.hide();
-    }
-  }, true).modal({});
-
-  dlg.close = ()=>{dlg.modal("hide");}
-  return dlg;
 }
 
 $(window).on('onAppError', (e, error)=>{

@@ -171,6 +171,41 @@ var CPuzzle = function(player) {
 
 CPuzzle.id = 3;
 CPuzzle.title = 'Puzzle';
+CPuzzle.parser = function(vdata, captions) {
+	let items = captions.items;
+	vdata.timeline = {};
+	vdata.content = {};
+
+	let compId = 1;
+
+	for (let i=0; i<items.length; i++) {
+		vdata.timeline[i] = parseTime(items[i][0]);
+		vdata.content[i] = {c:[compId], puzzle: [items[i][2], '']};
+	}
+
+	return vdata;
+}
+
+CPuzzle.dialog = function(parent, langList) {
+	var This = this;
+	function selectCtrl(sel) {
+		for (let i=0; i<langList.length; i++)
+			sel.append($('<option value="' + langList[i].id + '">' + langList[i].lang + '</option>'));
+		return This[name] = sel;
+	}
+
+	let tmpl = $('.pizzleDialog').clone();
+	let slan1 = selectCtrl(tmpl.find('[name=lang1]'));
+	let slan2 = selectCtrl(tmpl.find('[name=lang2]'));
+	parent.append(tmpl);
+
+	this.params = ()=>{
+		return {cids: [slan1.val(), slan2.val()]}
+	}
+
+	return this;
+}
+
 CPuzzle.Editor = function(parent, onChange) {
 
 	var This = this;
