@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"wor",
+				"words2"
+			],
+			[
+				"wo",
+				"words"
+			],
+			[
+				"item",
+				"items"
+			],
+			[
 				"app",
 				"append"
 			],
@@ -158,10 +170,6 @@
 			[
 				"arr",
 				"arr2"
-			],
-			[
-				"wo",
-				"word"
 			],
 			[
 				"for",
@@ -506,14 +514,6 @@
 			[
 				"Tit",
 				"TitleConditions"
-			],
-			[
-				"Va",
-				"Vacancy"
-			],
-			[
-				"def",
-				"defaultText"
 			]
 		]
 	},
@@ -541,7 +541,7 @@
 			"file": "views/templates.php",
 			"settings":
 			{
-				"buffer_size": 1931,
+				"buffer_size": 2013,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -550,9 +550,17 @@
 			"file": "js/controls.js",
 			"settings":
 			{
-				"buffer_size": 2016,
+				"buffer_size": 2113,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 67,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -567,7 +575,7 @@
 			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 6525,
+				"buffer_size": 7778,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -576,7 +584,8 @@
 			"file": "js/editor-app.js",
 			"settings":
 			{
-				"buffer_size": 9710,
+				"buffer_size": 9366,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
@@ -584,7 +593,24 @@
 			"file": "echo/controllers/captions.php",
 			"settings":
 			{
-				"buffer_size": 2444,
+				"buffer_size": 2625,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/C/WebServers/home/lang-lesson.ru/service-account-credentials.json",
+			"settings":
+			{
+				"buffer_size": 2346,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "include/BaseController.php",
+			"settings":
+			{
+				"buffer_size": 2273,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -627,11 +653,12 @@
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers",
 		"/C/WebServers/home/lang-lesson.ru/www/js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components",
-		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
+		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/captions.php",
@@ -647,7 +674,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
 		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
-		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/captions/dP_LGe5VxddeWiR1MRjANNE5sZdTYzs3.data",
 		"/C/WebServers/home/lang-lesson.ru/www/ytapi.php",
 		"/C/WebServers/home/lang-lesson.ru/www/captions/XfZ9cGK-c0XQIc2Q6Hp4lGCnq72HlqZIb5lBtQOTI5k=.data",
@@ -667,7 +693,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/C/WebServers/home/lang-lesson.ru/www/include/controller.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/command/command.js",
-		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
 		"/C/Users/vmaya/.ssh/id_rsa.pub",
 		"/C/WebServers/home/lang-lesson.ru/www/.htaccess",
 		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
@@ -905,6 +930,10 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"if (items.length == 2) {",
+			"items.length",
+			"applyYTCaptions",
+			"edit",
 			"setData",
 			"markerWidth",
 			"refreshMarkers",
@@ -1028,11 +1057,7 @@
 			"controlsBlock",
 			"playerContainer",
 			"PlayerDoc",
-			"controlsBlock",
-			"YT.Player",
-			"videoEl",
-			"videoPlayer",
-			"options"
+			"controlsBlock"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1128,7 +1153,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1157,8 +1182,8 @@
 						"selection":
 						[
 							[
-								4375,
-								4375
+								12286,
+								12286
 							]
 						],
 						"settings":
@@ -1168,10 +1193,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1584.0,
+						"translation.y": 6674.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1201,7 +1226,7 @@
 						"translation.y": 3894.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1210,15 +1235,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1931,
+						"buffer_size": 2013,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1828,
-								1840
+								1875,
+								1875
 							]
 						],
 						"settings":
@@ -1228,10 +1253,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 264.0,
+						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1240,30 +1265,59 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2016,
+						"buffer_size": 2113,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								72,
-								78
+								2092,
+								2092
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 858.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 67,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								14,
+								14
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "js/template.js",
 					"semi_transient": true,
 					"settings":
@@ -1288,24 +1342,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "js/components/puzzle.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6525,
+						"buffer_size": 7778,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4491,
-								4503
+								4949,
+								4949
 							]
 						],
 						"settings":
@@ -1313,32 +1367,91 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3630.0,
+						"translation.y": 3963.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "js/editor-app.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9710,
+						"buffer_size": 9366,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								8583,
+								8583
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7351.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "echo/controllers/captions.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2625,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1034,
+								1034
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 308.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "/C/WebServers/home/lang-lesson.ru/service-account-credentials.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								123,
+								83
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1350,20 +1463,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 7,
-					"file": "echo/controllers/captions.php",
+					"buffer": 10,
+					"file": "include/BaseController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2444,
+						"buffer_size": 2273,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1023,
-								1023
+								1437,
+								1437
 							]
 						],
 						"settings":
@@ -1372,10 +1485,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
+						"translation.y": 1104.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]

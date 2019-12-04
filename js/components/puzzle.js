@@ -172,15 +172,65 @@ var CPuzzle = function(player) {
 CPuzzle.id = 3;
 CPuzzle.title = 'Puzzle';
 CPuzzle.parser = function(vdata, captions) {
+
+	function twords(items) {
+		let words = [];
+		for (let i=0; i<items.length; i++) {
+			let tstart = parseTime(items[i][0]);
+			let tcount = parseTime(items[i][1]) - tstart;
+			let s = items[i][2];
+			let lcount = s.length;
+			let k = tcount / lcount;
+			let ws = s.split(/\s/);
+			let l = 0;
+			for (let w=0; w<ws.length; w++) {
+				s = ws[w];
+				let isep = s.charAt(s.length - 1) == '.';
+				words.push([tstart + l * k, ws[w]]);
+				l += ws[w].length + 1;
+			}
+		}
+		return words;
+	}
+
 	let items = captions.items;
 	vdata.timeline = {};
 	vdata.content = {};
+	let maxl = 50;
+	let minl = 30;
 
-	let compId = 1;
+	if (items.length == 2) {
+		let words 	= twords(items[0]);
+		let words2 	= twords(items[1]);
 
-	for (let i=0; i<items.length; i++) {
-		vdata.timeline[i] = parseTime(items[i][0]);
-		vdata.content[i] = {c:[compId], puzzle: [items[i][2], '']};
+		let buff = '', buff2 = '', st, i=0;
+		for (let w=0; w<words.length; w++) {
+			if (buff.length == 0) st = words[w][0];
+			else buff += ' ';
+
+			buff += words[w][1];
+			let isBreak = (buff.charAt(buff.length - 1) == '.') && (buff.length > minl);
+			if ((buff.length > maxl) || isBreak) {
+
+				let et = words[w][0];
+				let buff2 = '';
+
+				for (let w2=0; w2<words2.length; w2++) {
+					let w2t = words2[w2][0];
+
+					if (w2t > et) {
+						words2.splice(0, w2);
+						break;
+					}
+					buff2 += (buff2?' ':'') + words2[w2][1];
+				}
+
+				vdata.timeline[i] = st;
+				vdata.content[i] = {c:[CPuzzle.id], puzzle: [buff, '', buff2]};
+				buff = '';
+				i++;
+			}
+		}
 	}
 
 	return vdata;
