@@ -556,14 +556,6 @@
 			}
 		},
 		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 67,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "js/template.js",
 			"settings":
 			{
@@ -575,7 +567,7 @@
 			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 7778,
+				"buffer_size": 7978,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -788,7 +780,7 @@
 	],
 	"find":
 	{
-		"height": 43.0
+		"height": 31.0
 	},
 	"find_in_files":
 	{
@@ -1153,7 +1145,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -1196,7 +1188,7 @@
 						"translation.y": 6674.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1226,7 +1218,7 @@
 						"translation.y": 3894.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1256,7 +1248,7 @@
 						"translation.y": 330.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1285,39 +1277,11 @@
 						"translation.y": 858.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 67,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								14,
-								14
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
 					"file": "js/template.js",
 					"semi_transient": true,
 					"settings":
@@ -1342,24 +1306,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 5,
 					"file": "js/components/puzzle.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7778,
+						"buffer_size": 7978,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4949,
-								4949
+								5288,
+								5288
 							]
 						],
 						"settings":
@@ -1367,14 +1331,14 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3963.0,
+						"translation.y": 4408.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 6,
 					"file": "js/editor-app.js",
 					"semi_transient": false,
 					"settings":
@@ -1400,11 +1364,11 @@
 						"translation.y": 7351.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 7,
 					"file": "echo/controllers/captions.php",
 					"semi_transient": false,
 					"settings":
@@ -1429,11 +1393,11 @@
 						"translation.y": 308.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 8,
 					"file": "/C/WebServers/home/lang-lesson.ru/service-account-credentials.json",
 					"semi_transient": false,
 					"settings":
@@ -1459,11 +1423,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 9,
 					"file": "include/BaseController.php",
 					"semi_transient": false,
 					"settings":
@@ -1488,7 +1452,7 @@
 						"translation.y": 1104.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

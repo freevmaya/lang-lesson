@@ -237,7 +237,7 @@
         width: layout.css('width')?parseInt(layout.css('width')):'<?=$width?>',
         height: layout.css('height')?parseInt(layout.css('height')):'<?=$height?>',
         playerVars: { 
-          controls: 0,
+          controls: <?=($_GET['dev']?"1":"0")?>,
           autoplay: This.autoplay,
           iv_load_policy:3,
           enablejsapi:1,
