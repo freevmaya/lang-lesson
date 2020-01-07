@@ -167,11 +167,6 @@
     <div class="d-flex w-100 mx-auto flex-column page-wrapper">
       <?include_once("views/navbar.php")?>
       <?include_once("views/player.php")?>
-      <main role="main" class="inner">
-        <div>
-          <?include_once("views/content.php")?>
-        </div>
-      </main>
       <footer class="page-footer text-center">
         <div class="inner">
           <p>© 2019 Copyright: <a href="http://vmaya.com/">Vmaya</a></p>

@@ -17,6 +17,7 @@ var CPuzzle = function(player) {
   	var nextBtn = player.layout.find('.nextBtn');
   	var index = -1;
   	var completeList = {};
+  	var state = {};
 
   	top.droppable({drop: (e, ui)=>{
   		let d = ui.draggable;
@@ -34,9 +35,8 @@ var CPuzzle = function(player) {
 
   	function getWords(puzzle, order) {
   		let words = [], p = puzzle;
-  		phrase = [];
 		if (p[0].trim()) {
-			words = (phrase = p[0].split(/\s/)).slice(0);
+			words = p[0].split(/\s/).slice(0);
 			if (p[1].trim()) words = words.concat(p[1].split(/\s/));
 			words.sort(order?order:(a, b)=>{return Math.random() - 0.5});
 		}
@@ -44,29 +44,56 @@ var CPuzzle = function(player) {
   	}
 
   	function start(puzzle, tindex) {
+  		let words;
   		index = tindex;
 		top.empty();
 		bottom.empty();
 		trans.empty();
-		let words = getWords(puzzle);
+
+  		if (state[index]) {
+  			words = state[index].words;
+  			phrase = state[index].phrase;
+  		}
+  		else {
+  			state[index] = {words: [], top: [], phrase: []};
+  			state[index].words = words = getWords(puzzle);
+  			state[index].phrase = phrase = puzzle[0].split(/\s/);
+  		}
+
 		doc.prepareSpeech(words);
 		if (words.length > 0) {
-			for (let i=0; i<words.length; i++) wordCtrl(words, i);
+			let conts = [];
+			for (let i=0; i<words.length; i++) {
+				conts[i] = wordCtrl(words, i);
+			}
 
 	      	nextBtn.prop('disabled', !completeList[index]?true:'');
 	  		layer.removeClass('complete');
+
+			if (state[index]) {
+				for (let i=0; i<state[index].top.length; i++)
+					appendWord(conts[state[index].top[i]].children(), true);
+				checkPhrase();
+			}
   		}
   		if (puzzle[2]) trans.text(puzzle[2]);
       	layer.show();
   	}
 
-  	function appendWord(d) {
+  	function appendWord(d, noPlSp) {
+  		let ta = state[index].top;
+  		if (ta.indexOf(d.data('id')) == -1) ta.push(d.data('id'));
+
 		top.append(d);
 		checkPhrase();
-      	if (!player.playing()) doc.playSpeech(d.text());
+      	if (!player.playing() && !noPlSp) doc.playSpeech(d.text());
   	}
 
   	function removeWord(cont, d) {
+  		let ta = state[index].top;
+  		let ix = ta.indexOf(d.data('id'));
+  		if (ix > -1) ta.splice(ix, 1);
+  		
 		cont.append(d);
 		checkPhrase();
   	}
@@ -92,15 +119,10 @@ var CPuzzle = function(player) {
 				removeWord(cont, ui.draggable);
 	  	}});
 
-		function contSize() {
-   			cont.css({'min-width': word.outerWidth() + 2, 'min-height': word.outerHeight() + 2});
-		}
-
 		word.draggable({
     		delay: 200,
     		start: ()=>{
     			word.css('z-index', 10);
-    			contSize();
     		},
     		stop: function() {
 				word.css({left:'',top:''});
@@ -121,12 +143,14 @@ var CPuzzle = function(player) {
 	  	});
 
 		word.click((e)=>{
-			contSize();
 			if (word.parent().hasClass('cont')) appendWord(word);
 			else removeWord(cont, word);
 		});
 
 		bottom.append(cont);
+    	cont.css({'min-width': word.outerWidth() + 2, 'min-height': word.outerHeight() + 2});
+
+		return cont;
   	}
 
 	this.visible = (value)=>{
