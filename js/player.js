@@ -189,8 +189,8 @@ function playerInit(parent, options) {
     let pt, t=0;
     for (t in tlist) {
       if (pt) {
-        if ((tlist[t] > time) && (tlist[pt] <= time)) return parseInt(pt);
-      }
+        if ((tlist[t] > time) && (tlist[pt] <= time)) return parseInt(pt);        
+      } else if (time <= tlist[t]) return parseInt(t);
       pt = t;
     }
     return (time > 0)?parseInt(t):0;
