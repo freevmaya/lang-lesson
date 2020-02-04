@@ -303,6 +303,13 @@ function playerInit(parent, options) {
   this.init = (a_videoEl, startIndex)=>{
     This.videoEl = a_videoEl;
 
+    $(window).keydown((e)=>{
+      if (e.keyCode == 32) {
+        if (This.playing()) This.pauseVideo();
+        else play();
+      }
+    });
+
     setInterval(()=>{
       if (This.videoEl && This.videoEl.getCurrentTime) {
         var time = This.videoEl.getCurrentTime();
