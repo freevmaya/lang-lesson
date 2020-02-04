@@ -37,12 +37,12 @@ body, .controls {
 }
 
 .langControls .btn {
-  background: #e9ecef;
+  background: #34a1ff;
   border: 1px solid rgba(0, 0, 0, 0.4);
 }
 
 .langControls .btn:hover {
-  background: #dec487d4;
+  background: #1c66a5;
 }
 
 .transText {

@@ -143,12 +143,41 @@ $.fn.langInput = function() {
 
 TransText.id = 1;
 TransText.title = 'Translate';
-TransText.parser = function(text) {
-  return {
-    text: [text, ''],
-    stop: true
+TransText.parser = function(vdata, captions) {
+  let items = captions.items;
+  vdata.timeline = {};
+  vdata.content = {};
+
+  if (items.length == 1) {
+    items = items[0];
+    for (let i=0; i<items.length; i++) {
+      vdata.timeline[i] = parseTime(items[i][0]);
+      vdata.content[i] = {text: [items[i][2], ''] , stop: true};
+    }
   }
+
+  return vdata;
 }
+
+TransText.dialog = function(parent, langList) {
+  var This = this;
+  function selectCtrl(sel) {
+    for (let i=0; i<langList.length; i++)
+      sel.append($('<option value="' + langList[i].id + '">' + langList[i].lang + '</option>'));
+    return This[name] = sel;
+  }
+
+  let tmpl = $('.transDialog').clone();
+  let slan1 = selectCtrl(tmpl.find('[name=lang1]'));
+  parent.append(tmpl);
+
+  this.params = ()=>{
+    return {cids: [slan1.val()]}
+  }
+
+  return this;
+}
+
 TransText.Editor = function(parent, onChange) {
 
   var layer = $(
@@ -264,7 +293,7 @@ TransText.Editor = function(parent, onChange) {
   }
 
   this.defaultData = ()=>{
-    return {text: ['', '']};
+    return {text: ['', ''], stop: true};
   }
 
   this.setTime = (a_time)=>{}

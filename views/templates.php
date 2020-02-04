@@ -45,4 +45,11 @@
       <label for="recipient-name" class="col-form-label">Translate from</label> <select class="component-list" name="lang1"></select> to <select class="component-list" name="lang2"></select>
     </div>
   </div>
+
+  <div class="transDialog">
+    <label for="recipient-name" class="col-form-label">Select language:</label>
+    <div>
+      <label for="recipient-name" class="col-form-label">Translate from</label> <select class="component-list" name="lang1"></select>
+    </div>
+  </div>
 </div>
