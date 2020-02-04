@@ -158,12 +158,12 @@ TransText.Editor = function(parent, onChange) {
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
-        '<input type="text" name="transfer-text" placeholder="Translated"/>' +
+        '<input type="text" name="transfer-text" placeholder="Translated" data-locale="translated"/>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');
-  parent.append(layer);
-  parent.head.append($('<div class="right"><span>Stop</span><input type="checkbox" class="stop"></div>'));
+  parent.append(Locale.parse(layer));
+  parent.head.append($('<div class="right"><span data-locale="stop">Stop</span><input type="checkbox" class="stop"></div>'));
 
   var This = this;
   var lang_text = layer.find('[name="lang-text"]');

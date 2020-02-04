@@ -43,6 +43,7 @@
     <script src="<?=$mainURL?>js/template.js"></script>
     <script src="<?=$mainURL?>js/functions.js"></script>
     <script src="<?=$mainURL?>js/controls.js"></script>
+    <script src="<?=$mainURL?>js/locale.js"></script>
     <script src="<?=$mainURL?>js/command/command.js"></script>
     <script src="<?=$mainURL?>js/command/study-commands.js"></script>
     <script src="<?=$mainURL?>js/components/time-marker.js"></script>

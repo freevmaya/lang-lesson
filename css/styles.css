@@ -498,3 +498,7 @@ input[name="playlist-input"] {
   border-width: 1px;
   border-style: solid;
 }
+
+dt {
+  font-weight: normal !important;
+}

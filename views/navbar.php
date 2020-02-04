@@ -1,3 +1,7 @@
+<?
+  $lessons = DB::asArray("SELECT * FROM playlist WHERE type='training'");
+
+?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -6,44 +10,56 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarFile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarFile" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="file">
           File
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarFile">
-          <a class="dropdown-item" href="#" onclick="navigate.new()">New</a>
-          <a class="dropdown-item file-menu" href="#" onclick="navigate.open()">Open</a>
-          <a class="file-menu" href="#" onclick="navigate.save()">Save to disk</a>
-          <a class="file-menu" href="#" onclick="navigate.saveTo()">Save to my library</a>
+          <a class="dropdown-item" href="#" onclick="navigate.new()" data-locale="new">New</a>
+          <a class="dropdown-item file-menu" href="#" onclick="navigate.open()" data-locale="open">Open</a>
+          <a class="file-menu" href="#" onclick="navigate.save()" data-locale="save_to_disk">Save to disk</a>
+          <a class="file-menu" href="#" onclick="navigate.saveTo()" data-locale="save_to_lib">Save to my library</a>
           <div class="dropdown-divider edit"></div>
-          <a class="dropdown-item edit" href="#" onclick="navigate.edit()">Edit</a>
+          <a class="dropdown-item edit" href="#" onclick="navigate.edit()" data-locale="edit">Edit</a>
           <div class="dropdown-divider user"></div>
-          <a class="dropdown-item dropdown-toggle" href="#" id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <a class="dropdown-item dropdown-toggle" href="#" id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="playlist">
               Playlist
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarPlaylist" id="menuPlayList">
-            <a class="dropdown-item" href="#" onclick="myLibrary.show(0, undefined, true);">My library</a>
+            <a class="dropdown-item" href="#" onclick="myLibrary.show(0, undefined, true);" data-locale="my_library">My library</a>
           </div>
         </div>
       </li>
       <li class="nav-item dropdown edit-menu">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarEdit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarEdit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="edit">
           Edit
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarEdit">
-          <a class="dropdown-item shortcut" href="#" onclick="commandManager.undo()">Undo<span>Ctrl+Z</span></a>
-          <a class="dropdown-item shortcut" href="#" onclick="commandManager.redo()">Redo<span>Ctrl+Y</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="commandManager.undo()"><dt data-locale="undo">Undo</dt><span>Ctrl+Z</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="commandManager.redo()"><dt data-locale="redo">Redo</dt><span>Ctrl+Y</span></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item shortcut" href="#" onclick="navigate.copy()">Copy<span>Ctrl+C</span></a>
-          <a class="dropdown-item shortcut" href="#" onclick="navigate.paste()">Paste<span>Ctrl+V</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="navigate.copy()"><dt data-locale="copy">Copy</dt><span>Ctrl+C</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="navigate.paste()"><dt data-locale="paste">Paste</dt><span>Ctrl+V</span></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.insert();">Insert marker<span>I</span></a>
-          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.delete();">Delete marker<span>Delete</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.insert();"><dt data-locale="insert_marker">Insert marker</dt><span>I</span></a>
+          <a class="dropdown-item shortcut" href="#" onclick="if (doc.langapp) doc.langapp.delete();"><dt data-locale="delete_marker">Delete marker</dt><span>Delete</span></a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#" onclick="navigate.captions()">Youtube captions</a>
+          <a class="dropdown-item" href="#" onclick="navigate.captions()" data-locale="youtube_captions">Youtube captions</a>
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarShare" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarShare" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="lessons">
+          Lessons
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarLessons">
+        <?
+          foreach ($lessons as $lesson) {
+            ?><a class="dropdown-item" onclick="myLibrary.show(<?=$lesson['id']?>, <?=$lesson['uid']?>, true);" href="#"><?=$lesson['title']?></a><?
+          }
+        ?>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarShare" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="share">
           Share
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarShare">
@@ -54,7 +70,7 @@
         </div>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Login</a>
+        <a class="nav-link dropdown-toggle" href="#" id="navbarLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="login">Login</a>
         <div class="dropdown-menu" aria-labelledby="navbarLogin">
           <script src="//ulogin.ru/js/ulogin.js"></script>
 <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2F<?=$_SERVER['HTTP_HOST']?>;mobilebuttons=0;callback=ulogin"></div>

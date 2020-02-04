@@ -45,56 +45,60 @@ var CPuzzle = function(player) {
 
   	function start(puzzle, tindex) {
   		let words;
-  		index = tindex;
-		top.empty();
-		bottom.empty();
-		trans.empty();
+  		if (index != tindex) {
+	  		index = tindex;
+			top.empty();
+			bottom.empty();
+			trans.empty();
 
-  		if (state[index]) {
-  			words = state[index].words;
-  			phrase = state[index].phrase;
-  		}
-  		else {
-  			state[index] = {words: [], top: [], phrase: []};
-  			state[index].words = words = getWords(puzzle);
-  			state[index].phrase = phrase = puzzle[0].split(/\s/);
-  		}
+	  		if (state[index]) {
+	  			words = state[index].words;
+	  			phrase = state[index].phrase;
+	  		}
+	  		else {
+	  			state[index] = {words: [], top: [], phrase: []};
+	  			state[index].words = words = getWords(puzzle);
+	  			state[index].phrase = phrase = puzzle[0].split(/\s/);
+	  		}
 
-		doc.prepareSpeech(words);
-		if (words.length > 0) {
-			let conts = [];
-			for (let i=0; i<words.length; i++) {
-				conts[i] = wordCtrl(words, i);
-			}
+			doc.prepareSpeech(words);
+			if (words.length > 0) {
+				let conts = [];
+				for (let i=0; i<words.length; i++) {
+					conts[i] = wordCtrl(words, i);
+				}
 
-	      	nextBtn.prop('disabled', !completeList[index]?true:'');
-	  		layer.removeClass('complete');
+		      	nextBtn.prop('disabled', !completeList[index]?true:'');
+		  		layer.removeClass('complete');
 
-			if (state[index]) {
-				for (let i=0; i<state[index].top.length; i++)
-					appendWord(conts[state[index].top[i]].children(), true);
-				checkPhrase();
-			}
-  		}
-  		if (puzzle[2]) trans.text(puzzle[2]);
+				if (state[index]) {
+					for (let i=0; i<state[index].top.length; i++)
+						appendWord(conts[state[index].top[i]].children(), true);
+					checkPhrase();
+				}
+	  		}
+	  		if (puzzle[2]) trans.text(puzzle[2]);
+      	}
       	layer.show();
   	}
 
-  	function appendWord(d, noPlSp) {
-  		let ta = state[index].top;
-  		if (ta.indexOf(d.data('id')) == -1) ta.push(d.data('id'));
+  	function refreshTopStorage() {
+  		let ws = top.find('.word');
+  		state[index].top = [];
+  		for (let i=0; i<ws.length; i++)
+  			state[index].top.push($(ws[i]).data('id'));
+  	}
 
+  	function appendWord(d, isInit) {
 		top.append(d);
+		if (!isInit) refreshTopStorage();
 		checkPhrase();
-      	if (!player.playing() && !noPlSp) doc.playSpeech(d.text());
+      	if (!player.playing() && !isInit) doc.playSpeech(d.text());
   	}
 
   	function removeWord(cont, d) {
-  		let ta = state[index].top;
-  		let ix = ta.indexOf(d.data('id'));
-  		if (ix > -1) ta.splice(ix, 1);
-  		
 		cont.append(d);
+		refreshTopStorage();
 		checkPhrase();
   	}
 
@@ -137,6 +141,7 @@ var CPuzzle = function(player) {
 	  				if (list.index(d) > list.index(word))
 	  					d.insertBefore(word);
 	  				else d.insertAfter(word);
+					refreshTopStorage();
 					checkPhrase();
 	  			}
 	  		}
@@ -183,6 +188,7 @@ var CPuzzle = function(player) {
 	$(window).on('onChangeIndex', onChangeIndex);
 
 	this.dispose = ()=>{
+		nextBtn.prop('disabled', '');
 		$(window).off('onChangeIndex', onChangeIndex);
 		layer.remove();
 		completeList = {};
@@ -286,11 +292,11 @@ CPuzzle.Editor = function(parent, onChange) {
 	var layer = $(
     '<div class="CPuzzleEdit">' +
       '<div>' +
-      	'<input type="text" class="text" placeholder="Phrase"/>' +
+      	'<input type="text" class="text" placeholder="Phrase" data-locale="phrase"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div>' +
-      	'<input type="text" class="trans" placeholder="Translation"/>' +
+      	'<input type="text" class="trans" placeholder="Translation" data-locale="translated"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
@@ -298,7 +304,7 @@ CPuzzle.Editor = function(parent, onChange) {
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');
-	parent.append(layer);
+	parent.append(Locale.parse(layer));
 
 	var phrase = layer.find('.text');
 	var words = layer.find('[name="words"]');
