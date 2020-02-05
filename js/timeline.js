@@ -498,7 +498,7 @@ var Timeline = function(elem, options) {
 	}	
 
 	function defaultComponent() {
-		let deftype = localStorage.getItem('defaultComponent');
+		let deftype = parseInt(localStorage.getItem('defaultComponent'));
 		if (!deftype) deftype = Components.defaultComponent;
 		return deftype;
 	}
