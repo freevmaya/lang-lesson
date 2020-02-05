@@ -13,6 +13,7 @@
         <a class="btn btn-primary delete hint" data-hint="Delete selected marker">-</a>
       </div>
     </div>
+    <div class="timeline-sc"></div>
     <div class="slider"></div>
   </div>
   <div class="itemEditor">

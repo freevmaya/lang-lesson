@@ -26,6 +26,12 @@ function playerInit(parent, options) {
   Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});
   Object.defineProperty(this, 'layout', {get: ()=>{return parent;}});
   Object.defineProperty(this, 'time', {get: ()=>{return tlist[tindex];}});
+  Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + doc.data.id;}});  
+  Object.defineProperty(this, 'startIndex', {get: ()=>{
+    let si = localStorage.getItem(This.storage_id);
+    if (si == undefined) si = -1;
+    return si;
+  }});
 
   separator.draggable({
     axis: "y",
@@ -91,6 +97,7 @@ function playerInit(parent, options) {
 
     if (tindex != index) {
       tindex = parseInt(index);
+      localStorage.setItem(This.storage_id, tindex);
       timeList.val(tindex);
       updateComponents();
       afterSetIndex = true;
@@ -146,6 +153,7 @@ function playerInit(parent, options) {
       content[i] = $.extend({}, a_vdata.content[i]);
 
     partStopped = false;
+    tindex = This.startIndex;
 
     if (!tlist.hasOwnProperty(tindex)) {
       tindex = -1;
@@ -300,7 +308,7 @@ function playerInit(parent, options) {
     else setIndex(a_tindex);
   }
 
-  this.init = (a_videoEl, startIndex)=>{
+  this.init = (a_videoEl)=>{
     This.videoEl = a_videoEl;
 
     $(window).keydown((e)=>{
@@ -335,8 +343,8 @@ function playerInit(parent, options) {
     }, false);
 
     This.videoEl.addEventListener('onReady', function (e) {
-      if ((startIndex > -1) && (tlist.hasOwnProperty(startIndex)))
-        setIndex(startIndex, true, false);
+      if ((This.startIndex > -1) && (tlist.hasOwnProperty(This.startIndex)))
+        setIndex(This.startIndex, true, false);
     }, false);
   }
 }

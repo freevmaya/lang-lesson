@@ -46,6 +46,7 @@
     var speechList = {};
 
 
+    Object.defineProperty(this, 'data', {get: ()=>{return This.getData();}});
     Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.find('.itemEditor').length > 0;}});
 
@@ -273,7 +274,7 @@
       player = new YT.Player(container.find('.videoPlayer')[0], initdata);
       player.originSetSize = player.setSize;
       player.setSize = This.setPlayerSize;
-      playerApp.init(player, -1);
+      playerApp.init(player);
     } 
 
     function onChange() {

@@ -7,6 +7,7 @@ var CPuzzle = function(player) {
 		'<div class="trans"></div>'+
 	'</div>');
 
+	var This = this;
 	var parea = $('.player-area');
   	parea.append(layer);
 
@@ -18,6 +19,10 @@ var CPuzzle = function(player) {
   	var index = -1;
   	var completeList = {};
   	var state = {};
+    Object.defineProperty(this, 'storage_id', {get: ()=>{return 'puzzle-state-' + doc.data.id;}});
+
+    let storage_data = localStorage.getItem(This.storage_id);
+    if (storage_data) state = JSON.parse(localStorage.getItem(This.storage_id));
 
   	top.droppable({drop: (e, ui)=>{
   		let d = ui.draggable;
@@ -87,6 +92,8 @@ var CPuzzle = function(player) {
   		state[index].top = [];
   		for (let i=0; i<ws.length; i++)
   			state[index].top.push($(ws[i]).data('id'));
+
+		localStorage.setItem(This.storage_id, JSON.stringify(state));      
   	}
 
   	function appendWord(d, isInit) {

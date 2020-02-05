@@ -9,6 +9,7 @@ var Timeline = function(elem, options) {
 	var addBtn = elem.find('.add');
 	var delBtn = elem.find('.delete');
 	var cursor = elem.find('.cursor');
+	var scBar	= elem.find('.timeline-sc');
 	var cursorTime = 0;
 	var totalLength = 0;
 	var selectIndex = -1;
@@ -53,6 +54,7 @@ var Timeline = function(elem, options) {
 		if (!_range || (d != _range[1] - _range[0]))
     		refreshMarkers();
 		_range = range;
+		refreshSc();
     }
 
     function calcRange(left) {
@@ -131,6 +133,25 @@ var Timeline = function(elem, options) {
 			m.css({width: Math.floor(markerWidth), top: -(5 + i * 15)});
 			sl(i, m, p[i]);
 		});
+	}
+
+	function refreshSc() {
+
+		scBar.empty();
+
+		let k = totalLength / width();
+		let st = _range[0];
+		let t = Math.floor(Math.floor(_range[0] / k) * k);
+		let step = Math.ceil((_range[1] - _range[0]) / 60);
+
+		while (t < _range[1]) {
+			t += step;
+			console.log(t);
+			m = Math.round((t - st) / k);
+			let bclass = (t % 10 == 0)?' class="ten"':'';//((t % 5 == 0)?' class="five"':'');
+
+			scBar.append('<span style="margin-left: ' + m + 'px" ' + bclass + '></span>');
+		}
 	}
 
 	function deleteMarker(ix) {

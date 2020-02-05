@@ -21,7 +21,14 @@
 }
 
 .timeline-container {
-    height: 34px;
+    height: 29px;
+    padding: 0px;
+    margin-right: 75px;
+    overflow: hidden;
+}
+
+.timeline-sc {
+    height: 10px;
     padding: 0px;
     margin-right: 75px;
     overflow: hidden;
@@ -86,4 +93,22 @@
 
 .timeline .dropdown-menu a {
     cursor: pointer;
+}
+
+.timeline-sc span {
+    position: absolute;
+    display: block;
+    border-left: 1px solid #0000005c;
+    height: 2px;
+}
+
+.timeline-sc span.ten {
+    border-width: 2px;
+    border-color: #000000ba;
+    height: 10px;
+}
+
+.timeline-sc span.five {
+    border-color: #000000ba;
+    height: 8px;
 }
