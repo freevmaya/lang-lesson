@@ -127,7 +127,7 @@ var Timeline = function(elem, options) {
 			}
 		});
 
-		markerWidth = Math.round(Math.min(min, options.markerWidth));
+		markerWidth = Math.round(Math.min(Math.max(min, 4), options.markerWidth));
 		bar.children('.marker').each((i, m)=>{
 			m = $(m);
 			m.css({width: Math.floor(markerWidth), top: -(5 + i * 15)});
