@@ -146,10 +146,8 @@ var Timeline = function(elem, options) {
 
 		while (t < _range[1]) {
 			t += step;
-			console.log(t);
 			m = Math.round((t - st) / k);
 			let bclass = (t % 10 == 0)?' class="ten"':'';//((t % 5 == 0)?' class="five"':'');
-
 			scBar.append('<span style="margin-left: ' + m + 'px" ' + bclass + '></span>');
 		}
 	}
