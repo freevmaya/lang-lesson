@@ -481,6 +481,7 @@ var Timeline = function(elem, options) {
 	}
 
 	function checkAndAdd(type) {
+		localStorage.setItem('defaultComponent', type);
 		let r = markerWidth * totalLength / width() * 0.5;
 
 		for (let i in tlist)
@@ -496,8 +497,14 @@ var Timeline = function(elem, options) {
 		This.deleteSelectedMarker();
 	}	
 
+	function defaultComponent() {
+		let deftype = localStorage.getItem('defaultComponent');
+		if (!deftype) deftype = Components.defaultComponent;
+		return deftype;
+	}
+
 	delBtn.click(onDelMarker);
-	addBtn.click(()=>{checkAndAdd(Components.defaultComponent)});
+	addBtn.click(()=>{checkAndAdd(defaultComponent())});
 
 	let menu = addBtn.parent().find('.dropdown-menu');
 	let id;
