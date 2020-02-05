@@ -139,6 +139,7 @@ nav {
 
 .langControls .btn {
   opacity: 0 !important;
+  transition: height 0.2s;
 }
 
 .langControls:hover .btn, .pause .btn {

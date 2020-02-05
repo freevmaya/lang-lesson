@@ -124,6 +124,11 @@ body, .controls {
   color: white;
 }
 
+.CPuzzle .top .right {
+  background: #485b3c96;
+  color: white;
+}
+
 .CPuzzle .cont {
   border: 1px solid white;
   background: #ffd59c52;

@@ -111,8 +111,16 @@ var CPuzzle = function(player) {
 
 	function checkPhrase() {
 		let result = [];
+		let right = true;
 		top.find('.word').each((i, w)=>{
-			result.push($(w).text());
+			let wc = $(w);
+			let wd = wc.text();
+			result.push(wd);
+			if ((phrase[i] == wd) && right) wc.addClass('right');
+			else {
+				wc.removeClass('right');
+				right = false;
+			}
 		});
 
 		if ($.equals(phrase, result)) complete();
