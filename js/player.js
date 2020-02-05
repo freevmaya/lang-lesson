@@ -28,7 +28,7 @@ function playerInit(parent, options) {
   Object.defineProperty(this, 'time', {get: ()=>{return tlist[tindex];}});
   Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + doc.data.id;}});  
   Object.defineProperty(this, 'startIndex', {get: ()=>{
-    let si = localStorage.getItem(This.storage_id);
+    let si = parseInt(localStorage.getItem(This.storage_id));
     if (si == undefined) si = -1;
     return si;
   }});

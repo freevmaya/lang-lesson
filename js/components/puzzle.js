@@ -79,8 +79,8 @@ var CPuzzle = function(player) {
 				if (state[index]) {
 					for (let i=0; i<state[index].top.length; i++)
 						appendWord(conts[state[index].top[i]].children(), true);
-					checkPhrase();
-				}
+					completeList[index] = checkPhrase();
+				} else completeList[index] = false;
 	  		}
 	  		if (puzzle[2]) trans.text(puzzle[2]);
       	}
@@ -123,11 +123,13 @@ var CPuzzle = function(player) {
 			}
 		});
 
-		if ($.equals(phrase, result)) complete();
+		let r = $.equals(phrase, result);
+		if (r) complete();
 		else {
 			nextBtn.prop('disabled', true);
   			layer.removeClass('complete');
 		}
+		return r;
 	}
 
   	function wordCtrl(words, i) {
