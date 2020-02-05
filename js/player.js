@@ -267,8 +267,7 @@ function playerInit(parent, options) {
   }
 
   backBtn.click(()=>{
-    afterYTPlayer(()=>{
-
+    afterYTPlayer(()=>{      
       let aix, time = This.videoEl.getCurrentTime();
       if (partStop && partStopped) {
         setIndex(tindex, true, partStopped);
