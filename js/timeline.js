@@ -119,15 +119,22 @@ var Timeline = function(elem, options) {
 		var w = width();
 		var p = [];
 		var min = Number.MAX_VALUE;
+		let minMin = 4;
 		bar.children('.marker').each((i, m)=>{
-			p[i] = tlist[gix($(m))] / totalLength * w;
+			let ix = gix($(m));
+			p[i] = tlist[ix] / totalLength * w;
 			if (i > 0) {
 				let d = p[i] - p[i - 1];
-				if ((d < min) && (d > 0)) min = d;
+				if ((d < min) && (d > 0)) {
+					min = d;
+					if (min < minMin) {
+						console.log('Marker ID: ' + i + ' no correct interval. Time: ' + secondsToTime(tlist[ix]));
+					}
+				}
 			}
 		});
 
-		markerWidth = Math.round(Math.min(Math.max(min, 4), options.markerWidth));
+		markerWidth = Math.round(Math.min(Math.max(min, minMin), options.markerWidth));
 		bar.children('.marker').each((i, m)=>{
 			m = $(m);
 			m.css({width: Math.floor(markerWidth), top: -(5 + i * 15)});

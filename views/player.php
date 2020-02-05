@@ -159,7 +159,10 @@
 
       let delta = container.find('.videoPlayer').offset().top + vh + container.find('.controlsBlock').height() - 
                   ($(window).height() * 0.9);
-      if (delta > 0) vh -= delta;      
+      if (delta > 0) {
+        if (vh - delta > wh * 0.3)
+          vh -= delta;      
+      }
 
       return {width: w, height: Math.round(vh)};
     }
