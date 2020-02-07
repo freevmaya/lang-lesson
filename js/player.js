@@ -311,7 +311,7 @@ function playerInit(parent, options) {
     This.videoEl = a_videoEl;
 
     $(window).keydown((e)=>{
-      if (e.keyCode == 32) {
+      if ((e.target.type != 'text') && (e.keyCode == 32)) {
         if (This.playing()) This.pauseVideo();
         else play();
         e.stopPropagation();
