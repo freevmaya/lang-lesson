@@ -553,5 +553,5 @@ var Timeline = function(elem, options) {
 		refreshMarkers();
 	})
 
-	$(window).on('onChangeIndex', onChangeIndex);
+	//$(window).on('onChangeIndex', onChangeIndex);
 }
