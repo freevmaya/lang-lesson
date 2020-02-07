@@ -37,11 +37,15 @@ var CPuzzle = function(player) {
   	}});
 
   	function complete() {
-  		if (!completeList[index]) doc.changeScope(phrase.length * (doubleScope?2:1), 0);
   		nextBtn.prop('disabled', '');
   		layer.addClass('complete');
-  		completeList[index] = true;  		
-  		localStorage.setItem(This.storage_id_cl, JSON.stringify(completeList));
+  		if (!doc.editMode) {
+  			
+	  		if (!completeList[index]) doc.changeScope(phrase.length * (doubleScope?2:1), 0);
+
+  			completeList[index] = true;  		
+  			localStorage.setItem(This.storage_id_cl, JSON.stringify(completeList));
+  		}
   	}
 
   	function getWords(puzzle, order) {
@@ -82,7 +86,7 @@ var CPuzzle = function(player) {
 		      	nextBtn.prop('disabled', !completeList[index]?true:'');
 		  		layer.removeClass('complete');
 
-				if (state[index]) {
+				if (!doc.editMode && state[index]) {
 					for (let i=0; i<state[index].top.length; i++)
 						appendWord(conts[state[index].top[i]].children(), true);
 				}
@@ -99,7 +103,7 @@ var CPuzzle = function(player) {
   		for (let i=0; i<ws.length; i++)
   			state[index].top.push($(ws[i]).data('id'));
 
-		localStorage.setItem(This.storage_id, JSON.stringify(state));      
+		if (!doc.editMode) localStorage.setItem(This.storage_id, JSON.stringify(state));      
   	}
 
   	function appendWord(d, isInit) {

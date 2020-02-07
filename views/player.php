@@ -58,7 +58,7 @@
 
     Object.defineProperty(this, 'data', {get: ()=>{return This.getData();}});
     Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
-    Object.defineProperty(this, 'editMode', {get: ()=>{return container.find('.itemEditor').length > 0;}});
+    Object.defineProperty(this, 'editMode', {get: ()=>{return container.hasClass('editContaier');}});
     Object.defineProperty(this, 'scope', {get: ()=>{return _scope;}, set: (value)=>{
       _scope = value;
       container.find('#scope').text(value);
