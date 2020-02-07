@@ -452,6 +452,12 @@ input[name="playlist-input"] {
   align-content: center;
 }
 
+
+.editContaier .CPuzzle .top, 
+.editContaier .CPuzzle .bottom {
+  min-height: 1em;  
+}
+
 .CPuzzle .top {
   border-bottom: 1px dashed gray;
 }
@@ -470,6 +476,12 @@ input[name="playlist-input"] {
   font-size: 1.4em;
   cursor: pointer;
   padding: 0 0.4em;
+}
+
+.editContaier .CPuzzle .word {
+  font-size: 1em;  
+  padding: 0 0.1em;
+  border-radius: 3px;
 }
 
 .CPuzzle > div {
@@ -508,6 +520,14 @@ dt {
   text-align: right;
   display: flex;
   justify-content: space-between;
+}
+
+.editContaier .data-panel {
+  display: none;
+}
+
+.editContaier .langControls {
+  margin-bottom: 4px;  
 }
 
 .data-panel a {
