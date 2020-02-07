@@ -278,7 +278,10 @@ var Timeline = function(elem, options) {
 
 	function selectMarkerA(ix) {
 		if (selectIndex != ix) {
-			if (selectIndex > -1) getMarker(selectIndex).removeClass("selected");
+			if (selectIndex > -1) {
+				let m = getMarker(selectIndex);
+				if (m) m.removeClass("selected");
+			}
 			selectIndex = ix;
 			if (selectIndex > -1) {
 				getMarker(selectIndex).addClass("selected");
@@ -511,7 +514,12 @@ var Timeline = function(elem, options) {
 	}
 
 	function onChangeIndex(e, player) {
-		selectMarkerA(player.index);
+		for (let i in tlist) {
+			if (tlist[i] == player.time) {
+				selectMarkerA(i);
+				break;
+			}
+		}
 	}
 
 	delBtn.click(onDelMarker);
