@@ -510,6 +510,10 @@ var Timeline = function(elem, options) {
 		return deftype;
 	}
 
+	function onChangeIndex(e, player) {
+		selectMarkerA(player.index);
+	}
+
 	delBtn.click(onDelMarker);
 	addBtn.click(()=>{checkAndAdd(defaultComponent())});
 
@@ -540,4 +544,6 @@ var Timeline = function(elem, options) {
 	$(window).resize(()=>{
 		refreshMarkers();
 	})
+
+	$(window).on('onChangeIndex', onChangeIndex);
 }

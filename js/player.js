@@ -77,23 +77,25 @@ function playerInit(parent, options) {
   }
 
   This.setIndexFromTime = function(time) {
-    This.videoEl.seekTo(time, true);
-    setIndex(This.calcTIndex(time));
-    if (This.videoEl.getPlayerState() == YT.PlayerState.CUED) {
-      function onCheckState() {
-        if (This.playing()) {
-          This.pauseVideo();
-          clearTimeout(timer);
+    if (This.videoEl) {
+      This.videoEl.seekTo(time, true);
+      setIndex(This.calcTIndex(time));
+      if (This.videoEl.getPlayerState() == YT.PlayerState.CUED) {
+        function onCheckState() {
+          if (This.playing()) {
+            This.pauseVideo();
+            clearTimeout(timer);
+          }
         }
-      }
 
-      let timer = setInterval(onCheckState, 100);
+        let timer = setInterval(onCheckState, 100);
+      }
+      partStopped = false;
     }
-    partStopped = false;
   }
 
   var setIndex = this.setIndex = function setIndex(index, seekSet, startPlay) {
-    if (seekSet) This.videoEl.seekTo(tlist[index], true);
+    if (seekSet && This.videoEl) This.videoEl.seekTo(tlist[index], true);
 
     if (tindex != index) {
       tindex = parseInt(index);
@@ -348,4 +350,8 @@ function playerInit(parent, options) {
         setIndex(This.startIndex, true, false);
     }, false);
   }
+
+  $(window).on('onResetAnswers', ()=>{
+    setIndex(0);
+  }); 
 }
