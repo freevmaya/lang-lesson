@@ -314,6 +314,8 @@ function playerInit(parent, options) {
       if (e.keyCode == 32) {
         if (This.playing()) This.pauseVideo();
         else play();
+        e.stopPropagation();
+        return false;
       }
     });
 

@@ -523,19 +523,25 @@
 			"file": "views/player.php",
 			"settings":
 			{
-				"buffer_size": 12986,
+				"buffer_size": 13300,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"contents": "var CPuzzle = function(player) {\n\tvar layer = $(\n\t'<div class=\"CPuzzle\">'+\n\t\t'<div class=\"top\"></div>'+\n\t\t'<div class=\"after\"></div>' +\n\t\t'<div class=\"bottom\"></div>'+\n\t\t'<div class=\"trans\"></div>'+\n\t'</div>');\n\n\tvar This = this;\n\tvar parea = $('.player-area');\n  \tparea.append(layer);\n\n  \tvar top = layer.find('.top');\n  \tvar bottom = layer.find('.bottom');\n  \tvar trans = layer.find('.trans');\n  \tvar phrase;\n  \tvar nextBtn = player.layout.find('.nextBtn');\n  \tvar index = -1;\n  \tvar completeList = {};\n  \tvar state = {};\n    Object.defineProperty(this, 'storage_id', {get: ()=>{return 'puzzle-state-' + doc.data.id;}});\n\n    let storage_data = localStorage.getItem(This.storage_id);\n    if (storage_data) state = JSON.parse(localStorage.getItem(This.storage_id));\n\n  \ttop.droppable({drop: (e, ui)=>{\n  \t\tlet d = ui.draggable;\n  \t\tif (d.hasClass('word')) {\n  \t\t\tif (!d.parent().hasClass('top')) \n  \t\t\t\tappendWord(d);\n  \t\t}\n  \t}});\n\n  \tfunction complete() {\n  \t\tnextBtn.prop('disabled', '');\n  \t\tlayer.addClass('complete');\n  \t\tcompleteList[index] = true;\n  \t}\n\n  \tfunction getWords(puzzle, order) {\n  \t\tlet words = [], p = puzzle;\n\t\tif (p[0].trim()) {\n\t\t\twords = p[0].split(/\\s/).slice(0);\n\t\t\tif (p[1].trim()) words = words.concat(p[1].split(/\\s/));\n\t\t\twords.sort(order?order:(a, b)=>{return Math.random() - 0.5});\n\t\t}\n\t\treturn words;\n  \t}\n\n  \tfunction start(puzzle, tindex) {\n  \t\tlet words;\n  \t\tif (index != tindex) {\n\t  \t\tindex = tindex;\n\t\t\ttop.empty();\n\t\t\tbottom.empty();\n\t\t\ttrans.empty();\n\n\t  \t\tif (state[index]) {\n\t  \t\t\twords = state[index].words;\n\t  \t\t\tphrase = state[index].phrase;\n\t  \t\t}\n\t  \t\telse {\n\t  \t\t\tstate[index] = {words: [], top: [], phrase: []};\n\t  \t\t\tstate[index].words = words = getWords(puzzle);\n\t  \t\t\tstate[index].phrase = phrase = puzzle[0].split(/\\s/);\n\t  \t\t}\n\n\t\t\tdoc.prepareSpeech(words);\n\t\t\tif (words.length > 0) {\n\t\t\t\tlet conts = [];\n\t\t\t\tfor (let i=0; i<words.length; i++) {\n\t\t\t\t\tconts[i] = wordCtrl(words, i);\n\t\t\t\t}\n\n\t\t      \tnextBtn.prop('disabled', !completeList[index]?true:'');\n\t\t  \t\tlayer.removeClass('complete');\n\n\t\t\t\tif (state[index]) {\n\t\t\t\t\tfor (let i=0; i<state[index].top.length; i++)\n\t\t\t\t\t\tappendWord(conts[state[index].top[i]].children(), true);\n\t\t\t\t\tcompleteList[index] = checkPhrase();\n\t\t\t\t} else completeList[index] = false;\n\t  \t\t}\n\t  \t\tif (puzzle[2]) trans.text(puzzle[2]);\n      \t}\n      \tlayer.show();\n  \t}\n\n  \tfunction refreshTopStorage() {\n  \t\tlet ws = top.find('.word');\n  \t\tstate[index].top = [];\n  \t\tfor (let i=0; i<ws.length; i++)\n  \t\t\tstate[index].top.push($(ws[i]).data('id'));\n\n\t\tlocalStorage.setItem(This.storage_id, JSON.stringify(state));      \n  \t}\n\n  \tfunction appendWord(d, isInit) {\n\t\ttop.append(d);\n\t\tif (!isInit) refreshTopStorage();\n\t\tcheckPhrase();\n      \tif (!player.playing() && !isInit) doc.playSpeech(d.text());\n  \t}\n\n  \tfunction removeWord(cont, d) {\n\t\tcont.append(d);\n\t\trefreshTopStorage();\n\t\tcheckPhrase();\n  \t}\n\n\tfunction checkPhrase() {\n\t\tlet result = [];\n\t\tlet right = true;\n\t\ttop.find('.word').each((i, w)=>{\n\t\t\tlet wc = $(w);\n\t\t\tlet wd = wc.text();\n\t\t\tresult.push(wd);\n\t\t\tif ((phrase[i] == wd) && right) wc.addClass('right');\n\t\t\telse {\n\t\t\t\twc.removeClass('right');\n\t\t\t\tright = false;\n\t\t\t}\n\t\t});\n\n\t\tlet r = $.equals(phrase, result);\n\t\tif (r) complete();\n\t\telse {\n\t\t\tnextBtn.prop('disabled', true);\n  \t\t\tlayer.removeClass('complete');\n\t\t}\n\t\treturn r;\n\t}\n\n  \tfunction wordCtrl(words, i) {\n  \t\tvar word = $('<div class=\"word\" data-id=\"' + i + '\">' + words[i] + '</div>');\n\t\tvar cont = $('<div class=\"cont\" data-id=\"' + i + '\"></div>').append(word);\n\t\tcont.droppable({drop: (e, ui)=>{\n\t\t\tif (ui.draggable.data('id') == word.data('id'))\n\t\t\t\tremoveWord(cont, ui.draggable);\n\t  \t}});\n\n\t\tword.draggable({\n    \t\tdelay: 200,\n    \t\tstart: ()=>{\n    \t\t\tword.css('z-index', 10);\n    \t\t},\n    \t\tstop: function() {\n\t\t\t\tword.css({left:'',top:''});\n    \t\t\tword.css('z-index', '');\n\t\t\t}\n\t\t});\n\n\t\tword.droppable({drop: (e, ui)=>{\n\t  \t\t\tlet d = ui.draggable;\n\t  \t\t\tif (d.hasClass('word')) {\n\t  \t\t\t\tlet list = d.parent().children();\n\t  \t\t\t\tif (list.index(d) > list.index(word))\n\t  \t\t\t\t\td.insertBefore(word);\n\t  \t\t\t\telse d.insertAfter(word);\n\t\t\t\t\trefreshTopStorage();\n\t\t\t\t\tcheckPhrase();\n\t  \t\t\t}\n\t  \t\t}\n\t  \t});\n\n\t\tword.click((e)=>{\n\t\t\tif (word.parent().hasClass('cont')) appendWord(word);\n\t\t\telse removeWord(cont, word);\n\t\t});\n\n\n\t\tvar pressTimer;\n\t\tword.on('touchend', ()=>{clearTimeout(pressTimer);}).on('touchstart', ()=>{\n\t\t\tpressTimer = window.setTimeout(function() {\n\t\t\t\tconsole.log('long touch');\n\t\t\t},1000);\n\t\t});\n\n\t\tbottom.append(cont);\n    \tcont.css({'min-width': word.outerWidth() + 2, 'min-height': word.outerHeight() + 2});\n\n\t\treturn cont;\n  \t}\n\n\tthis.visible = (value)=>{\n\t\tif (value) layer.show(); else layer.hide();\n\t}\n\n\tthis.updateContent = (content, tindex)=>{\n\t\tif ((index > -1) && (!completeList[index]) && (!completeList[tindex]) && !doc.editMode) {\n\t\t\tplayer.setIndex(index, true);\n\t\t}\n\t\telse {\n\t\t\tif ((tindex > -1) && (content[tindex].puzzle)) {\n\t\t\t\tstart(content[tindex].puzzle, tindex);\n\t\t    } else {\n\t\t    \tlayer.hide();\n\t\t    }\n\t\t}\n\t}\n\n\tthis.getCaption = (content, tindex)=>{\n\t\treturn 'Puzzle: ' + (content[tindex].puzzle?getWords(content[tindex].puzzle, (a, b)=>{return a>b?1:-1}).join(','):'');\n\t}\n\n\tfunction onChangeIndex(e, player) {\n\t\tlet cn = player.content[player.index];\n\t\tlet dis = cn && cn.puzzle && !completeList[player.index];\n\t\tnextBtn.prop('disabled', dis?true:'');\n\t}\n\n\t$(window).on('onChangeIndex', onChangeIndex);\n\n\tthis.dispose = ()=>{\n\t\tnextBtn.prop('disabled', '');\n\t\t$(window).off('onChangeIndex', onChangeIndex);\n\t\tlayer.remove();\n\t\tcompleteList = {};\n\t}\n\n\tthis.stop = (player, index)=>{\n\t\treturn !completeList[index] && (player.content[index].puzzle != undefined);\n\t}\n\n\t$(window).on('onResetAnswers', ()=>{\n  \t\tcompleteList = {};\n  \t\tstate = {};\n  \t\tlocalStorage.setItem(This.storage_id, JSON.stringify(state));\n  \t\tstart(content[tindex].puzzle, tindex);\n\t});\n}\n\nCPuzzle.id = 3;\nCPuzzle.title = 'Puzzle';\nCPuzzle.parser = function(vdata, captions) {\n\n\tfunction twords(items) {\n\t\tlet words = [];\n\t\tfor (let i=0; i<items.length; i++) {\n\t\t\tlet tstart = parseTime(items[i][0]);\n\t\t\tlet tcount = parseTime(items[i][1]) - tstart;\n\t\t\tlet s = items[i][2];\n\t\t\tlet lcount = s.length;\n\t\t\tlet k = tcount / lcount;\n\t\t\tlet ws = s.split(/\\s/);\n\t\t\tlet l = 0;\n\t\t\tfor (let w=0; w<ws.length; w++) {\n\t\t\t\ts = ws[w];\n\t\t\t\tlet isep = s.charAt(s.length - 1) == '.';\n\t\t\t\twords.push([tstart + l * k, ws[w]]);\n\t\t\t\tl += ws[w].length + 1;\n\t\t\t}\n\t\t}\n\t\treturn words;\n\t}\n\n\tlet items = captions.items;\n\tvdata.timeline = {};\n\tvdata.content = {};\n\tlet maxl = 50;\n\tlet minl = 30;\n\n\tif (items.length == 2) {\n\t\tlet words \t= twords(items[0]);\n\t\tlet words2 \t= twords(items[1]);\n\n\t\tlet buff = '', buff2 = '', st, i=0;\n\t\tfor (let w=0; w<words.length; w++) {\n\t\t\tif (buff.length == 0) st = words[w][0];\n\t\t\telse buff += ' ';\n\n\t\t\tbuff += words[w][1];\n\t\t\tlet isBreak = (buff.charAt(buff.length - 1) == '.') && (buff.length > minl);\n\t\t\tif ((buff.length > maxl) || isBreak) {\n\n\t\t\t\tlet et = words[w][0];\n\t\t\t\tlet buff2 = '';\n\n\t\t\t\tfor (let w2=0; w2<words2.length; w2++) {\n\t\t\t\t\tlet w2t = words2[w2][0];\n\n\t\t\t\t\tif (w2t > et) {\n\t\t\t\t\t\twords2.splice(0, w2);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tbuff2 += (buff2?' ':'') + words2[w2][1];\n\t\t\t\t}\n\n\t\t\t\tvdata.timeline[i] = st;\n\t\t\t\tvdata.content[i] = {c:[CPuzzle.id], puzzle: [buff, '', buff2]};\n\t\t\t\tbuff = '';\n\t\t\t\ti++;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn vdata;\n}\n\nCPuzzle.dialog = function(parent, langList) {\n\tvar This = this;\n\tfunction selectCtrl(sel) {\n\t\tfor (let i=0; i<langList.length; i++)\n\t\t\tsel.append($('<option value=\"' + langList[i].id + '\">' + langList[i].lang + '</option>'));\n\t\treturn This[name] = sel;\n\t}\n\n\tlet tmpl = $('.pizzleDialog').clone();\n\tlet slan1 = selectCtrl(tmpl.find('[name=lang1]'));\n\tlet slan2 = selectCtrl(tmpl.find('[name=lang2]'));\n\tparent.append(tmpl);\n\n\tthis.params = ()=>{\n\t\treturn {cids: [slan1.val(), slan2.val()]}\n\t}\n\n\treturn this;\n}\n\nCPuzzle.Editor = function(parent, onChange) {\n\n\tvar This = this;\n\tvar layer = $(\n    '<div class=\"CPuzzleEdit\">' +\n      '<div>' +\n      \t'<input type=\"text\" class=\"text\" placeholder=\"Phrase\" data-locale=\"phrase\"/>' +\n      '</div>' +\n      '<div class=\"separate\"></div>' +\n      '<div>' +\n      \t'<input type=\"text\" class=\"trans\" placeholder=\"Translation\" data-locale=\"translated\"/>' +\n      '</div>' +\n      '<div class=\"separate\"></div>' +\n      '<div class=\"ftable\">' +\n        '<input type=\"text\" name=\"words\" placeholder=\"Additional words\"/>' +\n        '<input type=\"button\" class=\"btn-primary send\" value=\"Set\"></input>' +\n      '</div>' +\n    '</div>');\n\tparent.append(Locale.parse(layer));\n\n\tvar phrase = layer.find('.text');\n\tvar words = layer.find('[name=\"words\"]');\n\tvar input = layer.find('.input'); \n\tvar trans = layer.find('.trans'); \n\tvar ix;\n\n\tfunction doChange() {\n\t\tif (This.validate()) onChange();\n\t}\n\n\tthis.validate = ()=>{\n\t\treturn true;\n\t}\n\n\tthis.setData = (a_data, a_ix)=>{\n    \tix = a_ix;\n\t\tphrase.val(a_data?a_data.content[ix].puzzle[0]:'');\n\t\twords.val(a_data?a_data.content[ix].puzzle[1]:'');\n\t\ttrans.val(a_data?a_data.content[ix].puzzle[2]:'');\n\t}\n\n\tthis.clearData = (a_data, a_ix)=>{\n\t\tdelete a_data.content[ix].puzzle;\n\t}\n\n\tthis.defaultData = ()=>{\n\t\treturn {puzzle: ['', '', '']};\n\t}\n\n\tthis.setTime = function(a_time) {}\n\n\tthis.dispose = ()=>{\n\t\tlayer.remove();\n\t}\n\n\tfunction getData() {\n\t\treturn {\n\t\t\tpuzzle: [phrase.val(), words.val(), trans.val()]\n\t\t}\n\t}\n\n\tthis.ApplyItemCommand = function(app, data) {\n\n\t\tvar prev = $.extend({}, data.content[ix]);\n\t\tvar n = $.extend({}, data.content[ix], getData());\n\n\n\t\tthis.execute = ()=>{\n\t\t\tapp.setItemData(ix, n);\n\t\t\treturn true;\n\t\t}\n\n\t\tthis.undo = ()=>{\n\t\t\tapp.setItemData(ix, prev);\n\t\t}\n\n\t\tthis.redo = ()=>{\n\t\t\tapp.setItemData(ix, n);\n\t\t\treturn true;\n\t\t}\n\n\t\tthis.name = 'Pizzle apply';\n\t}\n\n\tfunction doSend() {\n\t\tif (This.validate()) onChange();\n\t} \n\n\tlayer.find('.send').click(doSend);\n}",
-			"file": "js/components/puzzle.js",
-			"file_size": 10167,
-			"file_write_time": 132254618728315350,
+			"file": "docs/events.txt",
 			"settings":
 			{
-				"buffer_size": 9802,
+				"buffer_size": 423,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/components/puzzle.js",
+			"settings":
+			{
+				"buffer_size": 10560,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -571,7 +577,7 @@
 			"file": "echo/controllers/langEcho.php",
 			"settings":
 			{
-				"buffer_size": 6955,
+				"buffer_size": 6975,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -654,6 +660,7 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
+		"/C/WebServers/home/lang-lesson.ru/www/docs",
 		"/C/WebServers/home/lang-lesson.ru/www/js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components",
 		"/C/WebServers/home/lang-lesson.ru/www/views",
@@ -931,9 +938,19 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": false,
+		"case_sensitive": true,
 		"find_history":
 		[
+			"completeList",
+			"storage_id",
+			"completeList",
+			"checkPhrase",
+			"removeWord",
+			"appendWord",
+			"checkPhrase",
+			"complete",
+			"doc",
+			"start",
 			"tindex",
 			"refresh",
 			"DB::one",
@@ -1051,17 +1068,7 @@
 			"if (items.length == 2) {",
 			"items.length",
 			"applyYTCaptions",
-			"edit",
-			"setData",
-			"markerWidth",
-			"refreshMarkers",
-			"applyRange",
-			"$(window).on('newContent'",
-			"onNewVideoStateChange",
-			"getYTCaptions",
-			"getVideoInfo",
-			"setTimeout(()=>{timeline",
-			"onNewVideoStateChange"
+			"edit"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1157,7 +1164,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1166,15 +1173,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12986,
+						"buffer_size": 13300,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3176,
-								3212
+								2648,
+								2648
 							]
 						],
 						"settings":
@@ -1184,7 +1191,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1500.0,
+						"translation.y": 1160.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -1192,19 +1199,48 @@
 				},
 				{
 					"buffer": 1,
-					"file": "js/components/puzzle.js",
+					"file": "docs/events.txt",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9802,
+						"buffer_size": 423,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9014,
-								9014
+								354,
+								354
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "js/components/puzzle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 10560,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6497,
+								6509
 							]
 						],
 						"settings":
@@ -1212,14 +1248,14 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 6239.0,
+						"translation.y": 4359.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 3,
 					"file": "js/locale.js",
 					"semi_transient": false,
 					"settings":
@@ -1244,11 +1280,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 4,
 					"file": "include/controller.php",
 					"semi_transient": false,
 					"settings":
@@ -1273,11 +1309,11 @@
 						"translation.y": 840.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
+					"buffer": 5,
 					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
@@ -1303,24 +1339,24 @@
 						"translation.y": 9658.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
+					"buffer": 6,
 					"file": "echo/controllers/langEcho.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6955,
+						"buffer_size": 6975,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4539,
-								4539
+								4759,
+								4759
 							]
 						],
 						"settings":
@@ -1329,14 +1365,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1779.0,
+						"translation.y": 1899.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
+					"buffer": 7,
 					"file": "include/engine.php",
 					"semi_transient": false,
 					"settings":
@@ -1360,11 +1396,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 7,
+					"buffer": 8,
 					"file": "css/colors.css",
 					"semi_transient": false,
 					"settings":
@@ -1390,11 +1426,11 @@
 						"translation.y": 599.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
-					"buffer": 8,
+					"buffer": 9,
 					"file": "js/player.js",
 					"semi_transient": false,
 					"settings":
@@ -1420,11 +1456,11 @@
 						"translation.y": 2499.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 9,
+					"buffer": 10,
 					"file": "js/timeline.js",
 					"semi_transient": false,
 					"settings":
@@ -1449,11 +1485,11 @@
 						"translation.y": 1880.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
+					"buffer": 11,
 					"file": "js/functions.js",
 					"semi_transient": false,
 					"settings":
@@ -1479,7 +1515,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				}
 			]
