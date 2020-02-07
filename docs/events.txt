@@ -13,6 +13,7 @@ window
 	ToEditMode				
 	onAppendComponent		{time, type}
 	applyYTCaptions			[id, items]
+	onResetAnswers			
 
 CommandManager
 	onCommandPointer		

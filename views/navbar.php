@@ -16,8 +16,8 @@
         <div class="dropdown-menu" aria-labelledby="navbarFile">
           <a class="dropdown-item" href="#" onclick="navigate.new()" data-locale="new">New</a>
           <a class="dropdown-item file-menu" href="#" onclick="navigate.open()" data-locale="open">Open</a>
-          <a class="file-menu" href="#" onclick="navigate.save()" data-locale="save_to_disk">Save to disk</a>
-          <a class="file-menu" href="#" onclick="navigate.saveTo()" data-locale="save_to_lib">Save to my library</a>
+          <a class="dropdown-item user" href="#" onclick="navigate.save()" data-locale="save_to_disk">Save to disk</a>
+          <a class="dropdown-item user" href="#" onclick="navigate.saveTo()" data-locale="save_to_lib">Save to my library</a>
           <div class="dropdown-divider edit"></div>
           <a class="dropdown-item edit" href="#" onclick="navigate.edit()" data-locale="edit">Edit</a>
           <div class="dropdown-divider user"></div>

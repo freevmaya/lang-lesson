@@ -16,7 +16,10 @@ var LocaleData = {
 		youtube_captions: 'Youtube титры',
 		login: 'Войти',
 		translate: 'Перевод',
-		time: 'Время'
+		time: 'Время',
+		save_to_disk: 'Сохранить на диск',
+		save_to_lib: 'Сохранить в альбом',
+		reset_answers: 'Сбросить ответы'
 	},
 	eng: {
 		file: 'File',
@@ -35,7 +38,10 @@ var LocaleData = {
 		youtube_captions: 'Youtube captions',
 		login: 'Login',
 		translate: 'Translate',
-		time: 'Time'
+		time: 'Time',
+		save_to_disk: 'Save to disk',
+		save_to_lib: 'Save to my library',
+		reset_answers: 'Reset answers'
 	}
 }
 

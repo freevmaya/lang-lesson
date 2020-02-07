@@ -44,7 +44,8 @@ class BaseController {
 		'publish'=>'Int',
 		'auth_provider_id'=>'Int',
 		'source_uid'=>'Int',
-		'voice'=>'Int'
+		'voice'=>'Int',
+		'value'=>'Float'
 	);
 
 	function __construct() {
@@ -65,6 +66,10 @@ class BaseController {
 
 	protected function safeInt($val) {
 		return intval($val);
+	}
+
+	protected function safeFloat($val) {
+		return floatval($val);
 	}
 
 	protected function safeBigintval($val) {

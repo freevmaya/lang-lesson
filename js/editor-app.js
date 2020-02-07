@@ -341,12 +341,11 @@ var LangApp = function(playerApp, options) {
     This.newVideo(videoID, doc.readInStorage(videoID));    
     editLayer.setData(null);
   });
-*/  
 
   $(window).on('onGetVideoContent', (e, callback)=>{
     callback(This.getData());
   });
-
+*/
   $(window).on('applyYTCaptions', (e, cobj)=>{
     if (cobj.id == data.id)
       This.setData(cobj.component.parser(data, cobj), playerApp.videoEl.getDuration());

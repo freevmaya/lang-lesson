@@ -19,10 +19,14 @@ var CPuzzle = function(player) {
   	var index = -1;
   	var completeList = {};
   	var state = {};
+  	var doubleScope;
     Object.defineProperty(this, 'storage_id', {get: ()=>{return 'puzzle-state-' + doc.data.id;}});
+    Object.defineProperty(this, 'storage_id_cl', {get: ()=>{return 'puzzle-cl-' + doc.data.id;}});
 
     let storage_data = localStorage.getItem(This.storage_id);
-    if (storage_data) state = JSON.parse(localStorage.getItem(This.storage_id));
+    if (storage_data) state = JSON.parse(storage_data);
+    let cl_data = localStorage.getItem(This.storage_id_cl);
+    if (cl_data) completeList = JSON.parse(cl_data);
 
   	top.droppable({drop: (e, ui)=>{
   		let d = ui.draggable;
@@ -33,9 +37,11 @@ var CPuzzle = function(player) {
   	}});
 
   	function complete() {
+  		if (!completeList[index]) doc.changeScope(phrase.length * (doubleScope?2:1), 0);
   		nextBtn.prop('disabled', '');
   		layer.addClass('complete');
-  		completeList[index] = true;
+  		completeList[index] = true;  		
+  		localStorage.setItem(This.storage_id_cl, JSON.stringify(completeList));
   	}
 
   	function getWords(puzzle, order) {
@@ -79,10 +85,10 @@ var CPuzzle = function(player) {
 				if (state[index]) {
 					for (let i=0; i<state[index].top.length; i++)
 						appendWord(conts[state[index].top[i]].children(), true);
-					completeList[index] = checkPhrase();
-				} else completeList[index] = false;
+				}
 	  		}
 	  		if (puzzle[2]) trans.text(puzzle[2]);
+	  		doubleScope = true;
       	}
       	layer.show();
   	}
@@ -98,18 +104,31 @@ var CPuzzle = function(player) {
 
   	function appendWord(d, isInit) {
 		top.append(d);
-		if (!isInit) refreshTopStorage();
-		checkPhrase();
-      	if (!player.playing() && !isInit) doc.playSpeech(d.text());
+		if (!isInit) {
+			refreshTopStorage();
+	      	if (!player.playing()) doc.playSpeech(d.text());
+		}
+		checkPhrase(!isInit);
+		if (!isInit && !correctSequense()) doubleScope = false;
   	}
 
   	function removeWord(cont, d) {
 		cont.append(d);
 		refreshTopStorage();
-		checkPhrase();
+		checkPhrase(true);
   	}
 
-	function checkPhrase() {
+  	function correctSequense() {
+  		let result = true;
+  		top.find('.word').each((i, w)=>{
+			let wc = $(w);
+			if (i < phrase.length)
+				result = result && (wc.text() == phrase[i]);
+		});
+		return result;
+  	}
+
+	function checkPhrase(isComplete) {
 		let result = [];
 		let right = true;
 		top.find('.word').each((i, w)=>{
@@ -124,8 +143,9 @@ var CPuzzle = function(player) {
 		});
 
 		let r = $.equals(phrase, result);
-		if (r) complete();
-		else {
+		if (r) {
+			if (isComplete) complete();
+		} else {
 			nextBtn.prop('disabled', true);
   			layer.removeClass('complete');
 		}
@@ -159,7 +179,7 @@ var CPuzzle = function(player) {
 	  					d.insertBefore(word);
 	  				else d.insertAfter(word);
 					refreshTopStorage();
-					checkPhrase();
+					checkPhrase(true);
 	  			}
 	  		}
 	  	});
@@ -167,6 +187,14 @@ var CPuzzle = function(player) {
 		word.click((e)=>{
 			if (word.parent().hasClass('cont')) appendWord(word);
 			else removeWord(cont, word);
+		});
+
+
+		var pressTimer;
+		word.on('touchend', ()=>{clearTimeout(pressTimer);}).on('touchstart', ()=>{
+			pressTimer = window.setTimeout(function() {
+				console.log('long touch');
+			},1000);
 		});
 
 		bottom.append(cont);
@@ -208,12 +236,23 @@ var CPuzzle = function(player) {
 		nextBtn.prop('disabled', '');
 		$(window).off('onChangeIndex', onChangeIndex);
 		layer.remove();
-		completeList = {};
 	}
 
 	this.stop = (player, index)=>{
 		return !completeList[index] && (player.content[index].puzzle != undefined);
 	}
+
+	$(window).on('onResetAnswers', ()=>{
+  		completeList = {};
+  		state = {};
+  		localStorage.setItem(This.storage_id, JSON.stringify(state));
+  		localStorage.setItem(This.storage_id_cl, JSON.stringify(completeList));
+  		if (index > -1) {
+  			let i = index;
+  			index = -1;
+  			start(player.content[i].puzzle, i);
+  		}
+	});
 }
 
 CPuzzle.id = 3;

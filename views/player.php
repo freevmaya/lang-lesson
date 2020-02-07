@@ -18,6 +18,15 @@
           <span class="glyphicon glyphicon-triangle-right"></span>
         </button>
       </div>
+      <div class="data-panel">
+        <div class="btn-group dropup">
+          <a href="#" id="setting" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
+          <div class="dropdown-menu" aria-labelledby="setting">
+            <a class="dropdown-item" href="#" onclick="doc.resetAnswers()" data-locale="reset_answers">Reset answers</a>
+          </div>  
+        </div>
+        <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
+      </div>
       <div class="controls">
         <select class="timeList">
           <option>---</option>>
@@ -41,6 +50,7 @@
     var params = {};
     var seg = [];
     var _vid = 0;
+    var _scope = 0;
 
     var audioElement = document.createElement('audio');
     var speechList = {};
@@ -49,11 +59,23 @@
     Object.defineProperty(this, 'data', {get: ()=>{return This.getData();}});
     Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.find('.itemEditor').length > 0;}});
+    Object.defineProperty(this, 'scope', {get: ()=>{return _scope;}, set: (value)=>{
+      _scope = value;
+      container.find('#scope').text(value);
+    }});
 
     this.langapp = null;
 
     this.getData = ()=>{
       return vdata;
+    }
+
+    this.changeScope = (incValue, decValue)=>{
+      $.post(echoURL + '?task=scope', {task_id: _vid, incValue: incValue, decValue: 0}, (data)=>{
+        if (data.result == 'ok') {
+          This.scope = This.scope + incValue + decValue;
+        } else $(window).trigger('onAppError', data.error);
+      });
     }
 
     this.loadVideo = (id, afterLoad)=>{
@@ -62,7 +84,10 @@
       
       $.getJSON(echoURL + '?task=get&id=' + parseInt(id), (result)=>{
         if (result && result.data) {
+
           _vid = parseInt(result.id);
+          This.scope = result.scope?result.scope:0;
+
           result = vdecode(result.data);
           if (playerApp) 
             $(window).trigger('onOpenVideoContent', result);
@@ -73,6 +98,17 @@
           if (afterLoad) afterLoad(vdata);
         }
       });
+    }
+
+    this.resetAnswers = ()=>{
+      if (_vid) {
+        $.post(echoURL + '?task=scope', {task_id: _vid, value: 0}, (data)=>{
+          if (data.result == 'ok') {
+            $(window).trigger('onResetAnswers');
+            This.scope = 0;
+          } else $(window).trigger('onAppError', data.error);
+        });
+      }
     }
 
     this.address = (seg1, seg2, seg3) =>{
@@ -387,9 +423,13 @@
     <?if ($video = $controller->getVideo()) {?>
     vdata = vdecode('<?=$video['data']?>');
     _vid = <?=$video['id']?>;
+    This.scope = <?=$video['scope']?$video['scope']:0?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>
-    if (!vdata) vdata = This.readInStorage(This.curVideoID());
+    if (!vdata) {
+      vdata = This.readInStorage(This.curVideoID());
+      This.scope = vdata.scope?vdata.scope:0;
+    }
     <?
     if ($defvideo = $controller->getDefaultVideo()) {
     ?>
@@ -407,6 +447,10 @@
 
     $(window).on('onAfterSaveToLibrary', (e, data)=>{
       _vid = parseInt(data.id);
+    });
+
+    $(window).on('onGetVideoContent', (e, callback)=>{
+      callback(This.getData());
     });
   }
   //END DOC CLASS

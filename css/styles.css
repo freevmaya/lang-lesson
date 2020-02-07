@@ -126,7 +126,7 @@ nav {
 .controls {
   display: flex;
   justify-content: space-between;
-  margin: 0.2em;
+  margin: 0 0.2em 0 0.2em;
   position: relative;
 }
 
@@ -502,4 +502,20 @@ input[name="playlist-input"] {
 
 dt {
   font-weight: normal !important;
+}
+
+.data-panel {
+  text-align: right;
+  display: flex;
+  justify-content: space-between;
+}
+
+.data-panel a {
+  display: block;
+}
+
+.data-panel span {
+  padding: 5px;
+  font-size: 1.5em;  
+  color: darkgray;
 }

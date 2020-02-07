@@ -29,6 +29,10 @@ class langEcho extends BaseController {
 		if ($id = intval($_GET['id'])) {
 			if ($item = DB::line("SELECT * FROM lang_items WHERE id={$id}")) {
 				$item['data'] = stripcslashes($item['data']);
+
+				if ($scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]))
+					$item['scope'] = $scope;
+				
 				echo json_encode($item);
 				return;
 			}
@@ -100,6 +104,44 @@ class langEcho extends BaseController {
 				echo '{"result": "ok"}';
 			else echo '{"result": "error", "error": "can`t delete playlist"}';
 		}
+	}
+
+	public function scope() {
+		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
+		if ($uid && ($task_id = $this->safePost('task_id'))) {
+			if (!$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
+				DB::query("INSERT INTO score (task_id, user_id, start_time) VALUES (:task_id, $uid, NOW())", [':task_id'=>$task_id]);
+				$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>DB::lastID()]);
+			}
+			if (($value = $this->safePost('value', false)) !== false) {
+				if (DB::query("UPDATE score SET incValue = :incValue, decValue = :decValue WHERE task_id=:task_id", 
+						[':task_id'=>$task_id, ':incValue'=>$value>0?$value:0, ':decValue'=>$value<0?$value:0])) {
+					echo '{"result": "ok"}';
+					return;
+				}
+			} else {
+				$incvalue = $this->safePost('incValue', 0);
+				$decvalue = $this->safePost('decValue', 0);
+
+				if (DB::query("UPDATE score SET incValue = incValue + :incvalue, decValue = decValue + :decvalue WHERE task_id=:task_id", 
+						[':task_id'=>$task_id, ':incvalue'=>$incvalue, ':decvalue'=>$decvalue])) {
+					echo '{"result": "ok"}';
+					return;
+				}
+			}
+		}
+		echo '{"result": "error", "error": "can`t set scope"}';
+	}
+
+	public function getScope() {
+		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
+		if ($uid && ($task_id = $this->safePost('task_id'))) {
+			if ($item = DB::one("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
+				echo json_encode($item);
+				return;
+			}
+		}
+		echo '{"result": "error", "error": "can`t get scope"}';		
 	}
 
 	public function create() {
