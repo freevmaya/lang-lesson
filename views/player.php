@@ -100,6 +100,13 @@
       });
     }
 
+    this.serviceOn = (price, func)=>{
+      if (doc.scope > price) {
+        doc.changeScope(0, -price);
+        func();
+      } else $.message(Locale.value('not_enough_points', {':price':price}));
+    }
+
     this.resetAnswers = ()=>{
       if (_vid) {
         $.post(echoURL + '?task=scope', {task_id: _vid, value: 0}, (data)=>{
@@ -157,11 +164,16 @@
       }
     }
 
-    this.prepareSpeech = (texts)=>{
-      let list = [];
+    this.speechIndex = (text)=>{
+      return text.replace(/[\W\s]+/ig, ' ');
+    }
+
+    this.prepareSpeech = (texts, afterFunc)=>{
+      let list = [], isCache = texts.length > 0;
       for (let i=0; i<texts.length; i++) {
-        let tindex = texts[i].replace(/[\W\s]+/ig, ' ');
+        let tindex = This.speechIndex(texts[i]);
         if (!speechList[tindex]) list.push(tindex);
+        else isCache = true;
       }
 
       if (list.length > 0) {
@@ -171,13 +183,26 @@
           if (data.urls) {
             for (let i in data.urls)
               speechList[i] = data.urls[i];
+            if (afterFunc) afterFunc(data.urls);
           } else $(window).trigger('onAppError', 'Prepare speech');
         }, "json");
-      }
+      } else if (isCache) afterFunc();
     }
 
     this.playSpeech = (text) =>{
       This.getSpeech(text, (url)=>{splay(url);})
+    }
+
+    this.talkPhrase = (text, price)=>{
+      let tindex = This.speechIndex(text);
+      if (speechList[tindex]) This.playSpeech(text);
+      else {
+        This.prepareSpeech([text], (list)=>{
+          This.serviceOn(price, ()=>{
+            This.playSpeech(text);
+          });
+        });
+      }
     }
 
     function calcPlayerSize(rate) {

@@ -23,7 +23,8 @@ var LocaleData = {
 		suggest_the_wrong_word: 'Подсказывать неверное слово (:price)',
 		already_on: 'Уже включено',
 		not_enough_points: 'Недостаточно баллов. Требуется :price баллов.',
-		mode_is_on: 'Режим включен'
+		mode_is_on: 'Режим включен',
+		talk_phrase: 'Проговорить фразу (:price)'
 	},
 	eng: {
 		file: 'File',
@@ -49,7 +50,8 @@ var LocaleData = {
 		suggest_the_wrong_word: 'Suggest the wrong word (:price).',
 		already_on: 'Already included',
 		not_enough_points: 'Not enough points. Requires :price points.',
-		mode_is_on: 'Mode is on'
+		mode_is_on: 'Mode is on',
+		talk_phrase: 'Speak a phrase (:price)'
 	}
 }
 

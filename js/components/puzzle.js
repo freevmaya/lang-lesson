@@ -230,18 +230,21 @@ var CPuzzle = function(player) {
 	}
 
 	this.settingMenu = (menu)=>{
+		var price = 30;
+		var spk_price = 30;
 
-		var price = 20;
 		menu.appendItem('reset_answers', ()=>{doc.resetAnswers();});
 		menu.appendItem('suggest_the_wrong_word', ()=>{
 			if (!setting.showWrongWord) {
-				if (doc.scope > price) {
-					doc.changeScope(0, -price);
+				doc.serviceOn(price, ()=>{
 					setting.showWrongWord = true;
-					 $.message(Locale.value('mode_is_on'));
-				} else $.message(Locale.value('not_enough_points', {':price':price}));
+			        $.message(Locale.value('mode_is_on'));
+				});
 			} else $.message(Locale.value('already_on'));
 		}, {':price':price});
+		menu.appendItem('talk_phrase', ()=>{
+			doc.talkPhrase(phrase.join(' '), spk_price);
+		}, {':price': spk_price});
 	}
 
 	this.getCaption = (content, tindex)=>{
