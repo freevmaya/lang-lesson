@@ -106,6 +106,10 @@
     border-width: 2px;
     border-color: #000000ba;
     height: 10px;
+    font-size: 09px;
+    padding-left: 2px;
+    cursor: default;
+    color: #646464;
 }
 
 .timeline-sc span.five {

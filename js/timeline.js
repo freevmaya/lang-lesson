@@ -148,14 +148,20 @@ var Timeline = function(elem, options) {
 
 		let k = totalLength / width();
 		let st = _range[0];
-		let t = Math.floor(Math.floor(_range[0] / k) * k);
+		let t = Math.ceil(Math.floor(Math.floor(_range[0] / k) * k) / 2) * 2;
 		let step = Math.ceil((_range[1] - _range[0]) / 60);
+		let ofs = 0;
+
+		//if (t % 2 == 1) t += 1;
 
 		while (t < _range[1]) {
 			t += step;
 			m = Math.round((t - st) / k);
-			let bclass = (t % 10 == 0)?' class="ten"':'';//((t % 5 == 0)?' class="five"':'');
-			scBar.append('<span style="margin-left: ' + m + 'px" ' + bclass + '></span>');
+			if (t % 5 == 0) {
+				scBar.append('<span style="margin-left: ' + m + 'px" class="ten">' + secondsToTime(t) + '</span>');
+			} else {
+				scBar.append('<span style="margin-left: ' + m + 'px"></span>');
+			}
 		}
 	}
 
