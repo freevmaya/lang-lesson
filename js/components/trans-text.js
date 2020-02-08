@@ -49,7 +49,7 @@ var TransText = function() {
   }
 
   this.getCaption = (content, tindex)=>{
-    return content[tindex].text[0].replace(/\|/ig, ' ');
+    return (content[tindex] && content[tindex].text)?content[tindex].text[0].replace(/\|/ig, ' '):'';
   }
 
   this.updateContent = (content, tindex)=>{

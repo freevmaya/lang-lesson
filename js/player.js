@@ -204,6 +204,7 @@ function playerInit(parent, options) {
       }
 
       let s = '';
+      let time = secondsToTime(tlist[i]);
       if (content[i] && content[i].c) {
         for (let n in content[i].c) {
           let cp = content[i].c[n];
@@ -211,9 +212,9 @@ function playerInit(parent, options) {
             s += wordCount(components[cp].getCaption(content, i), 10);
         }
 //      var s = content[i].text?wordCount(content[i].text[0].replace(/\|/ig, ' '), 4):'-';
-        timeList.append($('<option value="' + i + '"' + selected +'>' + secondsToTime(tlist[i]) + ' ' + s + '</option>'));
+        timeList.append($('<option value="' + i + '"' + selected +'>' + time + ' ' + s + '</option>'));
       } else {
-        console.log(i);
+        console.log('No content index:' + i + ', time: ' + time);
       }
     }
   }

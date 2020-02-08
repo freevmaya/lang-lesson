@@ -134,7 +134,7 @@ $(window).ready(()=>{
 
   var keys = [];
   $('.shortcut').each((i, item)=>{
-    let span = $(item);
+    let span = $(item).find('span');
     let key = span.text();
     let keya = key.split('+');
     key = keya[keya.length - 1];
