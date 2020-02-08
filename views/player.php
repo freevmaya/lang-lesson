@@ -19,7 +19,7 @@
         </button>
       </div>
       <div class="data-panel">
-        <div class="btn-group dropleft setting-menu-layer">
+        <div class="btn-group dropup setting-menu-layer">
           <a href="#" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
           <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
         </div>
@@ -100,7 +100,7 @@
     }
 
     this.serviceOn = (price, func)=>{
-      if (doc.scope > price) {
+      if (doc.scope >= price) {
         doc.changeScope(0, -price);
         func();
       } else $.message(Locale.value('not_enough_points', {':price':price}));

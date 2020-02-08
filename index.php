@@ -136,6 +136,14 @@
         .tooltip-layer {
           display: none;
         }
+
+        .separator {
+          display: none;
+        }
+
+        .langControls {
+          margin-top: 2px;
+        }
       }
     </style>
   <body>

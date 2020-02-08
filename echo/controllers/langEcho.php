@@ -30,8 +30,11 @@ class langEcho extends BaseController {
 			if ($item = DB::line("SELECT * FROM lang_items WHERE id={$id}")) {
 				$item['data'] = stripcslashes($item['data']);
 
-				if ($scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]))
-					$item['scope'] = $scope;
+				if ($uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:false) 
+					$scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$uid]);
+				else $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]);
+
+				if ($scope)	$item['scope'] = $scope;
 				
 				echo json_encode($item);
 				return;
@@ -135,8 +138,8 @@ class langEcho extends BaseController {
 
 	public function getScope() {
 		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
-		if ($uid && ($task_id = $this->safePost('task_id'))) {
-			if ($item = DB::one("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
+		if ($uid) {
+			if ($item = DB::one("SELECT * FROM score WHERE user_id=:user_id", [':user_id'=>$uid])) {
 				echo json_encode($item);
 				return;
 			}
