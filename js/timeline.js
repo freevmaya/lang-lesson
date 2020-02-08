@@ -509,18 +509,18 @@ var Timeline = function(elem, options) {
 
 	function checkAndAdd(type) {
 
-		if (checkCreateMarker()) {
-			localStorage.setItem('defaultComponent', type);
-			let r = markerWidth * totalLength / width() * 0.5;
+		localStorage.setItem('defaultComponent', type);
+		let r = markerWidth * totalLength / width() * 0.5;
 
-			for (let i in tlist)
-				if ((cursorTime >= tlist[i] - r) && (cursorTime <= tlist[i] + r)) {
-					if (selectIndex != i) doSelectMarker(i);
-					options.onAppendComponent(i, type);
-					return;
-				}
+		for (let i in tlist)
+			if ((cursorTime >= tlist[i] - r) && (cursorTime <= tlist[i] + r)) {
+				if (selectIndex != i) doSelectMarker(i);
+				options.onAppendComponent(i, type);
+				return;
+			}
+		if (checkCreateMarker())
 			This.createMarkerCommand(type);
-		} else $(window).trigger('onAppError', 'Interval too small');
+		else $(window).trigger('onAppError', 'Interval too small');
 	}	
 
 	function onDelMarker() {
