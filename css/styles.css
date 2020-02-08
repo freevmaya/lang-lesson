@@ -438,6 +438,7 @@ input[name="playlist-input"] {
 .CTitle h2 {
   margin: 0px;  
   user-select: none;
+  font-size: 1.7em;
 }
 
 .CPuzzle {
@@ -519,7 +520,7 @@ dt {
 .data-panel {
   text-align: right;
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .editContaier .data-panel {

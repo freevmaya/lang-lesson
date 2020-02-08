@@ -21,8 +21,7 @@
       <div class="data-panel">
         <div class="btn-group dropleft setting-menu-layer">
           <a href="#" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
-          <div class="setting-menu dropdown-menu" aria-labelledby="setting">
-          </div>  
+          <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
         </div>
         <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
       </div>
