@@ -452,7 +452,7 @@
     <?} else {?>
     if (!vdata) {
       vdata = This.readInStorage(This.curVideoID());
-      This.scope = vdata.scope?vdata.scope:0;
+      This.scope = (vdata && vdata.scope)?vdata.scope:0;
     }
     <?
     if ($defvideo = $controller->getDefaultVideo()) {
