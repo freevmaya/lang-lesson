@@ -204,14 +204,17 @@ function playerInit(parent, options) {
       }
 
       let s = '';
-      for (let n in content[i].c) {
-        let cp = content[i].c[n];
-        if (components[cp])
-          s += wordCount(components[cp].getCaption(content, i), 10);
-      }
-
+      if (content[i] && content[i].c) {
+        for (let n in content[i].c) {
+          let cp = content[i].c[n];
+          if (components[cp])
+            s += wordCount(components[cp].getCaption(content, i), 10);
+        }
 //      var s = content[i].text?wordCount(content[i].text[0].replace(/\|/ig, ' '), 4):'-';
-      timeList.append($('<option value="' + i + '"' + selected +'>' + secondsToTime(tlist[i]) + ' ' + s + '</option>'));
+        timeList.append($('<option value="' + i + '"' + selected +'>' + secondsToTime(tlist[i]) + ' ' + s + '</option>'));
+      } else {
+        console.log(i);
+      }
     }
   }
 
