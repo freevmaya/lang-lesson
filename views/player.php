@@ -185,7 +185,7 @@
             if (afterFunc) afterFunc(data.urls);
           } else $(window).trigger('onAppError', 'Prepare speech');
         }, "json");
-      } else if (isCache) afterFunc();
+      } else if (isCache && afterFunc) afterFunc();
     }
 
     this.playSpeech = (text) =>{
