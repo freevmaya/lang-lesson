@@ -19,10 +19,9 @@
         </button>
       </div>
       <div class="data-panel">
-        <div class="btn-group dropup">
-          <a href="#" id="setting" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
-          <div class="dropdown-menu" aria-labelledby="setting">
-            <a class="dropdown-item" href="#" onclick="doc.resetAnswers()" data-locale="reset_answers">Reset answers</a>
+        <div class="btn-group dropleft setting-menu-layer">
+          <a href="#" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
+          <div class="setting-menu dropdown-menu" aria-labelledby="setting">
           </div>  
         </div>
         <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
@@ -71,11 +70,12 @@
     }
 
     this.changeScope = (incValue, decValue)=>{
-      $.post(echoURL + '?task=scope', {task_id: _vid, incValue: incValue, decValue: 0}, (data)=>{
-        if (data.result == 'ok') {
-          This.scope = This.scope + incValue + decValue;
-        } else $(window).trigger('onAppError', data.error);
-      });
+      let cf = ()=>{This.scope = This.scope + incValue + decValue;};
+      if (_vid > 0) {
+        $.post(echoURL + '?task=scope', {task_id: _vid, incValue: incValue, decValue: decValue}, (data)=>{
+          if (data.result == 'ok') cf(); else $(window).trigger('onAppError', data.error);
+        });
+      } else cf();
     }
 
     this.loadVideo = (id, afterLoad)=>{

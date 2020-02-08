@@ -519,7 +519,7 @@ dt {
 .data-panel {
   text-align: right;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 
 .editContaier .data-panel {
@@ -538,4 +538,9 @@ dt {
   padding: 5px;
   font-size: 1.5em;  
   color: darkgray;
+}
+
+.dropdown-menu.show {
+    display: block;
+    box-shadow: 2px 2px 6px #0000007d;
 }

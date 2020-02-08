@@ -19,7 +19,11 @@ var LocaleData = {
 		time: 'Время',
 		save_to_disk: 'Сохранить на диск',
 		save_to_lib: 'Сохранить в альбом',
-		reset_answers: 'Сбросить ответы'
+		reset_answers: 'Сбросить ответы',
+		suggest_the_wrong_word: 'Подсказывать неверное слово (:price)',
+		already_on: 'Уже включено',
+		not_enough_points: 'Недостаточно баллов. Требуется :price баллов.',
+		mode_is_on: 'Режим включен'
 	},
 	eng: {
 		file: 'File',
@@ -41,7 +45,11 @@ var LocaleData = {
 		time: 'Time',
 		save_to_disk: 'Save to disk',
 		save_to_lib: 'Save to my library',
-		reset_answers: 'Reset answers'
+		reset_answers: 'Reset answers',
+		suggest_the_wrong_word: 'Suggest the wrong word (:price).',
+		already_on: 'Already included',
+		not_enough_points: 'Not enough points. Requires :price points.',
+		mode_is_on: 'Mode is on'
 	}
 }
 
@@ -77,6 +85,14 @@ var Locale = new (function() {
 		}
 
 		return elem;
+	}
+	this.value = function(wi, params) {
+		let v = LocaleData[_lang][wi];
+		if (params) {
+			for (let i in params)
+				v = v.replace(i, params[i]);
+		}
+		return v;
 	}
 })();
 

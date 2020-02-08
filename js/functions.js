@@ -181,7 +181,7 @@ function scrollTo(elem) {
 }
 
 $(window).on('onAppError', (e, error)=>{
-  console.error('Application error: ' + error.code + ', ' + error.message);
+  console.error('Application error: ' + JSON.stringify(error));
 });
 
 var tooltip = new function(){

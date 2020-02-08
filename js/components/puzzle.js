@@ -20,6 +20,9 @@ var CPuzzle = function(player) {
   	var completeList = {};
   	var state = {};
   	var doubleScope;
+  	var setting = {
+  		showWrongWord: false
+  	};
     Object.defineProperty(this, 'storage_id', {get: ()=>{return 'puzzle-state-' + doc.data.id;}});
     Object.defineProperty(this, 'storage_id_cl', {get: ()=>{return 'puzzle-cl-' + doc.data.id;}});
 
@@ -139,10 +142,12 @@ var CPuzzle = function(player) {
 			let wc = $(w);
 			let wd = wc.text();
 			result.push(wd);
-			if ((phrase[i] == wd) && right) wc.addClass('right');
-			else {
-				wc.removeClass('right');
-				right = false;
+			if (setting.showWrongWord) {
+				if ((phrase[i] == wd) && right) wc.addClass('right');
+				else {
+					wc.removeClass('right');
+					right = false;
+				}
 			}
 		});
 
@@ -222,6 +227,21 @@ var CPuzzle = function(player) {
 		    	layer.hide();
 		    }
 		}
+	}
+
+	this.settingMenu = (menu)=>{
+
+		var price = 20;
+		menu.appendItem('reset_answers', ()=>{doc.resetAnswers();});
+		menu.appendItem('suggest_the_wrong_word', ()=>{
+			if (!setting.showWrongWord) {
+				if (doc.scope > price) {
+					doc.changeScope(0, -price);
+					setting.showWrongWord = true;
+					 $.message(Locale.value('mode_is_on'));
+				} else $.message(Locale.value('not_enough_points', {':price':price}));
+			} else $.message(Locale.value('already_on'));
+		}, {':price':price});
 	}
 
 	this.getCaption = (content, tindex)=>{

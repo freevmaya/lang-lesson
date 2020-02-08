@@ -1,3 +1,11 @@
+$.fn.settingMenu = function(){
+  this.appendItem = (cap_index, func, cap_params)=>{
+    let em = $('<a class="dropdown-item" href="#" data-locale="' + cap_index + '">' + Locale.value(cap_index, cap_params) + '</a>');
+    em.click(func);
+    this.append(em);
+  }
+}
+
 function playerInit(parent, options) {
 
   var This = this;
@@ -10,6 +18,8 @@ function playerInit(parent, options) {
     nextBtn = parent.find('.nextBtn'),
     stopBtn = parent.find('.stopBtn'),
     timeList = parent.find('.timeList'),
+    settingMenu = parent.find('.setting-menu'),
+    settingMenuLayer = parent.find('.setting-menu-layer'),
     langControls = parent.find('.langControls'),
     separator = $('.playerContainer .separator'),
     septum = $('.playerContainer .playerSeptum');
@@ -32,6 +42,8 @@ function playerInit(parent, options) {
     if (si == undefined) si = -1;
     return si;
   }});
+
+  settingMenu.settingMenu();
 
   separator.draggable({
     axis: "y",
@@ -133,13 +145,21 @@ function playerInit(parent, options) {
   }
 
   function updateComponents() {
+    settingMenu.empty();
+
+    let isMenu = false;
     if ((tindex > -1) && (content[tindex])) {
       for (let i in components) {
         let v = content[tindex].c.includes(parseInt(i));
         components[i].visible(v);
-        if (v) components[i].updateContent(content, tindex);
+        if (v) {
+          components[i].updateContent(content, tindex);
+          if (isMenu = components[i].settingMenu != undefined)
+            components[i].settingMenu(settingMenu);
+        }
       }
     }
+    settingMenuLayer[isMenu?'show':'hide']();
   }
 
   This.setData = function(a_vdata) {
