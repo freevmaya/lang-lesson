@@ -231,7 +231,7 @@ var CPuzzle = function(player) {
 
 	this.settingMenu = (menu)=>{
 		var price = 30;
-		var spk_price = 30;
+		var spk_price = 15;
 
 		menu.appendItem('reset_answers', ()=>{doc.resetAnswers();});
 		menu.appendItem('suggest_the_wrong_word', ()=>{
