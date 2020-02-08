@@ -292,10 +292,10 @@ var Timeline = function(elem, options) {
 			if (selectIndex > -1) {
 				getMarker(selectIndex).addClass("selected");
 				elem.addClass('is-selected-marker');
+				setCursor(tlist[selectIndex]);			
 			} else elem.removeClass('is-selected-marker');
 
 			delBtn.prop("disabled", selectIndex == -1);
-			setCursor(tlist[selectIndex]);			
 
 			if (This.options.onSelect) This.options.onSelect(ix);
 		}

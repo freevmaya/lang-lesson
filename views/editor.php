@@ -5,7 +5,7 @@
         <div class="cursor"></div>
       </div>
       <div class="buttons" role="menu">
-        <div class="dropdown-submenu">
+        <div class="dropdown-submenu dropleft">
           <a class="btn btn-primary add hint" data-hint="Add marker">+</a>
           <div class="dropdown-menu">
           </div>
