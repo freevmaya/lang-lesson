@@ -16,12 +16,12 @@
         <div class="dropdown-menu" aria-labelledby="navbarFile">
           <a class="dropdown-item"  onclick="navigate.new()" data-locale="new">New</a>
           <a class="dropdown-item file-menu"  onclick="navigate.open()" data-locale="open">Open</a>
-          <a class="dropdown-item user"  onclick="navigate.save()" data-locale="save_to_disk">Save to disk</a>
+          <a class="dropdown-item file-menu"  onclick="navigate.save()" data-locale="save_to_disk">Save to disk</a>
           <a class="dropdown-item user"  onclick="navigate.saveTo()" data-locale="save_to_lib">Save to my library</a>
           <div class="dropdown-divider edit"></div>
           <a class="dropdown-item edit"  onclick="navigate.edit()" data-locale="edit">Edit</a>
           <div class="dropdown-divider user"></div>
-          <a class="dropdown-item dropdown-toggle"  id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="playlist">
+          <a class="dropdown-item dropdown-toggle user"  id="navbarPlaylist" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="playlist">
               Playlist
           </a>
           <div class="dropdown-menu" aria-labelledby="navbarPlaylist" id="menuPlayList">
@@ -78,8 +78,8 @@
       </li>
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle user user-title" id="navbarUser" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><?
-          if ($controller->user) {            echo $controller->user['first_name'].' '.$controller->user['last_name'];
-          }
+          if ($controller->user)
+            echo $controller->user['first_name'].' '.$controller->user['last_name'];
         ?></a>
         <div class="dropdown-menu" aria-labelledby="navbarUser">
           <a class="dropdown-item user" onclick="doc.user = null;" data-locale="logout">Logout</a>

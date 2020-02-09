@@ -97,8 +97,15 @@
       }
     }
 
+    this.storageScope = ()=>{
+      return parseInt(localStorage.getItem('scope')?localStorage.getItem('scope'):0);
+    }
+
     this.changeScope = (incValue, decValue)=>{
-      let cf = ()=>{This.scope = This.scope + incValue + decValue;};
+      let cf = ()=>{
+        This.scope = This.scope + incValue + decValue;
+        if (!_user) localStorage.setItem('scope', This.scope); 
+      };
       if ((_vid > 0) && _user) {
         $.post(echoURL + '?task=scope', {task_id: _vid, incValue: incValue, decValue: decValue}, (data)=>{
           if (data.result == 'ok') cf(); else $(window).trigger('onAppError', data.error);
@@ -114,7 +121,7 @@
         if (result && result.data) {
 
           _vid = parseInt(result.id);
-          This.scope = result.scope?result.scope:0;
+          This.scope = result.scope?result.scope:This.storageScope();
 
           result = vdecode(result.data);
           if (playerApp) 
@@ -136,15 +143,8 @@
     }
 
     this.resetAnswers = ()=>{
-      if (_vid) {
-        $.post(echoURL + '?task=scope', {task_id: _vid, value: 0}, (data)=>{
-          if (data.result == 'error') $(window).trigger('onAppError', data.error);
-          else {
-            $(window).trigger('onResetAnswers');
-            This.scope = 0;
-          }
-        });
-      }
+      if (_vid)
+        $(window).trigger('onResetAnswers');
     }
 
     this.address = (seg1, seg2, seg3) =>{
@@ -477,12 +477,12 @@
     <?if ($video = $controller->getVideo()) {?>
     vdata = vdecode('<?=$video['data']?>');
     _vid = <?=$video['id']?>;
-    This.scope = <?=$video['scope']?$video['scope']:0?>;
+    This.scope = <?=$video['scope']?$video['scope']:'This.storageScope()'?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>
     if (!vdata) {
       vdata = This.readInStorage(This.curVideoID());
-      This.scope = (vdata && vdata.scope)?vdata.scope:0;
+      This.scope = This.storageScope();
     }
     <?
     if ($defvideo = $controller->getDefaultVideo()) {

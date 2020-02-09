@@ -223,20 +223,22 @@ var CPuzzle = function(player) {
 	}
 
 	this.updateContent = (content, tindex)=>{
-		if ((index > -1) && (!completeList[index]) && (!completeList[tindex]) && !doc.editMode) {
-			player.setIndex(index, true);
-		}
-		else {
-			if ((tindex > -1) && (content[tindex].puzzle) && (content[tindex].puzzle[0])) {
-				start(content[tindex].puzzle, tindex);
-		    } else {
-		    	layer.hide();
-		    }
+		if (tindex != index) {
+			if ((index > -1) && !completeList[index] && !completeList[tindex] && !doc.editMode) {
+				player.setIndex(index, true);
+			}
+			else {
+				if ((tindex > -1) && (content[tindex].puzzle) && (content[tindex].puzzle[0])) {
+					start(content[tindex].puzzle, tindex);
+			    } else {
+			    	layer.hide();
+			    }
+			}
 		}
 	}
 
 	this.settingMenu = (menu)=>{
-		var price = 30;
+		var price = 40;
 		var spk_price = 15;
 
 		menu.appendItem('reset_answers', ()=>{doc.resetAnswers();});

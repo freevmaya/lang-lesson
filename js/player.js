@@ -69,18 +69,13 @@ function playerInit(parent, options) {
         if (This.playing()) {
           septButtonState('pause');
           This.pauseVideo();
-        } else {
-          septButtonState('none');
-          play();
-        }
+        } else play();
         e.stopPropagation();
         return false;
       } else if (septBtState == 'pause') {
-        septButtonState('none');
         play();
         e.stopPropagation();
       } else if (septBtState == 'repeat') {
-        septButtonState('none');
         setIndex(tindex, true, partStopped);
         e.stopPropagation();
       }

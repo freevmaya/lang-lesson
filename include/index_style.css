@@ -94,4 +94,8 @@
   .playerSeptum {
     display: flex;
   }
+
+  .edit {
+    display: none !important;
+  }
 }
