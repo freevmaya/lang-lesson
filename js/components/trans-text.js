@@ -3,7 +3,6 @@ var TransText = function() {
   '<div class="trans-text">'+
     '<div class="empty-content">' +
       '<div>Empty content</div>' +
-      '<button type="button" class="btn add" onclick="navigate.edit();">add</button>' +
     '</div>' +
     '<div class="transText" id="transText">' +
     '</div>' +
@@ -85,7 +84,7 @@ var TransText = function() {
   this.dispose = ()=>{layer.remove();}
 
   this.stop = (player, index)=>{
-    return player.content[index].stop?true:false;
+    return player.content[index] && player.content[index].stop;
   }
 }
 

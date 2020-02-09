@@ -54,9 +54,15 @@ var CPuzzle = function(player) {
   	function getWords(puzzle, order) {
   		let words = [], p = puzzle;
 		if (p[0].trim()) {
-			words = p[0].split(/\s/).slice(0);
-			if (p[1].trim()) words = words.concat(p[1].split(/\s/));
-			words.sort(order?order:(a, b)=>{return Math.random() - 0.5});
+			words = p[0].split(/[\s]+/).slice(0);
+			if (p[1].trim()) words = words.concat(p[1].split(/[\s]+/));
+
+			if (order) words.sort(order);
+			else {
+				let origin = words.concat([]);
+				while ($.equals(words, origin))
+					words.sort((a, b)=>{return Math.random() - 0.5});
+			}
 		}
 		return words;
   	}
@@ -221,7 +227,7 @@ var CPuzzle = function(player) {
 			player.setIndex(index, true);
 		}
 		else {
-			if ((tindex > -1) && (content[tindex].puzzle)) {
+			if ((tindex > -1) && (content[tindex].puzzle) && (content[tindex].puzzle[0])) {
 				start(content[tindex].puzzle, tindex);
 		    } else {
 		    	layer.hide();
@@ -265,8 +271,12 @@ var CPuzzle = function(player) {
 		layer.remove();
 	}
 
+	function isMyContent(content, index) {
+		return (content[index].puzzle != undefined) && (content[index].puzzle[0].length > 0);
+	}
+
 	this.stop = (player, index)=>{
-		return !completeList[index] && (player.content[index].puzzle != undefined);
+		return !completeList[index] && isMyContent(player.content, index);
 	}
 
 	$(window).on('onResetAnswers', ()=>{

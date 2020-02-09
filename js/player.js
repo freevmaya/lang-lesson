@@ -23,6 +23,8 @@ function playerInit(parent, options) {
     langControls = parent.find('.langControls'),
     separator = $('.playerContainer .separator'),
     septum = $('.playerContainer .playerSeptum');
+    septButton = $('.playerContainer .playerSeptum button');
+    septBtState = 'none';
 
   var tindex = -1;
   var tlist = {};
@@ -61,8 +63,46 @@ function playerInit(parent, options) {
     }
   });
 
+  septum.click((e)=>{
+    afterYTPlayer(()=>{
+      if (septBtState == 'none') {
+        if (This.playing()) {
+          septButtonState('pause');
+          This.pauseVideo();
+        } else {
+          septButtonState('none');
+          play();
+        }
+        e.stopPropagation();
+        return false;
+      } else if (septBtState == 'pause') {
+        septButtonState('none');
+        play();
+        e.stopPropagation();
+      } else if (septBtState == 'repeat') {
+        septButtonState('none');
+        setIndex(tindex, true, partStopped);
+        e.stopPropagation();
+      }
+    });
+  });
+
   function backBtnRefresh() {
     backBtn.find('span').removeClass('glyphicon-repeat').addClass('glyphicon-triangle-left');
+  }
+
+  function septButtonState(state) {
+    if (septBtState != state) {
+      septBtState = state;
+      let span = septButton.find('span');
+      span.removeClass('glyphicon-repeat').removeClass('glyphicon-play');
+      if (state == 'none') septButton.css('display', 'none');
+      else {
+        septButton.css('display', 'block');
+        if (state == 'repeat') span.addClass('glyphicon-repeat');
+        else span.addClass('glyphicon-play');
+      }
+    }
   }
 
   function play() {
@@ -77,6 +117,7 @@ function playerInit(parent, options) {
     This.videoEl.playVideo();
     updateComponents();
     nextBtn.removeClass('pfocus');
+    septButtonState('none');
     $(window).trigger('onPlay', This);
   }
 
@@ -84,6 +125,7 @@ function playerInit(parent, options) {
     partStopped = true;
     nextBtn.addClass('pfocus');
     backBtn.find('span').removeClass('glyphicon-triangle-left').addClass('glyphicon-repeat');
+    septButtonState('repeat');
     This.pauseVideo();
     $(window).trigger('onStopPart', This);
   }
@@ -189,6 +231,7 @@ function playerInit(parent, options) {
 
     if (This.videoEl) This.setIndexFromTime(This.videoEl.getCurrentTime());
     resetTimeList();
+    septButtonState('none');
   }
 
   function resetTimeList() {
@@ -292,7 +335,7 @@ function playerInit(parent, options) {
     }
   }
 
-  backBtn.click(()=>{
+  function backBtnClick() {
     afterYTPlayer(()=>{      
       let aix, time = This.videoEl.getCurrentTime();
       if (partStop && partStopped) {
@@ -304,13 +347,11 @@ function playerInit(parent, options) {
         setIndex(ctime, true, partStopped);
       }
       doAfterNavigate(tindex);
-      //backStep();
     });
-  });
+  }
 
-  nextBtn.click(()=>{
-    afterYTPlayer(nextStep);    
-  });
+  backBtn.click(backBtnClick);
+  nextBtn.click(()=>{afterYTPlayer(nextStep);});
 
   function beforeChangeIndex(a_tindex) {
     let edata = {

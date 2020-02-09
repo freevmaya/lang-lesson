@@ -52,99 +52,7 @@
     <script src="<?=$mainURL?>js/components/puzzle.js"></script>
 
     <style type="text/css">
-      .playerContainer {
-        width: <?=$width?>px;
-      }
-
-      .langControls {
-        width: <?=$width?>px;
-      }
-
-      @media screen and (max-width: <?=$width + 200?>px) {
-        .player-wrap {
-          display: block;
-        }
-
-        .list-container {
-          height: auto !important;
-          overflow-y: auto !important;
-        }
-      }
-
-      @media screen and (max-width: <?=$width?>px) {
-        nav {
-          width: auto;
-          padding: 0.2em !important;
-        }
-
-        nav.bg-light {          
-          background-color: #f8f9fa00 !important;
-        }
-
-        nav.bg-light:hover {          
-          background-color: #f8f9faFF !important;
-          box-shadow: 0 0 6px black;
-        }
-
-        .player-wrap {
-          margin-top: 0px;          
-        }
-
-        .navbar-collapse {
-          margin: 0.5em;
-        }
-
-        .navbar-toggler {
-          background: #f8f9fa8c;
-          width: 2em;
-          height: 2em;
-          padding: 0px;
-        }
-
-        .playerContainer {
-          left: 0px;
-          right: 0px;
-          margin-top: 0px;
-        }
-
-        .controls {
-        }
-
-        .Editor {
-        }
-
-        .transText {
-          font-size: 1.5em;
-        }
-
-        .transTextAll {
-          font-size: 1em;
-        }
-
-        .langControls .btn {
-          opacity: 1 !important;
-        }
-        
-        .item .trash {
-          opacity: 1;
-        }
-
-        .CPuzzle {
-          padding: 0 !important;
-        }
-
-        .tooltip-layer {
-          display: none;
-        }
-
-        .separator {
-          display: none;
-        }
-
-        .langControls {
-          margin-top: 2px;
-        }
-      }
+      <?include('include/index_style.css')?>
     </style>
   <body>
     <div class="hidden">
@@ -178,7 +86,7 @@
       <?include_once("views/player.php")?>
       <footer class="page-footer text-center">
         <div class="inner">
-          <p>© 2019 Copyright: <a href="http://vmaya.com/">Vmaya</a></p>
+          <p>© 2020 Copyright: <a href="http://vmaya.ru/">Vmaya</a></p>
         </div>
       </footer>
     </div>

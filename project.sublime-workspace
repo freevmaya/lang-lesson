@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"max",
+				"MAX_VALUE"
+			],
+			[
+				"t",
+				"tlist"
+			],
+			[
+				"show",
+				"showWrongWord"
+			],
+			[
+				"index",
+				"index"
+			],
+			[
 				"json",
 				"json_encode"
 			],
@@ -164,16 +184,8 @@
 				"originSetSize"
 			],
 			[
-				"t",
-				"tindex"
-			],
-			[
 				"sele",
 				"doSelectMarker"
-			],
-			[
-				"mar",
-				"markerWidth"
 			],
 			[
 				"Time",
@@ -400,10 +412,6 @@
 				"executeCmd"
 			],
 			[
-				"max",
-				"maxTime"
-			],
-			[
 				"sle",
 				"selectIndex"
 			],
@@ -460,10 +468,6 @@
 				"click"
 			],
 			[
-				"index",
-				"selectIndex"
-			],
-			[
 				"chi",
 				"children"
 			],
@@ -510,10 +514,6 @@
 			[
 				"va",
 				"val"
-			],
-			[
-				"site",
-				"sitemap"
 			]
 		]
 	},
@@ -523,7 +523,25 @@
 			"file": "views/player.php",
 			"settings":
 			{
-				"buffer_size": 13300,
+				"buffer_size": 14003,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 6353,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/editor.php",
+			"settings":
+			{
+				"buffer_size": 641,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,69 +559,7 @@
 			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 10560,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/locale.js",
-			"settings":
-			{
-				"buffer_size": 1715,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "include/controller.php",
-			"settings":
-			{
-				"buffer_size": 1816,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/styles.css",
-			"settings":
-			{
-				"buffer_size": 7167,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "echo/controllers/langEcho.php",
-			"settings":
-			{
-				"buffer_size": 6975,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "include/engine.php",
-			"settings":
-			{
-				"buffer_size": 629,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "css/colors.css",
-			"settings":
-			{
-				"buffer_size": 2173,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player.js",
-			"settings":
-			{
-				"buffer_size": 9383,
+				"buffer_size": 11263,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -612,7 +568,33 @@
 			"file": "js/timeline.js",
 			"settings":
 			{
-				"buffer_size": 12826,
+				"buffer_size": 13448,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/timeline.css",
+			"settings":
+			{
+				"buffer_size": 1791,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/styles.css",
+			"settings":
+			{
+				"buffer_size": 7557,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/locale.js",
+			"settings":
+			{
+				"buffer_size": 2353,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -621,7 +603,41 @@
 			"file": "js/functions.js",
 			"settings":
 			{
-				"buffer_size": 5805,
+				"buffer_size": 5806,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/navbar.php",
+			"settings":
+			{
+				"buffer_size": 13399,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/controls.js",
+			"settings":
+			{
+				"buffer_size": 2113,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/controller.php",
+			"settings":
+			{
+				"buffer_size": 1964,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "echo/controllers/langEcho.php",
+			"settings":
+			{
+				"buffer_size": 7119,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -660,44 +676,47 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/docs",
+		"/C/WebServers/home/lang-lesson.ru/www/css",
 		"/C/WebServers/home/lang-lesson.ru/www/js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components",
-		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
+		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
+		"/C/WebServers/home/lang-lesson.ru/www/include/engine.php",
+		"/C/WebServers/home/lang-lesson.ru/www/css/timeline.css",
+		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
+		"/C/Users/vmaya/Downloads/video_content (33).txt",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
+		"/C/Users/vmaya/Downloads/video_content (34).txt",
+		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
+		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
+		"/C/WebServers/home/logs/errors.log",
 		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu2.php",
 		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
 		"/C/WebServers/home/lang-lesson.ru/www/include/controller.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
 		"/C/Users/vmaya/Downloads/video_content (30).txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/dictionary.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/templates.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
 		"/C/WebServers/home/lang-lesson.ru/www/css/item-editor.css",
-		"/C/WebServers/home/lang-lesson.ru/www/css/timeline.css",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
 		"/C/WebServers/home/lang-lesson.ru/www/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
-		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
-		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
 		"/C/WebServers/home/lang-lesson.ru/www/views/player.php",
 		"/C/WebServers/home/lang-lesson.ru/service-account-credentials.json",
 		"/C/Users/vmaya/Downloads/video_content (28).txt",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/captions.php",
 		"/C/Users/vmaya/Desktop/Admin command LINUX.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
-		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/docs/events.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
 		"/C/WebServers/home/lang-lesson.ru/www/captions/dP_LGe5VxddeWiR1MRjANNE5sZdTYzs3.data",
 		"/C/WebServers/home/lang-lesson.ru/www/ytapi.php",
 		"/C/WebServers/home/lang-lesson.ru/www/captions/XfZ9cGK-c0XQIc2Q6Hp4lGCnq72HlqZIb5lBtQOTI5k=.data",
@@ -722,7 +741,6 @@
 		"/W/www/views/myclips.php",
 		"/W/www/include/controller.php",
 		"/W/www/include/BaseController.php",
-		"/C/WebServers/home/lang-lesson.ru/www/include/engine.php",
 		"/W/www/echo/index.php",
 		"/W/www/views/player.php",
 		"/D/documents/numbers.js",
@@ -761,7 +779,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/views/content.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/template.js",
 		"/C/WebServers/home/dev.rabota7.local/www/protected/views/faq/_form.php",
-		"/C/WebServers/home/logs/errors.log",
 		"/C/Users/vmaya/AppData/Local/Unity/Editor/upm.log",
 		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player.log",
 		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player-prev.log",
@@ -793,9 +810,7 @@
 		"/X/lang-lesson/echo/index.php",
 		"/X/lang-lesson/texts/We all came out to Montreux.txt",
 		"/X/lang-lesson/views/player.php",
-		"/X/lang-lesson/views/navbar.php",
-		"/X/lang-lesson/js/functions.js",
-		"/C/WebServers/home/vmaya/games/include/_edbu2.php"
+		"/X/lang-lesson/views/navbar.php"
 	],
 	"find":
 	{
@@ -938,9 +953,76 @@
 	},
 	"find_state":
 	{
-		"case_sensitive": true,
+		"case_sensitive": false,
 		"find_history":
 		[
+			"startLayout",
+			"calcPlayerSize",
+			".langControls",
+			".timeline .dropdown-menu",
+			"selectMarkerA",
+			"deleteMarker",
+			"createMarkerAndAdd",
+			"addMarker",
+			"refresh",
+			"onRangeDrag",
+			".ten",
+			".timeline-sc span.ten",
+			"refresh",
+			"cursorTime",
+			"checkCreateMarker",
+			"onError",
+			"createMarkerCommand",
+			"MAX_VALUE",
+			"CreateMarkerCommand",
+			"createMarkerAndAdd",
+			"addMarker",
+			"content",
+			"getCaption",
+			"resetTimeList",
+			"prepareSpeech",
+			".CTitle h2",
+			".data-panel",
+			"CPizzle",
+			"СЗшяяду",
+			"not_enough_points",
+			"message",
+			"settingMenu",
+			"$.fn",
+			"settingMenu",
+			"setting-menu",
+			"settingMenu",
+			"onChangeIndex",
+			"setIndex",
+			"scope",
+			"onAppError",
+			"marker",
+			"relative",
+			"onChangeIndex",
+			"time",
+			"selectMarkerA",
+			"onChangeIndex",
+			"setIndex",
+			"storage",
+			"$(window).on",
+			"storage",
+			"store",
+			"selectIndex",
+			"$(window).on",
+			"onChangeIndex",
+			"setIndex",
+			"timeList",
+			"localStorage",
+			"doc.editMode",
+			"localStorage",
+			"edit",
+			".langControls",
+			"data-panel",
+			".CPuzzle .word",
+			"keyCode",
+			" Key",
+			"key",
+			"keyDown",
 			"completeList",
 			"storage_id",
 			"completeList",
@@ -1001,74 +1083,7 @@
 			"defaultComponent",
 			"storage",
 			"checkAndAdd",
-			"Components",
-			"components",
-			"addComponent",
-			"buttons",
-			"\".add\"",
-			"'.add'",
-			".add",
-			"add",
-			"onAddMarker",
-			"add",
-			"console.log",
-			"startIndex",
-			"This.startIndex",
-			"startIndex",
-			"setData",
-			"initComponents",
-			"components",
-			"storage_id",
-			"playerApp.init",
-			"playerInit",
-			"init",
-			"component",
-			"init",
-			"startIndex",
-			"tindex",
-			"This",
-			"getItem",
-			"getData",
-			"video",
-			"storage",
-			"vid",
-			"state",
-			"storage",
-			"slider",
-			"_range",
-			"refresh",
-			"refreshMarkers",
-			"timeline-container",
-			"playVideo",
-			"pauseVideo",
-			"videoEl",
-			"player =",
-			"player",
-			"playerApp",
-			"keyDown",
-			"videoEl",
-			"playerApp",
-			"player",
-			"Down",
-			"Key",
-			"shortcut",
-			"Key",
-			"key",
-			".langControls .btn",
-			"text:",
-			"lang:",
-			"menu",
-			"nextBtn",
-			"calcTIndex",
-			"top",
-			"nextBtn",
-			"wordCtrl",
-			"This.videoEl.getPlayer",
-			"dev",
-			"if (items.length == 2) {",
-			"items.length",
-			"applyYTCaptions",
-			"edit"
+			"Components"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1164,7 +1179,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1173,15 +1188,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 13300,
+						"buffer_size": 14003,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2648,
-								2648
+								13258,
+								13258
 							]
 						],
 						"settings":
@@ -1191,14 +1206,74 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1160.0,
+						"translation.y": 8599.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6353,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4016,
+								4016
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2019.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/editor.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 641,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								255,
+								255
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
 					"file": "docs/events.txt",
 					"semi_transient": false,
 					"settings":
@@ -1223,24 +1298,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "js/components/puzzle.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10560,
+						"buffer_size": 11263,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6497,
-								6509
+								6168,
+								6168
 							]
 						],
 						"settings":
@@ -1248,27 +1323,27 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4359.0,
+						"translation.y": 4379.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "js/locale.js",
+					"buffer": 5,
+					"file": "js/timeline.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1715,
+						"buffer_size": 13448,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								495,
-								508
+								6356,
+								6356
 							]
 						],
 						"settings":
@@ -1277,143 +1352,57 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5219.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "include/controller.php",
+					"buffer": 6,
+					"file": "css/timeline.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1816,
+						"buffer_size": 1791,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1769,
-								1769
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 840.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "css/styles.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7167,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7149,
-								7149
+								1294,
+								1294
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 9658.0,
+						"translation.y": 1259.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 5,
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "echo/controllers/langEcho.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6975,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4759,
-								4759
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1899.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
 					"buffer": 7,
-					"file": "include/engine.php",
+					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 629,
+						"buffer_size": 7557,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "css/colors.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2173,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1668,
-								1668
+								112,
+								112
 							]
 						],
 						"settings":
@@ -1423,57 +1412,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 599.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "js/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9383,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4078,
-								4085
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2499.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "js/timeline.js",
+					"buffer": 8,
+					"file": "js/locale.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12826,
+						"buffer_size": 2353,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3400,
-								3400
+								1475,
+								1475
 							]
 						],
 						"settings":
@@ -1482,27 +1441,27 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1880.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 9,
 					"file": "js/functions.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5805,
+						"buffer_size": 5806,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								205,
-								218
+								5737,
+								5737
 							]
 						],
 						"settings":
@@ -1512,10 +1471,127 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 3880.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "views/navbar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 13399,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12842,
+								12842
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6480.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 11,
+					"file": "js/controls.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								588,
+								579
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "include/controller.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1964,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1727,
+								1727
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 820.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "echo/controllers/langEcho.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1405,
+								1405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 180.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				}
 			]

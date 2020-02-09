@@ -1,7 +1,11 @@
 <div class="player-wrap">
   <div class="playerContainer">
     <div>
-      <div class="playerSeptum"><div class="vclose"></div></div>
+      <div class="playerSeptum"><div class="vclose"></div>
+        <button type="button">
+          <span class="glyphicon"></span>
+        </button>
+      </div>
       <div class="videoPlayer">
         <div class="yt-button"></div>
       </div>
