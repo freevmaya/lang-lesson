@@ -25,6 +25,12 @@ class langEcho extends BaseController {
 		echo json_encode($user);
 	}
 
+	public function logout() {
+		setcookie("uid", null, -1, '/', $_SERVER['HTTP_HOST']);
+		unset($_COOKIE['uid']);
+		echo '{"result": 1}';
+	}
+
 	public function get() {
 		if ($id = intval($_GET['id'])) {
 			if ($item = DB::line("SELECT * FROM lang_items WHERE id={$id}")) {
@@ -32,7 +38,7 @@ class langEcho extends BaseController {
 
 				if ($uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:false) 
 					$scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$uid]);
-				else $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]);
+				//else $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]);
 
 				if ($scope)	$item['scope'] = $scope;
 				
@@ -110,28 +116,32 @@ class langEcho extends BaseController {
 	}
 
 	public function scope() {
-		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
-		if ($uid && ($task_id = $this->safePost('task_id'))) {
-			if (!$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
-				DB::query("INSERT INTO score (task_id, user_id, start_time) VALUES (:task_id, $uid, NOW())", [':task_id'=>$task_id]);
-				$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>DB::lastID()]);
-			}
-			if (($value = $this->safePost('value', false)) !== false) {
-				if (DB::query("UPDATE score SET incValue = :incValue, decValue = :decValue WHERE task_id=:task_id", 
-						[':task_id'=>$task_id, ':incValue'=>$value>0?$value:0, ':decValue'=>$value<0?$value:0])) {
-					echo '{"result": "ok"}';
-					return;
+		if ($uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:false) {
+			if ($task_id = $this->safePost('task_id')) {
+				if (!$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
+					DB::query("INSERT INTO score (task_id, user_id, start_time) VALUES (:task_id, $uid, NOW())", [':task_id'=>$task_id]);
+					$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>DB::lastID()]);
 				}
-			} else {
-				$incvalue = $this->safePost('incValue', 0);
-				$decvalue = $this->safePost('decValue', 0);
+				if (($value = $this->safePost('value', false)) !== false) {
+					if (DB::query("UPDATE score SET incValue = :incValue, decValue = :decValue WHERE task_id=:task_id", 
+							[':task_id'=>$task_id, ':incValue'=>$value>0?$value:0, ':decValue'=>$value<0?$value:0])) {
+						echo '{"result": "ok"}';
+						return;
+					}
+				} else {
+					$incvalue = $this->safePost('incValue', 0);
+					$decvalue = $this->safePost('decValue', 0);
 
-				if (DB::query("UPDATE score SET incValue = incValue + :incvalue, decValue = decValue + :decvalue WHERE task_id=:task_id", 
-						[':task_id'=>$task_id, ':incvalue'=>$incvalue, ':decvalue'=>$decvalue])) {
-					echo '{"result": "ok"}';
-					return;
+					if (DB::query("UPDATE score SET incValue = incValue + :incvalue, decValue = decValue + :decvalue WHERE task_id=:task_id", 
+							[':task_id'=>$task_id, ':incvalue'=>$incvalue, ':decvalue'=>$decvalue])) {
+						echo '{"result": "ok"}';
+						return;
+					}
 				}
 			}
+		} else {
+			echo '{"result": "empty UID"}';
+			return;
 		}
 		echo '{"result": "error", "error": "can`t set scope"}';
 	}

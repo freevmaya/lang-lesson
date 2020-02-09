@@ -140,7 +140,7 @@
 	var myLibrary = new Library();
 
 	$(window).on('onLoginUser', (e, user)=>{
-		myLibrary.auth_uid = user.uid;
+		if (user) myLibrary.auth_uid = user.uid;
 	});
 
 </script>

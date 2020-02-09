@@ -53,6 +53,7 @@
     var seg = [];
     var _vid = 0;
     var _scope = 0;
+    var _user=null;
 
     var audioElement = document.createElement('audio');
     var speechList = {};
@@ -66,15 +67,39 @@
       container.find('#scope').text(value);
     }});
 
+    Object.defineProperty(this, 'user', {get: ()=>{return _user;}, set: (value)=>{
+      if (_user != value) {
+        _user = value;
+        if (_user == null)
+          $.post(echoURL + "?task=logout", function(user) {
+            $.removeCookie('uid');
+          });
+
+        doAfterLogin(_user);
+      }
+    }});
+
     this.langapp = null;
 
     this.getData = ()=>{
       return vdata;
     }
 
+    doAfterLogin = (user)=>{
+      $(window).trigger('onLoginUser', user);
+      if (user) {
+        $('.user').css('display', 'block');
+        $.getJSON(echoURL + '?task=playlist', plMenuUpdate);
+        $('.user-title').text(user.first_name + " " + user.last_name);
+      } else {
+        $('.user-title').text('');
+        $('.user').css('display', 'none');
+      }
+    }
+
     this.changeScope = (incValue, decValue)=>{
       let cf = ()=>{This.scope = This.scope + incValue + decValue;};
-      if (_vid > 0) {
+      if ((_vid > 0) && _user) {
         $.post(echoURL + '?task=scope', {task_id: _vid, incValue: incValue, decValue: decValue}, (data)=>{
           if (data.result == 'ok') cf(); else $(window).trigger('onAppError', data.error);
         });
@@ -113,10 +138,11 @@
     this.resetAnswers = ()=>{
       if (_vid) {
         $.post(echoURL + '?task=scope', {task_id: _vid, value: 0}, (data)=>{
-          if (data.result == 'ok') {
+          if (data.result == 'error') $(window).trigger('onAppError', data.error);
+          else {
             $(window).trigger('onResetAnswers');
             This.scope = 0;
-          } else $(window).trigger('onAppError', data.error);
+          }
         });
       }
     }
@@ -485,5 +511,9 @@
 
   doc = new PlayerDoc($('.playerContainer'));
   function onYouTubeIframeAPIReady() {doc.YouTubeReady();}
+
+  $(window).ready(()=>{
+    doc.user = (<?=$controller->user?json_encode($controller->user):'null'?>);
+  });
 
 </script>

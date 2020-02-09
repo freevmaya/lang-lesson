@@ -65,9 +65,8 @@ class Controller extends BaseController {
 
 			if (is_numeric($this->cid)) {
 				$where = "id={$this->cid}";
-				if ($this->uid)
-					 $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$this->uid]);
-				else $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$this->cid]);
+				if ($this->uid) 
+					$scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$this->uid]);
 			} else $where = "video_id='{$this->cid}'";
 
 			if ($item = DB::line('SELECT * FROM lang_items WHERE '.$where.' ORDER BY rate DESC')) {

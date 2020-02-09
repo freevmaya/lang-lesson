@@ -378,6 +378,10 @@ main .content .item {
   display: none;
 }
 
+.navbar-nav a {
+  cursor: pointer;
+}
+
 .item-controls {
   text-align: right;
   height: 0px;
