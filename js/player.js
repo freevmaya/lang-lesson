@@ -197,6 +197,7 @@ function playerInit(parent, options) {
       }
     }
     settingMenuLayer[isMenu?'show':'hide']();
+    doc.resetFromInfo();
   }
 
   This.setData = function(a_vdata) {

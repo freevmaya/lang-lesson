@@ -1,4 +1,4 @@
-<div class="Editor">
+<div class="Editor" data-auto-component="editor">
   <div class="timeline" id="timeline">
     <div class="timeline-container">
       <div class="timeline-bar">

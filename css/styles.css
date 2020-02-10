@@ -513,6 +513,7 @@ input[name="playlist-input"] {
 .CPuzzle .trans {
   color: #b8b8b8;
   text-align: center;
+  line-height: 1em;
 }
 
 .dropdown-item.shortcut {

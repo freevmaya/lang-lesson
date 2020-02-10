@@ -1,6 +1,6 @@
 <div class="player-wrap">
   <div class="playerContainer">
-    <div>
+    <div data-auto-component="playerSize">
       <div class="playerSeptum"><div class="vclose"></div>
         <button type="button">
           <span class="glyphicon"></span>
@@ -12,7 +12,7 @@
     </div>
     <div class="separator"></div>
     <div class="controlsBlock">
-      <div class="langControls">
+      <div class="langControls" data-auto-component="langControls">
         <button type="button" class="btn left hint backBtn" data-hint="Back marker">
           <span class="glyphicon glyphicon-triangle-left"></span>
         </button>
@@ -22,14 +22,14 @@
           <span class="glyphicon glyphicon-triangle-right"></span>
         </button>
       </div>
-      <div class="data-panel">
+      <div class="data-panel" data-auto-component="dataPanel">
         <div class="btn-group dropup setting-menu-layer">
           <a href="#" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
           <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
         </div>
         <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
       </div>
-      <div class="controls">
+      <div class="controls" data-auto-component="controls">
         <select class="timeList">
           <option>---</option>>
         </select>
@@ -233,7 +233,7 @@
         });
       }
     }
-
+/*
     function calcPlayerSize(rate) {
       let w = <?=$width?>;
       let ww = $(window).width();
@@ -256,26 +256,95 @@
 
       return {width: w, height: Math.round(vh)};
     }
+*/
+
+
+    function calcPlayerSize(rate) {
+      let w = <?=$width?>;
+      let ww = $(window).width();
+      if (w > ww) w = ww;
+
+      let wh = $(window).height();
+      let vh = w * rate;
+
+      if (vh > wh) {
+        w = wh / rate;
+        vh = wh;
+      }
+
+      return {width: w, height: Math.round(vh)};
+    }
 
     this.setPlayerSize = (w, h)=>{
       let size = {width: w, height: h};
       if (player) player.originSetSize(w, h);
       else layout.css(size);
+
+      container.css('width', size.width);
+      container.find('.langControls').css('width', size.width);
       container.find('.playerSeptum').css('height', h);
       container.trigger('onPlayerSize', size);
     }
 
+/*
     this.setPlayerSizeRate = (rate)=>{
       let size = calcPlayerSize(rate);
-
-      container.css('width', size.width);
-      container.find('.langControls').css('width', size.width);
-
       let usersize = layout.data('usersize');
       if (usersize) size.height = usersize;
-      
       This.setPlayerSize(size.width, size.height);
     }
+*/
+
+    this.setPlayerSizeRate = (rate)=>{
+      if (layout) {
+        var dec = 0;
+        let size = calcPlayerSize(rate);
+        if (usersize = layout.data('usersize')) size.height = usersize;
+
+        let sizer = {
+          playerSize: (c)=>{
+            This.setPlayerSize(size.width, size.height);
+            return size.height;
+          },
+          langControls: (c)=>{
+            c.css('height', 'auto');
+            c.find('.player-area').attr('style', '');
+            return c.outerHeight();
+          },
+          editor: (c)=>{
+            return c.css('display') == 'none'?0:c.outerHeight();
+          },
+          default: (c)=>{
+            return c.outerHeight();
+          }
+        }
+
+        let handler = {
+          playerSize: ()=>{
+            This.setPlayerSize(size.width, size.height - dec * 0.5);
+          },
+          langControls: (c)=>{
+            let nh = c.height() - dec * 0.5;
+            let scale = nh/c.height();
+            c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');');
+            c.css('height', nh);
+          }
+        }
+
+        var h = 0;
+        $('[data-auto-component]').each((i, itm)=>{
+          let fname = $(itm).data('auto-component');
+          h += sizer[sizer[fname]?fname:'default']($(itm));
+        });
+
+        let wh = $(window).height();
+        if (wh < h) dec = h - wh;
+        $('[data-auto-component]').each((i, itm)=>{
+            let fname = $(itm).data('auto-component');
+            if (handler[fname]) handler[fname]($(itm));
+        });
+      }
+    } 
 
     this.getSize = (info)=>{
       if (info.height)
@@ -285,6 +354,8 @@
     }
 
     this.resetFromInfo = (info)=>{
+      if (!info && vdata) info = vdata.info;
+
       if (info) {
         let res = This.getSize(info);
         This.setTitle(info.title);
@@ -464,11 +535,11 @@
           layout = container.find('.videoPlayer');
           let w = <?=$width?>;
           let res = This.getSize(vdata.info);
-          layout.css('background-image', 'url(' + res.url + ')');
           layout.find('.yt-button').click(()=>{
             This.autoplay = 1;
             This.YouTubeAPILoad();
           });
+          layout.css('background-image', 'url(' + res.url + ')');
           This.resetFromInfo(vdata.info);
         }
       }    
