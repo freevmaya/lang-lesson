@@ -123,12 +123,14 @@ var CPuzzle = function(player) {
 		}
 		checkPhrase(!isInit);
 		if (!isInit && !correctSequense()) doubleScope = false;
+		doc.resetFromInfo();
   	}
 
   	function removeWord(cont, d) {
 		cont.append(d);
 		refreshTopStorage();
 		checkPhrase(true);
+		doc.resetFromInfo();
   	}
 
   	function correctSequense() {

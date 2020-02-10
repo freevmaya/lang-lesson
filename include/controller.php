@@ -54,20 +54,17 @@ class Controller extends BaseController {
 	public function task() {
 		GLOBAL $_COOKIE;
 
-		if ($uid = @$_COOKIE["uid"])
-			$this->uid = $uid;
-
-		if ($this->uid) 
-			$this->user = DB::line("SELECT * FROM users WHERE uid={$this->uid}");
+		if ($this->uid = @$_COOKIE["uid"]) {
+			if ($this->user = DB::line("SELECT * FROM users WHERE uid={$this->uid}"));
+				$this->user['scope'] = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$this->uid]);
+		}
 
 		if ($this->cid) {
 			$where = "";
 
-			if (is_numeric($this->cid)) {
+			if (is_numeric($this->cid))
 				$where = "id={$this->cid}";
-				if ($this->uid) 
-					$scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$this->uid]);
-			} else $where = "video_id='{$this->cid}'";
+			else $where = "video_id='{$this->cid}'";
 
 			if ($item = DB::line('SELECT * FROM lang_items WHERE '.$where.' ORDER BY rate DESC')) {
 				$item['data'] = stripcslashes($item['data']);

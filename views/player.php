@@ -298,6 +298,7 @@
     this.setPlayerSizeRate = (rate)=>{
       if (layout) {
         var dec = 0;
+        var minHeight = 64;
         let size = calcPlayerSize(rate);
         if (usersize = layout.data('usersize')) size.height = usersize;
 
@@ -307,7 +308,7 @@
             return size.height;
           },
           langControls: (c)=>{
-            c.css('height', 'auto');
+            c.css('min-height', minHeight);
             c.find('.player-area').attr('style', '');
             return c.outerHeight();
           },
@@ -326,8 +327,10 @@
           langControls: (c)=>{
             let nh = c.height() - dec * 0.5;
             let scale = nh/c.height();
-            c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');');
-            c.css('height', nh);
+            if (nh > minHeight) {
+              c.css('min-height', nh);
+              c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');height: ' + nh + 'px');
+            }
           }
         }
 
@@ -337,8 +340,10 @@
           h += sizer[sizer[fname]?fname:'default']($(itm));
         });
 
-        let wh = $(window).height();
+        let wh = $(window).height() - 2;
         if ((wh < h) && !This.editMode) dec = h - wh;
+
+        console.log(dec);
         $('[data-auto-component]').each((i, itm)=>{
             let fname = $(itm).data('auto-component');
             if (handler[fname]) handler[fname]($(itm));
@@ -548,18 +553,18 @@
     <?if ($video = $controller->getVideo()) {?>
     vdata = vdecode('<?=$video['data']?>');
     _vid = <?=$video['id']?>;
-    This.scope = <?=$video['scope']?$video['scope']:'This.storageScope()'?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>
     if (!vdata) {
       vdata = This.readInStorage(This.curVideoID());
-      This.scope = This.storageScope();
     }
     <?
     if ($defvideo = $controller->getDefaultVideo()) {
     ?>
     if (!vdata) vdata = vdecode('<?=$defvideo['data']?>');
     <?}}?>
+    
+    This.scope = <?=($controller->user && $controller->user['scope'])?$controller->user['scope']:'This.storageScope()'?>;
 
     $(window).ready(startLayout);
     $(window).resize(()=>{

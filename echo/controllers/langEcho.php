@@ -118,9 +118,9 @@ class langEcho extends BaseController {
 	public function scope() {
 		if ($uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:false) {
 			if ($task_id = $this->safePost('task_id')) {
-				if (!$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>$task_id])) {
+				if (!$item = DB::line("SELECT * FROM score WHERE task_id=:task_id && user_id=:uid", [':task_id'=>$task_id, ':uid'=>$uid])) {
 					DB::query("INSERT INTO score (task_id, user_id, start_time) VALUES (:task_id, $uid, NOW())", [':task_id'=>$task_id]);
-					$item = DB::line("SELECT * FROM score WHERE task_id=:task_id", [':task_id'=>DB::lastID()]);
+//					$item = DB::line("SELECT * FROM score WHERE task_id=:task_id && user_id=:uid", [':task_id'=>DB::lastID(), ':uid'=>$uid]);
 				}
 				if (($value = $this->safePost('value', false)) !== false) {
 					if (DB::query("UPDATE score SET incValue = :incValue, decValue = :decValue WHERE task_id=:task_id", 
