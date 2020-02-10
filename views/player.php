@@ -338,7 +338,7 @@
         });
 
         let wh = $(window).height();
-        if (wh < h) dec = h - wh;
+        if ((wh < h) && !This.editMode) dec = h - wh;
         $('[data-auto-component]').each((i, itm)=>{
             let fname = $(itm).data('auto-component');
             if (handler[fname]) handler[fname]($(itm));
