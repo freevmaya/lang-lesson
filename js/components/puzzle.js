@@ -273,12 +273,8 @@ var CPuzzle = function(player) {
 		layer.remove();
 	}
 
-	function isMyContent(content, index) {
-		return (content[index].puzzle != undefined) && (content[index].puzzle[0].length > 0);
-	}
-
 	this.stop = (player, index)=>{
-		return !completeList[index] && isMyContent(player.content, index);
+		return !completeList[index] && (content[index].puzzle != undefined);
 	}
 
 	$(window).on('onResetAnswers', ()=>{
