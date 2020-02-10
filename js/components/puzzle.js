@@ -274,7 +274,7 @@ var CPuzzle = function(player) {
 	}
 
 	this.stop = (player, index)=>{
-		return !completeList[index] && (content[index].puzzle != undefined);
+		return !completeList[index] && (player.content[index].puzzle != undefined);
 	}
 
 	$(window).on('onResetAnswers', ()=>{
