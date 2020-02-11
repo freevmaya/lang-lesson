@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"edit",
+				"editMode"
+			],
+			[
+				"in",
+				"info"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
 				"set",
 				"setItem"
 			],
@@ -106,10 +118,6 @@
 			[
 				"wo",
 				"word"
-			],
-			[
-				"in",
-				"indexOf"
 			],
 			[
 				"wor",
@@ -506,14 +514,6 @@
 			[
 				"Sitre",
 				"SiteController"
-			],
-			[
-				"city",
-				"city_id"
-			],
-			[
-				"Resume",
-				"Resume"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "views/player.php",
 			"settings":
 			{
-				"buffer_size": 14931,
+				"buffer_size": 17154,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,7 +532,7 @@
 			"file": "echo/controllers/langEcho.php",
 			"settings":
 			{
-				"buffer_size": 7343,
+				"buffer_size": 7405,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -578,7 +578,7 @@
 			"file": "include/controller.php",
 			"settings":
 			{
-				"buffer_size": 1838,
+				"buffer_size": 1801,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -587,7 +587,7 @@
 			"file": "css/styles.css",
 			"settings":
 			{
-				"buffer_size": 7890,
+				"buffer_size": 7910,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -596,7 +596,7 @@
 			"file": "include/index_style.css",
 			"settings":
 			{
-				"buffer_size": 1323,
+				"buffer_size": 1346,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -614,7 +614,7 @@
 			"file": "views/editor.php",
 			"settings":
 			{
-				"buffer_size": 641,
+				"buffer_size": 670,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -632,8 +632,16 @@
 			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 11568,
+				"buffer_size": 11491,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/components/title.js",
+			"settings":
+			{
+				"buffer_size": 2033,
 				"line_ending": "Windows"
 			}
 		}
@@ -671,14 +679,13 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/echo",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers",
 		"/C/WebServers/home/lang-lesson.ru/www/include",
 		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
 	[
+		"/C/WebServers/usr/local/apache/conf/httpd.conf",
 		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
@@ -759,7 +766,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/ts_index.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/time-marker.js",
 		"/C/WebServers/home/lang-lesson.ru/www/TextToSpeech/Voice.php",
-		"/C/WebServers/usr/local/apache/conf/httpd.conf",
 		"/C/WebServers/usr/local/php5_prod/php.ini",
 		"/C/WebServers/denwer/README.txt",
 		"/C/WebServers/denwer/CONFIGURATION.txt",
@@ -952,6 +958,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"->user",
+			"this->user",
+			".controls",
+			"@media screen and (max-width: 980px)",
+			"@media screen and (max-width: 980px)\n",
+			"setPlayerSizeRate",
+			"192.",
+			"editMode",
+			"stop",
+			"css(",
+			"setPlayerSize",
+			"setPlayerSizeRate",
+			"layout.",
+			"layout.set",
+			"resetFromInfo",
+			"videoPlayer",
+			"setPlayerSizeRate",
+			"let usersize = layout.data('usersize');",
+			"resetFromInfo",
+			"updateComponents",
+			"resetFromInfo",
+			"setPlayerSizeRate",
+			"auto-component",
+			"setPlayerSizeRate",
+			"$width",
+			"setPlayerSizeRate",
+			"calcPlayerSize",
+			"setSize",
+			".CPuzzle .trans",
 			"navbarPlaylist",
 			"player",
 			"player_list",
@@ -1050,36 +1085,7 @@
 			"selectIndex",
 			"$(window).on",
 			"onChangeIndex",
-			"setIndex",
-			"timeList",
-			"localStorage",
-			"doc.editMode",
-			"localStorage",
-			"edit",
-			".langControls",
-			"data-panel",
-			".CPuzzle .word",
-			"keyCode",
-			" Key",
-			"key",
-			"keyDown",
-			"completeList",
-			"storage_id",
-			"completeList",
-			"checkPhrase",
-			"removeWord",
-			"appendWord",
-			"checkPhrase",
-			"complete",
-			"doc",
-			"start",
-			"tindex",
-			"refresh",
-			"DB::one",
-			"error",
-			"post",
-			"postJSON",
-			"user"
+			"setIndex"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1185,15 +1191,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14931,
+						"buffer_size": 17154,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3463,
-								3463
+								16336,
+								16336
 							]
 						],
 						"settings":
@@ -1203,7 +1209,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1699.0,
+						"translation.y": 10619.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1215,15 +1221,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7343,
+						"buffer_size": 7405,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5325,
-								5325
+								4512,
+								4512
 							]
 						],
 						"settings":
@@ -1232,10 +1238,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2039.0,
+						"translation.y": 2220.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1289,7 +1295,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1318,7 +1324,7 @@
 						"translation.y": 2339.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1348,7 +1354,7 @@
 						"translation.y": 3918.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 12,
 					"type": "text"
 				},
 				{
@@ -1364,8 +1370,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								342,
+								348
 							]
 						],
 						"settings":
@@ -1387,15 +1393,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1838,
+						"buffer_size": 1801,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1555,
-								1555
+								1164,
+								1164
 							]
 						],
 						"settings":
@@ -1404,10 +1410,10 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 199.0,
+						"translation.y": 678.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1416,15 +1422,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7890,
+						"buffer_size": 7910,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5461,
-								5461
+								7156,
+								7156
 							]
 						],
 						"settings":
@@ -1434,7 +1440,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7059.0,
+						"translation.y": 9779.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 9,
@@ -1446,15 +1452,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1323,
+						"buffer_size": 1346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1316,
-								1316
+								884,
+								884
 							]
 						],
 						"settings":
@@ -1464,10 +1470,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1318.0,
+						"translation.y": 980.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1483,8 +1489,8 @@
 						"selection":
 						[
 							[
-								1376,
-								1376
+								5273,
+								5256
 							]
 						],
 						"settings":
@@ -1494,10 +1500,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1379.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1506,15 +1512,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 641,
+						"buffer_size": 670,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								255,
-								255
+								47,
+								47
 							]
 						],
 						"settings":
@@ -1527,7 +1533,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1556,7 +1562,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 13,
 					"type": "text"
 				},
 				{
@@ -1565,15 +1571,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11568,
+						"buffer_size": 11491,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6055,
-								6055
+								3558,
+								3558
 							]
 						],
 						"settings":
@@ -1581,10 +1587,39 @@
 							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 4239.0,
+						"translation.y": 1879.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 13,
+					"file": "js/components/title.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2033,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								541,
+								541
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
