@@ -1,7 +1,11 @@
 <?
 	header("Content-type: application/json; charset=utf-8");
 
-	include_once('../../config-lang-lesson.php');
+	$dirname = preg_split("/[\/\\\]+/", dirname(__FILE__));
+
+	$conf = $dirname[count($dirname) - 2];
+
+	include_once('../../config-'.$conf.'.php');
 	include(INCLUDE_PATH.'/engine.php');
 	putenv('GOOGLE_APPLICATION_CREDENTIALS='.$_SERVER['DOCUMENT_ROOT'].'/../service-account-credentials.json');
 
