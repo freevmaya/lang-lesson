@@ -24,7 +24,7 @@ class Controller extends BaseController {
 	} 
 
 	public function getDefaultVideo() {
-		return DB::line('SELECT li.* FROM default_items di LEFT JOIN lang_items li ON di.id = li.id ORDER BY rate DESC LIMIT 1');
+		return DB::line('SELECT * FROM default_items di LEFT JOIN lang_items li ON di.id = li.id ORDER BY di.rate DESC LIMIT 1');
 	} 
 
 	public function getPlaylists() {
