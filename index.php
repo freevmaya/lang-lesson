@@ -1,7 +1,11 @@
 <?
   header("Content-type: text/html; charset=utf-8");
 
-  include_once('../config-lang-lesson.php');
+  $dirname = preg_split("/[\/\\\]+/", dirname(__FILE__));
+
+  $conf = $dirname[count($dirname) - 1];
+
+  include_once('../config-'.$conf.'.php');
   include(INCLUDE_PATH.'/engine.php');
 
   $isEditor = @$_GET['editor']?true:false;
