@@ -23,6 +23,8 @@ var CPuzzle = function(player) {
   	var setting = {
   		showWrongWord: false
   	};
+  	var _puzzle;
+
     Object.defineProperty(this, 'storage_id', {get: ()=>{return 'puzzle-state-' + doc.data.id;}});
     Object.defineProperty(this, 'storage_id_cl', {get: ()=>{return 'puzzle-cl-' + doc.data.id;}});
 
@@ -67,41 +69,47 @@ var CPuzzle = function(player) {
 		return words;
   	}
 
+  	function refresh() {
+		top.empty();
+		bottom.empty();
+		trans.empty();
+
+  		if (state[index]) {
+  			words = state[index].words;
+  			phrase = state[index].phrase;
+  		}
+  		else {
+  			state[index] = {words: [], top: [], phrase: []};
+  			state[index].words = words = getWords(_puzzle);
+  			state[index].phrase = phrase = _puzzle[0].split(/\s/);
+  		}
+
+		doc.prepareSpeech(words);
+		if (words.length > 0) {
+			let conts = [];
+			for (let i=0; i<words.length; i++) {
+				conts[i] = wordCtrl(words, i);
+			}
+
+	      	nextBtn.prop('disabled', !completeList[index]?true:'');
+	  		layer.removeClass('complete');
+
+			if (!doc.editMode && state[index]) {
+				for (let i=0; i<state[index].top.length; i++)
+					appendWord(conts[state[index].top[i]].children(), true);
+			}
+  		}
+  		if (_puzzle[2]) trans.text(_puzzle[2]);
+
+  		doubleScope = top.find('.word').length == 0;
+  	}
+
   	function start(puzzle, tindex) {
   		let words;
   		if (index != tindex) {
 	  		index = tindex;
-			top.empty();
-			bottom.empty();
-			trans.empty();
-
-	  		if (state[index]) {
-	  			words = state[index].words;
-	  			phrase = state[index].phrase;
-	  		}
-	  		else {
-	  			state[index] = {words: [], top: [], phrase: []};
-	  			state[index].words = words = getWords(puzzle);
-	  			state[index].phrase = phrase = puzzle[0].split(/\s/);
-	  		}
-
-			doc.prepareSpeech(words);
-			if (words.length > 0) {
-				let conts = [];
-				for (let i=0; i<words.length; i++) {
-					conts[i] = wordCtrl(words, i);
-				}
-
-		      	nextBtn.prop('disabled', !completeList[index]?true:'');
-		  		layer.removeClass('complete');
-
-				if (!doc.editMode && state[index]) {
-					for (let i=0; i<state[index].top.length; i++)
-						appendWord(conts[state[index].top[i]].children(), true);
-				}
-	  		}
-	  		if (puzzle[2]) trans.text(puzzle[2]);
-	  		doubleScope = true;
+	  		_puzzle = puzzle;
+	  		refresh();
       	}
       	layer.show();
   	}
@@ -246,10 +254,12 @@ var CPuzzle = function(player) {
 		menu.appendItem('reset_answers', ()=>{doc.resetAnswers();});
 		menu.appendItem('suggest_the_wrong_word', ()=>{
 			if (!setting.showWrongWord) {
-				doc.serviceOn(price, ()=>{
+				//doc.serviceOn(price, ()=>{
 					setting.showWrongWord = true;
 			        $.message(Locale.value('mode_is_on'));
-				});
+	  				refresh();
+	  				doc.resetFromInfo();
+				//});
 			} else $.message(Locale.value('already_on'));
 		}, {':price':price});
 		menu.appendItem('talk_phrase', ()=>{
@@ -287,7 +297,8 @@ var CPuzzle = function(player) {
   		if (index > -1) {
   			let i = index;
   			index = -1;
-  			start(player.content[i].puzzle, i);
+  			if (player.content[i].puzzle)
+  				start(player.content[i].puzzle, i);
   		}
 	});
 }

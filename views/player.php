@@ -24,7 +24,7 @@
       </div>
       <div class="data-panel" data-auto-component="dataPanel">
         <div class="btn-group dropup setting-menu-layer">
-          <a href="#" role="button" data-toggle="dropdown"><span class="glyphicon glyphicon-cog"></span></a>
+          <a href="#" role="button" data-toggle="dropdown" data-hint="Additional functions" class="hint"><span class="glyphicon glyphicon-leaf"></span></a>
           <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
         </div>
         <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
