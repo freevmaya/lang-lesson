@@ -108,5 +108,6 @@
       var echoURL = '<?=$mainURL?>echo/';
       <?$controller->getScriptData();?>
     </script>
+    <?include_once("views/counter.php")?>
   </body>
 </html>
