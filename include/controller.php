@@ -59,6 +59,9 @@ class Controller extends BaseController {
 				$this->user['scope'] = DB::one("SELECT incValue + decValue AS value FROM score WHERE user_id=:user_id", [':user_id'=>$this->uid]);
 		}
 
+		if (!$this->cid) 
+			$this->cid = DB::one('SELECT id FROM default_items ORDER BY rate DESC LIMIT 1');
+
 		if ($this->cid) {
 			$where = "";
 
