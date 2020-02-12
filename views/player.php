@@ -56,7 +56,7 @@
     var _user=null;
 
     var audioElement = document.createElement('audio');
-    audioElement.volume = 0.5;
+    audioElement.volume = 0.4;
     var speechList = {};
 
 
