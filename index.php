@@ -23,6 +23,7 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="yandex-verification" content="aab8c1a5afa059a2" />
 
     <?include("views/og.php");?>
 
