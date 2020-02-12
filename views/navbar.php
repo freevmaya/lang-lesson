@@ -64,9 +64,12 @@
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarShare">
           <a class="dropdown-item"  onclick="navigate.linkShow()">link</a>
-          <a class="dropdown-item disabled" >vk.com</a>
-          <a class="dropdown-item disabled" >facebook.com</a>
-          <a class="dropdown-item disabled" >ok.ru</a>
+          <div class="dropdown-divider"></div>
+          <div>
+            <script src="https://yastatic.net/es5-shims/0.0.2/es5-shims.min.js"></script>
+            <script src="https://yastatic.net/share2/share.js"></script>
+            <div class="ya-share2" data-services="collections,vkontakte,facebook,odnoklassniki,moimir"></div>
+          </div>          
         </div>
       </li>
       <li class="nav-item dropdown">

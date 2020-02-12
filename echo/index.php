@@ -9,7 +9,7 @@
 	include(INCLUDE_PATH.'/engine.php');
 	putenv('GOOGLE_APPLICATION_CREDENTIALS='.$_SERVER['DOCUMENT_ROOT'].'/../service-account-credentials.json');
 
-	$domains = array('vmaya.ru', 'lang-lesson.ru', '192.168.1.64');
+	$domains = array('vmaya.ru', 'lang-lesson.ru', '192.168.1.64', 'engme.ru');
 	$ismaindomain = false;
 	foreach ($domains as $domain)
 		$ismaindomain = $ismaindomain || (strpos($_SERVER['HTTP_REFERER'], $domain) !== false);
