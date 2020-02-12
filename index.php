@@ -13,8 +13,9 @@
   $controller = new Controller();
   $controller->task();
 
-  $site_name = 'Дополнительный контент для вашего видео.';
-  $title = '';
+  $site_name = 'Обучение навыку распознования английской речи.';
+  $site_description = 'Игра для распознавания английской речи при помощи просмотра видео на английском языке.';
+  $title = 'Обучение английской речи по видео';
   $site_image = '';  
 
   $width = 980;
@@ -23,7 +24,9 @@
 <!DOCTYPE html>
 <html>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="yandex-verification" content="aab8c1a5afa059a2" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <title><?=$site_name?></title>
+    <meta name="description" content="<?=$site_description?>"> 
 
     <?include("views/og.php");?>
 
