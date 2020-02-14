@@ -44,6 +44,7 @@
     <script src="<?=$mainURL?>js/jquery-ui.js"></script>
     <script src="<?=$mainURL?>js/jquery.maskedinput.min.js"></script>
     <script src="<?=$mainURL?>js/jquery.cookie.js"></script>
+    <script src="<?=$mainURL?>js/jquery.ui.touch-punch.min.js"></script>
     <script src="<?=$mainURL?>js/timeline.js"></script>
     <script src="<?=$mainURL?>js/player.js"></script>
     <script src="<?=$mainURL?>js/lang-data.js"></script>
@@ -91,7 +92,13 @@
     <?include_once("views/templates.php")?>
     <div class="d-flex w-100 mx-auto flex-column page-wrapper">
       <?include_once("views/navbar.php")?>
-      <?include_once("views/player.php")?>
+      <div class="player-wrap">
+        <?
+          include_once("views/player.php");
+          if ($video) include_once("views/video_content.php");
+          include_once('views/myclips.php');
+        ?>
+      </div>
       <footer class="page-footer text-center">
         <div class="inner">
           <p>© 2020 Copyright: <a href="http://vmaya.ru/">Vmaya</a></p>

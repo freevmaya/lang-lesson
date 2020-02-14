@@ -188,11 +188,10 @@ var CPuzzle = function(player) {
 		word.draggable({
     		delay: 200,
     		start: ()=>{
-    			word.css('z-index', 10);
+    			word.css('z-index',10);
     		},
     		stop: function() {
-				word.css({left:'',top:''});
-    			word.css('z-index', '');
+				word.css({left:'',top:'', 'z-index':''});
 			}
 		});
 
@@ -268,7 +267,8 @@ var CPuzzle = function(player) {
 	}
 
 	this.getCaption = (content, tindex)=>{
-		return 'Puzzle: ' + (content[tindex].puzzle?getWords(content[tindex].puzzle, (a, b)=>{return a>b?1:-1}).join(','):'');
+		let p = content[tindex].puzzle;
+		return p?(p[2]?p[2]:getWords(p, (a, b)=>{return a>b?1:-1}).join(',')):'';
 	}
 
 	function onChangeIndex(e, player) {

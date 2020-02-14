@@ -14,8 +14,9 @@ class langEcho extends BaseController {
 		} else $provider_id = $networkRec['id'];
 
 		if (!($user = DB::line("SELECT * FROM users WHERE source_uid = {$uid} AND auth_provider_id = {$provider_id}"))) {
-			DB::query("INSERT INTO users (source_uid, auth_provider_id, url, last_name, first_name) ".
-						"VALUES ({$uid}, {$provider_id}, '{$url}', '{$last_name}', '{$first_name}')");
+			$query = "INSERT INTO users (source_uid, auth_provider_id, url, last_name, first_name) ".
+						"VALUES ({$uid}, {$provider_id}, '{$url}', '{$last_name}', '{$first_name}')";
+			DB::query($query);
 			$id = DB::lastID();
 			$user = DB::line("SELECT * FROM users WHERE uid = {$id}");
 		} else $id = $user['uid'];

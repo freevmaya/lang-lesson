@@ -1,46 +1,41 @@
-<div class="player-wrap">
-  <div class="playerContainer">
-    <div data-auto-component="playerSize">
-      <div class="playerSeptum"><div class="vclose"></div>
-        <button type="button">
-          <span class="glyphicon"></span>
-        </button>
-      </div>
-      <div class="videoPlayer">
-        <div class="yt-button"></div>
-      </div>
+<div class="playerContainer">
+  <div data-auto-component="playerSize">
+    <div class="playerSeptum"><div class="vclose"></div>
+      <button type="button">
+        <span class="glyphicon"></span>
+      </button>
     </div>
-    <div class="separator"></div>
-    <div class="controlsBlock">
-      <div class="langControls" data-auto-component="langControls">
-        <button type="button" class="btn left hint backBtn" data-hint="Back marker">
-          <span class="glyphicon glyphicon-triangle-left"></span>
-        </button>
-        <div class="player-area">            
-        </div>
-        <button type="button" class="btn right hint nextBtn" data-hint="Next marker">
-          <span class="glyphicon glyphicon-triangle-right"></span>
-        </button>
-      </div>
-      <div class="data-panel" data-auto-component="dataPanel">
-        <div class="btn-group dropup setting-menu-layer">
-          <a href="#" role="button" data-toggle="dropdown" data-hint="Additional functions" class="hint"><span class="glyphicon glyphicon-leaf"></span></a>
-          <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
-        </div>
-        <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
-      </div>
-      <div class="controls" data-auto-component="controls">
-        <select class="timeList">
-          <option>---</option>>
-        </select>
-        <div class="btn stop hint stopBtn" data-hint="Stops playing">hold</div>
-      </div>
-      <?include(dirname(__FILE__).'/editor.php');?>
+    <div class="videoPlayer">
+      <div class="yt-button"></div>
     </div>
   </div>
-  <?
-    include_once('views/myclips.php');
-  ?>
+  <div class="separator"></div>
+  <div class="controlsBlock">
+    <div class="langControls" data-auto-component="langControls">
+      <button type="button" class="btn left hint backBtn" data-hint="Back marker">
+        <span class="glyphicon glyphicon-triangle-left"></span>
+      </button>
+      <div class="player-area">
+      </div>
+      <button type="button" class="btn right hint nextBtn" data-hint="Next marker">
+        <span class="glyphicon glyphicon-triangle-right"></span>
+      </button>
+    </div>
+    <div class="data-panel" data-auto-component="dataPanel">
+      <div class="btn-group dropup setting-menu-layer">
+        <a href="#" role="button" data-toggle="dropdown" data-hint="Additional functions" class="hint"><span class="glyphicon glyphicon-leaf"></span></a>
+        <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
+      </div>
+      <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
+    </div>
+    <div class="controls" data-auto-component="controls">
+      <select class="timeList">
+        <option>---</option>>
+      </select>
+      <div class="btn stop hint stopBtn" data-hint="Stops playing">hold</div>
+    </div>
+    <?include(dirname(__FILE__).'/editor.php');?>
+  </div>
 </div>
 <script type="text/javascript">
   var doc;
@@ -310,7 +305,7 @@
           },
           langControls: (c)=>{
             c.css('min-height', minHeight);
-            c.find('.player-area').attr('style', '');
+            c.find('.player-area').removeProp('style');
             return c.outerHeight();
           },
           editor: (c)=>{
@@ -326,11 +321,14 @@
             This.setPlayerSize(size.width, size.height - dec * 0.5);
           },
           langControls: (c)=>{
-            let nh = c.height() - dec * 0.5;
-            let scale = nh/c.height();
+            let nh = Math.round(c.height() - dec * 0.5);
+            let scale = Math.ceil(Math.min(100, nh/c.height() * 100)) / 100;
             if (nh > minHeight) {
-              c.css('min-height', nh);
-              c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');height: ' + nh + 'px');
+              c.css('min-height',nh);
+              if (scale < 1) {
+                c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');height:' + nh + 'px');
+                console.log('scale: ' + scale.toString() + ' ' + nh.toString);
+              }
             }
           }
         }
@@ -551,7 +549,7 @@
     }
 
     <?if ($video = $controller->getVideo()) {?>
-    vdata = vdecode('<?=$video['data']?>');
+    vdata = <?=$video['data']?>;
     _vid = <?=$video['id']?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>

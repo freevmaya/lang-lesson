@@ -24,7 +24,7 @@ class Controller extends BaseController {
 	} 
 
 	public function getDefaultVideo() {
-		return DB::line('SELECT * FROM default_items di LEFT JOIN lang_items li ON di.id = li.id ORDER BY di.rate DESC LIMIT 1');
+		return $this->decodeVideo(DB::line('SELECT * FROM default_items di LEFT JOIN lang_items li ON di.id = li.id ORDER BY di.rate DESC LIMIT 1'));
 	} 
 
 	public function getPlaylists() {
@@ -51,6 +51,11 @@ class Controller extends BaseController {
 		}
 	}
 
+	protected static function decodeVideo($item) {
+		$item['data'] = urldecode(base64_decode($item['data']));
+		return $item;
+	}
+
 	public function task() {
 		GLOBAL $_COOKIE;
 
@@ -72,7 +77,7 @@ class Controller extends BaseController {
 			if ($item = DB::line('SELECT * FROM lang_items WHERE '.$where.' ORDER BY rate DESC')) {
 				$item['data'] = stripcslashes($item['data']);
 				if (isset($scope)) $item['scope'] = $scope;
-				$this->openVideo = $item;
+				$this->openVideo = $this->decodeVideo($item);
 			}
 		}
 	}
