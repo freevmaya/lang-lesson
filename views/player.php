@@ -304,8 +304,8 @@
             return size.height;
           },
           langControls: (c)=>{
-            c.css('min-height', minHeight);
-            c.find('.player-area').removeProp('style');
+            //c.css('min-height', minHeight);
+            c.find('.player-area').attr('style', '');
             return c.outerHeight();
           },
           editor: (c)=>{
@@ -321,11 +321,11 @@
             This.setPlayerSize(size.width, size.height - dec * 0.5);
           },
           langControls: (c)=>{
-            let nh = Math.round(c.height() - dec * 0.5);
-            let scale = Math.ceil(Math.min(100, nh/c.height() * 100)) / 100;
+            let nh = c.height() - dec * 0.5;
+            let scale = Math.min(1, nh/c.height());
             if (nh > minHeight) {
-              c.css('min-height',nh);
-              if (scale < 1) {
+              //c.css('min-height',nh);
+              if (scale < 0.99) {
                 c.find('.player-area').attr('style', 'transform: scale(1, ' + scale + ');height:' + nh + 'px');
                 console.log('scale: ' + scale.toString() + ' ' + nh.toString);
               }
