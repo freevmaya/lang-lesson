@@ -116,17 +116,19 @@
       $.getJSON(echoURL + '?task=get&id=' + parseInt(id), (result)=>{
         if (result && result.data) {
 
-          _vid = parseInt(result.id);
-          This.scope = result.scope?result.scope:This.storageScope();
+          checkStorage(vdecode(result.data), (a_data)=>{
+            _vid = parseInt(result.id);
+            This.scope = result.scope?result.scope:This.storageScope();
 
-          result = vdecode(result.data);
-          if (playerApp) 
-            $(window).trigger('onOpenVideoContent', result);
-          else vdata = result;
+            result = a_data;
+            if (playerApp) 
+              $(window).trigger('onOpenVideoContent', result);
+            else vdata = result;
 
-          This.address(undefined, undefined, id);
+            This.address(undefined, undefined, id);
 
-          if (afterLoad) afterLoad(vdata);
+            if (afterLoad) afterLoad(result);
+          })
         }
       });
     }
@@ -472,19 +474,21 @@
 
       function a_afterCheck() {
         if (confirm(Locale.value('unsaved_data'))) {
-          _vid = parseInt(s_vdata.id);
-          vdata = s_vdata;
-          This.resetFromInfo(vdata.info);
-          if (This.langapp) This.langapp.newVideo(vdata.id, vdata);
+          if (afterCheck) afterCheck(s_vdata)
           else {
-            if (player) {
-              player.stopVideo();
-              player.loadVideoById(vdata.id);
-              playerApp.setData(vdata);
+            _vid = parseInt(s_vdata.id);
+            vdata = s_vdata;
+            This.resetFromInfo(vdata.info);
+            if (This.langapp) This.langapp.newVideo(vdata.id, vdata);
+            else {
+              if (player) {
+                player.stopVideo();
+                player.loadVideoById(vdata.id);
+                playerApp.setData(vdata);
+              }
             }
           }
 
-          if (afterCheck) afterCheck(vdata);
           return vdata;
 
         } else if (afterCheck) afterCheck(a_vdata);
@@ -497,6 +501,8 @@
         if (!cmpTimelines(s_vdata.timeline, a_vdata.timeline))
           return a_afterCheck(s_vdata);
       }
+
+      if (afterCheck) afterCheck(a_vdata)
       return a_vdata;
     }
 
