@@ -458,6 +458,48 @@
       }
     }
 
+    function cmpTimelines(t1, t2) {
+      for (let i in t1)
+        if (t1[i] != t2[i]) return false;
+      for (let i in t2)
+        if (t1[i] != t2[i]) return false;
+
+      return true;
+    }
+
+    function checkStorage(a_vdata, afterCheck) {
+      let s_vdata = This.readInStorage(a_vdata.id);
+
+      function a_afterCheck() {
+        if (confirm(Locale.value('unsaved_data'))) {
+          _vid = parseInt(s_vdata.id);
+          vdata = s_vdata;
+          This.resetFromInfo(vdata.info);
+          if (This.langapp) This.langapp.newVideo(vdata.id, vdata);
+          else {
+            if (player) {
+              player.stopVideo();
+              player.loadVideoById(vdata.id);
+              playerApp.setData(vdata);
+            }
+          }
+
+          if (afterCheck) afterCheck(vdata);
+          return vdata;
+
+        } else if (afterCheck) afterCheck(a_vdata);
+
+        return a_vdata;
+      }
+
+      if (s_vdata && (a_vdata.id == s_vdata.id)) {
+
+        if (!cmpTimelines(s_vdata.timeline, a_vdata.timeline))
+          return a_afterCheck(s_vdata);
+      }
+      return a_vdata;
+    }
+
     $(window).on('ToEditMode', (e)=>{
       if (vdata && vdata.id) {
         if (!This.isYTLoaded()) This.YouTubeAPILoad(()=>{
@@ -549,7 +591,7 @@
     }
 
     <?if ($video = $controller->getVideo()) {?>
-    vdata = <?=$video['data']?>;
+    vdata = checkStorage(<?=$video['data']?>);
     _vid = <?=$video['id']?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>

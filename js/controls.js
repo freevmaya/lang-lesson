@@ -1,32 +1,36 @@
 $.dialog = (title, content, success, okCaption)=>{
-	let dlg = Template.create($('#dialogModal'), {
-		title: title,
-		content: content,
-		okButton: (elem)=>{
-			if (success) {
-				elem.html(okCaption?okCaption:'Ok');
-				elem.click(success);
-			} else elem.hide();
+	let tmpl = $('#dialogModal');
+	if (Template && (tmpl.length > 0)) {
+		let dlg = Template.create(tmpl, {
+			title: title,
+			content: content,
+			okButton: (elem)=>{
+				if (success) {
+					elem.html(okCaption?okCaption:'Ok');
+					elem.click(success);
+				} else elem.hide();
+			}
+		}, true).modal();
+
+	  	dlg.on('hidden.bs.modal', function (e) {
+	  		dlg.remove();
+		});
+
+		dlg.close = ()=>{
+			dlg.modal("hide");
+			setTimeout(()=>{dlg.remove();}, 1000);
 		}
-	}, true).modal();
-
-  	dlg.on('hidden.bs.modal', function (e) {
-  		dlg.remove();
-	});
-
-	dlg.close = ()=>{
-		dlg.modal("hide");
-		setTimeout(()=>{dlg.remove();}, 1000);
+		dlg.error = (error)=>{
+			dlg.find('.error').show().children('span').text(error);
+			dlg.find('[name=okButton]').hide();
+		}
+		return dlg;
 	}
-	dlg.error = (error)=>{
-		dlg.find('.error').show().children('span').text(error);
-		dlg.find('[name=okButton]').hide();
-	}
-	return dlg;
+	return null;
 }
 
 $.message = (message)=>{
-	$.dialog('Message', message);
+	$.dialog(Locale.value('message'), message);
 }
 
 $.fn.selectCtrl = function(list) {

@@ -11,6 +11,7 @@ var LocaleData = {
 		share: 'Поделиться',
 		copy: 'Копировать',
 		paste: 'Вставить',
+		message: 'Сообщение',
 		insert_marker: 'Вставить метку',
 		delete_marker: 'Удалить метку',
 		youtube_captions: 'Youtube титры',
@@ -25,7 +26,8 @@ var LocaleData = {
 		already_on: 'Уже включено',
 		not_enough_points: 'Недостаточно баллов. Требуется :price баллов.',
 		mode_is_on: 'Режим включен',
-		talk_phrase: 'Проговорить фразу (:price)'
+		talk_phrase: 'Проговорить фразу (:price)',
+		unsaved_data: 'Для данного видео есть несохраненные данные. Загрузить их?'
 	},
 	eng: {
 		file: 'File',
@@ -39,6 +41,7 @@ var LocaleData = {
 		share: 'Share',
 		copy: 'Copy',
 		paste: 'Paste',
+		message: 'Message',
 		insert_marker: 'Insert marker',
 		delete_marker: 'Delete marker',
 		youtube_captions: 'Youtube captions',
@@ -53,7 +56,8 @@ var LocaleData = {
 		already_on: 'Already included',
 		not_enough_points: 'Not enough points. Requires :price points.',
 		mode_is_on: 'Mode is on',
-		talk_phrase: 'Speak a phrase (:price)'
+		talk_phrase: 'Speak a phrase (:price)',
+		unsaved_data: 'There is unsaved data for this video. Download them?'
 	}
 }
 
