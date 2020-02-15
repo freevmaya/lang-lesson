@@ -15,15 +15,17 @@
   <div class="form-group" id="saveToLibTemplate">
     <label for="recipient-text" class="col-form-label">Title video:</label>
     <input type="text" class="form-control" name="title">
-    <div class="dropdown mr-1 playlist select">
+    <div>
       <input type="text" class="form-control" placeholder="New playlist" name="playlist-input">
-      <button type="button" class="btn btn-secondary dropdown-toggle title" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-offset="10,20">Default playlist</button>
-      <div class="dropdown-menu dropdown-menu-right">
-        <div class="list">
+      <div class="dropdown playlist select">
+        <button class="btn btn-secondary dropdown-toggle title"  id="navbarEdit" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="libList">Default playlist</button>
+        <div class="dropdown-menu" aria-labelledby="libList">
+          <div class="list">
+          </div>
+          <div class="dropdown-divider"></div>
+            <a class="dropdown-item" data-id="0">Default playlist</a>
+            <a class="dropdown-item">+</a>
         </div>
-        <div class="dropdown-divider"></div>
-          <a class="dropdown-item" data-id="0">Default playlist</a>
-          <a class="dropdown-item">+</a>
       </div>
     </div>
     <div class="success" style="display:none;">Saved</div>

@@ -431,7 +431,6 @@ main .content .item {
 }
 
 .select {
-  text-align: right;
   display: block;
 }
 
@@ -452,9 +451,8 @@ main .content .item {
 }
 
 input[name="playlist-input"] {
-  position: absolute;
-  width: calc(100% - 56px);
-  left: 0px;
+  margin-top: 5px;
+  width: 100%;
   display: none;
 }
 
