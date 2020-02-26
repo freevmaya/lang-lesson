@@ -193,7 +193,7 @@ var CPuzzle = function(player) {
 				removeWord(cont, ui.draggable);
 	  	}});
 
-	  	word.wordHint(words[i], tn_list[words[i]]);
+	  	word.wordHint(words[i], tn_list?tn_list[words[i]]:words[i]);
 
 		word.draggable({
     		delay: 200,
@@ -236,7 +236,7 @@ var CPuzzle = function(player) {
 					console.log('long touch');
 				},1000);
 			});
-			
+
 	  	} else word.click((e)=>{
 			if (e.target == word[0]) onClickTouch();
 		});
