@@ -597,4 +597,6 @@ dt {
 
 #video-description, .CDescription {
   padding: 1em;
+  text-indent: 2em;
 }
+
