@@ -39,7 +39,7 @@
     </div>
     <?include(dirname(__FILE__).'/editor.php');?>
   </div>
-  <div id="video-description">
+  <div id="video-description" style="display:none">
     <?=$video?$video['description']:''?>
   </div>
 </div>

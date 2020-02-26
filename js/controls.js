@@ -90,3 +90,64 @@ function captionDialog(template) {
 		});
 	}
 }
+
+$.fn.wordHint = function(word, trans) {
+
+	let This = this;
+	let layer = $.fn.wordHint.layer;
+	let stimer, etimer;
+
+	if (!layer) {
+		$.fn.wordHint.layer = layer = $('<div id="word-hint"><div>' +
+			'<div><a class="glyphicon glyphicon-volume-up"></a><span class="hint-word"></span></div>' +
+			'<div class="dropdown-divider"></div>' +
+			'<div><span class="hint-trans"></span></div>' +
+			'</div></div>');
+
+		let agh = layer.find('a.glyphicon');
+		agh.click((e)=>{
+			doc.playSpeech(layer.find('.hint-word').text());
+		});
+
+		$('body').append(layer);
+
+		layer.mouseenter(()=>{layer.is_focus = true});
+		layer.mouseleave(()=>{
+			layer.is_focus = false
+			if ($.fn.wordHint.current) $.fn.wordHint.current.onHide();
+		});
+	}
+
+	function onShow() {
+		$.fn.wordHint.current = This;
+
+		layer.find('.hint-word').text(word);
+		layer.find('.hint-trans').text(trans);
+		let p = This.offset();
+		layer.css({'left': p.left + (This.outerWidth() - layer.outerWidth()) / 2, 'top': p.top - layer.outerHeight()});
+		layer.show(100);
+		stimer = 0;
+	}
+
+	this.onHide = ()=>{
+		if (!layer.is_focus) {
+			$.fn.wordHint.current = null;		
+			layer.hide(100);
+		}
+	}
+
+	function onEnter(e) {
+		stimer = setTimeout(onShow, 1000);
+	}
+
+	function onLeave(e) {
+		if (stimer) {
+			clearTimeout(stimer);
+			stimer = 0;
+		}
+		etimer = setTimeout(This.onHide, 200);
+	}
+
+	this.mouseenter(onEnter);
+	this.mouseleave(onLeave);
+}

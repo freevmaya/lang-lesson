@@ -54,10 +54,16 @@ var CPuzzle = function(player) {
   	}
 
   	function getWords(puzzle, order) {
-  		let words = [], p = puzzle;
+  		let words = [], trans = {}, p = puzzle;
 		if (p[0].trim()) {
 			words = p[0].split(/[\s]+/).slice(0);
-			if (p[1].trim()) words = words.concat(p[1].split(/[\s]+/));
+
+			if (p[1].trim()) {
+				let t = p[1].split(/[\|,.;]+/).slice(0);
+				$.each(words, (i, v)=>{
+					trans[v] = (i < t.length)?t[i]:'';
+				})
+			}
 
 			if (order) words.sort(order);
 			else {
@@ -66,21 +72,24 @@ var CPuzzle = function(player) {
 					words.sort((a, b)=>{return Math.random() - 0.5});
 			}
 		}
-		return words;
+		return [words, trans];
   	}
 
   	function refresh() {
+  		let words, trans_list;
+
 		top.empty();
 		bottom.empty();
 		trans.empty();
 
   		if (state[index]) {
   			words = state[index].words;
+  			trans_list = state[index].trans;
   			phrase = state[index].phrase;
   		}
   		else {
-  			state[index] = {words: [], top: [], phrase: []};
-  			state[index].words = words = getWords(_puzzle);
+  			let wa = getWords(_puzzle);
+  			state[index] = {words: words = wa[0], trans: trans_list = wa[1], top: [], phrase: []};
   			state[index].phrase = phrase = _puzzle[0].split(/\s/);
   		}
 
@@ -88,7 +97,7 @@ var CPuzzle = function(player) {
 		if (words.length > 0) {
 			let conts = [];
 			for (let i=0; i<words.length; i++) {
-				conts[i] = wordCtrl(words, i);
+				conts[i] = wordCtrl(words, trans_list, i);
 			}
 
 	      	nextBtn.prop('disabled', !completeList[index]?true:'');
@@ -105,7 +114,6 @@ var CPuzzle = function(player) {
   	}
 
   	function start(puzzle, tindex) {
-  		let words;
   		if (index != tindex) {
 	  		index = tindex;
 	  		_puzzle = puzzle;
@@ -127,7 +135,7 @@ var CPuzzle = function(player) {
 		top.append(d);
 		if (!isInit) {
 			refreshTopStorage();
-	      	if (!player.playing()) doc.playSpeech(d.text());
+	      	if (!player.playing()) doc.playSpeech(d.data('word'));
 		}
 		checkPhrase(!isInit);
 		if (!isInit && !correctSequense()) doubleScope = false;
@@ -177,13 +185,15 @@ var CPuzzle = function(player) {
 		return r;
 	}
 
-  	function wordCtrl(words, i) {
-  		var word = $('<div class="word" data-id="' + i + '">' + words[i] + '</div>');
+  	function wordCtrl(words, tn_list, i) {
+  		var word = $('<div class="word" data-id="' + i + '" data-word="' + words[i] + '">' + words[i] + '</div>');
 		var cont = $('<div class="cont" data-id="' + i + '"></div>').append(word);
 		cont.droppable({drop: (e, ui)=>{
 			if (ui.draggable.data('id') == word.data('id'))
 				removeWord(cont, ui.draggable);
 	  	}});
+
+	  	word.wordHint(words[i], tn_list[words[i]]);
 
 		word.draggable({
     		delay: 200,
@@ -196,7 +206,7 @@ var CPuzzle = function(player) {
 		});
 
 		word.droppable({drop: (e, ui)=>{
-	  			let d = ui.draggable;
+	  		let d = ui.draggable;
 	  			if (d.hasClass('word')) {
 	  				let list = d.parent().children();
 	  				if (list.index(d) > list.index(word))
@@ -208,17 +218,27 @@ var CPuzzle = function(player) {
 	  		}
 	  	});
 
-		word.click((e)=>{
-			if (word.parent().hasClass('cont')) appendWord(word);
+	  	function onClickTouch() {
+	  		if (word.parent().hasClass('cont')) appendWord(word);
 			else removeWord(cont, word);
-		});
+	  	}
 
+	  	if (isMobile) {
 
-		var pressTimer;
-		word.on('touchend', ()=>{clearTimeout(pressTimer);}).on('touchstart', ()=>{
-			pressTimer = window.setTimeout(function() {
-				console.log('long touch');
-			},1000);
+			var pressTimer, ttime;
+			word.on('touchend', ()=>{
+				clearTimeout(pressTimer);
+				let delta = $.now() - ttime;
+				if (delta < 160) onClickTouch();
+			}).on('touchstart', ()=>{
+				ttime = $.now();
+				pressTimer = window.setTimeout(function() {
+					console.log('long touch');
+				},1000);
+			});
+			
+	  	} else word.click((e)=>{
+			if (e.target == word[0]) onClickTouch();
 		});
 
 		bottom.append(cont);
@@ -268,7 +288,7 @@ var CPuzzle = function(player) {
 
 	this.getCaption = (content, tindex)=>{
 		let p = content[tindex].puzzle;
-		return p?(p[2]?p[2]:getWords(p, (a, b)=>{return a>b?1:-1}).join(',')):'';
+		return p?(p[2]?p[2]:''):'';
 	}
 
 	function onChangeIndex(e, player) {
@@ -404,7 +424,7 @@ CPuzzle.Editor = function(parent, onChange) {
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
-        '<input type="text" name="words" placeholder="Additional words"/>' +
+        '<input type="text" name="words" placeholder="Translation words"/>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');

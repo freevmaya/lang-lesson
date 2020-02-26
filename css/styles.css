@@ -600,3 +600,41 @@ dt {
   text-indent: 2em;
 }
 
+#word-hint {
+  z-index: 100;
+  position: absolute;
+}
+
+#word-hint > div {
+  min-width: 160px;
+  background: white;
+  border: 1px solid #959595;
+  border-radius: 0.2em;
+  margin-bottom: 5px;  
+  padding: 1em;
+  text-align: left;
+  display: block;
+  box-shadow: 2px 2px 6px #0000007d;
+  color: #212529;
+}
+
+
+#word-hint > div > div {
+  white-space: nowrap;
+}
+
+
+#word-hint .glyphicon {
+  cursor: pointer;
+  padding: 5px;
+  color: gray;
+  margin-right: 3px;
+}
+
+#word-hint a:hover {
+  color: black;
+}
+
+.hint-trans {
+  margin-left: 27px;
+}
