@@ -374,7 +374,7 @@ function playerInit(parent, options) {
     This.videoEl = a_videoEl;
 
     $(window).keydown((e)=>{
-      if ((e.target.type != 'text') && (e.keyCode == 32)) {
+      if (!((e.target.type == 'text') || (e.target.type == 'textarea')) && (e.keyCode == 32) && ($.dialog.show == null)) {
         if (This.playing()) This.pauseVideo();
         else play();
         e.stopPropagation();

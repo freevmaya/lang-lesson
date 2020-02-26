@@ -27,7 +27,12 @@ var LocaleData = {
 		not_enough_points: 'Недостаточно баллов. Требуется :price баллов.',
 		mode_is_on: 'Режим включен',
 		talk_phrase: 'Проговорить фразу (:price)',
-		unsaved_data: 'Для данного видео есть несохраненные данные. Загрузить их?'
+		unsaved_data: 'Для данного видео есть несохраненные данные. Загрузить их?',
+		description_edit: 'Редактировать описание',
+		description: 'Описание',
+		description_help: 'Введите текст',
+		first_save_to_lib: 'Сначала сохраните в альбом',
+		album_title: 'Альбом:'
 	},
 	eng: {
 		file: 'File',
@@ -57,7 +62,12 @@ var LocaleData = {
 		not_enough_points: 'Not enough points. Requires :price points.',
 		mode_is_on: 'Mode is on',
 		talk_phrase: 'Speak a phrase (:price)',
-		unsaved_data: 'There is unsaved data for this video. Download them?'
+		unsaved_data: 'There is unsaved data for this video. Download them?',
+		description_edit: 'Edit description',
+		description: 'Description',
+		description_help: 'Enter text',
+		first_save_to_lib: 'Save to album first',
+		album_title: 'Album:'
 	}
 }
 

@@ -200,5 +200,18 @@ class langEcho extends BaseController {
 		}
 		echo '{"result": "error", "error": "Receive data"}';
 	}
+
+	public function setDescription() {
+		GLOBAL $_COOKIE;
+		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
+		if (($description = $_POST['description']) && ($id = $this->safePost('id', false)) && $uid) {
+			if (($video = DB::line("SELECT id, uid FROM lang_items WHERE id={$id}")) && ($video['uid'] == $uid)) {
+				DB::query("UPDATE lang_items SET `description`='{$description}' WHERE id={$id}");
+				echo '{"result": "ok"}';
+				return;
+			} else echo '{"result": "error", "error": "Other owner"}';
+		}
+		echo '{"result": "error", "error": "Receive data"}';
+	}
 }
 ?>

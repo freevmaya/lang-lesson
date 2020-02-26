@@ -12,8 +12,13 @@ $.dialog = (title, content, success, okCaption)=>{
 			}
 		}, true).modal();
 
+		$.dialog.show = this;
+		dlg.onAfterClose = null;
+
 	  	dlg.on('hidden.bs.modal', function (e) {
+			$.dialog.show = null;
 	  		dlg.remove();
+	  		if (dlg.onAfterClose) dlg.onAfterClose();
 		});
 
 		dlg.close = ()=>{
@@ -28,6 +33,8 @@ $.dialog = (title, content, success, okCaption)=>{
 	}
 	return null;
 }
+
+$.dialog.show = null;
 
 $.message = (message)=>{
 	$.dialog(Locale.value('message'), message);

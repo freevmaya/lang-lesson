@@ -15,6 +15,14 @@
     height: auto !important;
     overflow-y: auto !important;
   }
+
+  .playlist-title {
+    margin: 20px 0px;
+  }
+
+  .playlist-title dt {
+    display: inline-block;
+  }
 }
 
 @media screen and (max-width: <?=$width?>px) {

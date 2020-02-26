@@ -59,6 +59,7 @@
     <script src="<?=$mainURL?>js/components/trans-text.js"></script>
     <script src="<?=$mainURL?>js/components/title.js"></script>
     <script src="<?=$mainURL?>js/components/puzzle.js"></script>
+    <script src="<?=$mainURL?>js/components/description.js"></script>
 
     <style type="text/css">
       <?include('include/index_style.css')?>
@@ -92,14 +93,14 @@
     <?include_once("views/templates.php")?>
     <div class="d-flex w-100 mx-auto flex-column page-wrapper">
       <?include_once("views/navbar.php")?>
-      <div class="player-wrap">
+      <div class="player-wrap page-content">
         <?
           include_once("views/player.php");
           if ($video) include_once("views/video_content.php");
           include_once('views/myclips.php');
         ?>
       </div>
-      <footer class="page-footer text-center">
+      <footer class="page-footer text-center bg-light">
         <div class="inner">
           <p>© 2020 Copyright: <a href="http://vmaya.ru/">Vmaya</a></p>
         </div>
@@ -119,6 +120,7 @@
       Components[TransText.id] = TransText;
       Components[CTitle.id] = CTitle;
       Components[CPuzzle.id] = CPuzzle;
+      Components[CDescription.id] = CDescription;
 
       var echoURL = '<?=$mainURL?>echo/';
       <?$controller->getScriptData();?>

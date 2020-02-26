@@ -54,4 +54,11 @@
       <label for="recipient-name" class="col-form-label">Translate from</label> <select class="component-list" name="lang1"></select>
     </div>
   </div>
+
+  <div class="descriptionDialog" id="descriptionDialog">
+    <label for="description" class="col-form-label" data-locale="description_help"></label>
+    <div>
+      <textarea name="description"></textarea>
+    </div>
+  </div>
 </div>

@@ -89,7 +89,7 @@
 
 	          	if (!layer) createLayer(playlist.list);
 	          	else resetItems(playlist.list);
-	          	layer.find(".playlist-title").text(playlist.title);
+	          	layer.find(".playlist-title span").text(playlist.title);
 	          	doc.address(playlist.link);
 
 	          	if (success) success();
@@ -150,7 +150,7 @@
 
 <div class="hidden">
 	<div class="my-clips" id="my-clips-template">
-		<div class="playlist-title">My works</div>
+		<div class="playlist-title"><dt data-locale="album_title">Album: </dt><span>My works</span></div>
 		<div class="list-container">
 			<div class="clip-list">
 			</div>

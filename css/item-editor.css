@@ -145,3 +145,8 @@ button.send {
 .CPuzzleEdit input.trans {
     width: 100%
 }
+
+.component .ftable textarea {
+    width: 100%;
+    height: 80px;
+}

@@ -42,6 +42,7 @@
           <div class="dropdown-divider"></div>
           <a class="dropdown-item shortcut"  onclick="if (doc.langapp) doc.langapp.insert();"><dt data-locale="insert_marker">Insert marker</dt><span>I</span></a>
           <a class="dropdown-item shortcut"  onclick="if (doc.langapp) doc.langapp.delete();"><dt data-locale="delete_marker">Delete marker</dt><span>Delete</span></a>
+          <a class="dropdown-item"  onclick="navigate.descriptionEdit()" data-locale="description_edit">Edit description</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item"  onclick="navigate.captions()" data-locale="youtube_captions">Youtube captions</a>
         </div>
@@ -323,6 +324,30 @@
 
     this.captions = ()=>{
       captionDialog($('#videoCaptions'));
+    }
+
+    this.descriptionEdit = ()=>{
+      if (doc.vid) {
+        let ctmpl = $('.descriptionDialog').clone();
+        let text = ctmpl.find('textarea');
+
+        text.val($('#video-description').html());
+
+        let dlg = $.dialog(Locale.value('description'), ctmpl, ()=>{
+          let tx = text.val();
+          if (tx) {
+            $.post(echoURL + '?task=setDescription', {description: tx, id: doc.vid}, (data)=>{
+
+              dlg.onAfterClose = ()=>{
+                if (data.result == 'error') $.message(Locale.value(data.error));
+                else $(window).trigger('newDescription', tx);
+              }
+
+              dlg.close();
+            });
+          }
+        });
+      } else $.message(Locale.value('first_save_to_lib'));
     }
 
     $(window).on('onShowEditor', ()=>{

@@ -447,6 +447,12 @@ main .content .item {
   font-weight: bold;
 }
 
+.playlist-title dt {
+  display: none;
+  margin-right: 1em;
+  color: #444;
+}
+
 .select .dropdown-toggle-split {
 }
 
@@ -570,4 +576,25 @@ dt {
 
 .ya-share2 {
   padding: 5px 10px;
+}
+
+.page-footer {
+  width: 100%;
+  padding: 1em;
+  position: fixed;
+  bottom: 0px;
+}
+
+.page-footer p {
+  padding: 0px;
+  margin: 0px;
+}
+
+.descriptionDialog textarea {
+  width: 100%;
+  height: 200px;
+}
+
+#video-description, .CDescription {
+  padding: 1em;
 }

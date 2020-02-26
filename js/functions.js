@@ -1,3 +1,25 @@
+(function() {
+  let w = $(window);
+  w.ready(()=>{
+    let pc = $('.page-content');
+
+    function onResize() {
+      let pf = $('.page-footer');
+      let size = w.height() - pf.outerHeight() - $('.navbar').outerHeight();
+
+      pf.css('position', (pc.outerHeight() > size)?'relative':'fixed');
+    };
+
+
+    var observer = new ResizeObserver(function(entries) {
+      entries.forEach(function(entry) {if (entry.target == pc[0]) onResize();});
+    });
+    observer.observe(pc[0]);
+
+    onResize();
+  });
+})();
+
 $.urlParam = function(name){
 var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
 return (results && results.length)?results[1]:0;

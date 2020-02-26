@@ -1,3 +1,6 @@
+<?
+    $video = $controller->getVideo();
+?>
 <div class="playerContainer">
   <div data-auto-component="playerSize">
     <div class="playerSeptum"><div class="vclose"></div>
@@ -35,6 +38,9 @@
       <div class="btn stop hint stopBtn" data-hint="Stops playing">hold</div>
     </div>
     <?include(dirname(__FILE__).'/editor.php');?>
+  </div>
+  <div id="video-description">
+    <?=$video?$video['description']:''?>
   </div>
 </div>
 <script type="text/javascript">
@@ -120,6 +126,7 @@
             _vid = parseInt(result.id);
             This.scope = result.scope?result.scope:This.storageScope();
 
+            $('#video-description').html(result.description);
             result = a_data;
             if (playerApp) 
               $(window).trigger('onOpenVideoContent', result);
@@ -596,7 +603,7 @@
       }    
     }
 
-    <?if ($video = $controller->getVideo()) {?>
+    <?if ($video) {?>
     vdata = checkStorage(<?=$video['data']?>);
     _vid = <?=$video['id']?>;
     This.address(undefined, undefined, _vid);
@@ -620,6 +627,10 @@
     $(window).on('requireYTPlayer', (e, callBack)=>{
       if (!This.isYTLoaded()) This.YouTubeAPILoad(callBack);
     });
+
+    $(window).on('newDescription', (e, description)=>{
+      $('#video-description').html(description);
+    })
 
     $(window).on('onAfterSaveToLibrary', (e, data)=>{
       _vid = parseInt(data.id);
