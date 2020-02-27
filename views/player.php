@@ -32,8 +32,17 @@
         </a>
         <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
       </div>
-      <div class="item">
+      <div class="item hint" data-hint="Your bonuses">
         <span class="glyphicon glyphicon-star"></span><div id="scope">0</div>
+      </div>
+      <div class="item hint" data-hint="Rate lesson">
+        <span class="glyphicon glyphicon-thumbs-up"></span><div id="rate">0</div>
+      </div>
+      <div class="item hint" data-hint="Lesson comments">
+        <span class="glyphicon glyphicon-comment"></span><div id="comments">0</div>
+      </div>
+      <div class="item hint" data-hint="Other lessons">
+        <span class="glyphicon glyphicon-folder-open"></span><div id="lessons">0</div>
       </div>
     </div>
     <div class="controls" data-auto-component="controls">
@@ -121,6 +130,7 @@
     }
 
     this.setDiscription = (description)=>{
+      description = description?description:'';
       let layer = $('#video-description');
       if (description.trim()) layer.show();
       else layer.show();
