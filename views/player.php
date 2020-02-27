@@ -44,7 +44,7 @@
     </div>
     <?include(dirname(__FILE__).'/editor.php');?>
   </div>
-  <div id="video-description" style="display:none">
+  <div id="video-description" style="display:<?=$video?'block':'none'?>">
     <?=$video?$video['description']:''?>
   </div>
 </div>
@@ -120,6 +120,13 @@
       } else cf();
     }
 
+    this.setDiscription = (description)=>{
+      let layer = $('#video-description');
+      if (description.trim()) layer.show();
+      else layer.show();
+      layer.html(description);
+    }
+
     this.loadVideo = (id, afterLoad)=>{
 
       if (!player) This.YouTubeAPILoad();
@@ -131,7 +138,7 @@
             _vid = parseInt(result.id);
             This.scope = result.scope?result.scope:This.storageScope();
 
-            $('#video-description').html(result.description);
+            This.setDiscription(result.description);
             result = a_data;
             if (playerApp) 
               $(window).trigger('onOpenVideoContent', result);
