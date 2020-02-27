@@ -376,10 +376,6 @@ main .content .item {
   font-size: 0.8em;
 }
 
-.navbar {
-  flex-wrap: nowrap !important;
-}
-
 .navbar-nav .user {
   display: none;
 }
@@ -662,4 +658,15 @@ dt {
   white-space: nowrap;
   color: #0089ff;
   margin-left: 1em;
+}
+
+.lwidth {
+    text-align: left;
+    display: none;
+}
+
+.navbar .navbar-title {
+  display: flex;
+  flex-wrap: nowrap !important;
+  align-items: center;
 }

@@ -101,4 +101,16 @@
   .page-footer {
     padding: 0.5em;
   }
+
+  .hwidth {
+    display: none;
+  }
+
+  .lwidth {
+    display: block;
+  }
+
+  .navbar-title {
+    width: 100%;
+  }
 }
