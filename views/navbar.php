@@ -77,7 +77,7 @@
         <a class="nav-link dropdown-toggle" id="navbarLogin" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-locale="login">Login</a>
         <div class="dropdown-menu" aria-labelledby="navbarLogin">
           <script src="//ulogin.ru/js/ulogin.js"></script>
-<div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2F<?=$_SERVER['HTTP_HOST']?>;mobilebuttons=0;callback=ulogin"></div>
+          <div id="uLogin" data-ulogin="display=panel;theme=flat;fields=first_name,last_name;providers=vkontakte,odnoklassniki,mailru,facebook;hidden=other;redirect_uri=http%3A%2F%2F<?=$_SERVER['HTTP_HOST']?>;mobilebuttons=0;callback=ulogin"></div>
         </div>
       </li>
       <li class="nav-item dropdown">
@@ -91,6 +91,9 @@
       </li>
     </ul>
   </div>
+  <span class="video-title">
+    Video HD
+  </span>
 </nav>
 
 <script type="text/javascript">

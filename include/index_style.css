@@ -27,21 +27,11 @@
 
 @media screen and (max-width: <?=$width?>px) {
   nav {
-    width: auto;
     padding: 0.2em !important;
   }
 
-  nav.bg-light {          
-    background-color: #f8f9fa00 !important;
-  }
-
-  nav.bg-light:hover {          
-    background-color: #f8f9faFF !important;
-    box-shadow: 0 0 6px black;
-  }
-
   .player-wrap {
-    margin-top: 0px;          
+    margin-top: 2.9em;      
   }
 
   .navbar-collapse {
@@ -106,5 +96,9 @@
 
   .edit {
     display: none !important;
+  }
+
+  .page-footer {
+    padding: 0.5em;
   }
 }

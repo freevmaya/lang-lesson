@@ -25,11 +25,16 @@
       </button>
     </div>
     <div class="data-panel" data-auto-component="dataPanel">
-      <div class="btn-group dropup setting-menu-layer">
-        <a href="#" role="button" data-toggle="dropdown" data-hint="Additional functions" class="hint"><span class="glyphicon glyphicon-leaf"></span></a>
+      <div class="item btn-group dropup setting-menu-layer">
+        <a role="button" data-toggle="dropdown" data-hint="Additional functions" class="hint">
+          <span class="glyphicon glyphicon-leaf"></span>
+          <div data-locale="service">Service</div>
+        </a>
         <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
       </div>
-      <div><span class="glyphicon glyphicon-star"></span><span id="scope">0</span></div>
+      <div class="item">
+        <span class="glyphicon glyphicon-star"></span><div id="scope">0</div>
+      </div>
     </div>
     <div class="controls" data-auto-component="controls">
       <select class="timeList">
@@ -174,6 +179,7 @@
 
     this.setTitle = (title)=>{
       document.title = title;
+      $(".video-title").text(title);
     }
 
     function splay(url) {

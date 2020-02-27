@@ -32,7 +32,8 @@ var LocaleData = {
 		description: 'Описание',
 		description_help: 'Введите текст',
 		first_save_to_lib: 'Сначала сохраните в альбом',
-		album_title: 'Альбом:'
+		album_title: 'Альбом:',
+		service: 'Сервис'
 	},
 	eng: {
 		file: 'File',
@@ -67,7 +68,8 @@ var LocaleData = {
 		description: 'Description',
 		description_help: 'Enter text',
 		first_save_to_lib: 'Save to album first',
-		album_title: 'Album:'
+		album_title: 'Album:',
+		service: 'Service'
 	}
 }
 
