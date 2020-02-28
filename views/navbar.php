@@ -1,15 +1,35 @@
 <?
   $lessons = DB::asArray("SELECT * FROM playlist WHERE type='training'");
-
+  if ($video = $controller->getVideo()) {
+    $other_list = DB::asArray("SELECT id, title, preview_url FROM lang_items WHERE publish=1 AND pid={$video['pid']}");
+  }
 ?>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="navbar-title">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
     </button>
-    <span class="video-title lwidth">
-      Video HD
-    </span>
+    <div class="lwidth">
+      <?if ($other_list) {?>
+      <div class="btn-group">
+        <span class="dropdown-toggle" type="button" data-toggle="dropdown">
+          <span class="video-title">Video HD</span>
+        </span>
+        <div class="dropdown-menu clip-list">
+          <?foreach ($other_list as $item) {?>
+            <div data-id="<?=$item['id']?>">
+              <div class="image" style="background-image: url('<?=$item['preview_url']?>');"></div>
+              <div class="title"><?=$item['title']?></div>
+            </div>
+          <?}?>
+        </div>
+      </div>
+      <?} else {?>
+        <span class="video-title">
+          Video HD
+        </span>
+      <?}?>
+    </div>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -376,5 +396,15 @@
     }); 
   }
   var navigate = new Navigate();
+
+  $(window).ready(()=>{
+    $('.navbar-title .clip-list div').click((e)=>{
+      let id = $(e.currentTarget).data('id');
+      if (id) 
+        doc.loadVideo(id, ()=>{
+          scrollTo($('.videoPlayer'));
+        });
+    });
+  });
 
 </script>

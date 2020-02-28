@@ -4,20 +4,32 @@
 		"selected_items":
 		[
 			[
+				"fon",
+				"font-size\tproperty"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"margin",
+				"margin-left\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"t",
+				"transition\tproperty"
+			],
+			[
 				"vide",
 				"video"
 			],
 			[
-				"margin",
-				"margin\tproperty"
-			],
-			[
 				"paddi",
 				"padding\tproperty"
-			],
-			[
-				"wi",
-				"width\tproperty"
 			],
 			[
 				"padd",
@@ -66,10 +78,6 @@
 			[
 				"max",
 				"MAX_VALUE"
-			],
-			[
-				"t",
-				"tlist"
 			],
 			[
 				"show",
@@ -506,14 +514,6 @@
 			[
 				"cl",
 				"click"
-			],
-			[
-				"chi",
-				"children"
-			],
-			[
-				"om",
-				"omnx"
 			]
 		]
 	},
@@ -523,7 +523,7 @@
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 5571,
+				"buffer_size": 5627,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -541,7 +541,16 @@
 			"file": "views/navbar.php",
 			"settings":
 			{
-				"buffer_size": 14184,
+				"buffer_size": 14362,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/locale.js",
+			"settings":
+			{
+				"buffer_size": 2991,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -550,16 +559,7 @@
 			"file": "js/controls.js",
 			"settings":
 			{
-				"buffer_size": 2973,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/styles.css",
-			"settings":
-			{
-				"buffer_size": 8490,
+				"buffer_size": 3759,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -568,7 +568,54 @@
 			"file": "js/components/puzzle.js",
 			"settings":
 			{
-				"buffer_size": 11658,
+				"buffer_size": 12129,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/index_style.css",
+			"settings":
+			{
+				"buffer_size": 1395,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/styles.css",
+			"settings":
+			{
+				"buffer_size": 9293,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 8 files for \"video-description\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\navbar.php:\n  342:         text.val($('#video-description').html());\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\player.php:\n   47:   <div id=\"video-description\" style=\"display:none\">\n  134:             $('#video-description').html(result.description);\n  638:       $('#video-description').html(description);\n\n4 matches across 2 files\n",
+			"settings":
+			{
+				"buffer_size": 423,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "views/player.php",
+			"settings":
+			{
+				"buffer_size": 19616,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/components/description.js",
+			"settings":
+			{
+				"buffer_size": 2150,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -606,17 +653,16 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/css",
-		"/C/WebServers/home/lang-lesson.ru/www/docs",
 		"/C/WebServers/home/lang-lesson.ru/www/include",
-		"/C/WebServers/home/lang-lesson.ru/www/js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components",
+		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
 	[
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/player.php",
+		"/C/Users/vmaya/Downloads/простоквашино.txt",
+		"/D/documents/numbers.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/description.js",
 		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
 		"/C/WebServers/home/lang-lesson.ru/www/views/templates.php",
@@ -633,7 +679,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
 		"/D/documents/Книги/Рождественская каша - Нурдквист С.txt",
 		"/D/documents/Книги/Рождественская каша - Нурдквист С.rtf",
-		"/D/documents/numbers.js",
 		"/D/documents/Книги/avidreaders.ru__bhagavad-gita-kak-ona-est.txt",
 		"/D/documents/Книги/Саша умылся, лег в кровать и погасил верхний свет. Включил лампу для чтения и открыл книгу, заложенную небольшой открытк.txt",
 		"/C/Users/vmaya/Downloads/lang_items (2).sql",
@@ -741,8 +786,7 @@
 		"/C/WebServers/usr/local/apache/conf/vhosts.conf",
 		"/C/WebServers/usr/local/apache/conf/extra/httpd-ssl.conf",
 		"/C/WebServers/usr/local/apache/logs/access.log",
-		"/C/WebServers/home/192.168.1.63/www/___index.php",
-		"/C/WebServers/home/192.168.1.63/www/index.php"
+		"/C/WebServers/home/192.168.1.63/www/___index.php"
 	],
 	"find":
 	{
@@ -753,6 +797,11 @@
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\include",
@@ -875,12 +924,7 @@
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected -data/*",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected;-data/*",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\controllers",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\controllers",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components\\widgets\\views"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models"
 		]
 	},
 	"find_state":
@@ -888,6 +932,35 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"setDiscription",
+			"video-description",
+			"navbar",
+			".navbar",
+			"$('title')",
+			"$(\"title\")",
+			"$('title')",
+			"title",
+			".page-footer",
+			".CPuzzle .trans",
+			".data-panel",
+			".data-panel .item",
+			".data-panel span",
+			"setting-menu-layer",
+			"data-panel",
+			"controls",
+			"tn_list",
+			"$width",
+			"appendWord",
+			"var CPuzzle = function(player) {\nappendWord",
+			"appendWord",
+			"hint-trans",
+			"wordCtrl",
+			"words",
+			"state",
+			"getWords",
+			"wordCtrl",
+			"puzzle[1]",
+			"video-description",
 			"word-hint",
 			"elem",
 			".playlist-title",
@@ -986,36 +1059,7 @@
 			"setIndex",
 			"play(",
 			"play",
-			"controller->user",
-			"logout",
-			"doAfterLogin",
-			"user",
-			"scope(",
-			"ulogin",
-			"onLoginUser",
-			"ulogin",
-			"href=\"#\"",
-			"user",
-			"navbar-nav",
-			"logout",
-			"Login",
-			"getWords",
-			"checkPhrase",
-			"getWords",
-			"start",
-			"setData",
-			"stack",
-			"stopBtn",
-			"partStopped",
-			"accurateIndex",
-			"septButtonState",
-			"septButton",
-			"backBtn",
-			"playerSeptum",
-			"vclose",
-			"visible",
-			"updateComponents",
-			".playerSeptum"
+			"controller->user"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1112,7 +1156,7 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 9,
 			"sheets":
 			[
 				{
@@ -1121,15 +1165,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5571,
+						"buffer_size": 5627,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5413,
-								5413
+								4932,
+								4941
 							]
 						],
 						"settings":
@@ -1139,7 +1183,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 618.0,
+						"translation.y": 1859.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1158,8 +1202,8 @@
 						"selection":
 						[
 							[
-								10365,
-								10365
+								1123,
+								1123
 							]
 						],
 						"settings":
@@ -1169,10 +1213,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 379.0,
+						"translation.y": 1099.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1181,15 +1225,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14184,
+						"buffer_size": 14362,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1335,
-								1347
+								13242,
+								13242
 							]
 						],
 						"settings":
@@ -1199,27 +1243,27 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 6559.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 3,
-					"file": "js/controls.js",
+					"file": "js/locale.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2973,
+						"buffer_size": 2991,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2817,
-								2817
+								2096,
+								2103
 							]
 						],
 						"settings":
@@ -1228,27 +1272,84 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 1739.0,
+						"translation.y": 600.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "css/styles.css",
+					"file": "js/controls.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 8490,
+						"buffer_size": 3759,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								8367,
-								8367
+								2376,
+								2376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2239.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "js/components/puzzle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12129,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								5023,
+								5023
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3399.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "include/index_style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1395,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1393,
+								1393
 							]
 						],
 						"settings":
@@ -1258,38 +1359,157 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 11458.0,
+						"translation.y": 1498.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "js/components/puzzle.js",
-					"semi_transient": true,
+					"buffer": 7,
+					"file": "css/styles.css",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11658,
+						"buffer_size": 9293,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								8444,
+								8444
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11739.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 423,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										127,
+										144
+									],
+									[
+										231,
+										248
+									],
+									[
+										295,
+										312
+									],
+									[
+										358,
+										375
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								321,
+								321
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "views/player.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19616,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4593,
+								4593
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "js/components/description.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2150,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								181,
+								181
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
 					"type": "text"
 				}
 			]

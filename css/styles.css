@@ -658,6 +658,9 @@ dt {
   white-space: nowrap;
   color: #0089ff;
   margin-left: 1em;
+  max-width: 300px;
+  display: inline-block;
+  position: relative;
 }
 
 .lwidth {
@@ -669,4 +672,29 @@ dt {
   display: flex;
   flex-wrap: nowrap !important;
   align-items: center;
+  justify-content: space-between;
+}
+
+.navbar-title .dropdown-toggle::after {
+  margin: 0px 10px;
+}
+
+.navbar-title .clip-list div {
+  display: flex;
+  font-size: 13px;
+  margin: 5px;
+  color: darkslateblue;
+  cursor: pointer;
+}
+
+.navbar-title .clip-list .image {
+  width: 56px;
+  height: 40px;
+  flex-shrink: 0;
+}
+
+.navbar-title .clip-list .title {
+  height: 40px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
