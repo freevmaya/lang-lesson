@@ -27,7 +27,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
     <title><?=$site_name?></title>
     <meta name="description" content="<?=$site_description?>"> 
-
+    <meta name="yandex-verification" content="aab8c1a5afa059a2" />
+    
     <?include("views/og.php");?>
 
     <link rel="stylesheet" type="text/css" href="<?=$mainURL?>css/styles.css">
