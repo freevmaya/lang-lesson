@@ -23,12 +23,13 @@
 ?>
 <!DOCTYPE html>
 <html>
+  <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
     <title><?=$site_name?></title>
     <meta name="description" content="<?=$site_description?>"> 
     <meta name="yandex-verification" content="aab8c1a5afa059a2" />
-    
+
     <?include("views/og.php");?>
 
     <link rel="stylesheet" type="text/css" href="<?=$mainURL?>css/styles.css">
@@ -65,6 +66,7 @@
     <style type="text/css">
       <?include('include/index_style.css')?>
     </style>
+  </head>
   <body>
     <div class="hidden">
       <!-- Modal -->
