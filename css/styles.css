@@ -613,6 +613,10 @@ dt {
   text-indent: 2em;
 }
 
+#video-description h1 {
+  font-size: 1.5em;
+}
+
 #word-hint {
   z-index: 100;
   position: absolute;

@@ -10,9 +10,12 @@
       pf.css('position', (pc.outerHeight() > size)?'relative':'fixed');
     };
 
+    let layers = ['page-content'];
 
     var observer = new ResizeObserver(function(entries) {
-      entries.forEach(function(entry) {if (entry.target == pc[0]) onResize();});
+      entries.forEach(function(entry) {
+        if (entry.target == pc[0]) onResize();
+      });
     });
     observer.observe(pc[0]);
 
