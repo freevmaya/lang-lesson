@@ -114,6 +114,11 @@
           <a class="dropdown-item user" onclick="doc.user = null;" data-locale="logout">Logout</a>
         </div>
       </li>
+      <?
+        if ($user && ($user['role'] != 'user')) {
+          include(dirname(__FILE__).'/menu/'.$user['role'].'.php');
+        }
+      ?>
     </ul>
   </div>
   <span class="video-title hwidth">

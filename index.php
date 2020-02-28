@@ -20,6 +20,10 @@
 
   $width = 980;
   $height = round($width / 1.78);
+
+  if ($uid = $_COOKIE['uid']) {
+    $user = DB::line("SELECT u.*, a.name AS provider FROM users u LEFT JOIN auth_providers a ON a.id = u.auth_provider_id WHERE uid={$uid}");
+  }
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,6 +33,7 @@
     <title><?=$site_name?></title>
     <meta name="description" content="<?=$site_description?>"> 
     <meta name="yandex-verification" content="aab8c1a5afa059a2" />
+    <link rel="icon" href="https://engme.ru/favicon.ico" type="image/x-icon">
 
     <?include("views/og.php");?>
 
