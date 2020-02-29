@@ -33,16 +33,16 @@
         <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
       </div>
       <div class="item hint" data-hint="Your bonuses">
-        <span class="glyphicon glyphicon-star"></span><div id="scope">0</div>
+        <span class="glyphicon glyphicon-star"></span><div class="scope">0</div>
       </div>
-      <div class="item hint" data-hint="Rate lesson">
-        <span class="glyphicon glyphicon-thumbs-up"></span><div id="rate">0</div>
+      <div class="item hint" data-hint="Rate lesson" onclick="doc.addRate()">
+        <span class="glyphicon glyphicon-thumbs-up"></span><div class="rate"><?=$video?$video['rate']:0?></div>
       </div>
       <div class="item hint" data-hint="Lesson comments">
-        <span class="glyphicon glyphicon-comment"></span><div id="comments">0</div>
+        <span class="glyphicon glyphicon-comment"></span><div class="comments">0</div>
       </div>
       <div class="item hint" data-hint="Other lessons">
-        <span class="glyphicon glyphicon-folder-open"></span><div id="lessons">0</div>
+        <span class="glyphicon glyphicon-folder-open"></span><div class="lessons">0</div>
       </div>
     </div>
     <div class="controls" data-auto-component="controls">
@@ -80,7 +80,7 @@
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.hasClass('editContaier');}});
     Object.defineProperty(this, 'scope', {get: ()=>{return _scope;}, set: (value)=>{
       _scope = value;
-      container.find('#scope').text(value);
+      container.find('.scope').text(value);
     }});
 
     Object.defineProperty(this, 'user', {get: ()=>{return _user;}, set: (value)=>{
@@ -99,6 +99,20 @@
 
     this.getData = ()=>{
       return vdata;
+    }
+
+    this.addRate = ()=>{
+      if (_vid && !localStorage.getItem('set_rate_' + _vid)) {
+        $.post(echoURL + "?task=addRate", {vid: _vid}, function() {
+          $.message(Locale.value('thank_vote'));
+          This.setRateLabel(parseInt(container.find('.rate').text()) + 1);
+          localStorage.setItem('set_rate_' + _vid, true);
+        });
+      } else $.message(Locale.value('already_voted'));
+    }
+
+    this.setRateLabel = (val)=>{
+      container.find('.rate').text(val);
     }
 
     doAfterLogin = (user)=>{
@@ -149,6 +163,8 @@
             This.scope = result.scope?result.scope:This.storageScope();
 
             This.setDiscription(result.description);
+            This.setRateLabel(result.rate);
+
             result = a_data;
             if (playerApp) 
               $(window).trigger('onOpenVideoContent', result);

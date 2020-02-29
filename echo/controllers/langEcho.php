@@ -213,5 +213,16 @@ class langEcho extends BaseController {
 		}
 		echo '{"result": "error", "error": "Receive data"}';
 	}
+
+	public function addRate() {
+		if ($vid = $this->safePost('vid', false)) {
+			if ($video = DB::line("SELECT id, uid FROM lang_items WHERE id={$vid}")) {
+				DB::query("UPDATE lang_items SET `rate` = `rate` + 1 WHERE id={$vid}");
+				echo '{"result": "ok"}';
+				return;
+			} else echo '{"result": "error", "error": "No video available"}';
+		}
+		echo '{"result": "error", "error": "Not enough data"}';
+	}
 }
 ?>

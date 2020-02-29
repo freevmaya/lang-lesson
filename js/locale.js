@@ -33,7 +33,9 @@ var LocaleData = {
 		description_help: 'Введите текст',
 		first_save_to_lib: 'Сначала сохраните в альбом',
 		album_title: 'Альбом:',
-		service: 'Сервис'
+		service: 'Сервис',
+		thank_vote: 'Спасибо за ваш голос!',
+		already_voted: 'Спасибо, вы уже голосовали за это видео.'
 	},
 	eng: {
 		file: 'File',
@@ -69,7 +71,9 @@ var LocaleData = {
 		description_help: 'Enter text',
 		first_save_to_lib: 'Save to album first',
 		album_title: 'Album:',
-		service: 'Service'
+		service: 'Service',
+		thank_vote: 'Thanks for your vote!',
+		already_voted: 'Thank you, you have already voted for this video.'
 	}
 }
 

@@ -35,6 +35,7 @@ class BaseController {
 		'cids'=>'StringArray',
 		'uid'=>'Bigintval',
 		'id'=>'Bigintval',
+		'vid'=>'Bigintval',
 		'pid'=>'Bigintval',
 		'thumbnail_width'=>'Int',
 		'thumbnail_height'=>'Int',
