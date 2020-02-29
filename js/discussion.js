@@ -19,9 +19,14 @@ $.Discussion = (params, user)=>{
 
 	function addItem(itm, parent) {
 		let html = tmpl.clone();
-		html.find('.name').text(itm.first_name + ' ' + itm.last_name);
+		let n = html.find('.name');
+		n.text(itm.first_name + ' ' + itm.last_name);
 		html.find('.message').text(itm.message);
 		html.data('id', itm.id);
+		if (itm.uid == user.uid) {
+			html.addClass('myself');
+			n.text(Locale.value('you'));
+		}
 		parent.append(html);
 	}
 
@@ -42,6 +47,11 @@ $.Discussion = (params, user)=>{
 		if (pid) {
 			parent = getParent(pid);
 			if (parent.length == 0) return;
+		} else {
+			if (data.length == 0) {
+				layer.find('.empty').css('display', 'block');
+				return;
+			} else layer.find('.empty').css('display', 'none');
 		}
 
 		let plist = [];

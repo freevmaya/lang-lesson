@@ -720,17 +720,22 @@ dt {
 }
 
 .discussionItem {
-  display: flex;
   border: 1px solid #dee2e6;
   border-radius: 8px;
+  margin-right: 1em;
 }
 
 .discussionItem .user {
   font-size: 0.8em;
-  width: 40px;
   margin-right: 10px;
   overflow: hidden;
   text-overflow: ellipsis;
-  color: #8d8d9c;
+  color: #93bbac;
   flex-shrink: 0;
+}
+
+.discussionDialog .myself {
+  border-color: #0062cc;
+  margin-left: 1em;
+  margin-right: 0 !important;
 }

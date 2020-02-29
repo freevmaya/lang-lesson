@@ -39,7 +39,9 @@ var LocaleData = {
 		already_voted: 'Спасибо, вы уже голосовали за это видео.',
 		show_scope: 'Поздравляем, вы набрали :scope баллов!',
 		discussion: 'Обсуждение',
-		guest: 'Гость'
+		guest: 'Гость',
+		empty_discussion: 'Здесь сейчас пусто. Будьте первыми!',
+		you: 'Вы'
 	},
 	eng: {
 		file: 'File',
@@ -81,7 +83,9 @@ var LocaleData = {
 		already_voted: 'Thank you, you have already voted for this video.',
 		show_scope: 'Congratulations, you scored :scope points!',
 		discussion: 'Discussion',
-		guest: 'Guest'
+		guest: 'Guest',
+		empty_discussion: 'It’s empty here now. Be the first!',
+		you: 'You'
 	}
 }
 

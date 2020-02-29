@@ -63,6 +63,8 @@
   </div>
 
   <div class="discussionDialog" id="discussionDialog">
+    <div class="empty" data-locale="empty_discussion">
+    </div>
     <div class="list">
     </div>
     <div class="send-block">
