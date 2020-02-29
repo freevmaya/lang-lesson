@@ -3,7 +3,10 @@ $.Discussion = (params, user)=>{
 	let layer = $('#discussionDialog').clone();
 	layer.removeAttr('id');
 
-	let dlg = $.dialog(Locale.value('discussion'), layer);
+	let dlg = $.dialog(Locale.value('discussion'), layer, ()=>{
+		sendMessage();
+	}, Locale.value('send'));
+
 	let ta = dlg.find('textarea');
 	let list = dlg.find('.list');
 	let cache_key = params.vid + '-' + params.tid;
@@ -81,12 +84,10 @@ $.Discussion = (params, user)=>{
 				ta.val('');
 				doc.countMessages++;
 			} else $(window).trigger('onAppError', result.error);
-			console.log(result);
 		});
 	}
 
 	ta.focus();
-	dlg.find('.send').click(sendMessage);
 	return this;
 }
 

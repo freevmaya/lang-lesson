@@ -226,6 +226,8 @@ function playerInit(parent, options) {
     updateComponents();
 
     if (This.videoEl) This.setIndexFromTime(This.videoEl.getCurrentTime());
+    $(window).trigger('onChangeIndex', This);
+
     resetTimeList();
     septButtonState('none');
   }

@@ -67,7 +67,6 @@
     </div>
     <div class="send-block">
       <textarea name="message" placeholder="Input your message..."></textarea>
-      <button class="btn btn-secondary send" data-locale="send">Send</button>
     </div>
   </div>
 

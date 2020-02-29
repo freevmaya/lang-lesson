@@ -39,7 +39,7 @@
         <span class="glyphicon glyphicon-thumbs-up"></span><div class="rate"><?=$video?$video['rate']:0?></div>
       </div>
       <div class="item hint" data-hint="Lesson comments" onclick="doc.showMessages()">
-        <span class="glyphicon glyphicon-comment"></span><div class="comments"><?=$video?$video['countMessages']:0?></div>
+        <span class="glyphicon glyphicon-comment"></span><div class="comments">0</div>
       </div>
     </div>
     <div class="controls" data-auto-component="controls">
@@ -66,6 +66,7 @@
     var _vid = 0;
     var _scope = 0;
     var _user=null;
+    var _countMessages;
 
     var audioElement = document.createElement('audio');
     audioElement.volume = 0.4;
@@ -165,6 +166,7 @@
       
       $.getJSON(echoURL + '?task=get&id=' + parseInt(id), (result)=>{
         if (result && result.data) {
+          _countMessages = result.countMessages;
 
           checkStorage(vdecode(result.data), (a_data)=>{
             _vid = parseInt(result.id);
@@ -172,7 +174,6 @@
 
             This.setDiscription(result.description);
             This.setRateLabel(result.rate);
-            This.countMessages = result.countMessages;
 
             result = a_data;
             if (playerApp) 
@@ -507,6 +508,16 @@
       This.saveToStorage(vdata);
     }
 
+    function doChangeIndex(index) {
+      for (let i=0; i<_countMessages.length; i++) {
+          if (_countMessages[i].tid == index) {
+            This.countMessages = _countMessages[i].count;
+            return;
+          }
+        }
+        This.countMessages = 0;
+    }
+
     function checkAndCreateEditor() {
       if (!This.langapp) {
         This.langapp = new LangApp(playerApp, {onChange: onChange});
@@ -637,6 +648,7 @@
     function startLayout() {
       if (vdata) {
         playerApp.setData(vdata);
+
         if (vdata.info) {
           layout = container.find('.videoPlayer');
           let w = <?=$width?>;
@@ -654,6 +666,7 @@
     <?if ($video) {?>
     vdata = checkStorage(<?=$video['data']?>);
     _vid = <?=$video['id']?>;
+    _countMessages = <?=json_encode($video['countMessages'])?>;
     This.address(undefined, undefined, _vid);
     <?} else {?>
     if (!vdata) {
@@ -682,6 +695,10 @@
 
     $(window).on('onAfterSaveToLibrary', (e, data)=>{
       _vid = parseInt(data.id);
+    });
+
+    $(window).on('onChangeIndex', (e, data)=>{
+      doChangeIndex(data.index);
     });
 
     $(window).on('onGetVideoContent', (e, callback)=>{

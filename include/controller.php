@@ -77,7 +77,7 @@ class Controller extends BaseController {
 			if ($item = DB::line('SELECT * FROM lang_items WHERE '.$where.' ORDER BY rate DESC')) {
 				$item['data'] = stripcslashes($item['data']);
 				if (isset($scope)) $item['scope'] = $scope;
-				$item['countMessages'] = DB::one("SELECT COUNT(id) AS value FROM discussion WHERE vid=:vid", [':vid'=>$this->cid]);
+				$item['countMessages'] = DB::asArray("SELECT COUNT(id) AS count, tid FROM discussion WHERE vid=:vid GROUP BY tid", [':vid'=>$this->cid]);
 
 				$this->openVideo = $this->decodeVideo($item);
 			}

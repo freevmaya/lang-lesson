@@ -43,7 +43,7 @@ class langEcho extends BaseController {
 
 				if ($scope)	$item['scope'] = $scope;
 
-				$item['countMessages'] = DB::one("SELECT COUNT(id) AS value FROM discussion WHERE vid=:vid", [':vid'=>$id]);
+				$item['countMessages'] = DB::asArray("SELECT COUNT(id) AS count, tid FROM discussion WHERE vid=:vid GROUP BY tid", [':vid'=>$id]);
 				
 				echo json_encode($item);
 				return;
