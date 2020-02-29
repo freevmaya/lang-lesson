@@ -683,7 +683,7 @@ dt {
   margin: 0px 10px;
 }
 
-.navbar-title .clip-list div {
+.navbar .clip-list div {
   display: flex;
   font-size: 13px;
   margin: 5px;
@@ -691,13 +691,13 @@ dt {
   cursor: pointer;
 }
 
-.navbar-title .clip-list .image {
+.navbar .clip-list .image {
   width: 56px;
   height: 40px;
   flex-shrink: 0;
 }
 
-.navbar-title .clip-list .title {
+.navbar .clip-list .title {
   height: 40px;
   overflow: hidden;
   text-overflow: ellipsis;

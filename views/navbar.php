@@ -3,13 +3,9 @@
   if ($video = $controller->getVideo()) {
     $other_list = DB::asArray("SELECT id, title, preview_url FROM lang_items WHERE publish=1 AND pid={$video['pid']}");
   }
+
+  function otherVideosNav($other_list) {
 ?>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="navbar-title">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="lwidth">
       <?if ($other_list) {?>
       <div class="btn-group">
         <span class="dropdown-toggle" type="button" data-toggle="dropdown">
@@ -17,10 +13,12 @@
         </span>
         <div class="dropdown-menu clip-list">
           <?foreach ($other_list as $item) {?>
-            <div data-id="<?=$item['id']?>">
-              <div class="image" style="background-image: url('<?=$item['preview_url']?>');"></div>
-              <div class="title"><?=$item['title']?></div>
-            </div>
+            <a href="/<?=$item['id']?>" data-id="<?=$item['id']?>">
+              <div>
+                <div class="image" style="background-image: url('<?=$item['preview_url']?>');"></div>
+                <div class="title"><?=$item['title']?></div>
+              </div>
+            </a>
           <?}?>
         </div>
       </div>
@@ -29,6 +27,16 @@
           Video HD
         </span>
       <?}?>
+<?    
+  }
+?>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="navbar-title">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="lwidth">
+      <?otherVideosNav($other_list)?>
     </div>
   </div>
 
@@ -121,9 +129,9 @@
       ?>
     </ul>
   </div>
-  <span class="video-title hwidth">
-    Video HD
-  </span>  
+  <div class="hwidth">
+    <?otherVideosNav($other_list)?>
+  </div>  
 </nav>
 
 <script type="text/javascript">
@@ -403,12 +411,15 @@
   var navigate = new Navigate();
 
   $(window).ready(()=>{
-    $('.navbar-title .clip-list div').click((e)=>{
+    $('.navbar .clip-list a').click((e)=>{
       let id = $(e.currentTarget).data('id');
       if (id) 
         doc.loadVideo(id, ()=>{
           scrollTo($('.videoPlayer'));
         });
+
+      e.stopPropagation();
+      return false;
     });
   });
 
