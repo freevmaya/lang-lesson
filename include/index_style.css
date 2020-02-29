@@ -113,4 +113,8 @@
   .navbar-title {
     width: 100%;
   }
+
+  .modal-body {
+    padding: 0.5em;
+  }
 }

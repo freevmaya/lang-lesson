@@ -61,4 +61,23 @@
       <textarea name="description"></textarea>
     </div>
   </div>
+
+  <div class="discussionDialog" id="discussionDialog">
+    <div class="list">
+    </div>
+    <div class="send-block">
+      <textarea name="message" placeholder="Input your message..."></textarea>
+      <button class="btn btn-secondary send" data-locale="send">Send</button>
+    </div>
+  </div>
+
+  <div class="discussionItem" id="discussionItem">
+    <div class="user">
+      <div class="name"></div>
+    </div>
+    <div class="message">
+    </div>
+    <div class="childs">
+    </div>
+  </div>
 </div>

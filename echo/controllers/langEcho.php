@@ -42,6 +42,8 @@ class langEcho extends BaseController {
 				//else $scope = DB::one("SELECT incValue + decValue AS value FROM score WHERE task_id=:task_id", [':task_id'=>$id]);
 
 				if ($scope)	$item['scope'] = $scope;
+
+				$item['countMessages'] = DB::one("SELECT COUNT(id) AS value FROM discussion WHERE vid=:vid", [':vid'=>$id]);
 				
 				echo json_encode($item);
 				return;

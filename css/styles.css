@@ -702,3 +702,35 @@ dt {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.discussionDialog textarea, .discussionItem {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 5px 0px;
+}
+
+.discussionDialog textarea {
+  width: 100%;
+  border-color: #a59282 !important;
+}
+
+.send-block {
+  text-align: right;
+}
+
+.discussionItem {
+  display: flex;
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+}
+
+.discussionItem .user {
+  font-size: 0.8em;
+  width: 40px;
+  margin-right: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #8d8d9c;
+  flex-shrink: 0;
+}

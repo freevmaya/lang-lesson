@@ -32,17 +32,14 @@
         </a>
         <div class="setting-menu dropdown-menu" aria-labelledby="setting"></div>  
       </div>
-      <div class="item hint" data-hint="Your bonuses">
+      <div class="item hint" data-hint="Your bonuses" onclick="doc.showScope()">
         <span class="glyphicon glyphicon-star"></span><div class="scope">0</div>
       </div>
       <div class="item hint" data-hint="Rate lesson" onclick="doc.addRate()">
         <span class="glyphicon glyphicon-thumbs-up"></span><div class="rate"><?=$video?$video['rate']:0?></div>
       </div>
-      <div class="item hint" data-hint="Lesson comments">
-        <span class="glyphicon glyphicon-comment"></span><div class="comments">0</div>
-      </div>
-      <div class="item hint" data-hint="Other lessons">
-        <span class="glyphicon glyphicon-folder-open"></span><div class="lessons">0</div>
+      <div class="item hint" data-hint="Lesson comments" onclick="doc.showMessages()">
+        <span class="glyphicon glyphicon-comment"></span><div class="comments"><?=$video?$video['countMessages']:0?></div>
       </div>
     </div>
     <div class="controls" data-auto-component="controls">
@@ -82,6 +79,9 @@
       _scope = value;
       container.find('.scope').text(value);
     }});
+    Object.defineProperty(this, 'countMessages', {get: ()=>{return parseInt(container.find('.comments').text());}, set: (value)=>{
+      container.find('.comments').text(value);
+    }});
 
     Object.defineProperty(this, 'user', {get: ()=>{return _user;}, set: (value)=>{
       if (_user != value) {
@@ -99,6 +99,14 @@
 
     this.getData = ()=>{
       return vdata;
+    }
+
+    this.showScope = ()=>{
+      $.message(Locale.value('show_scope', {':scope': _scope}));
+    }
+
+    this.showMessages = ()=>{
+      $.Discussion({vid: _vid, tid: playerApp.index}, <?=$user?json_encode($user):'null'?>);
     }
 
     this.addRate = ()=>{
@@ -164,6 +172,7 @@
 
             This.setDiscription(result.description);
             This.setRateLabel(result.rate);
+            This.countMessages = result.countMessages;
 
             result = a_data;
             if (playerApp) 

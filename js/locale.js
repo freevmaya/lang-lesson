@@ -11,6 +11,7 @@ var LocaleData = {
 		share: 'Поделиться',
 		copy: 'Копировать',
 		paste: 'Вставить',
+		send: 'Отправить',
 		message: 'Сообщение',
 		insert_marker: 'Вставить метку',
 		delete_marker: 'Удалить метку',
@@ -35,7 +36,10 @@ var LocaleData = {
 		album_title: 'Альбом:',
 		service: 'Сервис',
 		thank_vote: 'Спасибо за ваш голос!',
-		already_voted: 'Спасибо, вы уже голосовали за это видео.'
+		already_voted: 'Спасибо, вы уже голосовали за это видео.',
+		show_scope: 'Поздравляем, вы набрали :scope баллов!',
+		discussion: 'Обсуждение',
+		guest: 'Гость'
 	},
 	eng: {
 		file: 'File',
@@ -49,6 +53,7 @@ var LocaleData = {
 		share: 'Share',
 		copy: 'Copy',
 		paste: 'Paste',
+		send: 'Send',
 		message: 'Message',
 		insert_marker: 'Insert marker',
 		delete_marker: 'Delete marker',
@@ -73,7 +78,10 @@ var LocaleData = {
 		album_title: 'Album:',
 		service: 'Service',
 		thank_vote: 'Thanks for your vote!',
-		already_voted: 'Thank you, you have already voted for this video.'
+		already_voted: 'Thank you, you have already voted for this video.',
+		show_scope: 'Congratulations, you scored :scope points!',
+		discussion: 'Discussion',
+		guest: 'Guest'
 	}
 }
 

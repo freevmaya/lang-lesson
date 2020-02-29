@@ -29,6 +29,25 @@ $.dialog = (title, content, success, okCaption)=>{
 			dlg.find('.error').show().children('span').text(error);
 			dlg.find('[name=okButton]').hide();
 		}
+
+		dlg.hLimit = (reducSelector)=>{
+			let md = dlg.find('.modal-dialog');
+			let relem = dlg.find(reducSelector);
+			function updateHeight() {
+				let dh = md.outerHeight() - $(window).innerHeight() + 5;
+				if (dh > 0)
+					relem.css({height: relem.height() - dh, 'overflow-y': 'scroll'});
+			}
+
+			var observer = new ResizeObserver(function(entries) {
+		      entries.forEach(function(entry) {
+		        if (entry.target == md[0]) updateHeight();
+		      });
+		    });
+		    observer.observe(md[0]);
+
+		  	dlg.on('hidden.bs.modal', function (e) {observer.disconnect();});
+		}
 		return dlg;
 	}
 	return null;

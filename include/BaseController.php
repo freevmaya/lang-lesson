@@ -31,7 +31,7 @@ class BaseController {
 		'network'=>64,
 		'ids'=>1024,
 		'pl'=>64,
-
+		'message'=>'Text',
 		'cids'=>'StringArray',
 		'uid'=>'Bigintval',
 		'id'=>'Bigintval',
@@ -71,6 +71,10 @@ class BaseController {
 
 	protected function safeFloat($val) {
 		return floatval($val);
+	}
+
+	protected function safeText($val) {
+		return addslashes($val);
 	}
 
 	protected function safeBigintval($val) {
