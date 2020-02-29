@@ -22,7 +22,8 @@ class discussion extends BaseController {
 	}
 
 	public function getMessages() {
-		if (($vid = $this->safePost('vid')) && ($tid = $this->safePost('tid'))) {
+		if ($vid = $this->safePost('vid')) {
+			$tid = $this->safePost('tid');
 
 			$list = DB::asArray("SELECT d.id, d.uid, d.pid, d.message, u.last_name, u.first_name, p.name AS provider
 				FROM discussion d 

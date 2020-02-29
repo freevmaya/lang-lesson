@@ -78,6 +78,7 @@ $.Discussion = (params, user)=>{
 					result.data.last_name = '';
 				}
 				addItem(result.data, getParent(params.pid));
+				ta.val('');
 				doc.countMessages++;
 			} else $(window).trigger('onAppError', result.error);
 			console.log(result);
