@@ -523,7 +523,7 @@
 			"file": "views/navbar.php",
 			"settings":
 			{
-				"buffer_size": 15751,
+				"buffer_size": 15870,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -532,7 +532,7 @@
 			"file": "sitemap.xml",
 			"settings":
 			{
-				"buffer_size": 1238,
+				"buffer_size": 1500,
 				"line_ending": "Unix"
 			}
 		},
@@ -668,6 +668,7 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
+		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
@@ -945,6 +946,7 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"lesson",
 			"clip-list",
 			"console.log(result);",
 			"countMessages",
@@ -1071,8 +1073,7 @@
 			"curVideoID",
 			"vdata =",
 			"load",
-			"startLayout",
-			".btn span"
+			"startLayout"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1170,7 +1171,7 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -1179,15 +1180,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15751,
+						"buffer_size": 15870,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								15595,
-								15595
+								5109,
+								5109
 							]
 						],
 						"settings":
@@ -1197,10 +1198,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 7758.0,
+						"translation.y": 1560.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1209,7 +1210,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1238,
+						"buffer_size": 1500,
 						"regions":
 						{
 						},
@@ -1230,7 +1231,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1260,7 +1261,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1341,7 +1342,8 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 60.0,
