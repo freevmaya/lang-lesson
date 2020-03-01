@@ -1,5 +1,6 @@
 <?
-  $lessons = DB::asArray("SELECT * FROM playlist WHERE type='training'");
+  $lessons = DB::asArray("SELECT pl.*, (SELECT id FROM lang_items li WHERE li.pid = pl.id ORDER BY li.rate DESC LIMIT 1) AS vid 
+                          FROM playlist pl WHERE pl.type='training'");
   if ($video = $controller->getVideo()) {
     $other_list = DB::asArray("SELECT id, title, preview_url FROM lang_items WHERE publish=1 AND pid={$video['pid']}");
   }
@@ -87,7 +88,7 @@
         <div class="dropdown-menu" aria-labelledby="navbarLessons">
         <?
           foreach ($lessons as $lesson) {
-            ?><a class="dropdown-item" onclick="myLibrary.show(<?=$lesson['id']?>, <?=$lesson['uid']?>, true);" ><?=$lesson['title']?></a><?
+            ?><a class="dropdown-item" href="/<?=$lesson['uid'].'/'.$lesson['link'].'/'.$lesson['vid']?>"><?=$lesson['title']?></a><?
           }
         ?>
         </div>
