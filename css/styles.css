@@ -662,9 +662,28 @@ dt {
   white-space: nowrap;
   color: #0089ff;
   margin-left: 1em;
-  max-width: 300px;
   display: inline-block;
   position: relative;
+}
+
+.lwidth .video-title {
+  width: calc(100% - 50px);
+}
+
+.navbar-title .lwidth {
+  width: calc(100% - 50px);
+}
+
+.navbar-title .lwidth .btn-group {
+  width: 100%;
+}
+
+.navbar-title .lwidth .btn-group .dropdown-toggle {
+  width: 100%;
+}
+
+.navbar-title .lwidth .video-title {
+  text-align: right;
 }
 
 .lwidth {

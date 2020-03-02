@@ -12,7 +12,7 @@
         <span class="dropdown-toggle" type="button" data-toggle="dropdown">
           <span class="video-title">Video HD</span>
         </span>
-        <div class="dropdown-menu clip-list">
+        <div class="dropdown-menu dropdown-menu-right clip-list">
           <?foreach ($other_list as $item) {?>
             <a href="/<?=$item['id']?>" data-id="<?=$item['id']?>">
               <div>
@@ -413,13 +413,15 @@
 
   $(window).ready(()=>{
     $('.navbar .clip-list a').click((e)=>{
-      let id = $(e.currentTarget).data('id');
-      if (id) 
+      let itm = $(e.currentTarget);
+      let id = itm.data('id');
+      if (id) {
         doc.loadVideo(id, ()=>{
           scrollTo($('.videoPlayer'));
         });
-
-      e.stopPropagation();
+        e.stopPropagation();
+        itm.parent('.dropdown-menu').removeClass('show');
+      }
       return false;
     });
   });
