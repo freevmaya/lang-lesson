@@ -514,7 +514,10 @@
     $(window).on('ToEditMode', (e)=>{
       if (vdata) {
         if (!_providers[_type] || !_providers[_type].loaded) {
-          // if provider no loaded
+          initProvider(_type, ()=>{
+            checkAndCreateEditor();
+            This.langapp.setData(vdata, player.getDuration());
+          });
         } else {
           checkAndCreateEditor();
           This.langapp.setData(vdata, player.getDuration());
