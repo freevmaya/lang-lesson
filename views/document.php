@@ -554,15 +554,14 @@
         player.loadVideo(vdata);
         playerApp.setData(vdata);
 
-        if (vdata.info) This.resetFromInfo(vdata.info);
-        else getVideoInfo(videoID, (info)=>{
+        getVideoInfo(videoID, (info)=>{
           let size = This.getSize(info);
           _record = $.extend(_record, {
             thumbnail_width: size.width,
             thumbnail_height: size.height,
             preview_url: size.url
           });
-          This.resetFromInfo(vdata.info = info)
+          This.resetFromInfo(vdata.info = info);
         });
       }
 
