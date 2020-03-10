@@ -542,14 +542,15 @@
       vdata = This.readInStorage(videoID);
       _vid = 0;
 
-      if (!vdata)
+      if (!vdata) {
         vdata = defaultVData();
+        vdata.id = videoID;
+      }
 
       function afterYTLoad() {
-        checkAndCreateEditor();
-        This.langapp.newVideo(vdata);
+        //checkAndCreateEditor();
+        if (This.langapp) This.langapp.newVideo(vdata);
 
-        playerApp.stopVideo();
         player.loadVideo(vdata);
         playerApp.setData(vdata);
 
@@ -565,6 +566,11 @@
         });
       }
 
+      if (player) {
+        playerApp.stopVideo();
+        player.destroy();
+        player = null;
+      }
       initProvider('youtube', afterYTLoad);
       return false;
     }

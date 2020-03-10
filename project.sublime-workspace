@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"new",
+				"newVideo"
+			],
+			[
+				"stop",
+				"stopVideo"
+			],
+			[
+				"t",
+				"tlist"
+			],
+			[
+				"rese",
+				"resetFromInfo"
+			],
+			[
+				"json",
+				"json_encode"
+			],
+			[
+				"l",
+				"layout"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"ini",
+				"initProvider"
+			],
+			[
+				"call",
+				"callBack"
+			],
+			[
+				"Default",
+				"defaultVData"
+			],
+			[
+				"pro",
+				"initProvider"
+			],
+			[
 				"get",
 				"getDuration"
 			],
@@ -80,10 +124,6 @@
 				"text-align\tproperty"
 			],
 			[
-				"t",
-				"transition\tproperty"
-			],
-			[
 				"vide",
 				"video"
 			],
@@ -120,10 +160,6 @@
 				"septButtonState"
 			],
 			[
-				"stop",
-				"stopPropagation"
-			],
-			[
 				"sep",
 				"septBtState"
 			],
@@ -146,10 +182,6 @@
 			[
 				"index",
 				"index"
-			],
-			[
-				"json",
-				"json_encode"
 			],
 			[
 				"fo",
@@ -186,10 +218,6 @@
 			[
 				"pl",
 				"playVideo"
-			],
-			[
-				"l",
-				"length"
 			],
 			[
 				"you",
@@ -384,10 +412,6 @@
 				"TransText"
 			],
 			[
-				"di",
-				"dispose"
-			],
-			[
 				"cle",
 				"clearComponents"
 			],
@@ -456,10 +480,6 @@
 				"splice"
 			],
 			[
-				"new",
-				"newVideoData"
-			],
-			[
 				"box",
 				"box-shadow\tproperty"
 			],
@@ -494,54 +514,116 @@
 			[
 				"key",
 				"keyDown"
-			],
-			[
-				"h",
-				"hasOwnProperty"
-			],
-			[
-				"exe",
-				"executeCmd"
-			],
-			[
-				"sle",
-				"selectIndex"
-			],
-			[
-				"dele",
-				"deleteMarker"
-			],
-			[
-				"cu",
-				"cursorTime"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "views/navbar.php",
+			"file": "views/document.php",
 			"settings":
 			{
-				"buffer_size": 15979,
+				"buffer_size": 20510,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "sitemap.xml",
+			"file": "js/player-providers/youtube.js",
 			"settings":
 			{
-				"buffer_size": 1500,
-				"line_ending": "Unix"
+				"buffer_size": 2740,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/navbar.php",
+			"settings":
+			{
+				"buffer_size": 16104,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": ".gitignore",
+			"settings":
+			{
+				"buffer_size": 82,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "echo/controllers/langEcho.php",
+			"settings":
+			{
+				"buffer_size": 8566,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/player.js",
+			"settings":
+			{
+				"buffer_size": 11989,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/functions.js",
+			"settings":
+			{
+				"buffer_size": 6111,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "Searching 32 files for \"loadVideoById\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  337:     playerApp.loadVideoById(newVideoID = videoID);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player.js:\n  108:   this.loadVideoById = (videoID)=>{\n  109:     videoEl.loadVideoById(videoID, -1);    \n\n3 matches across 2 files\n\n\nSearching 32 files for \"loadVideoById\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  337:     playerApp.loadVideoById(newVideoID = videoID);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player-providers\\youtube.js:\n   63: \t\t\t\tplayer.loadVideoById(vdata.id);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player.js:\n  108:   this.loadVideoById = (videoID)=>{\n  109:     videoEl.loadVideoById(videoID, -1);\n\n4 matches across 3 files\n\n\nSearching 32 files for \"word-hint\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\controls.js:\n  120: \t\t$.fn.wordHint.layer = layer = $('<div id=\"word-hint\"><div>' +\n\n1 match in 1 file\n\n\nSearching 6 files for \"wordHint\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\components\\puzzle.js:\n  196: \t  \tif (tn_list && tn_list[words[i]]) word.wordHint(words[i], tn_list[words[i]]);\n\n1 match in 1 file\n\n\nSearching 32 files for \"document.location\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\canvasSave.js:\n   18:         this._baseURL = Utils.baseURL(document.location.href);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player-providers\\youtube.js:\n   37: \t\t\t\torigin: document.location.host,\n   95:     else callback({title: document.location.host, width: 640, height: 420});\n\n3 matches across 2 files\n\n\nSearching 32 files for \"newVideo\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  309:   var newVideoID = false;\n  310:   var newVideoData = null;\n  312:   function onNewVideoStateChange(e) {  \n  313:     if (newVideoID !== false) {\n  315:       let nid = newVideoID;\n  320:           newVideoData = (newVideoData == null)?{id: nid, timeline: [], content: []}:newVideoData;\n  321:           This.setData(newVideoData, playerApp.getDuration());\n  322:           newVideoData = null;\n  327:       newVideoID = false;\n  331:   playerApp.onStateChange(onNewVideoStateChange);\n  333:   this.newVideo = (a_data)=>{\n  335:     newVideoData = a_data;\n\n14 matches in 1 file\n\n\nSearching 10 files for \"newVideo\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\document.php:\n  195:               if (This.langapp) This.langapp.newVideo(vdata);\n  488:             if (This.langapp) This.langapp.newVideo(vdata.id, vdata);\n  548:         This.langapp.newVideo(videoID, vdata);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\navbar.php:\n  178:       var newDialog = $.dialog('New content', $('#newVideoTemplate').clone(), ()=>{\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\templates.php:\n    2:   <div class=\"form-group\" id=\"newVideoTemplate\">\n\n5 matches across 3 files\n",
+			"settings":
+			{
+				"buffer_size": 2814,
+				"line_ending": "Windows",
+				"name": "Find Results",
+				"scratch": true
+			}
+		},
+		{
+			"file": "js/components/puzzle.js",
+			"settings":
+			{
+				"buffer_size": 12131,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "js/controls.js",
+			"settings":
+			{
+				"buffer_size": 4337,
+				"line_ending": "Windows"
 			}
 		},
 		{
 			"file": "index.php",
 			"settings":
 			{
-				"buffer_size": 6102,
+				"buffer_size": 6030,
 				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "var internal = function(container, vdata, options) {\n\n\tvar layout = container.find('.videoPlayer');\n\tvar player;\n\tvar This = this;\n\n\tObject.defineProperty(this, 'player', {get: ()=>{return player;}});\n\tObject.defineProperty(this, 'loaded', {get: ()=>{return player != null;}});\n\n    this.reset = function(a_vdata) {    \t\n    \tvdata = a_vdata;\n    \tplayer.css('display', 'block');\n    \toptions.onReady();\n    }\n\n    player = $('<video></video>');\n\n    if (doc.langapp)\n    \tplayer[0].controls = true;\n    else container.on('onCreateEditor', ()=>{\n    \tplayer[0].controls = true;\n    });\n    var videoEl = player[0];\n    var source = $('<source src=\"/video/' + doc.vid + '.mp4\" type=\"video/mp4\"></source>');\n\n    player.append(source);\n    layout.html(player);\n\n    player.on('loadeddata', ()=>{\n    \toptions.onReady(vdata);\n    \tplayer.trigger('onReady', vdata);\n    \tvideoEl.play();\n    });\n\n    let onChangeStage = ()=>{player.trigger('onStateChange', player.getPlayerState())}\n    player.on('play', onChangeStage);\n    player.on('waiting', onChangeStage);\n\n    $.extend(player, {\n\t\tsetSize: (w, h)=>{\n\t\t\tlet size = {width: w, height: h};\n\t\t\tif (player) {\n\t\t\t\tplayer.attr(\"width\", w);\n\t\t\t\tplayer.attr(\"height\", h);\n\t\t\t} else layout.css(size);\n\n\t\t\tcontainer.css('width', size.width);\n\t\t\tcontainer.find('.langControls').css('width', size.width);\n\t\t\tcontainer.find('.playerSeptum').css('height', h);\n\t\t\tcontainer.trigger('onPlayerSize', size);\n\t    },\n\t    addEventListener: (type, listener, useCapture)=>{\n\t    \tplayer.on(type, listener);\n\t    },\n\t    getCurrentTime: ()=>{return videoEl.currentTime},\n\t    seekTo: (time)=>{\n\t    \tif (time != undefined) videoEl.currentTime = time;\n\t    },\n\t    getDuration: ()=>{return videoEl.duration;},\n\t    getPlayerState: ()=>{\n\t    \tif (!videoEl.paused) return PlayerState.PLAYING;\n\t    \treturn -1;\n\t    },\n\t    pauseVideo: ()=>{videoEl.pause();},\n\t    stopVideo: ()=>{videoEl.pause();},\n\t    playVideo: ()=>{videoEl.play();},\n\t    loadVideo: (vdata)=>{\n\t\t\tsource.attr('src', '/video/' + doc.vid + '.mp4');\n\t\t},\n\t\tdestroy: ()=>{\n\t\t\tcontainer.off('onCreateEditor', );\n\t\t\tplayer.remove();\n\t\t\tplayer = null;\n\t\t}\n\t});\n}",
+			"file": "js/player-providers/internal.js",
+			"file_size": 2190,
+			"file_write_time": 132283027109040369,
+			"settings":
+			{
+				"buffer_size": 2154,
 				"line_ending": "Windows"
 			}
 		},
@@ -555,28 +637,10 @@
 			}
 		},
 		{
-			"file": "views/document.php",
+			"file": "css/styles.css",
 			"settings":
 			{
-				"buffer_size": 19812,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player-providers/youtube.js",
-			"settings":
-			{
-				"buffer_size": 2399,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player.js",
-			"settings":
-			{
-				"buffer_size": 11907,
+				"buffer_size": 10828,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -585,53 +649,7 @@
 			"file": "js/editor-app.js",
 			"settings":
 			{
-				"buffer_size": 9276,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Rquire method Player Provider\n\nload - YouTubeAPILoad\nloaded - isYTLoaded\nsetSize - originSetSize\nloadVideo\ngetDuration",
-			"settings":
-			{
-				"buffer_size": 118,
-				"line_ending": "Windows",
-				"name": "Rquire method Player Provider"
-			}
-		},
-		{
-			"file": "js/controls.js",
-			"settings":
-			{
-				"buffer_size": 4337,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/functions.js",
-			"settings":
-			{
-				"buffer_size": 5958,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 31 files for \"getVideoInfo\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\functions.js:\n  110: function getVideoInfo(id, callback) {\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player-providers\\youtube.js:\n   47: \t\t\t  \tif (!vdata.info) getVideoInfo(vdata.id, (info)=>{\n\n2 matches across 2 files\n",
-			"settings":
-			{
-				"buffer_size": 299,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "include/index_style.css",
-			"settings":
-			{
-				"buffer_size": 1436,
+				"buffer_size": 8956,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -670,12 +688,25 @@
 	"expanded_folders":
 	[
 		"/C/WebServers/home/lang-lesson.ru/www",
+		"/C/WebServers/home/lang-lesson.ru/www/css",
 		"/C/WebServers/home/lang-lesson.ru/www/js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers",
 		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/lang-lesson"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/internal.js",
+		"/C/WebServers/home/lang-lesson.ru/www/texts/жил-был пес рабочий файл.txt",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/youtube.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
+		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
+		"/C/WebServers/home/lang-lesson.ru/www/test.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-1.12.4.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
+		"/C/WebServers/home/lang-lesson.ru/www/sitemap.xml",
+		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/discussion.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/discussion.js",
@@ -691,20 +722,15 @@
 		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
 		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
-		"/C/WebServers/home/lang-lesson.ru/www/texts/жил-был пес рабочий файл.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/captions.php",
 		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/TextToSpeech.php",
 		"/C/WebServers/home/lang-lesson.ru/www/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/disscusion.js",
 		"/C/WebServers/home/lang-lesson.ru/www/views/menu/admin.php",
 		"/C/WebServers/home/lang-lesson.ru/www/views/myclips.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
 		"/X/vmaya/pj/imgLoad.php",
 		"/X/vmaya/pj/free_test.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
 		"/C/WebServers/home/lang-lesson.ru/www/views/menu/manager.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/description.js",
 		"/C/Users/vmaya/Downloads/простоквашино.txt",
@@ -797,13 +823,7 @@
 		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player.log",
 		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player-prev.log",
 		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor-prev.log",
-		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor.log",
-		"/C/WebServers/home/lang-lesson.ru/www/css/cover.css",
-		"/X/logs/errors.log",
-		"/C/Program Files/Android/android-sdk/extras/google/usb_driver/amd64/NOTICE.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/include/_dbu.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-ui.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-1.12.4.js"
+		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor.log"
 	],
 	"find":
 	{
@@ -814,6 +834,13 @@
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js\\components",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
@@ -934,14 +961,7 @@
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\controllers",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\controllers"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models"
 		]
 	},
 	"find_state":
@@ -949,6 +969,124 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"newContentYT",
+			"newVideo",
+			"initProvider",
+			"checkAndCreateEditor",
+			"Editor",
+			"onEdit",
+			"initProvider(video.type,",
+			"langapp.newVideo(",
+			"newVideo",
+			"setVideo",
+			" this.newVideo",
+			"localStorage.setItem",
+			"onReady",
+			"playerApp",
+			"setIndex",
+			"startIndex",
+			"_providers",
+			"startIndex",
+			"store",
+			"if (!vdata) vdata = vdecode",
+			"console.debug",
+			"setInterval",
+			"setIndex",
+			"initProvider",
+			".playerSeptum",
+			"container",
+			"initProvider",
+			"playerContainer",
+			"septum",
+			"septButton",
+			"playerSeptum",
+			"stop",
+			"stopPart",
+			"playerSeptum",
+			"default.jpg",
+			"document.location",
+			"document.locale.host",
+			"baseUrl",
+			"default.jpg",
+			"yt-button",
+			"resetFromInfo",
+			"vdata = ",
+			"resetFromInfo",
+			"getSize",
+			"background",
+			"vdata =",
+			"record",
+			"vdata =",
+			"initProvider",
+			"yt-",
+			"initProvider",
+			"wordHint",
+			"word-hint",
+			".videoPlayer",
+			"yt-button",
+			"loadVideo",
+			"initProvider",
+			"initProvider(_type = video.type, ()",
+			"loadVideoById",
+			"initProvider",
+			"langapp",
+			"container",
+			"langapp",
+			"editor",
+			"onStateChange",
+			"loadVideoById",
+			"videoEl",
+			"stopVideo",
+			"videoEl",
+			"setInterval",
+			"pauseVideo",
+			"stopVideo",
+			"getPlayerState",
+			"playing",
+			"videoEl.addEvent",
+			"create",
+			"PlayerState",
+			"YT.PlayerState",
+			"getPlayerState",
+			"toEdit",
+			"vdata =",
+			"options",
+			"setPlayerSize",
+			"initProvider",
+			"YouTubeAPILoad",
+			"requireYTPlayer",
+			"afterYTPlayer",
+			"backBtnClick",
+			"videoPlayer",
+			"script",
+			"initProvider",
+			"getSize",
+			"default",
+			"getSize",
+			"initProvider",
+			"checkStorage",
+			"readInStorage",
+			"_user",
+			"newContent",
+			"doAfterLogin",
+			"doAfterLoad",
+			"          vdata = a_data;\n",
+			"setVideo",
+			"openVideoContent",
+			"result",
+			"openVideoContent",
+			"onOpenVideoContent",
+			"openVideoContent",
+			"initProvider",
+			"openVideoContent",
+			"openVideoContent(a_data);});\n",
+			"onOpenVideoContent",
+			"openVideoContent",
+			"loadVideo",
+			"_type",
+			"_providers[_type]",
+			"loadVideo",
+			"onOpenVideoContent",
 			"ToEditMode",
 			"accurateIndex",
 			"originSetSize",
@@ -958,125 +1096,7 @@
 			"getVideoInfo",
 			"afterYTLoad",
 			"calcPlayerSize",
-			"_provider",
-			"provider",
-			"resetFromInfo",
-			"youtube",
-			"onYouTubeIframeAPIReady",
-			"YouTubeAPILoad",
-			"isYTLoaded",
-			"YouTubeAPILoad",
-			"'new '",
-			"type",
-			"loadVideo",
-			"console",
-			"YouTubeReady",
-			"ready",
-			"yt-button",
-			"startLayout",
-			"layout",
-			"isYTLoaded",
-			"layout",
-			"YouTubeReady",
-			"videoEl",
-			"player",
-			"YouTubeReady",
-			"setPlayerSize",
-			"videoEl",
-			"layout",
-			"PlayerYT",
-			"videoEl",
-			"player",
-			"init = ",
-			"init(",
-			"player",
-			"YouTubeReady",
-			"autoplay",
-			"player",
-			"getDuration",
-			"player",
-			"YouTubeAPILoad",
-			"player",
-			"YouTubeReady",
-			".init",
-			"PlayerYT",
-			"init",
-			"getCurrentTime",
-			"pauseVideo",
-			"playing",
-			"accurateIndex",
-			"calcTIndex",
-			".videoEl",
-			"this.videoEl",
-			"This.videoEl",
-			"videoEl",
-			"this.videoEl",
-			"videoEl",
-			"stopVideo",
-			"this.",
-			"stopVideo",
-			"onNewVideoStateChange",
-			"videoEl",
-			"getDuration",
-			"videoEl",
-			".video-title",
-			"video-title",
-			".video-title",
-			"clip-list",
-			"lesson",
-			"clip-list",
-			"console.log(result);",
-			"countMessages",
-			"tindex =",
-			"tindex",
-			"storage",
-			"doChangeIndex",
-			"onChangeIndex",
-			"countMessages",
-			"setMessages",
-			"updateHeight",
-			"messages",
-			"comments",
-			"setCountMess",
-			"$.Disc",
-			"error",
-			"result.error",
-			"template",
-			"Template",
-			"Discussion",
-			"send",
-			"template",
-			"playerApp",
-			"timeline",
-			"showMessages",
-			"addRate",
-			"playerSeptum",
-			"localStorage",
-			"scope",
-			"rate",
-			"addRate",
-			"onclick",
-			"vid",
-			"addRate",
-			"http",
-			"https",
-			"http",
-			"_SESSION",
-			"$user",
-			"video-description",
-			"separator",
-			"separator ui-draggable ui-draggable-handle",
-			"separator",
-			"auto-component",
-			"data-auto-component",
-			"resize",
-			"resetFromInfo",
-			"setPlayerSizeRate",
-			"resetFromInfo",
-			"resize",
-			"yandex-verification",
-			"load",
-			"loadVideo"
+			"_provider"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1084,6 +1104,8 @@
 		"regex": false,
 		"replace_history":
 		[
+			"PlayerState",
+			"video",
 			"videoEl",
 			"/",
 			"",
@@ -1175,24 +1197,24 @@
 	"groups":
 	[
 		{
-			"selected": 4,
+			"selected": 11,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/navbar.php",
+					"file": "views/document.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 15979,
+						"buffer_size": 20510,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								670,
-								670
+								16604,
+								16604
 							]
 						],
 						"settings":
@@ -1202,19 +1224,134 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
+						"translation.y": 10699.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/player-providers/youtube.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2740,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1739,
+								1739
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 819.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/navbar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16104,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8791,
+								8803
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 3479.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".gitignore",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 82,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								29,
+								29
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
+						},
+						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "echo/controllers/langEcho.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8566,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6102,
+								6102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 519.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 10,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "sitemap.xml",
+					"buffer": 5,
+					"file": "js/player.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1500,
+						"buffer_size": 11989,
 						"regions":
 						{
 						},
@@ -1227,7 +1364,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/XML/XML.sublime-syntax",
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1235,24 +1372,277 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "index.php",
+					"buffer": 6,
+					"file": "js/functions.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6102,
+						"buffer_size": 6111,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2474,
-								2474
+								5971,
+								5977
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 4298.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2814,
+						"regions":
+						{
+							"match":
+							{
+								"flags": 112,
+								"regions":
+								[
+									[
+										117,
+										130
+									],
+									[
+										221,
+										234
+									],
+									[
+										269,
+										282
+									],
+									[
+										446,
+										459
+									],
+									[
+										572,
+										585
+									],
+									[
+										664,
+										677
+									],
+									[
+										712,
+										725
+									],
+									[
+										909,
+										918
+									],
+									[
+										1097,
+										1105
+									],
+									[
+										1302,
+										1319
+									],
+									[
+										1417,
+										1434
+									],
+									[
+										1474,
+										1491
+									],
+									[
+										1657,
+										1665
+									],
+									[
+										1690,
+										1698
+									],
+									[
+										1731,
+										1739
+									],
+									[
+										1773,
+										1781
+									],
+									[
+										1820,
+										1828
+									],
+									[
+										1849,
+										1857
+									],
+									[
+										1865,
+										1873
+									],
+									[
+										1924,
+										1932
+									],
+									[
+										1968,
+										1976
+									],
+									[
+										2025,
+										2033
+									],
+									[
+										2059,
+										2067
+									],
+									[
+										2114,
+										2122
+									],
+									[
+										2150,
+										2158
+									],
+									[
+										2184,
+										2192
+									],
+									[
+										2376,
+										2384
+									],
+									[
+										2443,
+										2451
+									],
+									[
+										2498,
+										2506
+									],
+									[
+										2638,
+										2646
+									],
+									[
+										2769,
+										2777
+									]
+								],
+								"scope": ""
+							}
+						},
+						"selection":
+						[
+							[
+								2512,
+								2512
+							]
+						],
+						"settings":
+						{
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 7,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ \t].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1460.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "js/components/puzzle.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 12131,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4945,
+								4945
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3419.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "js/controls.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4337,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2954,
+								2962
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2019.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2416,
+								2416
 							]
 						],
 						"settings":
@@ -1262,14 +1652,42 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 718.0,
+						"translation.y": 678.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 11,
+					"file": "js/player-providers/internal.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2154,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2103,
+								2103
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 799.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
 					"file": "views/counter.php",
 					"semi_transient": false,
 					"settings":
@@ -1293,279 +1711,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 14,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "views/document.php",
+					"buffer": 13,
+					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 19812,
+						"buffer_size": 10828,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								17909,
-								17909
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 11599.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/player-providers/youtube.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2399,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								271,
-								271
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11907,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11104,
-								11104
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 7579.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "js/editor-app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 9276,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8894,
-								8894
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6939.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								106,
-								106
-							]
-						],
-						"settings":
-						{
-							"auto_name": "Rquire method Player Provider",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "js/controls.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2,
-								2
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "js/functions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5958,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2187,
-								2187
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1679.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 299,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										110,
-										122
-									],
-									[
-										240,
-										252
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								129,
-								129
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 1,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "include/index_style.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1436,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1427,
-								1427
+								2397,
+								2397
 							]
 						],
 						"settings":
@@ -1575,10 +1738,40 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1800.0,
+						"translation.y": 2659.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "js/editor-app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8956,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7968,
+								7968
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
 					"type": "text"
 				}
 			]

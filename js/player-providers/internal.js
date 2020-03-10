@@ -15,11 +15,13 @@ var internal = function(container, vdata, options) {
 
     player = $('<video></video>');
 
+    function onCreateEditor() {
+    	player[0].controls = true;
+    }
+
     if (doc.langapp)
     	player[0].controls = true;
-    else container.on('onCreateEditor', ()=>{
-    	player[0].controls = true;
-    });
+    else container.on('onCreateEditor', onCreateEditor);
     var videoEl = player[0];
     var source = $('<source src="/video/' + doc.vid + '.mp4" type="video/mp4"></source>');
 
@@ -68,6 +70,7 @@ var internal = function(container, vdata, options) {
 			source.attr('src', '/video/' + doc.vid + '.mp4');
 		},
 		destroy: ()=>{
+			container.off('onCreateEditor', onCreateEditor);
 			player.remove();
 			player = null;
 		}
