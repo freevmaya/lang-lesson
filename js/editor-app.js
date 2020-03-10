@@ -314,11 +314,11 @@ var LangApp = function(playerApp, options) {
 
       let nid = newVideoID;
       function onCheckLoaded() {
-        let len = playerApp.videoEl.getDuration();
+        let len = playerApp.getDuration();
         if (len > 0) {
           clearTimeout(timerId);
           newVideoData = (newVideoData == null)?{id: nid, timeline: [], content: []}:newVideoData;
-          This.setData(newVideoData, playerApp.videoEl.getDuration());
+          This.setData(newVideoData, playerApp.getDuration());
           newVideoData = null;
         }
       }
@@ -328,27 +328,16 @@ var LangApp = function(playerApp, options) {
     }
   }
 
-  playerApp.videoEl.addEventListener('onStateChange', onNewVideoStateChange, false);
+  playerApp.onStateChange(onNewVideoStateChange);
 
-  this.newVideo = (videoID, a_data)=>{
+  this.newVideo = (a_data)=>{
     commandManager.clearAll();
     newVideoData = a_data;
-    playerApp.videoEl.stopVideo();
-    playerApp.videoEl.loadVideoById(newVideoID = videoID, -1);
   }
-/*
-  $(window).on('newContent', (e, videoID)=>{
-    This.newVideo(videoID, doc.readInStorage(videoID));    
-    editLayer.setData(null);
-  });
-
-  $(window).on('onGetVideoContent', (e, callback)=>{
-    callback(This.getData());
-  });
-*/
+  
   $(window).on('applyYTCaptions', (e, cobj)=>{
     if (cobj.id == data.id)
-      This.setData(cobj.component.parser(data, cobj), playerApp.videoEl.getDuration());
+      This.setData(cobj.component.parser(data, cobj), playerApp.getDuration());
   });
 
   $(window).trigger('onShowEditor');
@@ -369,7 +358,7 @@ var LangApp = function(playerApp, options) {
     setInterval(()=>{
       if (playerApp.playing()) {
         plyerSetCursor = true;
-        timeline.setCursor(playerApp.videoEl.getCurrentTime());
+        timeline.setCursor(playerApp.getCurrentTime());
         plyerSetCursor = false;
       }
     }, 100);

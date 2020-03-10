@@ -163,7 +163,10 @@ class langEcho extends BaseController {
 	public function create() {
 		GLOBAL $_COOKIE;
 		$uid = isset($_COOKIE["uid"])?$_COOKIE["uid"]:0;
-		if (($data = $_POST['data']) && ($video_id = $_POST['video_id']) && $uid) {
+
+		if (!($video_id = $_POST['video_id'])) $video_id = md5(rand(0, 10000));
+
+		if (($data = $_POST['data']) && $uid) {
 
 			$pl = $this->safePost('pl', 0); 
 			$id = $this->safePost('id', 0);

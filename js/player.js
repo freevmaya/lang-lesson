@@ -6,11 +6,11 @@ $.fn.settingMenu = function(){
   }
 }
 
-function playerInit(parent, options) {
+function Player(parent, options) {
 
   var This = this;
 
-  this.videoEl;  
+  videoEl = null;  
   this.options = options?options:{};
 
   var vidControls = parent.find('.controls'),
@@ -38,7 +38,7 @@ function playerInit(parent, options) {
   Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});
   Object.defineProperty(this, 'layout', {get: ()=>{return parent;}});
   Object.defineProperty(this, 'time', {get: ()=>{return tlist[tindex];}});
-  Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + doc.data.id;}});  
+  Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + (doc.record?doc.record.id:docdata.id);}});  
   Object.defineProperty(this, 'startIndex', {get: ()=>{
     let si = parseInt(localStorage.getItem(This.storage_id));
     if (si == undefined) si = -1;
@@ -64,7 +64,7 @@ function playerInit(parent, options) {
   });
 
   septum.click((e)=>{
-    afterYTPlayer(()=>{
+    afterPlayer(()=>{
       if (septBtState == 'none') {
         if (This.playing()) {
           septButtonState('pause');
@@ -81,6 +81,101 @@ function playerInit(parent, options) {
       }
     });
   });
+
+  this.playing = ()=>{
+    return videoEl && videoEl.getPlayerState && (videoEl.getPlayerState() == PlayerState.PLAYING);
+  }
+
+  this.hold = (value)=>{
+    partStop = value;
+    if (value) stopBtn.addClass("stop"); else stopBtn.removeClass("stop");
+    if (videoEl.getPlayerState && !partStop && !This.playing()) play();
+  }
+
+  this.getDuration = ()=>{
+    return videoEl?videoEl.getDuration():0;
+  }
+
+  this.stopVideo = ()=>{
+    videoEl.stopVideo();
+  }
+
+  this.pauseVideo = ()=>{
+    videoEl.pauseVideo();
+    langControls.addClass('pause');
+  }
+
+  this.loadVideoById = (videoID)=>{
+    videoEl.loadVideoById(videoID, -1);
+  }
+
+  this.onStateChange = (onEvent)=>{
+    videoEl.addEventListener('onStateChange', onEvent, false);    
+  }
+
+  this.getCurrentTime = ()=>{
+    return videoEl.getCurrentTime();
+  }
+
+  this.init = (a_videoEl)=>{
+    videoEl = a_videoEl;
+
+    $(window).keydown((e)=>{
+      if (!((e.target.type == 'text') || (e.target.type == 'textarea')) && (e.keyCode == 32) && ($.dialog.show == null)) {
+        if (This.playing()) This.pauseVideo();
+        else play();
+        e.stopPropagation();
+        return false;
+      }
+    });
+
+    setInterval(()=>{
+      if (videoEl && videoEl.getCurrentTime) {
+        var time = videoEl.getCurrentTime();
+
+        if (!afterSetIndex) {
+          if (This.playing()) {
+            if (langControls.hasClass('pause')) langControls.removeClass('pause');
+            if (!partStopped) {
+              var a_tindex = parseInt(calcTIndex(time));            
+              if ((a_tindex > -1) && (a_tindex != tindex) && content[a_tindex])
+                beforeChangeIndex(a_tindex);
+            }
+          }
+        }
+      }
+    }, 30);
+
+    videoEl.addEventListener('onStateChange', function (e) {  
+      if (e.data == PlayerState.PLAYING) {
+        if (partStopped) nextStep();
+        partStopped = false;
+      }
+    }, false);
+
+    videoEl.addEventListener('onReady', function (e) {
+      if ((This.startIndex > -1) && (tlist.hasOwnProperty(This.startIndex)))
+        setIndex(This.startIndex, true, false);
+    }, false);
+  }
+
+  function accurateIndex(time, limit) {
+    let t;
+    for (t in tlist)
+      if ((tround(tlist[t]) >= tround(time - limit) && (tround(tlist[t]) <= tround(time + limit)))) return parseInt(t);
+    return -1;
+  }
+
+  function calcTIndex(time) {
+    let pt, t=0;
+    for (t in tlist) {
+      if (pt) {
+        if ((tround(tlist[t]) > tround(time)) && (tround(tlist[pt]) <= tround(time))) return parseInt(pt);        
+      } else if (tround(time) <= tround(tlist[t])) return parseInt(t);
+      pt = t;
+    }
+    return (time > 0)?parseInt(t):0;
+  }  
 
   function backBtnRefresh() {
     backBtn.find('span').removeClass('glyphicon-repeat').addClass('glyphicon-triangle-left');
@@ -109,7 +204,7 @@ function playerInit(parent, options) {
       pauseWord.removeClass('pfocus');
       pauseWord = null;
     }
-    This.videoEl.playVideo();
+    videoEl.playVideo();
     updateComponents();
     nextBtn.removeClass('pfocus');
     septButtonState('none');
@@ -126,10 +221,10 @@ function playerInit(parent, options) {
   }
 
   This.setIndexFromTime = function(time) {
-    if (This.videoEl) {
-      This.videoEl.seekTo(time, true);
-      setIndex(This.calcTIndex(time));
-      if (This.videoEl.getPlayerState() == YT.PlayerState.CUED) {
+    if (videoEl) {
+      videoEl.seekTo(time, true);
+      setIndex(calcTIndex(time));
+      if (videoEl.getPlayerState() == PlayerState.CUED) {
         function onCheckState() {
           if (This.playing()) {
             This.pauseVideo();
@@ -144,7 +239,7 @@ function playerInit(parent, options) {
   }
 
   var setIndex = this.setIndex = function setIndex(index, seekSet, startPlay) {
-    if (seekSet && This.videoEl) This.videoEl.seekTo(tlist[index], true);
+    if (seekSet && videoEl) videoEl.seekTo(tlist[index], true);
 
     if (tindex != index) {
       tindex = parseInt(index);
@@ -225,7 +320,7 @@ function playerInit(parent, options) {
     initComponents();
     updateComponents();
 
-    if (This.videoEl) This.setIndexFromTime(This.videoEl.getCurrentTime());
+    //if (videoEl) This.setIndexFromTime(videoEl.getCurrentTime());
     $(window).trigger('onChangeIndex', This);
 
     resetTimeList();
@@ -238,8 +333,8 @@ function playerInit(parent, options) {
     var cindex = -1;
     for (var i in tlist) {
       var selected = '';
-      if ((cindex == -1) && This.videoEl && 
-          This.videoEl.getPlayerState && (tlist[i] >= This.videoEl.getCurrentTime())) {
+      if ((cindex == -1) && videoEl && 
+          videoEl.getPlayerState && (tlist[i] >= videoEl.getCurrentTime())) {
         cindex = i;
         selected = ' selected ';
       }
@@ -260,41 +355,8 @@ function playerInit(parent, options) {
     }
   }
 
-  this.calcTIndex = (time)=>{
-    let pt, t=0;
-    for (t in tlist) {
-      if (pt) {
-        if ((tlist[t] > time) && (tlist[pt] <= time)) return parseInt(pt);        
-      } else if (time <= tlist[t]) return parseInt(t);
-      pt = t;
-    }
-    return (time > 0)?parseInt(t):0;
-  }
-
-  this.accurateIndex = (time, limit)=>{
-    let t;
-    for (t in tlist)
-      if ((tlist[t] >= time - limit) && (tlist[t] <= time + limit)) return parseInt(t);
-    return -1;
-  }
-
-  this.playing = ()=>{
-    return This.videoEl && This.videoEl.getPlayerState && (This.videoEl.getPlayerState() == YT.PlayerState.PLAYING);
-  }
-
-  this.pauseVideo = ()=>{
-    This.videoEl.pauseVideo();
-    langControls.addClass('pause');
-  }
-
-  this.hold = (value)=>{
-    partStop = value;
-    if (value) stopBtn.addClass("stop"); else stopBtn.removeClass("stop");
-    if (This.videoEl.getPlayerState && !partStop && !This.playing()) play();
-  }
-
   timeList.change(()=>{
-    afterYTPlayer(()=>{
+    afterPlayer(()=>{
       setIndex(parseInt(timeList.val()), true, partStopped);
     });
   });
@@ -303,8 +365,8 @@ function playerInit(parent, options) {
     This.hold(!partStop);
   });
 
-  function afterYTPlayer(success) {
-    if (!This.videoEl) $(window).trigger("requireYTPlayer", success);
+  function afterPlayer(success) {
+    if (!videoEl) $(window).trigger("requirePlayer", success);
     else success();
   }
 
@@ -334,14 +396,14 @@ function playerInit(parent, options) {
   }
 
   function backBtnClick() {
-    afterYTPlayer(()=>{      
-      let aix, time = This.videoEl.getCurrentTime();
+    afterPlayer(()=>{      
+      let aix, time = videoEl.getCurrentTime();
       if (partStop && partStopped) {
         setIndex(tindex, true, partStopped);
-      } else if ((aix = This.accurateIndex(time, 0.5)) > 0) {
+      } else if ((aix = accurateIndex(time, 0.5)) > 0) {
         setIndex(aix - 1, true, partStopped);
       } else {
-        let ctime = This.calcTIndex(time);
+        let ctime = calcTIndex(time);
         setIndex(ctime, true, partStopped);
       }
       doAfterNavigate(tindex);
@@ -349,7 +411,7 @@ function playerInit(parent, options) {
   }
 
   backBtn.click(backBtnClick);
-  nextBtn.click(()=>{afterYTPlayer(nextStep);});
+  nextBtn.click(()=>{afterPlayer(nextStep);});
 
   function beforeChangeIndex(a_tindex) {
     let edata = {
@@ -370,48 +432,6 @@ function playerInit(parent, options) {
 
     if (stop && partStop && (a_tindex == tindex + 1)) stopPart();
     else setIndex(a_tindex);
-  }
-
-  this.init = (a_videoEl)=>{
-    This.videoEl = a_videoEl;
-
-    $(window).keydown((e)=>{
-      if (!((e.target.type == 'text') || (e.target.type == 'textarea')) && (e.keyCode == 32) && ($.dialog.show == null)) {
-        if (This.playing()) This.pauseVideo();
-        else play();
-        e.stopPropagation();
-        return false;
-      }
-    });
-
-    setInterval(()=>{
-      if (This.videoEl && This.videoEl.getCurrentTime) {
-        var time = This.videoEl.getCurrentTime();
-
-        if (!afterSetIndex) {
-          if (This.playing()) {
-            if (langControls.hasClass('pause')) langControls.removeClass('pause');
-            if (!partStopped) {
-              var a_tindex = parseInt(This.calcTIndex(time));            
-              if ((a_tindex > -1) && (a_tindex != tindex) && content[a_tindex]) 
-                beforeChangeIndex(a_tindex);
-            }
-          }
-        }
-      }
-    }, 30);
-
-    This.videoEl.addEventListener('onStateChange', function (e) {  
-      if (e.data == YT.PlayerState.PLAYING) {
-        if (partStopped) nextStep();
-        partStopped = false;
-      }
-    }, false);
-
-    This.videoEl.addEventListener('onReady', function (e) {
-      if ((This.startIndex > -1) && (tlist.hasOwnProperty(This.startIndex)))
-        setIndex(This.startIndex, true, false);
-    }, false);
   }
 
   $(window).on('onResetAnswers', ()=>{

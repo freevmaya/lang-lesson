@@ -59,13 +59,16 @@
 
   var PlayerDoc = function(container) {
     var This = this;
-    var vdata, player = null, layout;
-    var playerApp = new playerInit(container);
+    var playerApp = new Player(container);
     var params = {};
     var seg = [];
+    var vdata, player = null, layout;
+    var _record;
     var _vid = 0;
     var _scope = 0;
     var _user=null;
+    var _type;
+    var _providers = {};
     var _countMessages;
 
     var audioElement = document.createElement('audio');
@@ -74,6 +77,7 @@
 
 
     Object.defineProperty(this, 'data', {get: ()=>{return This.getData();}});
+    Object.defineProperty(this, 'record', {get: ()=>{return _record;}});
     Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.hasClass('editContaier');}});
     Object.defineProperty(this, 'scope', {get: ()=>{return _scope;}, set: (value)=>{
@@ -92,7 +96,15 @@
             $.removeCookie('uid');
           });
 
-        doAfterLogin(_user);
+        $(window).trigger('onLoginUser', _user);
+        if (_user) {
+          $('.user').css('display', 'block');
+          $.getJSON(echoURL + '?task=playlist', plMenuUpdate);
+          $('.user-title').text(_user.first_name + " " + _user.last_name);
+        } else {
+          $('.user-title').text('');
+          $('.user').css('display', 'none');
+        }
       }
     }});
 
@@ -124,18 +136,6 @@
       container.find('.rate').text(val);
     }
 
-    doAfterLogin = (user)=>{
-      $(window).trigger('onLoginUser', user);
-      if (user) {
-        $('.user').css('display', 'block');
-        $.getJSON(echoURL + '?task=playlist', plMenuUpdate);
-        $('.user-title').text(user.first_name + " " + user.last_name);
-      } else {
-        $('.user-title').text('');
-        $('.user').css('display', 'none');
-      }
-    }
-
     this.storageScope = ()=>{
       return parseInt(localStorage.getItem('scope')?localStorage.getItem('scope'):0);
     }
@@ -160,32 +160,47 @@
       layer.html(description);
     }
 
-    this.loadVideo = (id, afterLoad)=>{
-
-      if (!player) This.YouTubeAPILoad();
-      
+    this.loadVideo = (id, doAfterLoad = false)=>{
       $.getJSON(echoURL + '?task=get&id=' + parseInt(id), (result)=>{
-        if (result && result.data) {
-          _countMessages = result.countMessages;
-
-          checkStorage(vdecode(result.data), (a_data)=>{
-            _vid = parseInt(result.id);
-            This.scope = result.scope?result.scope:This.storageScope();
-
-            This.setDiscription(result.description);
-            This.setRateLabel(result.rate);
-
-            result = a_data;
-            if (playerApp) 
-              $(window).trigger('onOpenVideoContent', result);
-            else vdata = result;
-
-            This.address(undefined, undefined, id);
-
-            if (afterLoad) afterLoad(result);
-          })
-        }
+        This.setVideo(result, doAfterLoad);
       });
+    }
+
+    this.setVideo = (video, doAfterLoad = false)=>{
+      if (video && video.data) {
+        if (player) {
+          layout.css({width: layout.width(), height: layout.height()});
+          player.destroy();
+        }
+
+        _countMessages = video.countMessages;
+
+        checkStorage((typeof video.data == 'string')?vdecode(video.data):video.data, (a_data)=>{
+          _vid = parseInt(video.id);
+          _record = video;
+          delete _record.data;
+
+          vdata = a_data;
+
+          This.scope = video.scope?video.scope:This.storageScope();
+
+          This.setDiscription(video.description);
+          This.setRateLabel(video.rate);
+
+          This.address(undefined, undefined, _vid);
+
+          initProvider(video.type, ()=>{
+            if (playerApp) {
+              This.resetFromInfo(vdata.info, _record);
+              if (This.langapp) This.langapp.newVideo(vdata);
+
+              player.loadVideo(vdata);
+              playerApp.setData(vdata);
+            }
+            if (doAfterLoad) doAfterLoad(vdata);
+          });
+        })
+      }
     }
 
     this.serviceOn = (price, func)=>{
@@ -287,30 +302,6 @@
         });
       }
     }
-/*
-    function calcPlayerSize(rate) {
-      let w = <?=$width?>;
-      let ww = $(window).width();
-      if (w > ww) w = ww;
-
-      let wh = $(window).height() - 140;
-      let vh = w * rate;
-
-      if (vh > wh) {
-        w = wh / rate;
-        vh = wh;
-      }
-
-      if (vh > 640) {
-        let delta = container.find('.videoPlayer').offset().top + vh + container.find('.controlsBlock').height() - 
-                  ($(window).height() * 0.9);
-        if (delta > 0)
-          vh -= delta;
-      }
-
-      return {width: w, height: Math.round(vh)};
-    }
-*/
 
 
     function calcPlayerSize(rate) {
@@ -331,7 +322,7 @@
 
     this.setPlayerSize = (w, h)=>{
       let size = {width: w, height: h};
-      if (player) player.originSetSize(w, h);
+      if (player) player.setSize(w, h);
       else layout.css(size);
 
       container.css('width', size.width);
@@ -339,15 +330,6 @@
       container.find('.playerSeptum').css('height', h);
       container.trigger('onPlayerSize', size);
     }
-
-/*
-    this.setPlayerSizeRate = (rate)=>{
-      let size = calcPlayerSize(rate);
-      let usersize = layout.data('usersize');
-      if (usersize) size.height = usersize;
-      This.setPlayerSize(size.width, size.height);
-    }
-*/
 
     this.setPlayerSizeRate = (rate)=>{
       if (layout) {
@@ -408,17 +390,34 @@
     } 
 
     this.getSize = (info)=>{
-      if (info.height)
-        return info;
+      if (info) {
+        if (info.thumbnail_width && info.preview_url) 
+          return {
+            width: info.thumbnail_width,
+            height: info.thumbnail_height,
+            url: info.preview_url
+          }
+        if (info.height)
+          return info;
+        if (info.thumbnails)
+          return info.thumbnails.maxres?info.thumbnails.maxres:info.thumbnails.high;
+      }
 
-      return info.thumbnails.maxres?info.thumbnails.maxres:info.thumbnails.high;
+      return {
+        width: 640,
+        height: 480,
+        url: document.location.host + '/images/preview/default.jpg'
+      }
     }
 
-    this.resetFromInfo = (info)=>{
-      if (!info && vdata) info = vdata.info;
+    this.resetFromInfo = (info, record=false)=>{
+      if (!info && vdata) {
+        info = vdata.info;
+        record = _record;
+      }
 
       if (info) {
-        let res = This.getSize(info);
+        let res = This.getSize(record?record:info);
         This.setTitle(info.title);
         This.setPlayerSizeRate(res.height/res.width);
       } 
@@ -442,66 +441,6 @@
       return localStorage.getItem('curid');
     }
 
-    this.afterYTLoad = null;
-    this.autoplay = 0;
-
-    this.YouTubeAPILoad = function(afterLoad) {
-      this.afterYTLoad = afterLoad;
-      var tag = document.createElement('script');
-      tag.src = "https://www.youtube.com/iframe_api";
-      var firstScriptTag = document.getElementsByTagName('script')[0];
-      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    }
-
-    this.isYTLoaded = function() {
-      return player != null;
-    }
-
-    this.YouTubeReady = function() {
-
-      var initdata = {
-        width: layout.css('width')?parseInt(layout.css('width')):'<?=$width?>',
-        height: layout.css('height')?parseInt(layout.css('height')):'<?=$height?>',
-        playerVars: { 
-          controls: <?=($_GET['dev']?"1":"0")?>,
-          autoplay: This.autoplay,
-          iv_load_policy:3,
-          enablejsapi:1,
-          origin: document.location.host,
-          rel: 0,
-          modestbranding: 1, 
-          showinfo: 0, 
-          ecver: 2
-        }
-      }
-
-      if (vdata && vdata.id) {
-        initdata.videoId = vdata.id;
-        initdata.events = {
-          onReady: ()=>{
-            let usersize = layout.data('usersize');
-
-            layout = container.find('.videoPlayer');
-            let clcss = {width: '', height: ''};
-            if (usersize != undefined) clcss.height = usersize;
-            layout.css(clcss);
-
-            if (vdata.info) This.resetFromInfo(vdata.info);
-            else getVideoInfo(vdata.id, (info)=>{
-              This.resetFromInfo(vdata.info = info);
-            })
-
-            if (This.afterYTLoad) This.afterYTLoad();
-          }
-        }
-      }
-
-      player = new YT.Player(container.find('.videoPlayer')[0], initdata);
-      player.originSetSize = player.setSize;
-      player.setSize = This.setPlayerSize;
-      playerApp.init(player);
-    } 
-
     function onChange() {
       vdata = This.langapp.getData();
       playerApp.setData(vdata);
@@ -523,6 +462,7 @@
         This.langapp = new LangApp(playerApp, {onChange: onChange});
         container.find('.Editor').css('display', 'block');
         container.addClass('editContaier');
+        container.trigger('onCreateEditor');
       }
     }
 
@@ -544,14 +484,13 @@
           else {
             _vid = parseInt(s_vdata.id);
             vdata = s_vdata;
-            This.resetFromInfo(vdata.info);
-            if (This.langapp) This.langapp.newVideo(vdata.id, vdata);
-            else {
-              if (player) {
-                player.stopVideo();
-                player.loadVideoById(vdata.id);
-                playerApp.setData(vdata);
-              }
+            This.resetFromInfo(vdata.info, _record);
+            if (This.langapp) This.langapp.newVideo(vdata);
+
+            if (player) {
+              player.stopVideo();
+              player.loadVideo(vdata);
+              playerApp.setData(vdata);
             }
           }
 
@@ -573,120 +512,129 @@
     }
 
     $(window).on('ToEditMode', (e)=>{
-      if (vdata && vdata.id) {
-        if (!This.isYTLoaded()) This.YouTubeAPILoad(()=>{
-          checkAndCreateEditor();
-          This.langapp.setData(vdata, player.getDuration());
-        }); else {
+      if (vdata) {
+        if (!_providers[_type] || !_providers[_type].loaded) {
+          // if provider no loaded
+        } else {
           checkAndCreateEditor();
           This.langapp.setData(vdata, player.getDuration());
         }
       }
     });
 
-    This.openVideoContent = (a_data)=>{
-      function afterYTLoad() {
-        vdata = a_data;
-
-        if (!vdata.info) {
-          getVideoInfo(vdata.id, (info)=>{
-            vdata.info = info;
-            This.resetFromInfo(vdata.info);
-          }) 
-        } else This.resetFromInfo(vdata.info);
-
-        if (This.langapp) This.langapp.newVideo(vdata.id, vdata);
-        else {
-          player.stopVideo();
-          player.loadVideoById(vdata.id);
-          playerApp.setData(vdata);
+    function defaultVData() {
+      return  {
+        id: 0,
+        timeline: [],
+        content: [],
+        info: {
+          width: 640,
+          height: 480,
+          url: document.location.host + '/images/preview/default.jpg'           
         }
-      }
-
-      if (a_data.id) {
-        if (!This.isYTLoaded()) This.YouTubeAPILoad(afterYTLoad); 
-        else afterYTLoad();
       }
     }
 
-    $(window).on('onOpenVideoContent', (e, a_data)=>{This.openVideoContent(a_data);});
+    this.newContentYT = (videoID)=>{
+      vdata = This.readInStorage(videoID);
+      _vid = 0;
 
-    $(window).on('newContent', (e, videoID)=>{
+      if (!vdata)
+        vdata = defaultVData();
+
       function afterYTLoad() {
         checkAndCreateEditor();
+        This.langapp.newVideo(vdata);
 
-        let a_data = This.readInStorage(videoID);
-        console.log("Video ID: " + videoID + ", data - " + a_data);
-        if (a_data) {
-          vdata = a_data;
-          This.langapp.newVideo(videoID, vdata);
-          if (vdata.info) This.resetFromInfo(vdata.info);
-          else getVideoInfo(videoID, (info)=>{This.resetFromInfo(vdata.info = info)});
-        } else {
-          getVideoInfo(videoID, (info)=>{
-            vdata = {
-              info: info,
-              id: videoID,
-              timeline: [],
-              content: []
-            };
-            This.langapp.newVideo(videoID, vdata);
-            This.resetFromInfo(info);
+        playerApp.stopVideo();
+        player.loadVideo(vdata);
+        playerApp.setData(vdata);
+
+        if (vdata.info) This.resetFromInfo(vdata.info);
+        else getVideoInfo(videoID, (info)=>{
+          let size = This.getSize(info);
+          _record = $.extend(_record, {
+            thumbnail_width: size.width,
+            thumbnail_height: size.height,
+            preview_url: size.url
           });
-        }
-
-        _vid = 0;
+          This.resetFromInfo(vdata.info = info)
+        });
       }
 
-      if (!This.isYTLoaded()) This.YouTubeAPILoad(afterYTLoad); 
-      else afterYTLoad();
-
-      e.stopPropagation();
+      initProvider('youtube', afterYTLoad);
       return false;
-    });
+    }
+
+    function initProvider(a_type, doAfter) {
+      let options = {
+        onReady: (a_vdata)=>{
+          if (a_vdata != undefined) vdata = a_vdata;
+
+          player = _providers[a_type].player;
+          let usersize = layout.data('usersize');
+
+          layout = container.find('.videoPlayer');
+          let clcss = {width: '', height: ''};
+          if (usersize != undefined) clcss.height = usersize;
+          layout.css(clcss);
+
+          _type = a_type;
+          if (_type) container.addClass(_type);
+
+          playerApp.init(player);
+          if (doAfter) doAfter();
+
+          This.resetFromInfo(vdata.info, _record);
+          layout.css('background-image', 'none');          
+        }
+      }
+
+      if (_type) container.removeClass(_type);
+      layout.find('.yt-button').remove();
+
+      if (window[a_type])
+        eval('_providers["' + a_type + '"] = new ' + a_type + '(container, vdata, options);');
+      else {
+        let script = document.createElement( "script" );
+        let head = $('head')[0];
+        script.src = '/js/player-providers/' + a_type + '.js';
+        script.onload = script.onreadystatechange = function( _, isAbort ) {
+            script.onload = script.onreadystatechange = null;
+            initProvider(a_type, doAfter);
+        };
+        head.insertBefore(script, head.firstChild);
+      }
+    }
 
     function startLayout() {
       if (vdata) {
         playerApp.setData(vdata);
+        layout = container.find('.videoPlayer');
+        layout.find('.yt-button').click(()=>{
+          initProvider(_type);
+        });
 
         if (vdata.info) {
-          layout = container.find('.videoPlayer');
           let w = <?=$width?>;
           let res = This.getSize(vdata.info);
-          layout.find('.yt-button').click(()=>{
-            This.autoplay = 1;
-            This.YouTubeAPILoad();
-          });
           layout.css('background-image', 'url(' + res.url + ')');
-          This.resetFromInfo(vdata.info);
+          This.resetFromInfo(vdata.info, _record);
         }
       }    
     }
-
-    <?if ($video) {?>
-    vdata = checkStorage(<?=$video['data']?>);
-    _vid = <?=$video['id']?>;
-    _countMessages = <?=json_encode($video['countMessages'])?>;
-    This.address(undefined, undefined, _vid);
-    <?} else {?>
-    if (!vdata) {
-      vdata = This.readInStorage(This.curVideoID());
-    }
-    <?
-    if ($defvideo = $controller->getDefaultVideo()) {
-    ?>
-    if (!vdata) vdata = vdecode('<?=$defvideo['data']?>');
-    <?}}?>
     
     This.scope = <?=($controller->user && $controller->user['scope'])?$controller->user['scope']:'This.storageScope()'?>;
 
     $(window).ready(startLayout);
     $(window).resize(()=>{
-      if (vdata && vdata.info) This.resetFromInfo(vdata.info);
+      if (vdata && vdata.info) This.resetFromInfo(vdata.info, _record);
     }) 
 
-    $(window).on('requireYTPlayer', (e, callBack)=>{
-      if (!This.isYTLoaded()) This.YouTubeAPILoad(callBack);
+    $(window).on('requirePlayer', (e, callBack)=>{
+      if (_providers[_type] == undefined) {
+        initProvider(_type, callBack);
+      } else callBack();
     });
 
     $(window).on('newDescription', (e, description)=>{
@@ -704,12 +652,34 @@
     $(window).on('onGetVideoContent', (e, callback)=>{
       callback(This.getData());
     });
+
+
+
+    <?if ($video) {?>
+    <?if ($video['data']) {?>
+    vdata = checkStorage(<?=$video['data']?>);
+    _record = <?=json_encode(array_merge($video, ['data'=>'']))?>;
+    <?} else {?>
+    vdata = defaultVData();
+    <?}?>
+    _type = '<?=$video['type']?>';
+    _vid = <?=$video['id']?>;
+    _countMessages = <?=json_encode($video['countMessages'])?>;
+    This.address(undefined, undefined, _vid);
+    <?} else {?>
+    if (!vdata) {
+      vdata = This.readInStorage(This.curVideoID());
+    }
+    <?
+    if ($defvideo = $controller->getDefaultVideo()) {
+    ?>
+    if (!vdata) vdata = vdecode('<?=$defvideo['data']?>');
+    <?}}?>  
   }
   //END DOC CLASS
 
   doc = new PlayerDoc($('.playerContainer'));
-  function onYouTubeIframeAPIReady() {doc.YouTubeReady();}
-
+  //function onYouTubeIframeAPIReady() {YouTubeReady();}
   $(window).ready(()=>{
     doc.user = (<?=$controller->user?json_encode($controller->user):'null'?>);
   });

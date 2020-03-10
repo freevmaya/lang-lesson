@@ -186,7 +186,7 @@
         else r = slink.match(/^([\w_-\d]+)$/);
 
         if (r && (r.length >= 2)) {
-          $(window).trigger('newContent', (r[2] != undefined)?r[2]:r[1]);
+          doc.newContentYT(r[2] != undefined?r[2]:r[1]);
           newDialog.modal("hide");
           return;
         }
@@ -279,8 +279,14 @@
           reader.onload = function (e) {
             if (e.target.readyState == 2) {
               try {
-                let data = JSON.parse(e.target.result);
-                $(window).trigger('onOpenVideoContent', data);
+                doc.setVideo({
+                  id: 0,
+                  type: 'youtube',
+                  countMessages: 0,
+                  description: '',
+                  rate: 0,
+                  data: JSON.parse(e.target.result)
+                });
               } catch {
                 $(window).trigger('onAppError', {code: 101, message: 'Error read file ' + file.name});
               }

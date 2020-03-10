@@ -193,7 +193,7 @@ var CPuzzle = function(player) {
 				removeWord(cont, ui.draggable);
 	  	}});
 
-	  	if (tn_list && tn_list[words[i]]) word.wordHint(words[i], tn_list[words[i]]);
+//	  	if (tn_list && tn_list[words[i]]) word.wordHint(words[i], tn_list[words[i]]);
 
 		word.draggable({
     		delay: 200,

@@ -1,5 +1,7 @@
 /vendor
+/images
 /audio
+/video
 /tmp
 /data-api
 /vmaya_phpMyAdmin

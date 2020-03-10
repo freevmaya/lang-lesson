@@ -51,6 +51,12 @@ nav {
   background: url(images/ytb-focus.png);
 }
 
+.videoPlayer {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
 .page-wrapper {
   min-height: 100%;
 }
@@ -158,6 +164,11 @@ nav {
   display: none;
   justify-content: center;
   align-items: center;
+}
+
+.internal .playerSeptum {
+  display: flex;
+  z-index: 1;
 }
 
 .playerSeptum button {

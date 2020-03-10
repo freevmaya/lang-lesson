@@ -104,7 +104,7 @@
       <?include_once("views/navbar.php")?>
       <div class="player-wrap page-content">
         <?
-          include_once("views/player.php");
+          include_once("views/document.php");
           if ($video) include_once("views/video_content.php");
           include_once('views/myclips.php');
         ?>

@@ -104,17 +104,6 @@ function vdecode(str) {
     return str?JSON.parse(decodeURIComponent(escape(window.atob(str)))):null;
 }
 
-var YTKey = 'AIzaSyAMPefFkyce4DuxzSSfWDRczVlCCMr1hpk';
-var YTUrl = 'https://www.googleapis.com/youtube/v3/';
-
-function getVideoInfo(id, callback) {
-  $.getJSON(YTUrl + 'videos?id=' + id + '&key=' + YTKey + '&part=snippet', null, (a_data)=>{
-    if (a_data.items && a_data.items[0])
-      callback(a_data.items[0].snippet);
-    else callback({title: document.location.host, width: 640, height: 420});
-  });
-}
-
 /*
 function getYTCaptions(videoID, callback) {
   $.getJSON(YTUrl + 'captions?part=snippet&videoId=' + videoID + '&key=' + YTKey, 
@@ -263,4 +252,19 @@ var tooltip = new function(){
 
 $.equals = function (arr1, arr2) {
   return JSON.stringify(arr1) == JSON.stringify(arr2);
+}
+
+
+
+function tround(t) {
+  return Math.round(t * 1000) / 1000;
+}
+
+
+var PlayerState = {
+  ENDED: 0,
+  PLAYING: 1,
+  PAUSED: 2,
+  BUFFERING: 3,
+  CUED: 5
 }
