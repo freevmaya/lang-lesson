@@ -1,0 +1,10 @@
+interface Player {
+	PlayerState 	getPlayerState()
+	int 			getDuration()
+	void 			playVideo()
+	void 			stopVideo()
+	void 			pauseVideo()
+	void 			addEventListener(event, onEvent, bool);
+	int 			getCurrentTime()
+	void 			seekTo(time, bool)
+}

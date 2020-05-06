@@ -260,6 +260,31 @@ function tround(t) {
   return Math.round(t * 1000) / 1000;
 }
 
+function parseTimelineText(str) {
+  let list = str.split(/\n/);
+  let result = [];
+
+  let n = 0, ni = 0;
+  let t;
+
+  for (let i=0; i<list.length; i++) {
+    let s = list[i].trim();
+    if (s) {
+      if (n == 1) {
+        let ta = s.split(/-->/); 
+        t = [parseTime(ta[0]), parseTime(ta[1]), 0];
+      } else if (n == 2) {
+        t[2] = s;
+        result.push(t);
+      }
+
+      n = (n + 1) % 3;
+    } else ni++;
+  }
+
+  return result;
+}
+
 
 var PlayerState = {
   ENDED: 0,

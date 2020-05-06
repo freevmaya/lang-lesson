@@ -53,13 +53,23 @@ var CPuzzle = function(player) {
   		}
   	}
 
+  	function splitWords(words) {
+  		let result = [];
+
+  		$.each(words.split(/[\s\|,.;]+/).slice(0), (i, s)=>{
+  			if (s.trim()) result.push(s);
+  		});
+
+  		return result;
+  	}
+
   	function getWords(puzzle, order) {
   		let words = [], trans = {}, p = puzzle;
 		if (p[0].trim()) {
-			words = p[0].split(/[\s]+/).slice(0);
+			words = splitWords(p[0]);
 
 			if (p[1].trim()) {
-				let t = p[1].split(/[\|,.;]+/).slice(0);
+				let t = splitWords(p[1]);
 				$.each(words, (i, v)=>{
 					trans[v] = (i < t.length)?t[i]:'';
 				})
@@ -90,7 +100,7 @@ var CPuzzle = function(player) {
   		else {
   			let wa = getWords(_puzzle);
   			state[index] = {words: words = wa[0], trans: trans_list = wa[1], top: [], phrase: []};
-  			state[index].phrase = phrase = _puzzle[0].split(/\s/);
+  			state[index].phrase = phrase = splitWords(_puzzle[0]);
   		}
 
 		doc.prepareSpeech(words);
@@ -327,6 +337,17 @@ CPuzzle.id = 3;
 CPuzzle.title = 'Puzzle';
 CPuzzle.parser = function(vdata, captions) {
 
+	let items = captions.items;
+	vdata.timeline = {};
+	vdata.content = {};
+
+	if (typeof items == 'string') {
+
+		let list = items.split(/^[\d]+$/g);
+		console.log(list);
+		return vdata;
+	}
+
 	function twords(items) {
 		let words = [];
 		for (let i=0; i<items.length; i++) {
@@ -347,15 +368,12 @@ CPuzzle.parser = function(vdata, captions) {
 		return words;
 	}
 
-	let items = captions.items;
-	vdata.timeline = {};
-	vdata.content = {};
 	let maxl = 50;
 	let minl = 30;
 
-	if (items.length == 2) {
+	if (items.length >0) {
 		let words 	= twords(items[0]);
-		let words2 	= twords(items[1]);
+		let words2 	= (items.length > 1)?twords(items[1]):[];
 
 		let buff = '', buff2 = '', st, i=0;
 		for (let w=0; w<words.length; w++) {

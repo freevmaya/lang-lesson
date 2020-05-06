@@ -4,6 +4,182 @@
 		"selected_items":
 		[
 			[
+				"stat",
+				"state"
+			],
+			[
+				"list",
+				"list-style-image\tproperty"
+			],
+			[
+				"margin",
+				"margin-bottom\tproperty"
+			],
+			[
+				"font",
+				"font-weight\tproperty"
+			],
+			[
+				"jso",
+				"json_encode"
+			],
+			[
+				"DATE_",
+				"DATE_SHORT"
+			],
+			[
+				"strto",
+				"strtotime"
+			],
+			[
+				"f",
+				"fdbg"
+			],
+			[
+				"exp",
+				"explode"
+			],
+			[
+				"me",
+				"method"
+			],
+			[
+				"Int",
+				"intval"
+			],
+			[
+				"item",
+				"item_id"
+			],
+			[
+				"sh",
+				"shapeType"
+			],
+			[
+				"re",
+				"rect"
+			],
+			[
+				"body",
+				"bodyId"
+			],
+			[
+				"an",
+				"anchor"
+			],
+			[
+				"cre",
+				"createRJoin"
+			],
+			[
+				"Get",
+				"GetBodyID"
+			],
+			[
+				"get",
+				"GetSize"
+			],
+			[
+				"na",
+				"navigate"
+			],
+			[
+				"_",
+				"_size"
+			],
+			[
+				"w",
+				"naturalWidth"
+			],
+			[
+				"le",
+				"length"
+			],
+			[
+				"len",
+				"Length"
+			],
+			[
+				"P",
+				"PtoC"
+			],
+			[
+				"vma",
+				"vmayaBox2D"
+			],
+			[
+				"he",
+				"helpers"
+			],
+			[
+				"V",
+				"b2Vec2"
+			],
+			[
+				"p",
+				"prototype"
+			],
+			[
+				"vm",
+				"vmayaBox2D"
+			],
+			[
+				"limi",
+				"limitMin"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"mo",
+				"mousedown"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"wi",
+				"width\tproperty"
+			],
+			[
+				"pro",
+				"provider"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"b2",
+				"b2Vec2"
+			],
+			[
+				"fix",
+				"fixDef"
+			],
+			[
+				"tr",
+				"trim"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"over",
+				"overflow\tproperty"
+			],
+			[
+				"pa",
+				"pageY"
+			],
+			[
+				"te",
+				"textarea\tTag"
+			],
+			[
 				"new",
 				"newVideo"
 			],
@@ -28,10 +204,6 @@
 				"layout"
 			],
 			[
-				"di",
-				"display"
-			],
-			[
 				"ini",
 				"initProvider"
 			],
@@ -42,14 +214,6 @@
 			[
 				"Default",
 				"defaultVData"
-			],
-			[
-				"pro",
-				"initProvider"
-			],
-			[
-				"get",
-				"getDuration"
 			],
 			[
 				"remove",
@@ -76,10 +240,6 @@
 				"json_decode"
 			],
 			[
-				"over",
-				"overflow-y\tproperty"
-			],
-			[
 				"fi",
 				"first_name"
 			],
@@ -100,28 +260,12 @@
 				"value"
 			],
 			[
-				"me",
-				"message"
-			],
-			[
 				"marg",
 				"margin\tproperty"
 			],
 			[
-				"wi",
-				"width\tproperty"
-			],
-			[
 				"fon",
 				"font-size\tproperty"
-			],
-			[
-				"margin",
-				"margin-left\tproperty"
-			],
-			[
-				"text",
-				"text-align\tproperty"
 			],
 			[
 				"vide",
@@ -166,10 +310,6 @@
 			[
 				"sept",
 				"septButton"
-			],
-			[
-				"mar",
-				"margin-top\tproperty"
 			],
 			[
 				"max",
@@ -224,20 +364,12 @@
 				"Youtube"
 			],
 			[
-				"p",
-				"phrase"
-			],
-			[
 				"wo",
 				"word"
 			],
 			[
 				"wor",
 				"words2"
-			],
-			[
-				"item",
-				"items"
 			],
 			[
 				"app",
@@ -266,10 +398,6 @@
 			[
 				"ca",
 				"captions"
-			],
-			[
-				"jso",
-				"json_decode"
 			],
 			[
 				"au",
@@ -386,271 +514,16 @@
 			[
 				"ty",
 				"typeof"
-			],
-			[
-				"add",
-				"addBtn"
-			],
-			[
-				"edi",
-				"editLayer"
-			],
-			[
-				"c",
-				"content"
-			],
-			[
-				"upda",
-				"updateComponents"
-			],
-			[
-				"disp",
-				"disposeComponents"
-			],
-			[
-				"Text",
-				"TransText"
-			],
-			[
-				"cle",
-				"clearComponents"
-			],
-			[
-				"Pl",
-				"PlayerState"
-			],
-			[
-				"un",
-				"undefined"
-			],
-			[
-				"play",
-				"playlists"
-			],
-			[
-				"drop",
-				"dropdown"
-			],
-			[
-				"la",
-				"lastID"
-			],
-			[
-				"is",
-				"isYTLoaded"
-			],
-			[
-				"prev",
-				"preview_url"
-			],
-			[
-				"selec",
-				"selectIndex"
-			],
-			[
-				"ch",
-				"change"
-			],
-			[
-				"le",
-				"length"
-			],
-			[
-				"sel",
-				"selectedText"
-			],
-			[
-				"padding",
-				"padding\tproperty"
-			],
-			[
-				"paddin",
-				"padding-top\tproperty"
-			],
-			[
-				"is_nu",
-				"is_numeric"
-			],
-			[
-				"is_s",
-				"is_string"
-			],
-			[
-				"spli",
-				"splice"
-			],
-			[
-				"box",
-				"box-shadow\tproperty"
-			],
-			[
-				"tra",
-				"transition\tproperty"
-			],
-			[
-				"ma",
-				"margin\tproperty"
-			],
-			[
-				"cretae",
-				"CreateMarkerCommand"
-			],
-			[
-				"imn",
-				"important"
-			],
-			[
-				"min",
-				"min-width\tproperty"
-			],
-			[
-				"w",
-				"width"
-			],
-			[
-				"ov",
-				"overflow-x\tproperty"
-			],
-			[
-				"key",
-				"keyDown"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "views/document.php",
+			"file": "/X/vmaya/ss/ssconfig.php",
 			"settings":
 			{
-				"buffer_size": 20510,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player-providers/youtube.js",
-			"settings":
-			{
-				"buffer_size": 2740,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/navbar.php",
-			"settings":
-			{
-				"buffer_size": 16104,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": ".gitignore",
-			"settings":
-			{
-				"buffer_size": 82,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "echo/controllers/langEcho.php",
-			"settings":
-			{
-				"buffer_size": 8566,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player.js",
-			"settings":
-			{
-				"buffer_size": 11989,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/functions.js",
-			"settings":
-			{
-				"buffer_size": 6111,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "Searching 32 files for \"loadVideoById\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  337:     playerApp.loadVideoById(newVideoID = videoID);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player.js:\n  108:   this.loadVideoById = (videoID)=>{\n  109:     videoEl.loadVideoById(videoID, -1);    \n\n3 matches across 2 files\n\n\nSearching 32 files for \"loadVideoById\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  337:     playerApp.loadVideoById(newVideoID = videoID);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player-providers\\youtube.js:\n   63: \t\t\t\tplayer.loadVideoById(vdata.id);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player.js:\n  108:   this.loadVideoById = (videoID)=>{\n  109:     videoEl.loadVideoById(videoID, -1);\n\n4 matches across 3 files\n\n\nSearching 32 files for \"word-hint\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\controls.js:\n  120: \t\t$.fn.wordHint.layer = layer = $('<div id=\"word-hint\"><div>' +\n\n1 match in 1 file\n\n\nSearching 6 files for \"wordHint\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\components\\puzzle.js:\n  196: \t  \tif (tn_list && tn_list[words[i]]) word.wordHint(words[i], tn_list[words[i]]);\n\n1 match in 1 file\n\n\nSearching 32 files for \"document.location\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\canvasSave.js:\n   18:         this._baseURL = Utils.baseURL(document.location.href);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\player-providers\\youtube.js:\n   37: \t\t\t\torigin: document.location.host,\n   95:     else callback({title: document.location.host, width: 640, height: 420});\n\n3 matches across 2 files\n\n\nSearching 32 files for \"newVideo\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\js\\editor-app.js:\n  309:   var newVideoID = false;\n  310:   var newVideoData = null;\n  312:   function onNewVideoStateChange(e) {  \n  313:     if (newVideoID !== false) {\n  315:       let nid = newVideoID;\n  320:           newVideoData = (newVideoData == null)?{id: nid, timeline: [], content: []}:newVideoData;\n  321:           This.setData(newVideoData, playerApp.getDuration());\n  322:           newVideoData = null;\n  327:       newVideoID = false;\n  331:   playerApp.onStateChange(onNewVideoStateChange);\n  333:   this.newVideo = (a_data)=>{\n  335:     newVideoData = a_data;\n\n14 matches in 1 file\n\n\nSearching 10 files for \"newVideo\"\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\document.php:\n  195:               if (This.langapp) This.langapp.newVideo(vdata);\n  488:             if (This.langapp) This.langapp.newVideo(vdata.id, vdata);\n  548:         This.langapp.newVideo(videoID, vdata);\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\navbar.php:\n  178:       var newDialog = $.dialog('New content', $('#newVideoTemplate').clone(), ()=>{\n\nC:\\WebServers\\home\\lang-lesson.ru\\www\\views\\templates.php:\n    2:   <div class=\"form-group\" id=\"newVideoTemplate\">\n\n5 matches across 3 files\n",
-			"settings":
-			{
-				"buffer_size": 2814,
-				"line_ending": "Windows",
-				"name": "Find Results",
-				"scratch": true
-			}
-		},
-		{
-			"file": "js/components/puzzle.js",
-			"settings":
-			{
-				"buffer_size": 12131,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/controls.js",
-			"settings":
-			{
-				"buffer_size": 4337,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 6030,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "var internal = function(container, vdata, options) {\n\n\tvar layout = container.find('.videoPlayer');\n\tvar player;\n\tvar This = this;\n\n\tObject.defineProperty(this, 'player', {get: ()=>{return player;}});\n\tObject.defineProperty(this, 'loaded', {get: ()=>{return player != null;}});\n\n    this.reset = function(a_vdata) {    \t\n    \tvdata = a_vdata;\n    \tplayer.css('display', 'block');\n    \toptions.onReady();\n    }\n\n    player = $('<video></video>');\n\n    if (doc.langapp)\n    \tplayer[0].controls = true;\n    else container.on('onCreateEditor', ()=>{\n    \tplayer[0].controls = true;\n    });\n    var videoEl = player[0];\n    var source = $('<source src=\"/video/' + doc.vid + '.mp4\" type=\"video/mp4\"></source>');\n\n    player.append(source);\n    layout.html(player);\n\n    player.on('loadeddata', ()=>{\n    \toptions.onReady(vdata);\n    \tplayer.trigger('onReady', vdata);\n    \tvideoEl.play();\n    });\n\n    let onChangeStage = ()=>{player.trigger('onStateChange', player.getPlayerState())}\n    player.on('play', onChangeStage);\n    player.on('waiting', onChangeStage);\n\n    $.extend(player, {\n\t\tsetSize: (w, h)=>{\n\t\t\tlet size = {width: w, height: h};\n\t\t\tif (player) {\n\t\t\t\tplayer.attr(\"width\", w);\n\t\t\t\tplayer.attr(\"height\", h);\n\t\t\t} else layout.css(size);\n\n\t\t\tcontainer.css('width', size.width);\n\t\t\tcontainer.find('.langControls').css('width', size.width);\n\t\t\tcontainer.find('.playerSeptum').css('height', h);\n\t\t\tcontainer.trigger('onPlayerSize', size);\n\t    },\n\t    addEventListener: (type, listener, useCapture)=>{\n\t    \tplayer.on(type, listener);\n\t    },\n\t    getCurrentTime: ()=>{return videoEl.currentTime},\n\t    seekTo: (time)=>{\n\t    \tif (time != undefined) videoEl.currentTime = time;\n\t    },\n\t    getDuration: ()=>{return videoEl.duration;},\n\t    getPlayerState: ()=>{\n\t    \tif (!videoEl.paused) return PlayerState.PLAYING;\n\t    \treturn -1;\n\t    },\n\t    pauseVideo: ()=>{videoEl.pause();},\n\t    stopVideo: ()=>{videoEl.pause();},\n\t    playVideo: ()=>{videoEl.play();},\n\t    loadVideo: (vdata)=>{\n\t\t\tsource.attr('src', '/video/' + doc.vid + '.mp4');\n\t\t},\n\t\tdestroy: ()=>{\n\t\t\tcontainer.off('onCreateEditor', );\n\t\t\tplayer.remove();\n\t\t\tplayer = null;\n\t\t}\n\t});\n}",
-			"file": "js/player-providers/internal.js",
-			"file_size": 2190,
-			"file_write_time": 132283027109040369,
-			"settings":
-			{
-				"buffer_size": 2154,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/counter.php",
-			"settings":
-			{
-				"buffer_size": 667,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/styles.css",
-			"settings":
-			{
-				"buffer_size": 10828,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/editor-app.js",
-			"settings":
-			{
-				"buffer_size": 8956,
-				"encoding": "UTF-8",
+				"buffer_size": 2213,
 				"line_ending": "Windows"
 			}
 		}
@@ -687,143 +560,137 @@
 	},
 	"expanded_folders":
 	[
-		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/css",
-		"/C/WebServers/home/lang-lesson.ru/www/js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers",
-		"/C/WebServers/home/lang-lesson.ru/www/views",
-		"/W/lang-lesson"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
+		"/D/documents/Книги/Буддизм/Намерения, стоящие за собственными действиями.txt",
+		"/W/family-status/echo/controllers/family_status.php",
+		"/D/documents/Книги/Сказки/Носов/Носов, И я помогаю.txt",
+		"/D/documents/numbers.js",
+		"/D/documents/Книги/Сказки/Носов/Носов, Бенгальские огни.txt",
+		"/D/documents/Книги/Сказки/Носов/Носов, Дружок.txt",
+		"/H/Install/loader from USB/mzf_v5/Инструкция и утилиты/WContig/Readme_RU.txt",
+		"/H/Install/loader from USB/mzf_v5/Инструкция и утилиты/Инструкция.txt",
+		"/D/documents/Книги/Сказки/Носов Как Винтик и Шпунтик делали пылесос.txt",
+		"/D/documents/Книги/Сказки/Носов Три охотника.txt",
+		"/D/documents/Книги/Сказки/Носов Саша.txt",
+		"/I/Documents/Паша читать/Носов Милиционер.txt",
+		"/I/Documents/Паша читать/Носов Прятки.txt",
+		"/I/Documents/Паша читать/Рассказ Леденец.txt",
+		"/D/documents/Книги/Английский/phrases.html",
+		"/C/Users/vmaya/Desktop/Заготовки.txt",
+		"/W/family-status/index.php",
+		"/W/family-status/include/_edbu_pdo.php",
+		"/W/log/access.log",
+		"/W/log/error.log",
+		"/I/Documents/Английский/фразы.txt",
+		"/I/Documents/Паша читать/Носов, Тук-тук-тук.txt",
+		"/I/Documents/Паша читать/Носов, Автомобиль.txt",
+		"/I/Documents/Паша читать/Носов, Метро.txt",
+		"/I/Documents/Паша читать/Носов, Шурик у дедушки.txt",
+		"/I/Documents/Паша читать/Носов, Карасик.txt",
+		"/W/cron-family-status.php",
+		"/W/config-lang-lesson.php",
+		"/W/family-status/echo/index.php",
+		"/W/config-family-status.php",
+		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/src/main/AndroidManifest.xml",
+		"/C/Users/vmaya/.AndroidStudio3.0/system/log/idea.log",
+		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/google-services.json",
+		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/release/output.json",
+		"/W/family-status/echo/controllers/langEcho.php",
+		"/D/Unity/SCS_optical/Assets/Resources/Junction box/anim/connector to cable.anim",
+		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu2.php",
+		"/W/family-status/echo/controllers/captions.php",
+		"/C/WebServers/home/dev.box2d.com/www/b2dJson/customProperties.js",
+		"/C/WebServers/home/dev.box2d.com/www/b2dJson/testbed.js",
+		"/C/WebServers/home/dev.box2d.com/www/b2dJson/loadrube.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/internal.js",
-		"/C/WebServers/home/lang-lesson.ru/www/texts/жил-был пес рабочий файл.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/youtube.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
-		"/C/WebServers/home/lang-lesson.ru/www/test.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-1.12.4.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
-		"/C/WebServers/home/lang-lesson.ru/www/sitemap.xml",
 		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/discussion.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/discussion.js",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
-		"/C/WebServers/home/lang-lesson.ru/www/include/controller.php",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/box2dPlayer.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/helpers.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/vmaya.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/mouse-join.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/vmayaBox2D.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/utils.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/include/navbar.php",
+		"/C/WebServers/home/dev.box2d.com/www/b2dJson/box2dweb.js",
+		"/C/WebServers/home/lang-lesson.ru/www/docs/Player interface.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/views/templates.php",
+		"/C/WebServers/home/lang-lesson.ru/www/views/content.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/youtube.js",
+		"/C/Users/vmaya/Downloads/data (11).json",
+		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/index.php",
+		"/C/Users/vmaya/Downloads/data (9).json",
+		"/C/Users/vmaya/Downloads/data (8).json",
+		"/C/Users/vmaya/Downloads/data (7).json",
+		"/C/Users/vmaya/Downloads/data (10).json",
+		"/C/Users/vmaya/Downloads/data (2).json",
+		"/C/Users/vmaya/Downloads/data (1).json",
+		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/canvas2image.js",
+		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/canvasSave.js",
+		"/C/Users/vmaya/Downloads/data.json",
+		"/C/WebServers/home/lang-lesson.ru/www/js/canvas2image.js",
+		"/C/Users/vmaya/Downloads/lesson.php",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/Box2D.js",
+		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/pjApp/pjcanvas.js",
+		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/pjApp/baseapp.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/css/style.css",
+		"/C/WebServers/home/lang-lesson.ru/www/js/canvasSave.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/jquery-1.12.4.js",
+		"/C/WebServers/home/dev.box2d.com/www/build/Box2D_v2.2.1_min.js",
+		"/C/WebServers/home/lang-lesson.ru/www/index.php",
+		"/C/WebServers/home/lang-lesson.ru/www/css/animation.css",
+		"/C/WebServers/home/dev.box2d.com/www/google/lesson.html",
+		"/C/WebServers/home/dev.box2d.com/www/b2dJson/index.html",
+		"/D/documents/Книги/Английский/фразы.txt",
+		"/D/Unity/SCS_optical/Assets/Resources/Polishing/Anim/LC/Polish.anim",
+		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-1.12.4.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/demo.html",
+		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/Joints/b2DistanceJoint.cpp",
+		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2Body.h",
+		"/C/WebServers/home/dev.box2d.com/www/google/Box2D.js",
+		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Collision/Shapes/b2PolygonShape.cpp",
+		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2Body.cpp",
+		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2World.cpp",
+		"/C/WebServers/home/dev.box2d.com/www/demo2/lesson.html",
+		"/C/WebServers/home/dev.box2d.com/www/google/js/ivank.js",
+		"/C/WebServers/home/dev.box2d.com/www/ivank/js/ivank.js",
+		"/C/WebServers/home/dev.box2d.com/www/google/example.html",
+		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
 		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
-		"/D/documents/numbers.js",
-		"/C/WebServers/home/lang-lesson.ru/www/robots.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/player.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
-		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
-		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/captions.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/TextToSpeech.php",
-		"/C/WebServers/home/lang-lesson.ru/www/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/disscusion.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/menu/admin.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/myclips.php",
-		"/X/vmaya/pj/imgLoad.php",
-		"/X/vmaya/pj/free_test.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/menu/manager.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/description.js",
-		"/C/Users/vmaya/Downloads/простоквашино.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/css/item-editor.css",
-		"/C/WebServers/home/lang-lesson.ru/www/docs/events.txt",
+		"/C/WebServers/home/lang-lesson.ru/www/test.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-ui.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/base64.js",
-		"/D/documents/Книги/Рождественская каша - Нурдквист С.txt",
-		"/D/documents/Книги/Рождественская каша - Нурдквист С.rtf",
-		"/D/documents/Книги/avidreaders.ru__bhagavad-gita-kak-ona-est.txt",
-		"/D/documents/Книги/Саша умылся, лег в кровать и погасил верхний свет. Включил лампу для чтения и открыл книгу, заложенную небольшой открытк.txt",
-		"/C/Users/vmaya/Downloads/lang_items (2).sql",
-		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
-		"/C/WebServers/home/logs/errors.log",
-		"/C/WebServers/home/lang-lesson.ru/www/views/og.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/counter.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/title.js",
-		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
+		"/C/WebServers/home/lang-lesson.ru/www/texts/How to Become Silent.txt",
 		"/C/WebServers/usr/local/apache/conf/httpd.conf",
-		"/C/WebServers/home/lang-lesson.ru/www/css/timeline.css",
-		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
-		"/C/WebServers/home/lang-lesson.ru/www/include/engine.php",
-		"/C/Users/vmaya/Downloads/video_content (33).txt",
-		"/C/Users/vmaya/Downloads/video_content (34).txt",
-		"/C/WebServers/home/lang-lesson.ru/config-lang-lesson.php",
-		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu2.php",
-		"/C/Users/vmaya/Downloads/video_content (30).txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/dictionary.js",
-		"/C/WebServers/home/lang-lesson.ru/service-account-credentials.json",
-		"/C/Users/vmaya/Downloads/video_content (28).txt",
-		"/C/Users/vmaya/Desktop/Admin command LINUX.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
-		"/C/WebServers/home/lang-lesson.ru/www/captions/dP_LGe5VxddeWiR1MRjANNE5sZdTYzs3.data",
-		"/C/WebServers/home/lang-lesson.ru/www/ytapi.php",
-		"/C/WebServers/home/lang-lesson.ru/www/captions/XfZ9cGK-c0XQIc2Q6Hp4lGCnq72HlqZIb5lBtQOTI5k=.data",
-		"/C/Users/vmaya/AppData/Local/Temp/Rar$DIa0.455/jquery.cookie.js",
-		"/C/WebServers/usr/local/php5/php.ini",
-		"/W/lang-lesson/ytapi.php",
-		"/W/www/data-api/index.php",
-		"/W/lang-lesson/index.php",
-		"/C/Users/vmaya/Downloads/[DownSub.com] Изучаем «Союз»_ отстыковка, посадка.srt",
-		"/C/Users/vmaya/Downloads/[DownSub.com] Изучаем «Союз»_ отстыковка, посадка.txt",
-		"/W/lang-lesson/gapi_example.php",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/download-example.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/command/command.js",
-		"/C/Users/vmaya/.ssh/id_rsa.pub",
-		"/C/WebServers/home/lang-lesson.ru/www/.htaccess",
-		"/C/WebServers/home/lang-lesson.ru/www/index_db.php",
-		"/W/www/.htaccess",
-		"/W/www/index.php",
-		"/W/www/views/myclips.php",
-		"/W/www/include/controller.php",
-		"/W/www/include/BaseController.php",
-		"/W/www/echo/index.php",
-		"/W/www/views/player.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/template component.js",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/src/Google/Client.php",
-		"/C/WebServers/home/lang-lesson.ru/www/tmp/Congratulations! Your certificate and chain hav.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/index.php",
-		"/Z/usr/local/php5/php.ini",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/data.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/vendor/google/apiclient-services/src/Google/Service/YouTube.php",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/vendor/google/apiclient-services/src/Google/Service/PlayMovies/Avail.php",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/vendor/google/apiclient-services/src/Google/Service/Books.php",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/examples/index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/data-api/src/Google/autoload.php",
-		"/C/WebServers/home/lang-lesson.ru/google-api-php-client-master/src/Google/autoload.php",
-		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/Gapic/TextToSpeechGapicClient.php",
-		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/SynthesizeSpeechRequest.php",
-		"/C/WebServers/home/lang-lesson.ru/www/vendor/google/cloud-text-to-speech/src/V1/SsmlVoiceGender.php",
-		"/C/WebServers/home/lang-lesson.ru/www/ts_index.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/time-marker.js",
-		"/C/WebServers/home/lang-lesson.ru/www/TextToSpeech/Voice.php",
-		"/C/WebServers/usr/local/php5_prod/php.ini",
-		"/C/WebServers/denwer/README.txt",
-		"/C/WebServers/denwer/CONFIGURATION.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/command/study-commands.js",
-		"/D/Unity/roomEditor/.gitignore",
-		"/D/Unity/SCS_optical/.gitignore",
-		"/C/WebServers/home/lang-lesson.ru/www/js/components/title,js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/item-editor.js",
-		"/C/WebServers/home/lang-lesson.ru/google-api-javascript-client-master/javascripts/main.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/inputmask.js",
-		"/C/WebServers/home/lang-lesson.ru/www/docs/events.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/content.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/template.js",
-		"/C/WebServers/home/dev.rabota7.local/www/protected/views/faq/_form.php",
-		"/C/Users/vmaya/AppData/Local/Unity/Editor/upm.log",
-		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player.log",
-		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS_optical/Player-prev.log",
-		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor-prev.log",
-		"/C/Users/vmaya/AppData/Local/Unity/Editor/Editor.log"
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index.html",
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/ropeJoint.js",
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-html5canvas-testbed.js",
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-html5canvas-debugDraw.js",
+		"/C/WebServers/home/dev.box2d.com/www/ivank/index.html",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-noclosure.min.js",
+		"/C/WebServers/home/lang-lesson.ru/www/anim-dev.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/animation/bone.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/math/vector.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
+		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/mathquill.min.js",
+		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/vector.js",
+		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/mathctrls.js",
+		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/triangle.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/counter.php",
+		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
+		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
+		"/C/WebServers/home/lang-lesson.ru/www/texts/жил-был пес рабочий файл.txt",
+		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
+		"/C/WebServers/home/lang-lesson.ru/www/sitemap.xml",
+		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/discussion.php"
 	],
 	"find":
 	{
@@ -834,6 +701,20 @@
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\dev.oformi-foto.ru\\www\\pjjs\\jsa",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\google\\js",
+			"C:\\WebServers\\home\\dev.oformi-foto.ru\\www\\pjjs\\jsa",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\include",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\google\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\google\\js",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\b2dJson",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\google\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\dev.box2d.com\\www\\demo2\\index_files",
+			"C:\\WebServers\\home\\192.168.1.63______\\www\\math\\ssd",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js\\components",
@@ -947,21 +828,7 @@
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\extensions",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\webroot\\js",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\controllers",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\models"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework"
 		]
 	},
 	"find_state":
@@ -969,134 +836,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"newContentYT",
-			"newVideo",
-			"initProvider",
-			"checkAndCreateEditor",
-			"Editor",
-			"onEdit",
-			"initProvider(video.type,",
-			"langapp.newVideo(",
-			"newVideo",
-			"setVideo",
-			" this.newVideo",
-			"localStorage.setItem",
-			"onReady",
-			"playerApp",
-			"setIndex",
-			"startIndex",
-			"_providers",
-			"startIndex",
-			"store",
-			"if (!vdata) vdata = vdecode",
-			"console.debug",
-			"setInterval",
-			"setIndex",
-			"initProvider",
-			".playerSeptum",
-			"container",
-			"initProvider",
-			"playerContainer",
-			"septum",
-			"septButton",
-			"playerSeptum",
-			"stop",
-			"stopPart",
-			"playerSeptum",
-			"default.jpg",
-			"document.location",
-			"document.locale.host",
-			"baseUrl",
-			"default.jpg",
-			"yt-button",
-			"resetFromInfo",
-			"vdata = ",
-			"resetFromInfo",
-			"getSize",
-			"background",
-			"vdata =",
-			"record",
-			"vdata =",
-			"initProvider",
-			"yt-",
-			"initProvider",
-			"wordHint",
-			"word-hint",
-			".videoPlayer",
-			"yt-button",
-			"loadVideo",
-			"initProvider",
-			"initProvider(_type = video.type, ()",
-			"loadVideoById",
-			"initProvider",
-			"langapp",
-			"container",
-			"langapp",
-			"editor",
-			"onStateChange",
-			"loadVideoById",
+			"BASESTORAGEURL",
+			"Налог",
+			"И я помогаю - Носов Н.Н.",
+			"Бенгальские огни - Носов Н.Н.",
+			"Дружок - Носов Н.Н.",
+			"Федина задача - Носов Н.Н.",
+			"Про репку - Носов Н.Н.",
+			"Носов",
+			"Ступеньки - Носов Н.Н.",
+			"Когда мы смеёмся - Носов Н.Н.",
+			"Как Винтик и Шпунтик делали пылесос - Носов Н.Н.",
+			"Три охотника - Носов Н.Н.",
+			"Саша - Носов Н.Н.",
+			"Носов",
+			"Находчивость",
+			"Рассказ Находчивость",
+			"Находчивость - Носов Н.Н.",
+			"Находчивость рассказ Носова",
+			"Милиционер - Носов Н.Н.",
+			"Прятки - Носов Н.Н.",
+			"Леденец - Носов Н.Н.",
+			"PROFILE",
+			"Тук-тук-тук - Носов Н.Н.",
+			"рассказ Носова Тук-тук-тук про лагерь",
+			"Автомобиль - Носов Н.Н.",
+			"Метро - Носов Н.Н.",
+			"метро рассказ носова",
+			"Шурик у дедушки - Носов Н.Н.",
+			"Карасик - Носов Н.Н.",
+			"log",
+			"SC connector v sbore 2",
+			"v sbore 2",
+			"v sbore",
+			"vsbor",
+			"vsbore 2",
+			"jre1.8.0_211",
+			"task",
+			"getUri",
+			"history",
+			"load",
+			"location",
+			"set",
+			"location",
 			"videoEl",
-			"stopVideo",
+			"location",
 			"videoEl",
-			"setInterval",
-			"pauseVideo",
-			"stopVideo",
-			"getPlayerState",
-			"playing",
-			"videoEl.addEvent",
+			"addEventListener",
+			"loadVideoById",
+			"SetMass",
+			"GetMassData",
+			"SetMassData",
+			"power",
+			"SetAsBox",
+			"b2CircleShape",
+			" b2Circle",
+			"master",
+			"alpha",
+			"name=\"mode\"",
+			"panel",
+			"panel ui-draggable ui-draggable-handle",
+			"bodyFromID",
+			"VImage",
+			"VMaya",
+			"saveData",
+			"VImage",
+			"body1",
+			"showRectangle",
+			"anchor",
+			"ancher",
+			"GetAncher",
+			"an",
+			"anhor",
+			"b2RevoluteJointDef",
+			"saveData",
+			"GetAngle",
+			"SetAngle",
+			"saveData",
+			"create\\",
 			"create",
-			"PlayerState",
-			"YT.PlayerState",
-			"getPlayerState",
-			"toEdit",
-			"vdata =",
-			"options",
-			"setPlayerSize",
-			"initProvider",
-			"YouTubeAPILoad",
-			"requireYTPlayer",
-			"afterYTPlayer",
-			"backBtnClick",
-			"videoPlayer",
-			"script",
-			"initProvider",
-			"getSize",
-			"default",
-			"getSize",
-			"initProvider",
-			"checkStorage",
-			"readInStorage",
-			"_user",
-			"newContent",
-			"doAfterLogin",
-			"doAfterLoad",
-			"          vdata = a_data;\n",
-			"setVideo",
-			"openVideoContent",
-			"result",
-			"openVideoContent",
-			"onOpenVideoContent",
-			"openVideoContent",
-			"initProvider",
-			"openVideoContent",
-			"openVideoContent(a_data);});\n",
-			"onOpenVideoContent",
-			"openVideoContent",
-			"loadVideo",
-			"_type",
-			"_providers[_type]",
-			"loadVideo",
-			"onOpenVideoContent",
-			"ToEditMode",
-			"accurateIndex",
-			"originSetSize",
-			"player",
-			"YTUrl",
-			"YTKey",
-			"getVideoInfo",
-			"afterYTLoad",
-			"calcPlayerSize",
-			"_provider"
+			"createVJoin",
+			"createJoin",
+			"createBody",
+			"clist",
+			"ResetMassData",
+			"DestroyList",
+			"bodyDestroyList",
+			"m_bodyDestroyList",
+			"Clear",
+			"CleanBodyList",
+			"GetBodyID",
+			"BodyCreate",
+			"createBody",
+			"ground",
+			"createBody",
+			"return this.m_prev",
+			"return this.m_next",
+			"return m_next",
+			"return m_prev",
+			"m_prev",
+			"createBody",
+			"vmayaBox2D",
+			"createBody",
+			"world",
+			".b2Vec2",
+			"b2Vec2",
+			"open",
+			"makeDataURI",
+			"toDataURL",
+			"makeDataURI",
+			"saveFile",
+			"save",
+			"VImage",
+			"this.constructor",
+			"prototype.con",
+			"prototype",
+			"eval",
+			"this.constructor",
+			"this.constructor.prototype.",
+			"ground",
+			"Image",
+			"MouseSupport",
+			"img",
+			"VImage",
+			"_objects",
+			"VImage",
+			"Image",
+			"FileReader",
+			"createClick"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1104,6 +971,14 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"Connector",
+			"vmayaSprite",
+			"this._path",
+			"bpPanel",
+			"PtoW",
+			"canvas",
+			"",
 			"PlayerState",
 			"video",
 			"videoEl",
@@ -1197,581 +1072,37 @@
 	"groups":
 	[
 		{
-			"selected": 11,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "views/document.php",
+					"file": "/X/vmaya/ss/ssconfig.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 20510,
+						"buffer_size": 2213,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								16604,
-								16604
+								619,
+								633
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 10699.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "js/player-providers/youtube.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2740,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1739,
-								1739
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 819.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "views/navbar.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 16104,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8791,
-								8803
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 3479.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": ".gitignore",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 82,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								29,
-								29
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Git Formats/Git Ignore.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "echo/controllers/langEcho.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8566,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6102,
-								6102
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 519.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11989,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "js/functions.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6111,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5971,
-								5977
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4298.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2814,
-						"regions":
-						{
-							"match":
-							{
-								"flags": 112,
-								"regions":
-								[
-									[
-										117,
-										130
-									],
-									[
-										221,
-										234
-									],
-									[
-										269,
-										282
-									],
-									[
-										446,
-										459
-									],
-									[
-										572,
-										585
-									],
-									[
-										664,
-										677
-									],
-									[
-										712,
-										725
-									],
-									[
-										909,
-										918
-									],
-									[
-										1097,
-										1105
-									],
-									[
-										1302,
-										1319
-									],
-									[
-										1417,
-										1434
-									],
-									[
-										1474,
-										1491
-									],
-									[
-										1657,
-										1665
-									],
-									[
-										1690,
-										1698
-									],
-									[
-										1731,
-										1739
-									],
-									[
-										1773,
-										1781
-									],
-									[
-										1820,
-										1828
-									],
-									[
-										1849,
-										1857
-									],
-									[
-										1865,
-										1873
-									],
-									[
-										1924,
-										1932
-									],
-									[
-										1968,
-										1976
-									],
-									[
-										2025,
-										2033
-									],
-									[
-										2059,
-										2067
-									],
-									[
-										2114,
-										2122
-									],
-									[
-										2150,
-										2158
-									],
-									[
-										2184,
-										2192
-									],
-									[
-										2376,
-										2384
-									],
-									[
-										2443,
-										2451
-									],
-									[
-										2498,
-										2506
-									],
-									[
-										2638,
-										2646
-									],
-									[
-										2769,
-										2777
-									]
-								],
-								"scope": ""
-							}
-						},
-						"selection":
-						[
-							[
-								2512,
-								2512
-							]
-						],
-						"settings":
-						{
-							"detect_indentation": false,
-							"line_numbers": false,
-							"output_tag": 7,
-							"result_base_dir": "",
-							"result_file_regex": "^([^ \t].*):$",
-							"result_line_regex": "^ +([0-9]+):",
-							"scroll_past_end": true,
-							"syntax": "Packages/Default/Find Results.hidden-tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1460.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "js/components/puzzle.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 12131,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4945,
-								4945
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3419.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "js/controls.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4337,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2954,
-								2962
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 2019.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 13,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6030,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2416,
-								2416
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 678.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 11,
-					"file": "js/player-providers/internal.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2154,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2103,
-								2103
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 799.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "views/counter.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 667,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								487,
-								487
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 14,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "css/styles.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 10828,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2397,
-								2397
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2659.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "js/editor-app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8956,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7968,
-								7968
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6159.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
 					"type": "text"
 				}
 			]
@@ -1779,7 +1110,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 31.0
+		"height": 29.0
 	},
 	"input":
 	{
@@ -1820,7 +1151,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 74.0
+		"height": 54.0
 	},
 	"save_all_on_build": true,
 	"select_file":

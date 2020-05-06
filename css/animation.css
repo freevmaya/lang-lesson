@@ -1,0 +1,21 @@
+.anim-canvas {
+	background: black;
+	overflow: hidden;
+	position: absolute;
+}
+
+.anim-bone {
+	position: absolute;
+}
+
+.anchor {
+	width: 16px;
+	height: 16px;
+    background: rgba(255, 0, 0, 0.5);
+    border: 1px solid #00004a;
+	z-index: 2;
+}
+
+.selected {
+	border: 1px red dashed !important;
+}

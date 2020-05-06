@@ -17,6 +17,9 @@ nav {
   position: fixed !important;
   z-index: 3;
   transition: background-color 0.4s;
+  background-image: url(images/logo.png);
+  background-repeat: no-repeat;
+  padding-left: 140px !important;
 }
 
 .player-wrap {
@@ -168,7 +171,6 @@ nav {
 
 .internal .playerSeptum {
   display: flex;
-  z-index: 1;
 }
 
 .playerSeptum button {
@@ -180,6 +182,7 @@ nav {
   color: white;
   display: none;
   font-size: 24px;
+  z-index: 1;
 }
 
 .playerSeptum button:hover {
@@ -614,7 +617,8 @@ dt {
   margin: 0px;
 }
 
-.descriptionDialog textarea {
+.descriptionDialog textarea,
+#videoCaptions textarea {
   width: 100%;
   height: 200px;
 }
@@ -671,7 +675,7 @@ dt {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  color: #0089ff;
+  color: #a56b6b;
   margin-left: 1em;
   display: inline-block;
   position: relative;
@@ -768,4 +772,24 @@ dt {
   border-color: #0062cc;
   margin-left: 1em;
   margin-right: 0 !important;
+}
+
+.start-info {
+  position: absolute;
+  width: 45%;
+  background: white;
+  border-radius: 8px;
+  padding: 1.2em;
+  border: 1px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
+  box-shadow: 2px 2px 6px #0000007d;
+  top: 70px;
+  margin-left: 20px;
+  display: none;
+  opacity: 0;
+  transition: top 0.5s, opacity 0.5s;
+}
+
+.start-info .buttons {
+  text-align: center;  
 }

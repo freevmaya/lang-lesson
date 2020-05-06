@@ -54,6 +54,12 @@
     <?=$video?$video['description']:''?>
   </div>
 </div>
+<div class="start-info">
+  <p data-locale="start_info"></p>
+  <div class="buttons">
+    <button type="button" class="btn btn-primary" data-locale="good" name="okButton"></button>      
+  </div>
+</div>
 <script type="text/javascript">
   var doc;
 
@@ -109,6 +115,28 @@
     }});
 
     this.langapp = null;
+
+    this.showStartInfo = ()=>{
+      let si = $('.start-info');
+
+      let top = si.css('top');
+      si.css({top: -200, display: 'block'});
+
+      setTimeout(()=>{
+        si.css({
+          top: top,
+          opacity: 1
+        });
+      }, 2000);
+
+      si.find('.btn-primary').click(()=>{
+        si.css({
+          top: -200,
+          opacity: 0
+        });
+        setTimeout(()=>{si.hide()}, 1000);
+      });
+    }
 
     this.getData = ()=>{
       return vdata;
@@ -628,6 +656,11 @@
           let res = This.getSize(vdata.info);
           layout.css('background-image', 'url(' + res.url + ')');
           This.resetFromInfo(vdata.info, _record);
+        }
+
+        if (!localStorage.getItem('first_start')) {
+          This.showStartInfo();
+          localStorage.setItem('first_start', true);
         }
       }    
     }

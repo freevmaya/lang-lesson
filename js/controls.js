@@ -74,32 +74,59 @@ function captionDialog(template) {
 				let ctmpl = template.clone();
 				let list = ctmpl.find('.component-list');
 				let layout = ctmpl.find('.control');
+				let tlayer = ctmpl.find('.timeline');
+
+				let cbdl = ctmpl.find('[name="download"]');
+
+				function isDownload() {
+					return cbdl.prop("checked"); 
+				}
+
+				function onChange() {
+					layout.empty();
+					component = Components[list.val()];
+					if (isDownload()) cdlg = component.dialog(layout, result);
+					else cdlg = null;
+				}
+
+				cbdl.change(()=>{
+					if (isDownload()) tlayer.hide();
+					else tlayer.show();
+					onChange();
+				})
+
+				tlayer.hide();
 				var component;
 				var cdlg;
 				list.append($('<option value="0">--</option>'));
 				for (let i in Components)
 					if (Components[i].title) list.append($('<option value="' + i + '">' + Components[i].title + '</option>'));
-				list.on('change', ()=>{
-					layout.empty();
-					cdlg = (component = Components[list.val()]).dialog(layout, result);
-				});
+				list.on('change', onChange);
 
 				let dlg = $.dialog('Captions', ctmpl, ()=>{
-					let params = cdlg.params();
+					if (isDownload()) {
+						let params = cdlg.params();
 
-					$.post(echoURL + '?task=getCaptions&model=captions', params, (result)=>{
-						if (result && result.length) {
-							$(window).trigger('applyYTCaptions', {
-								id: vdata.id,
-								items: result,
-								component: component
-							});
-						} else if (result.error) {
-							dlg.error(result.error);
-							return;
-						}
-						dlg.close();
-					});
+						$.post(echoURL + '?task=getCaptions&model=captions', params, (result)=>{
+							if (result && result.length) {
+								$(window).trigger('applyYTCaptions', {
+									id: vdata.id,
+									items: result,
+									component: component
+								});
+							} else if (result.error) {
+								dlg.error(result.error);
+								return;
+							}
+							dlg.close();
+						});
+					} else {
+						$(window).trigger('applyYTCaptions', {
+							id: vdata.id,
+							items: [parseTimelineText(tlayer.find('textarea').val())],
+							component: component
+						});
+					}
 				}, 'Apply');
 		    } else {
 		    	let msg = "Empty list of languages\n";

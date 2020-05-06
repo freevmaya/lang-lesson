@@ -38,6 +38,14 @@
       <div class="control">
       </div>
     </div>
+    <div>
+      <label>Download captions</label>
+      <input type="checkbox" name="download" checked>
+    </div>
+    <div class="timeline">
+      <label>Drop timeline list here:</label>
+      <textarea class="source"></textarea>
+    </div>
     <div class="success" style="display:none;"></div>
   </div>
 

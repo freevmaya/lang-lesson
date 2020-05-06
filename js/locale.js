@@ -41,7 +41,9 @@ var LocaleData = {
 		discussion: 'Обсуждение',
 		guest: 'Гость',
 		empty_discussion: 'Здесь сейчас пусто. Будьте первыми!',
-		you: 'Вы'
+		you: 'Вы',
+		good: 'Хорошо',
+		start_info: '<h3>Привет!</h3>Я вам расскажу что здесь нужно делать.<br>1. Прослушайте фрагмент видео<br>2. Выбирите снизу слова, из которых состоит прослушанная фраза<br>3. Получите бонусы и продолжите изучение английского языка'
 	},
 	eng: {
 		file: 'File',
@@ -85,7 +87,9 @@ var LocaleData = {
 		discussion: 'Discussion',
 		guest: 'Guest',
 		empty_discussion: 'It’s empty here now. Be the first!',
-		you: 'You'
+		you: 'You',
+		good: 'Good',
+		start_info: ''
 	}
 }
 
@@ -102,6 +106,7 @@ var Locale = new (function() {
     		This.parse($('body'), _lang);
     	}
     }});
+
 	this.parse = function(elem) {
 
 		if ($.type(elem) == 'string')
@@ -115,7 +120,7 @@ var Locale = new (function() {
 				let val = LocaleData[_lang][s.data('locale')];
 				if (val) {
 					if (s.attr('placeholder')) s.attr('placeholder', val);
-					else s.text(val);
+					else s.html(val);
 				}
 			});
 		}

@@ -28,6 +28,14 @@
 @media screen and (max-width: <?=$width?>px) {
   nav {
     padding: 0.2em !important;
+    background-position-x: 43px;
+    background-position-y: -5px;
+  }
+
+  .start-info {
+    width: 100%;
+    top: 40px;
+    margin-left: 0px;
   }
 
   .player-wrap {
