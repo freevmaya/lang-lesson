@@ -29,7 +29,7 @@
   nav {
     padding: 0.2em !important;
     background-position-x: 43px;
-    background-position-y: -5px;
+    background-size: contain;
   }
 
   .start-info {

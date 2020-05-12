@@ -4,16 +4,56 @@
 		"selected_items":
 		[
 			[
+				"tra",
+				"transition\tproperty"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"margin-",
+				"margin-left\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"bor",
+				"border-radius\tproperty"
+			],
+			[
+				"bac",
+				"background-repeat\tproperty"
+			],
+			[
+				"back",
+				"background-position\tproperty"
+			],
+			[
+				"im",
+				"important"
+			],
+			[
+				"pad",
+				"padding-left\tproperty"
+			],
+			[
+				"margin",
+				"margin-right\tproperty"
+			],
+			[
+				"imag",
+				"images"
+			],
+			[
 				"stat",
 				"state"
 			],
 			[
 				"list",
 				"list-style-image\tproperty"
-			],
-			[
-				"margin",
-				"margin-bottom\tproperty"
 			],
 			[
 				"font",
@@ -148,10 +188,6 @@
 				"provider"
 			],
 			[
-				"di",
-				"display\tproperty"
-			],
-			[
 				"b2",
 				"b2Vec2"
 			],
@@ -162,10 +198,6 @@
 			[
 				"tr",
 				"trim"
-			],
-			[
-				"text",
-				"textarea"
 			],
 			[
 				"over",
@@ -328,10 +360,6 @@
 				"font-size\tproperty"
 			],
 			[
-				"pad",
-				"padding\tproperty"
-			],
-			[
 				"al",
 				"text-align\tproperty"
 			],
@@ -486,44 +514,35 @@
 			[
 				"a",
 				"addComponent"
-			],
-			[
-				"vi",
-				"videoPlayer"
-			],
-			[
-				"arr",
-				"arr2"
-			],
-			[
-				"for",
-				"for\tfor (…) {…}"
-			],
-			[
-				"data",
-				"a_data"
-			],
-			[
-				"up",
-				"updateContent"
-			],
-			[
-				"de",
-				"defaultComponent"
-			],
-			[
-				"ty",
-				"typeof"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/X/vmaya/ss/ssconfig.php",
+			"file": "css/styles.css",
 			"settings":
 			{
-				"buffer_size": 2213,
+				"buffer_size": 11440,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "views/navbar.php",
+			"settings":
+			{
+				"buffer_size": 16095,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "include/index_style.css",
+			"settings":
+			{
+				"buffer_size": 1574,
+				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
 		}
@@ -560,14 +579,35 @@
 	},
 	"expanded_folders":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www",
+		"/C/WebServers/home/lang-lesson.ru/www/css",
+		"/C/WebServers/home/lang-lesson.ru/www/include",
+		"/C/WebServers/home/lang-lesson.ru/www/views",
+		"/W/family-status"
 	],
 	"file_history":
 	[
+		"/D/documents/Книги/Паша, читать/Васек Трубачев и его товарищи.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
-		"/D/documents/Книги/Буддизм/Намерения, стоящие за собственными действиями.txt",
-		"/W/family-status/echo/controllers/family_status.php",
-		"/D/documents/Книги/Сказки/Носов/Носов, И я помогаю.txt",
+		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
+		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
+		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
+		"/W/lang-lesson/include/_edbu_pdo.php",
+		"/C/WebServers/home/lang-lesson.ru/www/index.php",
+		"/D/documents/Книги/Паша, читать/Фирменное блюдо.txt",
+		"/D/documents/Книги/Паша, читать/Два танка.txt",
+		"/D/documents/Книги/Паша, читать/Мальчиш-Кибальчиш.txt",
+		"/D/documents/Книги/Паша, читать/Дерзость.txt",
+		"/X/vmaya/ssd2/templates/menu.html",
 		"/D/documents/numbers.js",
+		"/X/vmaya/ss/templates/user/page.html",
+		"/I/Documents/Паша читать/Драгунский, Надо иметь чувство юмора.txt",
+		"/W/family-status/echo/controllers/family_status.php",
+		"/X/vmaya/ss/ssconfig.php",
+		"/D/documents/Книги/Буддизм/Намерения, стоящие за собственными действиями.txt",
+		"/D/documents/Книги/Сказки/Носов/Носов, И я помогаю.txt",
 		"/D/documents/Книги/Сказки/Носов/Носов, Бенгальские огни.txt",
 		"/D/documents/Книги/Сказки/Носов/Носов, Дружок.txt",
 		"/H/Install/loader from USB/mzf_v5/Инструкция и утилиты/WContig/Readme_RU.txt",
@@ -607,7 +647,6 @@
 		"/C/WebServers/home/dev.box2d.com/www/b2dJson/loadrube.js",
 		"/C/WebServers/home/dev.box2d.com/www/google/lesson.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/internal.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
 		"/C/WebServers/home/dev.box2d.com/www/google/js/box2dPlayer.js",
 		"/C/WebServers/home/dev.box2d.com/www/google/js/helpers.js",
 		"/C/WebServers/home/dev.box2d.com/www/google/js/vmaya.js",
@@ -640,7 +679,6 @@
 		"/C/WebServers/home/lang-lesson.ru/www/js/canvasSave.js",
 		"/C/WebServers/home/dev.box2d.com/www/google/js/jquery-1.12.4.js",
 		"/C/WebServers/home/dev.box2d.com/www/build/Box2D_v2.2.1_min.js",
-		"/C/WebServers/home/lang-lesson.ru/www/index.php",
 		"/C/WebServers/home/lang-lesson.ru/www/css/animation.css",
 		"/C/WebServers/home/dev.box2d.com/www/google/lesson.html",
 		"/C/WebServers/home/dev.box2d.com/www/b2dJson/index.html",
@@ -660,7 +698,6 @@
 		"/C/WebServers/home/dev.box2d.com/www/google/example.html",
 		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
-		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
 		"/C/WebServers/home/lang-lesson.ru/www/test.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-ui.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
@@ -677,20 +714,7 @@
 		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-noclosure.min.js",
 		"/C/WebServers/home/lang-lesson.ru/www/anim-dev.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/animation/bone.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/math/vector.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
-		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/mathquill.min.js",
-		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/vector.js",
-		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/mathctrls.js",
-		"/C/WebServers/home/192.168.1.63______/www/math/ssd/js/math/triangle.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/counter.php",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/langEcho.php",
-		"/C/WebServers/home/lang-lesson.ru/www/.gitignore",
-		"/C/WebServers/home/lang-lesson.ru/www/texts/жил-был пес рабочий файл.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
-		"/C/WebServers/home/lang-lesson.ru/www/sitemap.xml",
-		"/C/WebServers/home/lang-lesson.ru/www/echo/controllers/discussion.php"
+		"/C/WebServers/home/lang-lesson.ru/www/js/math/vector.js"
 	],
 	"find":
 	{
@@ -836,6 +860,24 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"-5px",
+			"navbar",
+			"  ",
+			"showStartInfo",
+			"start-info",
+			"storage",
+			"trans",
+			"start-info",
+			".center",
+			"center",
+			"LocaleData",
+			"nav",
+			".logo",
+			"юдщпщ",
+			".video-title",
+			"navbar",
+			"navbarSupportedContent",
+			"fetchColumn",
 			"BASESTORAGEURL",
 			"Налог",
 			"И я помогаю - Носов Н.Н.",
@@ -945,25 +987,7 @@
 			"makeDataURI",
 			"toDataURL",
 			"makeDataURI",
-			"saveFile",
-			"save",
-			"VImage",
-			"this.constructor",
-			"prototype.con",
-			"prototype",
-			"eval",
-			"this.constructor",
-			"this.constructor.prototype.",
-			"ground",
-			"Image",
-			"MouseSupport",
-			"img",
-			"VImage",
-			"_objects",
-			"VImage",
-			"Image",
-			"FileReader",
-			"createClick"
+			"saveFile"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -971,6 +995,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			" ",
 			"",
 			"Connector",
 			"vmayaSprite",
@@ -1072,30 +1097,90 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/X/vmaya/ss/ssconfig.php",
+					"file": "css/styles.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2213,
+						"buffer_size": 11440,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								619,
-								633
+								9788,
+								9788
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 13599.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "views/navbar.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 16095,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1257,
+								1257
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "include/index_style.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								523,
+								523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1151,7 +1236,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 54.0
+		"height": 74.0
 	},
 	"save_all_on_build": true,
 	"select_file":

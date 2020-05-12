@@ -693,6 +693,12 @@ dt {
   width: 100%;
 }
 
+.navbar {
+  border-bottom: 1px solid #9E9E9E;
+  box-shadow: 3px 0px 6px #00000024;
+  background-color: white;
+}
+
 .navbar-title .lwidth .btn-group .dropdown-toggle {
   width: 100%;
 }
