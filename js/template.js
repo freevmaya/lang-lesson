@@ -24,7 +24,7 @@ var Template = {
 				let options = {};
 				try {
 					options = JSON.parse(tmplText);
-				} catch {}
+				} catch (e) {}
 
 				let ldata = options.prepare?options.prepare(tmplText, data[n]):data[n];
 				if (typeof(ldata) == 'function')

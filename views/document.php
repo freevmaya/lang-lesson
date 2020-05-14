@@ -460,7 +460,7 @@
       if (videoID) {
         try {
           return JSON.parse(localStorage.getItem('vdata-' + videoID));     
-        } catch {}
+        } catch (e) {}
       }
       return null;
     }

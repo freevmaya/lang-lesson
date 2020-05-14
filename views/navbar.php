@@ -287,7 +287,7 @@
                   rate: 0,
                   data: JSON.parse(e.target.result)
                 });
-              } catch {
+              } catch (e) {
                 $(window).trigger('onAppError', {code: 101, message: 'Error read file ' + file.name});
               }
             }

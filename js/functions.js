@@ -1,26 +1,30 @@
 (function() {
-  let w = $(window);
-  w.ready(()=>{
-    let pc = $('.page-content');
 
-    function onResize() {
-      let pf = $('.page-footer');
-      let size = w.height() - pf.outerHeight() - $('.navbar').outerHeight();
+  if (window.ResizeObserver) {
+    
+    let w = $(window);
+    w.ready(()=>{
+      let pc = $('.page-content');
 
-      pf.css('position', (pc.outerHeight() > size)?'relative':'fixed');
-    };
+      function onResize() {
+        let pf = $('.page-footer');
+        let size = w.height() - pf.outerHeight() - $('.navbar').outerHeight();
 
-    let layers = ['page-content'];
+        pf.css('position', (pc.outerHeight() > size)?'relative':'fixed');
+      };
 
-    var observer = new ResizeObserver(function(entries) {
-      entries.forEach(function(entry) {
-        if (entry.target == pc[0]) onResize();
+      let layers = ['page-content'];
+
+      var observer = new ResizeObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.target == pc[0]) onResize();
+        });
       });
-    });
-    observer.observe(pc[0]);
+      observer.observe(pc[0]);
 
-    onResize();
-  });
+      onResize();
+    });
+  }
 })();
 
 $.urlParam = function(name){
@@ -138,7 +142,7 @@ function urlLit(w,v) {
     if (ch.length<3) 
       ww += ch; 
     else ww += eval(ch)[v];
-    } catch {}
+    } catch (e) {}
   }
   return(ww.replace(/[^a-zA-Z0-9\-]/g,'-').replace(/[-]{2,}/gim, '-').replace( /^\-+/g, '').replace( /\-+$/g, ''));
 }

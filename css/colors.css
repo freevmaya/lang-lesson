@@ -120,7 +120,7 @@ body, .controls {
 }
 
 .CPuzzle .top .word {
-  background: #7b7b7b96;
+  background-color: rgba(123, 123, 150, 0.45);
   color: white;
 }
 
