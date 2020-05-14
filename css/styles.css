@@ -508,6 +508,10 @@ input[name="playlist-input"] {
   margin: 0.1em;
 }
 
+.CPuzzle .top.over {
+  background-color: #98fb986b;
+}
+
 .CPuzzle .cont {
   margin: 0.1em;
   border-radius: 8px;

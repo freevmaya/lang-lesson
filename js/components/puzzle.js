@@ -34,12 +34,16 @@ var CPuzzle = function(player) {
     if (cl_data) completeList = JSON.parse(cl_data);
 
   	top.droppable({drop: (e, ui)=>{
-  		let d = ui.draggable;
-  		if (d.hasClass('word')) {
-  			if (!d.parent().hasClass('top')) 
-  				appendWord(d);
-  		}
-  	}});
+	  		let d = ui.draggable;
+	  		if (d.hasClass('word')) {
+	  			if (!d.parent().hasClass('top')) 
+	  				appendWord(d);
+	  		}
+	  		top.removeClass('over');
+	  	},
+		over: (e, ui)=>{top.addClass('over');},
+		out: (e, ui)=>{top.removeClass('over');}
+	});
 
   	function complete() {
   		nextBtn.prop('disabled', '');

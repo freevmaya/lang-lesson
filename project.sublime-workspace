@@ -520,29 +520,33 @@
 	"buffers":
 	[
 		{
-			"file": "css/styles.css",
+			"file": "echo/controllers/TextToSpeech.php",
 			"settings":
 			{
-				"buffer_size": 11440,
-				"encoding": "UTF-8",
+				"buffer_size": 2325,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "views/navbar.php",
+			"contents": "{\n    \"name\": \"kreait/firebase-php\",\n    \"description\": \"Firebase Admin SDK\",\n    \"keywords\": [\"firebase\", \"google\", \"sdk\", \"api\", \"database\"],\n    \"homepage\": \"https://github.com/kreait/firebase-php\",\n    \"license\": \"MIT\",\n    \"authors\": [\n        {\n            \"name\": \"Jérôme Gamez\",\n            \"homepage\": \"https://github.com/jeromegamez\"\n        }\n    ],\n    \"support\": {\n        \"docs\": \"https://firebase-php.readthedocs.io\",\n        \"issues\": \"https://github.com/kreait/firebase-php/issues\",\n        \"source\": \"https://github.com/kreait/firebase-php\"\n    },\n    \"require\": {\n        \"php\": \"^7.2\",\n        \"ext-ctype\": \"*\",\n        \"ext-json\": \"*\",\n        \"ext-mbstring\": \"*\",\n        \"ext-openssl\": \"*\",\n        \"giggsey/libphonenumber-for-php\": \"^8.9\",\n        \"google/auth\": \"^1.8\",\n        \"google/cloud-core\": \"^1.36\",\n        \"google/cloud-storage\": \"^1.14\",\n        \"guzzlehttp/guzzle\": \"^6.2.1|^7.0@beta\",\n        \"kreait/clock\": \"^1.0.1\",\n        \"kreait/firebase-tokens\": \"^1.10\",\n        \"lcobucci/jwt\": \"^3.3.1\",\n        \"mtdowling/jmespath.php\": \"^2.3\",\n        \"psr/cache\": \"^1.0\",\n        \"psr/simple-cache\": \"^1.0\",\n        \"riverline/multipart-parser\": \"^2.0\"\n    },\n    \"require-dev\": {\n        \"friendsofphp/php-cs-fixer\": \"^2.16\",\n        \"google/cloud-firestore\": \"^1.11\",\n        \"jangregor/phpstan-prophecy\": \"^0.6.2\",\n        \"phpstan/extension-installer\": \"^1.0\",\n        \"phpstan/phpstan\": \"^0.12.15\",\n        \"phpstan/phpstan-phpunit\": \"^0.12.6\",\n        \"phpunit/phpunit\": \"^8.5\",\n        \"symfony/var-dumper\": \"^5.0\"\n    },\n    \"suggest\": {\n        \"google/cloud-firestore\": \"^1.0 to use the Firestore component\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"Kreait\\\\Firebase\\\\\": \"src/Firebase\"\n        }\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"Kreait\\\\Firebase\\\\Tests\\\\\": \"tests\"\n        }\n    },\n    \"config\": {\n        \"sort-packages\": true\n    },\n    \"extra\": {\n        \"branch-alias\": {\n            \"dev-master\": \"5.x-dev\",\n            \"dev-4.x\": \"4.x-dev\"\n        }\n    },\n    \"funding\": [\n        {\n            \"type\": \"github\",\n            \"url\": \"https://github.com/sponsors/jeromegamez\"\n        }\n    ]\n}\n",
+			"file": "/W/family-status/firebase-php-master/composer.json",
+			"file_size": 2187,
+			"file_write_time": 132333829800000000,
 			"settings":
 			{
-				"buffer_size": 16095,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
+				"buffer_size": 2185,
+				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "include/index_style.css",
+			"contents": "-----------------ИП Фролов Вадим Валерьевич-----------------\nТелефон: 89514657928\nтел. +79514657928,+79088283575,+79227540997\nмодем +79385067190\nICQ: 347468347\ne-mail: fwadim@mail.ru\n454052 г. Челябинск ул. Черкасская 8-7\n454100 г. Челябинск ул. Чичерина 1-228\n\nИП Фролов Вадим Валерьевич\nИНН: 745004166339\n\nСвидетельство: 74 № 005266102\nОт. 02.03.2010 (2 марта 2010 года)\nВыдано ИФНС России по Металлургическому району г. Челябинска                    // т. 7283385\n\nСвидетельство: 74 № 005572423\nОт. 05.04.2013 Выдано Межрайонная ИФНС России №22 по Челябинской области\n\nОГРН: 310745006100014\n\nПаспорт:                 \nСерия 7514 № 519308    7514519308\nВыдан: УФМС России в Курчатовском районе гор. Челябинска\nДата выдачи: 08.10.2014 (08 октября 2014 года)\nКод подразделения: 740-053\n                          \nПрошлый паспорт                                     \nСерия 7501 № 217049    7501217049\nВыдан: УВД Металлургического р-она гор. Челябинска\nДата выдачи: 19.02.2002 (19 февраля 2002 года)\nКод подразделения: 742-045\n\nГруппа крови 0(I) Rh+ положительная\n\n---БАНКИ------------------------------------------\nРеквизиты банка:\nр/с 40802810090860000443\nкор/с 30101810400000000779\nОАО «ЧЕЛЯБИНВЕСТБАНК» г. Челябинск\nБИК: 047501779\nИНН: 7421000200\nКПП: 745301001\n454128, Челябинская обл., г. Челябинск, пл. Революции 8\nтел. (351) 731-24-16\nРуководитель:\nПлеханова Светлана Николаевна\n\nРеквизиты вклада \"Дальновидный\" (с 03.06.2011 по 18.06.2014, ставка 7.7%)\nномер счета: 42301810500159445685\n\nСв-во пенсионного фонда\nСНИЛС : 005-590-865 50\nМашина:\n    Вод. удост.     : 7433176384\n    знак            : У832НР174\n    паспорт         : 74УЕ998564\n    VIN             : JHMGH2350XS206787\n    \n    Бывш. вод. уд. 74АА314102 06.11.2016\nПолис: 11 017029\nAZAF\nCSGJ\n\n---Фролова Светлана Викторовна---------------------\nИНН 744715214549\nПаспорт:\n7509 587707\nВыдан: Отделом УФМС РОССИИ по Челябинской обл. в Калининском р-оне гор. Челябинска\nДата выдачи: 18.09.2009\nКод подразделения: 740-052\nДата рождения: 08.05.1983 гор. Челябинск\nСНИЛС: 113-459-623 47\n\nтел. +79049727667\nПрава: 7424 007236 20.05.2015\nСбер. МИР 2202 2001 9002 4347\n\n---Дети-------------------\nФролов Иван Вадимович 23.04.2007 +79227451138\nФролов Павел Вадимович 05.10.2010 +79080817759\n\n\n(UDI) \t8062938299454250872\nWMID: \t723942155126\nWMR:\tR233295054648\n\n\n454052 Russia, Chelyabinsk, Cherkasskay 8-7\nFrolov Vadim\n\n-----------------------------------------\nРеквизиты банка:\nОАО «ЧЕЛЯБИНВЕСТБАНК» г. Челябинск\nБИК: 047501779\nИНН: 7421000200\nКПП: 745301001\nр/с 40802810090860000443\nкор/с 30101810400000000779\n\nПолучатель:\nИП Фролов Вадим Валерьевич\nИНН: 745004166339\n\nhttps://retail.akbars.ru 5995692727        21 103.60 \nhttps://click.alfabank.ru 6225077\nСистема город, номер карты: 990002 0000 845396 6784\n\nДомашняя сеть, доступ: fB9uy9E8WC\n---------------------------------------------------Загран-паспорта--------------\nFROLOV VADIM\nКод государства: RUS\nТип: P\nНомер: 721092493\nВыдан: 10.09.2012 ФМС 74010 до 10.09.2022\n\nFROLOVA SVETLANA\nНомер: 721059349\nВыдан: 07.09.2012 ФМС 74011 до 07.09.2022\n\n----------------------РЕКВИЗИТЫ АЛЬФАБАНКА----------------------------------------------------\nОАО «АЛЬФА-БАНК»\nБИК 044525593\nИНН 7728168971\nКПП 770801001\nОГРН 1027700067328\nКор/сч. 30101810200000000593\nS.W.I.F.T.: ALFARUMM\nСчет: 40817810409970088070\nПолучатель: Фролов Вадим Валерьевич\nИНН 745004166339\nhttp://alfabank.ru/chelyabinsk/essential/\n\nАльфа Банк\nMasterCard 5559 4937 1661 8336\nСбер, VISA 4276 7216 9788 1167\nYandex virtual 5599 0050 3833 4640 09/20\n\n----------------Показания счетчика------------\nл/с 3140259021\nл/с 3001069478 новый 5000247462\n\nПитание Иван 0152-29015746\n\nPNUO2YEQ4CDHEIWC\n\n\n\nДля пособия\n\nПаша, актовая запись\n2291 22.10.2010\nОтдел ЗАГС администрации Калининского района г. Челябинска",
+			"file": "/D/documents/numbers.js",
+			"file_size": 3807,
+			"file_write_time": 132203495086666860,
 			"settings":
 			{
-				"buffer_size": 1574,
-				"encoding": "UTF-8",
+				"buffer_size": 3775,
+				"encoding": "Cyrillic (Windows 1251)",
 				"line_ending": "Windows"
 			}
 		}
@@ -579,21 +583,26 @@
 	},
 	"expanded_folders":
 	[
-		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/css",
-		"/C/WebServers/home/lang-lesson.ru/www/include",
-		"/C/WebServers/home/lang-lesson.ru/www/views",
 		"/W/family-status"
 	],
 	"file_history":
 	[
+		"/C/Users/vmaya/Downloads/_family-status.sql",
+		"/X/vmaya/ss/templates/catalog/list.html",
+		"/W/family-status/index-fcm.php",
+		"/W/family-status/firebase-php-master/src/Firebase/Messaging/CloudMessage.php",
+		"/D/documents/Книги/Паша, читать/Осеева/Долг.txt",
+		"/D/documents/Книги/Паша, читать/Осеева/Волшебная иголочка.txt",
+		"/X/vmaya/ssd2/templates/adv/engme.html",
+		"/X/vmaya/ssd2/templates/catalog/list.html",
+		"/X/vmaya/ssd2/templates/catalog/tmpls.html",
+		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
+		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
 		"/D/documents/Книги/Паша, читать/Васек Трубачев и его товарищи.txt",
 		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
-		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
 		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
 		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/W/lang-lesson/include/_edbu_pdo.php",
 		"/C/WebServers/home/lang-lesson.ru/www/index.php",
 		"/D/documents/Книги/Паша, читать/Фирменное блюдо.txt",
@@ -705,16 +714,7 @@
 		"/C/WebServers/home/lang-lesson.ru/www/texts/How to Become Silent.txt",
 		"/C/WebServers/usr/local/apache/conf/httpd.conf",
 		"/C/WebServers/home/lang-lesson.ru/www/js/inputmask.js",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index.html",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/ropeJoint.js",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-html5canvas-testbed.js",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-html5canvas-debugDraw.js",
-		"/C/WebServers/home/dev.box2d.com/www/ivank/index.html",
-		"/C/Windows/System32/drivers/etc/hosts",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index_files/embox2d-noclosure.min.js",
-		"/C/WebServers/home/lang-lesson.ru/www/anim-dev.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/animation/bone.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/math/vector.js"
+		"/C/WebServers/home/dev.box2d.com/www/demo2/index.html"
 	],
 	"find":
 	{
@@ -860,6 +860,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"adv",
+			"tmpls_header",
 			"-5px",
 			"navbar",
 			"  ",
@@ -985,9 +987,7 @@
 			"b2Vec2",
 			"open",
 			"makeDataURI",
-			"toDataURL",
-			"makeDataURI",
-			"saveFile"
+			"toDataURL"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1102,29 +1102,28 @@
 			[
 				{
 					"buffer": 0,
-					"file": "css/styles.css",
-					"semi_transient": false,
+					"file": "echo/controllers/TextToSpeech.php",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 11440,
+						"buffer_size": 2325,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9788,
-								9788
+								0,
+								0
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 13599.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
@@ -1132,25 +1131,25 @@
 				},
 				{
 					"buffer": 1,
-					"file": "views/navbar.php",
+					"file": "/W/family-status/firebase-php-master/composer.json",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 16095,
+						"buffer_size": 2185,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1257,
-								1257
+								452,
+								490
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
@@ -1162,29 +1161,27 @@
 				},
 				{
 					"buffer": 2,
-					"file": "include/index_style.css",
+					"file": "/D/documents/numbers.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1574,
+						"buffer_size": 3775,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								523,
-								523
+								3678,
+								3678
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2318.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
