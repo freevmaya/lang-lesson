@@ -33,12 +33,13 @@ function Player(parent, options) {
   var afterSetIndex = false;
   var curText = false;
   var components = {};
+  var onStateChangeListeners = [];
 
   Object.defineProperty(this, 'content', {get: ()=>{return content;}});
   Object.defineProperty(this, 'index', {get: ()=>{return tindex;}});
   Object.defineProperty(this, 'layout', {get: ()=>{return parent;}});
   Object.defineProperty(this, 'time', {get: ()=>{return tlist[tindex];}});
-  Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + (doc.record?doc.record.id:docdata.id);}});  
+  Object.defineProperty(this, 'storage_id', {get: ()=>{return 'player-state-' + (doc && doc.record?doc.record.id:'null');}});  
   Object.defineProperty(this, 'startIndex', {get: ()=>{
     let si = parseInt(localStorage.getItem(This.storage_id));
     if (si == undefined) si = -1;
@@ -110,12 +111,21 @@ function Player(parent, options) {
   }
 
   this.onStateChange = (onEvent)=>{
-    videoEl.addEventListener('onStateChange', onEvent, false);    
+    if (videoEl) 
+      videoEl.addEventListener('onStateChange', onEvent, false);    
+    onStateChangeListeners.push(onEvent);
   }
 
   this.getCurrentTime = ()=>{
     return videoEl.getCurrentTime();
   }
+
+  onStateChangeListeners.push(function (e) {  
+    if (e.data == PlayerState.PLAYING) {
+      if (partStopped) nextStep();
+      partStopped = false;
+    }
+  });
 
   this.init = (a_videoEl)=>{
     videoEl = a_videoEl;
@@ -146,12 +156,8 @@ function Player(parent, options) {
       }
     }, 30);
 
-    videoEl.addEventListener('onStateChange', function (e) {  
-      if (e.data == PlayerState.PLAYING) {
-        if (partStopped) nextStep();
-        partStopped = false;
-      }
-    }, false);
+    for (let i=0; i<onStateChangeListeners.length; i++)
+      videoEl.addEventListener('onStateChange', onStateChangeListeners[i], false);
 
     videoEl.addEventListener('onReady', function (e) {
       if ((This.startIndex > -1) && (tlist.hasOwnProperty(This.startIndex)))

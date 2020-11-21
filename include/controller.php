@@ -52,7 +52,9 @@ class Controller extends BaseController {
 	}
 
 	protected static function decodeVideo($item) {
-		$item['data'] = urldecode(base64_decode($item['data']));
+		if ($item['data'][0] != '{') 
+			$item['data'] = urldecode(base64_decode($item['data']));
+		
 		return $item;
 	}
 

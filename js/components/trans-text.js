@@ -275,7 +275,7 @@ TransText.Editor = function(parent, onChange) {
     conformity  = [];
     ix      = a_ix;
 
-    if (a_data) {   
+    if (a_data && a_data.content && a_data.content[ix].text) {   
       lang_text.setVal(a_data.content[ix].text[0]);
       transfer_text.val(a_data.content[ix].text[1]);
       stopcb.prop('checked', a_data.content[ix].stop?true:false);
@@ -303,7 +303,12 @@ TransText.Editor = function(parent, onChange) {
 
   this.ApplyItemCommand = function(app, data) {
     var new_data  = getData();
-    var back = [data.content[ix].text[0], data.content[ix].text[1], data.stop?true:false];
+    var back = ["", "", false];
+    if (data.content[ix]) {
+      let t = data.content[ix].text;
+      back = [t ? t[0]: "", t ? t[1]: "", data.stop?true:false];
+    }
+
     var newt = new_data;
 
     function applyData(lang_text, transfer_text, stop) {
