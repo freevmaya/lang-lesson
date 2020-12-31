@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"new",
+				"newVideoID"
+			],
+			[
+				"onChange",
+				"onStateChange"
+			],
+			[
+				"def",
+				"defaultVData"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
 				"po",
 				"polyLines"
 			],
@@ -54,10 +70,6 @@
 			[
 				"rel_",
 				"rel_id"
-			],
-			[
-				"json",
-				"json_encode"
 			],
 			[
 				"jso",
@@ -288,10 +300,6 @@
 				"textarea\tTag"
 			],
 			[
-				"new",
-				"newVideo"
-			],
-			[
 				"stop",
 				"stopVideo"
 			],
@@ -506,71 +514,11 @@
 			[
 				"pla",
 				"playerApp"
-			],
-			[
-				"co",
-				"completeList"
-			],
-			[
-				"print",
-				"print_r"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "js/components/trans-text.js",
-			"settings":
-			{
-				"buffer_size": 8354,
-				"encoding": "UTF-8",
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "views/editor.php",
-			"settings":
-			{
-				"buffer_size": 670,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/player.js",
-			"settings":
-			{
-				"buffer_size": 11989,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/editor-app.js",
-			"settings":
-			{
-				"buffer_size": 8956,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/timeline.js",
-			"settings":
-			{
-				"buffer_size": 13448,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "%YAML 1.1\n%TAG !u! tag:unity3d.com,2011:\n--- !u!1 &1876520187316701994\nGameObject:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  serializedVersion: 6\n  m_Component:\n  - component: {fileID: 1876520187316701998}\n  - component: {fileID: 1876520187316701997}\n  - component: {fileID: 4730009103608055838}\n  m_Layer: 0\n  m_Name: CableConnector\n  m_TagString: Untagged\n  m_Icon: {fileID: 0}\n  m_NavMeshLayer: 0\n  m_StaticEditorFlags: 0\n  m_IsActive: 1\n--- !u!4 &1876520187316701998\nTransform:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1876520187316701994}\n  m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}\n  m_LocalPosition: {x: 9.322174, y: 5.85, z: -33.4647}\n  m_LocalScale: {x: 1, y: 1, z: 1}\n  m_Children: []\n  m_Father: {fileID: 0}\n  m_RootOrder: 0\n  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}\n--- !u!114 &1876520187316701997\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1876520187316701994}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: c186c9076285f6245acfb33904be52ac, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  source: {fileID: 4805181688220498657, guid: 18c6a8cb72a0a184dafac6ab32ca3f27, type: 3}\n--- !u!114 &4730009103608055838\nMonoBehaviour:\n  m_ObjectHideFlags: 0\n  m_CorrespondingSourceObject: {fileID: 0}\n  m_PrefabInstance: {fileID: 0}\n  m_PrefabAsset: {fileID: 0}\n  m_GameObject: {fileID: 1876520187316701994}\n  m_Enabled: 1\n  m_EditorHideFlags: 0\n  m_Script: {fileID: 11500000, guid: 6fca50fbec5d6cb4b9e2d8cd31f8c3df, type: 3}\n  m_Name: \n  m_EditorClassIdentifier: \n  hitValue: 1\n",
-			"file": "/D/Unity/Components/CablePulling/Assets/Scripts/Cables/Prefabs/wall/CableConnector.prefab",
-			"file_size": 1853,
-			"file_write_time": 132073715392588640,
-			"settings":
-			{
-				"buffer_size": 1853,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -604,20 +552,29 @@
 	},
 	"expanded_folders":
 	[
-		"/C/WebServers/home/lang-lesson.ru/www",
-		"/C/WebServers/home/lang-lesson.ru/www/js",
-		"/C/WebServers/home/lang-lesson.ru/www/views",
-		"/C/WebServers/home/lang-lesson.ru/www/views/menu",
 		"/W/family-status"
 	],
 	"file_history":
 	[
+		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
+		"/C/WebServers/home/lang-lesson.ru/www/include/controller.php",
+		"/C/WebServers/home/lang-lesson.ru/www/views/myclips.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.806/Linux/oformi-foto_ru.ca-bundle",
+		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS/Player.log",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
+		"/C/WebServers/home/lang-lesson.ru/www/index.php",
+		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
+		"/D/Unity/Components/CablePulling/Assets/Scripts/Cables/Prefabs/wall/CableConnector.prefab",
 		"/D/Unity/Cтенд по системам видеонаблюдения/Assets/Scripts/Cables/Nodes/Interface.cs",
 		"/D/install/Windows/!!!  ВАЖНО !!!.txt",
 		"/D/Unity/OCSC_terrain_tmp/Terrain_Info.tlps",
 		"/D/install/Windows/Windows XP Pro sp3 VL (MSDN)/Keys_New.txt",
 		"/C/Users/vmaya/Downloads/[English] Why I read a book a day (and why you should too)_ the law of 33% _ Tai Lopez _ TEDxUBIWiltz [DownSub.com].srt",
-		"/C/WebServers/home/lang-lesson.ru/www/index.php",
 		"/C/WebServers/home/lang-lesson.ru/www/anim-dev.php",
 		"/C/Users/vmaya/Downloads/EditorBuildSettings.asset",
 		"/D/Unity/SCS_optical/ProjectSettings/EditorBuildSettings.asset",
@@ -724,22 +681,9 @@
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/template.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
 		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
 		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
-		"/C/Users/vmaya/Downloads/_family-status.sql",
-		"/X/vmaya/ss/templates/catalog/list.html",
-		"/W/family-status/firebase-php-master/src/Firebase/Messaging/CloudMessage.php",
-		"/D/documents/Книги/Паша, читать/Осеева/Долг.txt",
-		"/D/documents/Книги/Паша, читать/Осеева/Волшебная иголочка.txt",
-		"/X/vmaya/ssd2/templates/adv/engme.html",
-		"/X/vmaya/ssd2/templates/catalog/list.html",
-		"/X/vmaya/ssd2/templates/catalog/tmpls.html",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
-		"/D/documents/Книги/Паша, читать/Васек Трубачев и его товарищи.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
-		"/W/lang-lesson/include/_edbu_pdo.php"
+		"/C/Users/vmaya/Downloads/_family-status.sql"
 	],
 	"find":
 	{
@@ -750,6 +694,12 @@
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\lang-lesson.ru\\www",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\include",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
 			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
@@ -871,13 +821,7 @@
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\resume",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\resume\\_form",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\zii\\widgets\\grid",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\extensions",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\extensions"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\views"
 		]
 	},
 	"find_state":
@@ -885,6 +829,63 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"newVideoID",
+			"onStateChange",
+			"videoEl.addEventListener",
+			"videoEl",
+			"onStateChange",
+			"videoEl",
+			"onStateChange",
+			"newVideoData",
+			"load",
+			"checkStorage",
+			"resetFromInfo",
+			"setTitle",
+			"title",
+			"setDiscription",
+			"default",
+			"checkStorage",
+			"loadVideo",
+			"resetItems",
+			"?task=getUserClips",
+			"showClip",
+			"createItem",
+			"resetItems",
+			"defaultVData",
+			"default.jpg",
+			"default.jps",
+			"default\\",
+			"default",
+			"videoPlayer",
+			"vp",
+			"v",
+			"default",
+			"openVideo",
+			"$video",
+			"checkStorage",
+			"this.reload",
+			"onAfterSaveToLibrary",
+			"save",
+			"baseURL",
+			"location",
+			"document.location",
+			"defaultVData",
+			"vdata",
+			"startLayout",
+			"This.baseURL",
+			"baseURL",
+			"This.baseURL",
+			"This",
+			"document.location",
+			"baseURL",
+			"default.jpg",
+			"docdata",
+			"playerApp",
+			"docdata",
+			"PlayerDoc",
+			"record",
+			"doc",
+			"docdata",
 			"rangeHandle",
 			"slider",
 			"tlLayout",
@@ -955,64 +956,7 @@
 			"log_errors",
 			"error",
 			"token",
-			"TEMPLATESLIMIT",
-			"28099",
-			"gpj_templates",
-			"manageHolidayTmpls",
-			"getTamplates",
-			"MODEL_NAME",
-			"nez",
-			".top .word",
-			"ResizeObserver",
-			"catch",
-			"cath",
-			"puzzle",
-			"pizzle",
-			"adv",
-			"tmpls_header",
-			"-5px",
-			"navbar",
-			"  ",
-			"showStartInfo",
-			"start-info",
-			"storage",
-			"trans",
-			"start-info",
-			".center",
-			"center",
-			"LocaleData",
-			"nav",
-			".logo",
-			"юдщпщ",
-			".video-title",
-			"navbar",
-			"navbarSupportedContent",
-			"fetchColumn",
-			"BASESTORAGEURL",
-			"Налог",
-			"И я помогаю - Носов Н.Н.",
-			"Бенгальские огни - Носов Н.Н.",
-			"Дружок - Носов Н.Н.",
-			"Федина задача - Носов Н.Н.",
-			"Про репку - Носов Н.Н.",
-			"Носов",
-			"Ступеньки - Носов Н.Н.",
-			"Когда мы смеёмся - Носов Н.Н.",
-			"Как Винтик и Шпунтик делали пылесос - Носов Н.Н.",
-			"Три охотника - Носов Н.Н.",
-			"Саша - Носов Н.Н.",
-			"Носов",
-			"Находчивость",
-			"Рассказ Находчивость",
-			"Находчивость - Носов Н.Н.",
-			"Находчивость рассказ Носова",
-			"Милиционер - Носов Н.Н.",
-			"Прятки - Носов Н.Н.",
-			"Леденец - Носов Н.Н.",
-			"PROFILE",
-			"Тук-тук-тук - Носов Н.Н.",
-			"рассказ Носова Тук-тук-тук про лагерь",
-			"Автомобиль - Носов Н.Н."
+			"TEMPLATESLIMIT"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -1126,188 +1070,8 @@
 	"groups":
 	[
 		{
-			"selected": 5,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "js/components/trans-text.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8354,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7714,
-								7714
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5295.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "views/editor.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 670,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/player.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11989,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8664,
-								8672
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5276.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "js/editor-app.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8956,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8306,
-								8306
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 6074.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/timeline.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 13448,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								476,
-								482
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "/D/Unity/Components/CablePulling/Assets/Scripts/Cables/Prefabs/wall/CableConnector.prefab",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1853,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								406,
-								420
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
