@@ -4,6 +4,122 @@
 		"selected_items":
 		[
 			[
+				"new",
+				"newVideoID"
+			],
+			[
+				"onChange",
+				"onStateChange"
+			],
+			[
+				"def",
+				"defaultVData"
+			],
+			[
+				"json",
+				"json_decode"
+			],
+			[
+				"po",
+				"polyLines"
+			],
+			[
+				"get",
+				"getPath"
+			],
+			[
+				"pad",
+				"padding\tproperty"
+			],
+			[
+				"paddin",
+				"padding-right\tproperty"
+			],
+			[
+				"is_a",
+				"is_array"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"la",
+				"lastID"
+			],
+			[
+				"IN",
+				"INSERT"
+			],
+			[
+				"rel",
+				"rel_id"
+			],
+			[
+				"las",
+				"last_name"
+			],
+			[
+				"in",
+				"invite"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"rel_",
+				"rel_id"
+			],
+			[
+				"jso",
+				"json_encode"
+			],
+			[
+				"crea",
+				"createAt"
+			],
+			[
+				"con",
+				"content_id"
+			],
+			[
+				"sen",
+				"sendFCM"
+			],
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"rece",
+				"receiver_id"
+			],
+			[
+				"re",
+				"response"
+			],
+			[
+				"creat",
+				"createdAt"
+			],
+			[
+				"ck",
+				"ck_message"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"bac",
+				"background-color\tproperty"
+			],
+			[
 				"tra",
 				"transition\tproperty"
 			],
@@ -24,20 +140,12 @@
 				"border-radius\tproperty"
 			],
 			[
-				"bac",
-				"background-repeat\tproperty"
-			],
-			[
 				"back",
 				"background-position\tproperty"
 			],
 			[
 				"im",
 				"important"
-			],
-			[
-				"pad",
-				"padding-left\tproperty"
 			],
 			[
 				"margin",
@@ -54,14 +162,6 @@
 			[
 				"list",
 				"list-style-image\tproperty"
-			],
-			[
-				"font",
-				"font-weight\tproperty"
-			],
-			[
-				"jso",
-				"json_encode"
 			],
 			[
 				"DATE_",
@@ -96,10 +196,6 @@
 				"shapeType"
 			],
 			[
-				"re",
-				"rect"
-			],
-			[
 				"body",
 				"bodyId"
 			],
@@ -116,16 +212,8 @@
 				"GetBodyID"
 			],
 			[
-				"get",
-				"GetSize"
-			],
-			[
 				"na",
 				"navigate"
-			],
-			[
-				"_",
-				"_size"
 			],
 			[
 				"w",
@@ -212,10 +300,6 @@
 				"textarea\tTag"
 			],
 			[
-				"new",
-				"newVideo"
-			],
-			[
 				"stop",
 				"stopVideo"
 			],
@@ -226,10 +310,6 @@
 			[
 				"rese",
 				"resetFromInfo"
-			],
-			[
-				"json",
-				"json_encode"
 			],
 			[
 				"l",
@@ -254,10 +334,6 @@
 			[
 				"o",
 				"other_list"
-			],
-			[
-				"sen",
-				"sendMessage"
 			],
 			[
 				"timeli",
@@ -314,10 +390,6 @@
 			[
 				"edit",
 				"editMode"
-			],
-			[
-				"in",
-				"info"
 			],
 			[
 				"set",
@@ -408,10 +480,6 @@
 				"empty"
 			],
 			[
-				"con",
-				"Components"
-			],
-			[
 				"fun",
 				"function"
 			],
@@ -446,110 +514,11 @@
 			[
 				"pla",
 				"playerApp"
-			],
-			[
-				"co",
-				"completeList"
-			],
-			[
-				"print",
-				"print_r"
-			],
-			[
-				"fil",
-				"file_name"
-			],
-			[
-				"unse",
-				"unset"
-			],
-			[
-				"file",
-				"file_name"
-			],
-			[
-				"ti",
-				"time"
-			],
-			[
-				"cur",
-				"getCurrentTime"
-			],
-			[
-				"ori",
-				"originSetSize"
-			],
-			[
-				"sele",
-				"doSelectMarker"
-			],
-			[
-				"Time",
-				"TimeMarker"
-			],
-			[
-				"has",
-				"hasOwnProperty"
-			],
-			[
-				"Com",
-				"commandManager"
-			],
-			[
-				"ex",
-				"extend"
-			],
-			[
-				"onDele",
-				"onDeleteComponent"
-			],
-			[
-				"on",
-				"onDelete"
-			],
-			[
-				"fle",
-				"flex-grow\tproperty"
-			],
-			[
-				"a",
-				"addComponent"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "echo/controllers/TextToSpeech.php",
-			"settings":
-			{
-				"buffer_size": 2325,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": "{\n    \"name\": \"kreait/firebase-php\",\n    \"description\": \"Firebase Admin SDK\",\n    \"keywords\": [\"firebase\", \"google\", \"sdk\", \"api\", \"database\"],\n    \"homepage\": \"https://github.com/kreait/firebase-php\",\n    \"license\": \"MIT\",\n    \"authors\": [\n        {\n            \"name\": \"Jérôme Gamez\",\n            \"homepage\": \"https://github.com/jeromegamez\"\n        }\n    ],\n    \"support\": {\n        \"docs\": \"https://firebase-php.readthedocs.io\",\n        \"issues\": \"https://github.com/kreait/firebase-php/issues\",\n        \"source\": \"https://github.com/kreait/firebase-php\"\n    },\n    \"require\": {\n        \"php\": \"^7.2\",\n        \"ext-ctype\": \"*\",\n        \"ext-json\": \"*\",\n        \"ext-mbstring\": \"*\",\n        \"ext-openssl\": \"*\",\n        \"giggsey/libphonenumber-for-php\": \"^8.9\",\n        \"google/auth\": \"^1.8\",\n        \"google/cloud-core\": \"^1.36\",\n        \"google/cloud-storage\": \"^1.14\",\n        \"guzzlehttp/guzzle\": \"^6.2.1|^7.0@beta\",\n        \"kreait/clock\": \"^1.0.1\",\n        \"kreait/firebase-tokens\": \"^1.10\",\n        \"lcobucci/jwt\": \"^3.3.1\",\n        \"mtdowling/jmespath.php\": \"^2.3\",\n        \"psr/cache\": \"^1.0\",\n        \"psr/simple-cache\": \"^1.0\",\n        \"riverline/multipart-parser\": \"^2.0\"\n    },\n    \"require-dev\": {\n        \"friendsofphp/php-cs-fixer\": \"^2.16\",\n        \"google/cloud-firestore\": \"^1.11\",\n        \"jangregor/phpstan-prophecy\": \"^0.6.2\",\n        \"phpstan/extension-installer\": \"^1.0\",\n        \"phpstan/phpstan\": \"^0.12.15\",\n        \"phpstan/phpstan-phpunit\": \"^0.12.6\",\n        \"phpunit/phpunit\": \"^8.5\",\n        \"symfony/var-dumper\": \"^5.0\"\n    },\n    \"suggest\": {\n        \"google/cloud-firestore\": \"^1.0 to use the Firestore component\"\n    },\n    \"autoload\": {\n        \"psr-4\": {\n            \"Kreait\\\\Firebase\\\\\": \"src/Firebase\"\n        }\n    },\n    \"autoload-dev\": {\n        \"psr-4\": {\n            \"Kreait\\\\Firebase\\\\Tests\\\\\": \"tests\"\n        }\n    },\n    \"config\": {\n        \"sort-packages\": true\n    },\n    \"extra\": {\n        \"branch-alias\": {\n            \"dev-master\": \"5.x-dev\",\n            \"dev-4.x\": \"4.x-dev\"\n        }\n    },\n    \"funding\": [\n        {\n            \"type\": \"github\",\n            \"url\": \"https://github.com/sponsors/jeromegamez\"\n        }\n    ]\n}\n",
-			"file": "/W/family-status/firebase-php-master/composer.json",
-			"file_size": 2187,
-			"file_write_time": 132333829800000000,
-			"settings":
-			{
-				"buffer_size": 2185,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "-----------------ИП Фролов Вадим Валерьевич-----------------\nТелефон: 89514657928\nтел. +79514657928,+79088283575,+79227540997\nмодем +79385067190\nICQ: 347468347\ne-mail: fwadim@mail.ru\n454052 г. Челябинск ул. Черкасская 8-7\n454100 г. Челябинск ул. Чичерина 1-228\n\nИП Фролов Вадим Валерьевич\nИНН: 745004166339\n\nСвидетельство: 74 № 005266102\nОт. 02.03.2010 (2 марта 2010 года)\nВыдано ИФНС России по Металлургическому району г. Челябинска                    // т. 7283385\n\nСвидетельство: 74 № 005572423\nОт. 05.04.2013 Выдано Межрайонная ИФНС России №22 по Челябинской области\n\nОГРН: 310745006100014\n\nПаспорт:                 \nСерия 7514 № 519308    7514519308\nВыдан: УФМС России в Курчатовском районе гор. Челябинска\nДата выдачи: 08.10.2014 (08 октября 2014 года)\nКод подразделения: 740-053\n                          \nПрошлый паспорт                                     \nСерия 7501 № 217049    7501217049\nВыдан: УВД Металлургического р-она гор. Челябинска\nДата выдачи: 19.02.2002 (19 февраля 2002 года)\nКод подразделения: 742-045\n\nГруппа крови 0(I) Rh+ положительная\n\n---БАНКИ------------------------------------------\nРеквизиты банка:\nр/с 40802810090860000443\nкор/с 30101810400000000779\nОАО «ЧЕЛЯБИНВЕСТБАНК» г. Челябинск\nБИК: 047501779\nИНН: 7421000200\nКПП: 745301001\n454128, Челябинская обл., г. Челябинск, пл. Революции 8\nтел. (351) 731-24-16\nРуководитель:\nПлеханова Светлана Николаевна\n\nРеквизиты вклада \"Дальновидный\" (с 03.06.2011 по 18.06.2014, ставка 7.7%)\nномер счета: 42301810500159445685\n\nСв-во пенсионного фонда\nСНИЛС : 005-590-865 50\nМашина:\n    Вод. удост.     : 7433176384\n    знак            : У832НР174\n    паспорт         : 74УЕ998564\n    VIN             : JHMGH2350XS206787\n    \n    Бывш. вод. уд. 74АА314102 06.11.2016\nПолис: 11 017029\nAZAF\nCSGJ\n\n---Фролова Светлана Викторовна---------------------\nИНН 744715214549\nПаспорт:\n7509 587707\nВыдан: Отделом УФМС РОССИИ по Челябинской обл. в Калининском р-оне гор. Челябинска\nДата выдачи: 18.09.2009\nКод подразделения: 740-052\nДата рождения: 08.05.1983 гор. Челябинск\nСНИЛС: 113-459-623 47\n\nтел. +79049727667\nПрава: 7424 007236 20.05.2015\nСбер. МИР 2202 2001 9002 4347\n\n---Дети-------------------\nФролов Иван Вадимович 23.04.2007 +79227451138\nФролов Павел Вадимович 05.10.2010 +79080817759\n\n\n(UDI) \t8062938299454250872\nWMID: \t723942155126\nWMR:\tR233295054648\n\n\n454052 Russia, Chelyabinsk, Cherkasskay 8-7\nFrolov Vadim\n\n-----------------------------------------\nРеквизиты банка:\nОАО «ЧЕЛЯБИНВЕСТБАНК» г. Челябинск\nБИК: 047501779\nИНН: 7421000200\nКПП: 745301001\nр/с 40802810090860000443\nкор/с 30101810400000000779\n\nПолучатель:\nИП Фролов Вадим Валерьевич\nИНН: 745004166339\n\nhttps://retail.akbars.ru 5995692727        21 103.60 \nhttps://click.alfabank.ru 6225077\nСистема город, номер карты: 990002 0000 845396 6784\n\nДомашняя сеть, доступ: fB9uy9E8WC\n---------------------------------------------------Загран-паспорта--------------\nFROLOV VADIM\nКод государства: RUS\nТип: P\nНомер: 721092493\nВыдан: 10.09.2012 ФМС 74010 до 10.09.2022\n\nFROLOVA SVETLANA\nНомер: 721059349\nВыдан: 07.09.2012 ФМС 74011 до 07.09.2022\n\n----------------------РЕКВИЗИТЫ АЛЬФАБАНКА----------------------------------------------------\nОАО «АЛЬФА-БАНК»\nБИК 044525593\nИНН 7728168971\nКПП 770801001\nОГРН 1027700067328\nКор/сч. 30101810200000000593\nS.W.I.F.T.: ALFARUMM\nСчет: 40817810409970088070\nПолучатель: Фролов Вадим Валерьевич\nИНН 745004166339\nhttp://alfabank.ru/chelyabinsk/essential/\n\nАльфа Банк\nMasterCard 5559 4937 1661 8336\nСбер, VISA 4276 7216 9788 1167\nYandex virtual 5599 0050 3833 4640 09/20\n\n----------------Показания счетчика------------\nл/с 3140259021\nл/с 3001069478 новый 5000247462\n\nПитание Иван 0152-29015746\n\nPNUO2YEQ4CDHEIWC\n\n\n\nДля пособия\n\nПаша, актовая запись\n2291 22.10.2010\nОтдел ЗАГС администрации Калининского района г. Челябинска",
-			"file": "/D/documents/numbers.js",
-			"file_size": 3807,
-			"file_write_time": 132203495086666860,
-			"settings":
-			{
-				"buffer_size": 3775,
-				"encoding": "Cyrillic (Windows 1251)",
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -587,144 +556,153 @@
 	],
 	"file_history":
 	[
-		"/C/Users/vmaya/Downloads/_family-status.sql",
-		"/X/vmaya/ss/templates/catalog/list.html",
-		"/W/family-status/index-fcm.php",
-		"/W/family-status/firebase-php-master/src/Firebase/Messaging/CloudMessage.php",
-		"/D/documents/Книги/Паша, читать/Осеева/Долг.txt",
-		"/D/documents/Книги/Паша, читать/Осеева/Волшебная иголочка.txt",
-		"/X/vmaya/ssd2/templates/adv/engme.html",
-		"/X/vmaya/ssd2/templates/catalog/list.html",
-		"/X/vmaya/ssd2/templates/catalog/tmpls.html",
-		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
-		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
-		"/C/WebServers/home/lang-lesson.ru/www/include/index_style.css",
-		"/D/documents/Книги/Паша, читать/Васек Трубачев и его товарищи.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
 		"/C/WebServers/home/lang-lesson.ru/www/views/document.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/locale.js",
-		"/W/lang-lesson/include/_edbu_pdo.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
+		"/C/WebServers/home/lang-lesson.ru/www/include/controller.php",
+		"/C/WebServers/home/lang-lesson.ru/www/views/myclips.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/player.js",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.806/Linux/oformi-foto_ru.ca-bundle",
+		"/C/Users/vmaya/AppData/LocalLow/DefaultCompany/SCS/Player.log",
+		"/C/WebServers/home/lang-lesson.ru/www/js/components/trans-text.js",
+		"/C/WebServers/home/lang-lesson.ru/www/views/editor.php",
+		"/C/WebServers/home/lang-lesson.ru/www/views/navbar.php",
 		"/C/WebServers/home/lang-lesson.ru/www/index.php",
-		"/D/documents/Книги/Паша, читать/Фирменное блюдо.txt",
-		"/D/documents/Книги/Паша, читать/Два танка.txt",
-		"/D/documents/Книги/Паша, читать/Мальчиш-Кибальчиш.txt",
-		"/D/documents/Книги/Паша, читать/Дерзость.txt",
-		"/X/vmaya/ssd2/templates/menu.html",
+		"/C/WebServers/home/lang-lesson.ru/www/include/BaseController.php",
+		"/C/WebServers/home/lang-lesson.ru/www/js/timeline.js",
+		"/D/Unity/Components/CablePulling/Assets/Scripts/Cables/Prefabs/wall/CableConnector.prefab",
+		"/D/Unity/Cтенд по системам видеонаблюдения/Assets/Scripts/Cables/Nodes/Interface.cs",
+		"/D/install/Windows/!!!  ВАЖНО !!!.txt",
+		"/D/Unity/OCSC_terrain_tmp/Terrain_Info.tlps",
+		"/D/install/Windows/Windows XP Pro sp3 VL (MSDN)/Keys_New.txt",
+		"/C/Users/vmaya/Downloads/[English] Why I read a book a day (and why you should too)_ the law of 33% _ Tai Lopez _ TEDxUBIWiltz [DownSub.com].srt",
+		"/C/WebServers/home/lang-lesson.ru/www/anim-dev.php",
+		"/C/Users/vmaya/Downloads/EditorBuildSettings.asset",
+		"/D/Unity/SCS_optical/ProjectSettings/EditorBuildSettings.asset",
 		"/D/documents/numbers.js",
-		"/X/vmaya/ss/templates/user/page.html",
-		"/I/Documents/Паша читать/Драгунский, Надо иметь чувство юмора.txt",
+		"/D/Unity/OSCS_terrain/Assets/TerraLand/TerraLand Core/_Help - Documentation/TerraLand ReadMe.txt",
+		"/D/Unity/UnityGeoDataLoader-0.1/GeoDataLoader.csproj",
 		"/W/family-status/echo/controllers/family_status.php",
-		"/X/vmaya/ss/ssconfig.php",
-		"/D/documents/Книги/Буддизм/Намерения, стоящие за собственными действиями.txt",
-		"/D/documents/Книги/Сказки/Носов/Носов, И я помогаю.txt",
-		"/D/documents/Книги/Сказки/Носов/Носов, Бенгальские огни.txt",
-		"/D/documents/Книги/Сказки/Носов/Носов, Дружок.txt",
-		"/H/Install/loader from USB/mzf_v5/Инструкция и утилиты/WContig/Readme_RU.txt",
-		"/H/Install/loader from USB/mzf_v5/Инструкция и утилиты/Инструкция.txt",
-		"/D/documents/Книги/Сказки/Носов Как Винтик и Шпунтик делали пылесос.txt",
-		"/D/documents/Книги/Сказки/Носов Три охотника.txt",
-		"/D/documents/Книги/Сказки/Носов Саша.txt",
-		"/I/Documents/Паша читать/Носов Милиционер.txt",
-		"/I/Documents/Паша читать/Носов Прятки.txt",
-		"/I/Documents/Паша читать/Рассказ Леденец.txt",
-		"/D/documents/Книги/Английский/phrases.html",
-		"/C/Users/vmaya/Desktop/Заготовки.txt",
-		"/W/family-status/index.php",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DIa0.374/Aushkul README.txt",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DIa0.796/readme.txt",
+		"/W/family-status/include/Notification.php",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task10.frm",
+		"/D/file.txt",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task11.frm",
+		"/D/Visual Basic 6.0.0.9782/projects/file.txt",
+		"/W/family-status.cron.php",
+		"/W/family-status/echo/controllers/image.php",
+		"/W/log/fdbg.log",
+		"/W/log/error.log",
+		"/W/cron-family-status.php",
+		"/C/WebServers/home/test1.ru/www/job_test_7.php",
+		"/C/WebServers/home/test1.ru/www/job_test_8.php",
+		"/C/WebServers/home/test1.ru/www/job_test_3.php",
+		"/C/Users/vmaya/Desktop/Сервера.txt",
+		"/C/WebServers/home/test1.ru/www/job_test_9.php",
+		"/C/WebServers/home/test1.ru/www/js/jquery-ui.js",
+		"/D/tmp/test.json",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task9.2.frm",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task9.1.frm",
+		"/J/Documents/Паша читать/Маленькие Тролли и Большое Наводнение.txt",
+		"/D/Unity/DataProtection/data/tkui_el/tkui.json",
+		"/D/Unity/DataProtection/data/tkui_el/ProtectSource.json",
+		"/C/WebServers/home/test1.ru/www/job_test_4.php",
+		"/C/WebServers/home/test1.ru/www/job_test_6.php",
+		"/C/WebServers/home/test1.ru/www/1.txt",
+		"/D/Unity/DataProtection/data/tkui_el/ProtectSystems.json",
+		"/C/WebServers/home/test1.ru/www/job_test_5.php",
+		"/C/WebServers/home/test1.ru/www/job_test.php",
+		"/C/WebServers/home/test1.ru/www/index.php",
+		"/D/Unity/DataProtection/data/tkui_el/EntitySource.json",
+		"/D/Unity/DataProtection/Assets/data/ProtectSource.json",
+		"/D/Unity/DataProtection/Assets/data/ProtectSystems.json",
+		"/D/Unity/DataProtection/Assets/data/tkui.json",
+		"/D/Unity/DataProtection/Assets/data/tkui_el/EntitySource.json",
+		"/D/Unity/DataProtection/Assets/data/ConnectedToLines.json",
+		"/J/Documents/Паша читать/Путешествие Алисы.txt",
+		"/J/Documents/Паша читать/Сказка Городок в табакерке.txt",
+		"/D/Unity/roomEditor/bin/Assets/data/ProtectSystems.json",
+		"/D/Unity/roomEditor/bin/Assets/data/ProtectSource.json",
+		"/W/family-status/echo/index.php",
+		"/W/lang-lesson/include/fdbg.php",
+		"/W/config-family-status.php",
+		"/D/Unity/SCS_optical/Assets/Scenes/OpticalStart.unity",
+		"/J/Documents/Паша читать/Кусака.txt",
+		"/J/Documents/Паша читать/Как я ловил человечков.txt",
+		"/W/family-status/include/BaseController.php",
+		"/C/Users/vmaya/Downloads/[English (auto-generated)] Paragliding first day out of lockdown_ Dust devil, Crash! [DownSub.com].srt",
+		"/W/family-status/index-fcm.php",
+		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/release/output.json",
+		"/W/family-status/test-fb.php",
+		"/W/family-status/vendor/kreait/laravel-firebase/config/firebase.php",
+		"/D/Unity/roomEditor/Assets/Scripts/TimeScript.cs",
+		"/D/1s_bases/vac/1Cv8.1CD",
+		"/C/Users/vmaya/Desktop/Admin command LINUX.txt",
+		"/D/documents/Книги/Паша, читать/Приключения Электроника.txt",
+		"/D/Unity/SCS_optical/Assets/Resources/Fibrlok II Universal Splice/napkin_right.anim",
+		"/D/Unity/SCS_optical/Assets/Resources/Fibrlok II Universal Splice/right fiber to tool.anim",
+		"/D/Unity/SCS_optical/Assets/Resources/Fibrlok II Universal Splice/cleaver right fiber.anim",
+		"/D/Unity/SCS_optical/Assets/Resources/Fibrlok II Universal Splice/clean right fiber.anim",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task7.frm",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_task6.frm",
+		"/D/documents/Книги/Сказки/Сказка о потерянном времени.txt",
+		"/D/documents/Книги/Сказки/Серебряное копытце.txt",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_case.frm",
+		"/D/Visual Basic 6.0.0.9782/projects/Form_for.frm",
+		"/D/documents/Тестовые задачи/i2crm-php-test-task-a0d44ecafc60 (1)/i2crm-php-test-task-a0d44ecafc60/README.md",
+		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu_pdo.php",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.845/servicevendingweb-master/src/app/services/authentication.service.spec.ts",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.062/servicevendingweb-master/src/karma.conf.js",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.295/servicevendingweb-master/src/assets/scss/_mixins.scss",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.327/servicevendingweb-master/src/tsconfig.app.json",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.315/servicevendingweb-master/src/environments/environment.base.ts",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.860/servicevendingweb-master/src/index.html",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.735/servicevendingweb-master/src/polyfills.ts",
+		"/C/Users/vmaya/AppData/Local/Temp/Rar$DRa0.190/servicevendingweb-master/src/app/app.component.ts",
+		"/W/family-status/include/fdbg.php",
+		"/W/family-status/include/_dbu.php",
 		"/W/family-status/include/_edbu_pdo.php",
 		"/W/log/access.log",
-		"/W/log/error.log",
-		"/I/Documents/Английский/фразы.txt",
-		"/I/Documents/Паша читать/Носов, Тук-тук-тук.txt",
-		"/I/Documents/Паша читать/Носов, Автомобиль.txt",
-		"/I/Documents/Паша читать/Носов, Метро.txt",
-		"/I/Documents/Паша читать/Носов, Шурик у дедушки.txt",
-		"/I/Documents/Паша читать/Носов, Карасик.txt",
-		"/W/cron-family-status.php",
-		"/W/config-lang-lesson.php",
-		"/W/family-status/echo/index.php",
-		"/W/config-family-status.php",
-		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/src/main/AndroidManifest.xml",
-		"/C/Users/vmaya/.AndroidStudio3.0/system/log/idea.log",
-		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/google-services.json",
-		"/C/Users/vmaya/AndroidStudioProjects/FamilyStatus/app/release/output.json",
-		"/W/family-status/echo/controllers/langEcho.php",
-		"/D/Unity/SCS_optical/Assets/Resources/Junction box/anim/connector to cable.anim",
-		"/C/WebServers/home/lang-lesson.ru/www/include/_edbu2.php",
-		"/W/family-status/echo/controllers/captions.php",
-		"/C/WebServers/home/dev.box2d.com/www/b2dJson/customProperties.js",
-		"/C/WebServers/home/dev.box2d.com/www/b2dJson/testbed.js",
-		"/C/WebServers/home/dev.box2d.com/www/b2dJson/loadrube.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/lesson.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/internal.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/box2dPlayer.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/helpers.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/vmaya.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/mouse-join.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/vmayaBox2D.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/utils.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/include/navbar.php",
-		"/C/WebServers/home/dev.box2d.com/www/b2dJson/box2dweb.js",
-		"/C/WebServers/home/lang-lesson.ru/www/docs/Player interface.txt",
-		"/C/WebServers/home/lang-lesson.ru/www/views/templates.php",
-		"/C/WebServers/home/lang-lesson.ru/www/views/content.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/player-providers/youtube.js",
-		"/C/Users/vmaya/Downloads/data (11).json",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/index.php",
-		"/C/Users/vmaya/Downloads/data (9).json",
-		"/C/Users/vmaya/Downloads/data (8).json",
-		"/C/Users/vmaya/Downloads/data (7).json",
-		"/C/Users/vmaya/Downloads/data (10).json",
-		"/C/Users/vmaya/Downloads/data (2).json",
-		"/C/Users/vmaya/Downloads/data (1).json",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/canvas2image.js",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/canvasSave.js",
-		"/C/Users/vmaya/Downloads/data.json",
-		"/C/WebServers/home/lang-lesson.ru/www/js/canvas2image.js",
-		"/C/Users/vmaya/Downloads/lesson.php",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/Box2D.js",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/pjApp/pjcanvas.js",
-		"/C/WebServers/home/dev.oformi-foto.ru/www/pjjs/jsa/pjApp/baseapp.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/css/style.css",
-		"/C/WebServers/home/lang-lesson.ru/www/js/canvasSave.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/jquery-1.12.4.js",
-		"/C/WebServers/home/dev.box2d.com/www/build/Box2D_v2.2.1_min.js",
-		"/C/WebServers/home/lang-lesson.ru/www/css/animation.css",
-		"/C/WebServers/home/dev.box2d.com/www/google/lesson.html",
-		"/C/WebServers/home/dev.box2d.com/www/b2dJson/index.html",
-		"/D/documents/Книги/Английский/фразы.txt",
-		"/D/Unity/SCS_optical/Assets/Resources/Polishing/Anim/LC/Polish.anim",
-		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-1.12.4.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/demo.html",
-		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/Joints/b2DistanceJoint.cpp",
-		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2Body.h",
-		"/C/WebServers/home/dev.box2d.com/www/google/Box2D.js",
-		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Collision/Shapes/b2PolygonShape.cpp",
-		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2Body.cpp",
-		"/C/WebServers/home/dev.box2d.com/www/Box2D_v2.2.1/Box2D/Dynamics/b2World.cpp",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/lesson.html",
-		"/C/WebServers/home/dev.box2d.com/www/google/js/ivank.js",
-		"/C/WebServers/home/dev.box2d.com/www/ivank/js/ivank.js",
-		"/C/WebServers/home/dev.box2d.com/www/google/example.html",
-		"/C/WebServers/home/lang-lesson.ru/www/js/controls.js",
+		"/D/documents/Тестовые задачи/i2crm-php-test-task-a0d44ecafc60 (1)/__MACOSX/i2crm-php-test-task-a0d44ecafc60/._README.md",
+		"/D/Unity/New Unity Project/New Unity Project.csproj",
+		"/X/vmaya/games/admin/controllers/holidayController.php",
+		"/X/vmaya/games/models/pjf_m8_model.php",
+		"/C/Users/vmaya/AndroidStudioProjects/ChatExp/data/functions/index.js",
+		"/X/vmaya/ssd2/templates/app/view.html",
+		"/C/Users/vmaya/AndroidStudioProjects/ChatKit-master/README.md",
+		"/X/vmaya/ss/templates/app/view.html",
+		"/D/Visual Basic 6.0.0.9782/Portable Microsoft Visual Basic 6.0 SP6/readme.txt",
+		"/D/Visual Basic 6.0.0.9782/Версия.txt",
+		"/W/vmaya/vac/css/style.css",
+		"/W/vmaya/vac/index.php",
+		"/D/documents/Книги/Паша, читать/Приключения Незнайки и его друзей.txt",
+		"/W/vmaya/vac/page_01.php",
+		"/W/family-status/firebase-php-master/composer.json",
 		"/C/WebServers/home/lang-lesson.ru/www/js/components/puzzle.js",
-		"/C/WebServers/home/lang-lesson.ru/www/test.php",
-		"/C/WebServers/home/lang-lesson.ru/www/js/jquery-ui.js",
-		"/C/WebServers/home/lang-lesson.ru/www/js/editor-app.js",
+		"/C/WebServers/home/lang-lesson.ru/www/js/template.js",
 		"/C/WebServers/home/lang-lesson.ru/www/js/functions.js",
-		"/C/WebServers/home/lang-lesson.ru/www/texts/How to Become Silent.txt",
-		"/C/WebServers/usr/local/apache/conf/httpd.conf",
-		"/C/WebServers/home/lang-lesson.ru/www/js/inputmask.js",
-		"/C/WebServers/home/dev.box2d.com/www/demo2/index.html"
+		"/C/WebServers/home/lang-lesson.ru/www/css/styles.css",
+		"/C/WebServers/home/lang-lesson.ru/www/css/colors.css",
+		"/C/Users/vmaya/Downloads/_family-status.sql"
 	],
 	"find":
 	{
-		"height": 41.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
 		"height": 116.0,
 		"where_history":
 		[
+			"C:\\WebServers\\home\\lang-lesson.ru\\www",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\include",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\js",
+			"C:\\WebServers\\home\\lang-lesson.ru\\www\\views",
 			"C:\\WebServers\\home\\dev.oformi-foto.ru\\www\\pjjs\\jsa",
 			"C:\\WebServers\\home\\dev.box2d.com\\www\\google\\js",
 			"C:\\WebServers\\home\\dev.oformi-foto.ru\\www\\pjjs\\jsa",
@@ -843,16 +821,7 @@
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\resume",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views\\resume\\_form",
 			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\zii\\widgets\\grid",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\extensions",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\views",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\components",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected\\extensions",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\protected",
-			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework"
+			"C:\\WebServers\\home\\dev.rabota7.local\\www\\framework\\views"
 		]
 	},
 	"find_state":
@@ -860,134 +829,134 @@
 		"case_sensitive": false,
 		"find_history":
 		[
-			"adv",
-			"tmpls_header",
-			"-5px",
-			"navbar",
-			"  ",
-			"showStartInfo",
-			"start-info",
-			"storage",
-			"trans",
-			"start-info",
-			".center",
-			"center",
-			"LocaleData",
-			"nav",
-			".logo",
-			"юдщпщ",
-			".video-title",
-			"navbar",
-			"navbarSupportedContent",
-			"fetchColumn",
-			"BASESTORAGEURL",
-			"Налог",
-			"И я помогаю - Носов Н.Н.",
-			"Бенгальские огни - Носов Н.Н.",
-			"Дружок - Носов Н.Н.",
-			"Федина задача - Носов Н.Н.",
-			"Про репку - Носов Н.Н.",
-			"Носов",
-			"Ступеньки - Носов Н.Н.",
-			"Когда мы смеёмся - Носов Н.Н.",
-			"Как Винтик и Шпунтик делали пылесос - Носов Н.Н.",
-			"Три охотника - Носов Н.Н.",
-			"Саша - Носов Н.Н.",
-			"Носов",
-			"Находчивость",
-			"Рассказ Находчивость",
-			"Находчивость - Носов Н.Н.",
-			"Находчивость рассказ Носова",
-			"Милиционер - Носов Н.Н.",
-			"Прятки - Носов Н.Н.",
-			"Леденец - Носов Н.Н.",
-			"PROFILE",
-			"Тук-тук-тук - Носов Н.Н.",
-			"рассказ Носова Тук-тук-тук про лагерь",
-			"Автомобиль - Носов Н.Н.",
-			"Метро - Носов Н.Н.",
-			"метро рассказ носова",
-			"Шурик у дедушки - Носов Н.Н.",
-			"Карасик - Носов Н.Н.",
-			"log",
-			"SC connector v sbore 2",
-			"v sbore 2",
-			"v sbore",
-			"vsbor",
-			"vsbore 2",
-			"jre1.8.0_211",
-			"task",
-			"getUri",
-			"history",
+			"newVideoID",
+			"onStateChange",
+			"videoEl.addEventListener",
+			"videoEl",
+			"onStateChange",
+			"videoEl",
+			"onStateChange",
+			"newVideoData",
 			"load",
+			"checkStorage",
+			"resetFromInfo",
+			"setTitle",
+			"title",
+			"setDiscription",
+			"default",
+			"checkStorage",
+			"loadVideo",
+			"resetItems",
+			"?task=getUserClips",
+			"showClip",
+			"createItem",
+			"resetItems",
+			"defaultVData",
+			"default.jpg",
+			"default.jps",
+			"default\\",
+			"default",
+			"videoPlayer",
+			"vp",
+			"v",
+			"default",
+			"openVideo",
+			"$video",
+			"checkStorage",
+			"this.reload",
+			"onAfterSaveToLibrary",
+			"save",
+			"baseURL",
 			"location",
-			"set",
-			"location",
-			"videoEl",
-			"location",
-			"videoEl",
-			"addEventListener",
-			"loadVideoById",
-			"SetMass",
-			"GetMassData",
-			"SetMassData",
-			"power",
-			"SetAsBox",
-			"b2CircleShape",
-			" b2Circle",
-			"master",
-			"alpha",
-			"name=\"mode\"",
-			"panel",
-			"panel ui-draggable ui-draggable-handle",
-			"bodyFromID",
-			"VImage",
-			"VMaya",
-			"saveData",
-			"VImage",
-			"body1",
-			"showRectangle",
-			"anchor",
-			"ancher",
-			"GetAncher",
-			"an",
-			"anhor",
-			"b2RevoluteJointDef",
-			"saveData",
-			"GetAngle",
-			"SetAngle",
-			"saveData",
-			"create\\",
-			"create",
-			"createVJoin",
-			"createJoin",
-			"createBody",
-			"clist",
-			"ResetMassData",
-			"DestroyList",
-			"bodyDestroyList",
-			"m_bodyDestroyList",
-			"Clear",
-			"CleanBodyList",
-			"GetBodyID",
-			"BodyCreate",
-			"createBody",
-			"ground",
-			"createBody",
-			"return this.m_prev",
-			"return this.m_next",
-			"return m_next",
-			"return m_prev",
-			"m_prev",
-			"createBody",
-			"vmayaBox2D",
-			"createBody",
-			"world",
-			".b2Vec2",
-			"b2Vec2",
-			"open",
-			"makeDataURI",
-			"toDataURL"
+			"document.location",
+			"defaultVData",
+			"vdata",
+			"startLayout",
+			"This.baseURL",
+			"baseURL",
+			"This.baseURL",
+			"This",
+			"document.location",
+			"baseURL",
+			"default.jpg",
+			"docdata",
+			"playerApp",
+			"docdata",
+			"PlayerDoc",
+			"record",
+			"doc",
+			"docdata",
+			"rangeHandle",
+			"slider",
+			"tlLayout",
+			"timeline",
+			"tlLayout",
+			"timeline",
+			"ApplyItemCommand",
+			"GridPer",
+			"res",
+			"ADAM KUCHARSKI: OK",
+			"ADAM KUCHARSKI: OK.",
+			"dialogModalLabel",
+			"uid",
+			"login",
+			"$rel",
+			"getRelationList",
+			"cronRun",
+			"resiza",
+			"resi",
+			"$(\"#file\")",
+			"$(\"h1\")",
+			"uploadData",
+			"is_moving",
+			"protectType",
+			"Внешние",
+			"outside",
+			"ext",
+			"Внешние",
+			"tkui",
+			"upload_url",
+			"trace",
+			"addRel",
+			"deleteRelation",
+			"addRelation",
+			"start",
+			"Без",
+			"Безклее",
+			"start",
+			"email",
+			"rel_id",
+			"relations",
+			"getRelations",
+			"INTERVAL",
+			"iNTERVAL - 1",
+			"getState",
+			"uid1",
+			"removeRelation",
+			"uid2",
+			"defaultRelation",
+			"defaultRel",
+			"type_id",
+			"FROM ck_message m",
+			"cron_notify",
+			"receiver_id",
+			"text",
+			"image_id",
+			"056c",
+			"users.usr",
+			"users",
+			"Маш",
+			"Curve_left",
+			"autor",
+			"MAIN",
+			"upload_url",
+			"GetStack",
+			"error",
+			"errors",
+			"log_errors",
+			"error",
+			"token",
+			"TEMPLATESLIMIT"
 		],
 		"highlight": false,
 		"in_selection": false,
@@ -995,6 +964,10 @@
 		"regex": false,
 		"replace_history":
 		[
+			"file",
+			"h1",
+			"is_focus",
+			"Curve_right",
 			" ",
 			"",
 			"Connector",
@@ -1097,102 +1070,14 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "echo/controllers/TextToSpeech.php",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 2325,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/W/family-status/firebase-php-master/composer.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2185,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								452,
-								490
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/D/documents/numbers.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3775,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3678,
-								3678
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 2318.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 29.0
+		"height": 28.0
 	},
 	"input":
 	{
@@ -1233,7 +1118,7 @@
 	"project": "project.sublime-project",
 	"replace":
 	{
-		"height": 74.0
+		"height": 72.0
 	},
 	"save_all_on_build": true,
 	"select_file":

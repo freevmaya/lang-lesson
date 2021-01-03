@@ -2,13 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "."
-		},
-		{
 			"path": "C:\\WebServers\\home\\dev.box2d.com\\www"
 		},
 		{
 			"path": "W:\\family-status"
+		},
+		{
+			"path": "C:\\WebServers\\home\\test1.ru\\www"
+		},
+		{
+			"path": "."
 		}
 	]
 }

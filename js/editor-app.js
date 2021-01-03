@@ -333,6 +333,7 @@ var LangApp = function(playerApp, options) {
   this.newVideo = (a_data)=>{
     commandManager.clearAll();
     newVideoData = a_data;
+    newVideoID = a_data.id;
   }
   
   $(window).on('applyYTCaptions', (e, cobj)=>{

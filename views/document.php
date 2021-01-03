@@ -64,8 +64,8 @@
   var doc;
 
   var PlayerDoc = function(container) {
-    var This = this;
-    var playerApp = new Player(container);
+    var This = doc = this;
+    var playerApp;
     var params = {};
     var seg = [];
     var vdata, player = null, layout;
@@ -85,6 +85,7 @@
     Object.defineProperty(this, 'data', {get: ()=>{return This.getData();}});
     Object.defineProperty(this, 'record', {get: ()=>{return _record;}});
     Object.defineProperty(this, 'vid', {get: ()=>{return _vid;}});
+    Object.defineProperty(this, 'baseURL', {get: ()=>{return document.location.protocol + '//' +  document.location.host + '/';}});
     Object.defineProperty(this, 'editMode', {get: ()=>{return container.hasClass('editContaier');}});
     Object.defineProperty(this, 'scope', {get: ()=>{return _scope;}, set: (value)=>{
       _scope = value;
@@ -195,7 +196,7 @@
     }
 
     this.setVideo = (video, doAfterLoad = false)=>{
-      if (video && video.data) {
+      if (video) {
         if (player) {
           layout.css({width: layout.width(), height: layout.height()});
           player.destroy();
@@ -203,7 +204,7 @@
 
         _countMessages = video.countMessages;
 
-        checkStorage((typeof video.data == 'string')?vdecode(video.data):video.data, (a_data)=>{
+        function afterCheckVideo(a_data) {
           _vid = parseInt(video.id);
           _record = video;
           delete _record.data;
@@ -227,7 +228,20 @@
             }
             if (doAfterLoad) doAfterLoad(vdata);
           });
-        })
+        }
+
+        if (video.data) checkStorage((typeof video.data == 'string')?vdecode(video.data):video.data, afterCheckVideo);
+        else {
+          checkStorage($.extend(defaultVData(), {
+            id: video.id,
+            info: {
+              title  : video.title,
+              width  : video.thumbnail_width,
+              height : video.thumbnail_height,
+              url    : video.preview_url           
+            }}
+          ), afterCheckVideo);
+        }
       }
     }
 
@@ -252,7 +266,7 @@
       if (seg2 != undefined) seg[1] = seg2;
       if (seg3 != undefined) seg[2] = seg3;
 
-      history.replaceState(null, null, '<?=$controller->baseURL()?>' + This.getUri());
+      history.replaceState(null, null, This.baseURL + This.getUri());
     }
 
     this.getSeg = ()=>{return seg;}
@@ -434,7 +448,7 @@
       return {
         width: 640,
         height: 480,
-        url: document.location.host + '/images/preview/default.jpg'
+        url: This.baseURL + '/images/preview/default.jpg'
       }
     }
 
@@ -561,7 +575,7 @@
         info: {
           width: 640,
           height: 480,
-          url: document.location.host + '/images/preview/default.jpg'           
+          url: This.baseURL + '/images/preview/default.jpg'           
         }
       }
     }
@@ -694,15 +708,31 @@
       callback(This.getData());
     });
 
+    <?if ($video) {
+      echo('/*'.print_r($video, true).'*/');
+    ?>
 
 
-    <?if ($video) {?>
     <?if ($video['data']) {?>
     vdata = checkStorage(<?=$video['data']?>);
     _record = <?=json_encode(array_merge($video, ['data'=>'']))?>;
-    <?} else {?>
-    vdata = defaultVData();
-    <?}?>
+    <?} else {      
+      if ($video['preview_url']) {
+        ?>
+        vdata = {
+          id: <?=$video['id']?>,
+          timeline: [],
+          content: [],
+          info: {
+            title: '<?=$video['title']?>',
+            width: <?=$video['thumbnail_width']?>,
+            height: <?=$video['thumbnail_height']?>,
+            url: '<?=$video['preview_url']?>'           
+          }
+        }
+        <?
+      } else {?>vdata = defaultVData();<?}
+    }?>
     _type = '<?=$video['type']?>';
     _vid = <?=$video['id']?>;
     _countMessages = <?=json_encode($video['countMessages'])?>;
@@ -716,10 +746,12 @@
     ?>
     if (!vdata) vdata = vdecode('<?=$defvideo['data']?>');
     <?}}?>  
+
+    playerApp = new Player(container);
   }
   //END DOC CLASS
 
-  doc = new PlayerDoc($('.playerContainer'));
+  new PlayerDoc($('.playerContainer'));
   //function onYouTubeIframeAPIReady() {YouTubeReady();}
   $(window).ready(()=>{
     doc.user = (<?=$controller->user?json_encode($controller->user):'null'?>);

@@ -245,7 +245,7 @@
                 uid: uid,
                 pl: (plid != undefined)?plid:pltitle,
                 pllink: urlLit(pltitle),
-                data: vcode(a_data), 
+                data: JSON.stringify(a_data), 
                 video_id: a_data.id,
                 title: a_data.info.title,
                 preview_url: size.thumbnail_url?size.thumbnail_url:size.url,
