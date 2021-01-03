@@ -18,10 +18,12 @@ var Timeline = function(elem, options) {
   	this.options = options;
 
   	var slider = elem.find('.slider').slider({range	: true, slide: onChangeSlider});
+  	var minRangeDelta = 0;
 	var rangeHandle = elem.find('.ui-slider-range');
 	var rangeDrag = false;
 	var nextIndex = 0;
 	var _range;
+	var _requireRefresh = false;
 
 	delBtn.prop("disabled", true);
 
@@ -51,8 +53,7 @@ var Timeline = function(elem, options) {
     	bar.parent().css({"margin-left": -range[0] * k, "margin-right": (range[1] - totalLength) * k});
 		cursor.css('margin-left', cursorTime / totalLength * width());
 
-		if (!_range || (d != _range[1] - _range[0]))
-    		refreshMarkers();
+		if (!_range || (d != _range[1] - _range[0])) _requireRefresh = true;
 		_range = range;
 		refreshSc();
     }
@@ -82,7 +83,8 @@ var Timeline = function(elem, options) {
     }
 
     function onChangeSlider(event, ui) {
-    	applyRange(ui.values);
+    	if (ui.values[1] - ui.values[0] > minRangeDelta) applyRange(ui.values);
+    	else return false;
     }
 
 	function width() {
@@ -119,7 +121,7 @@ var Timeline = function(elem, options) {
 		var w = width();
 		var p = [];
 		var min = Number.MAX_VALUE;
-		let minMin = 4;
+		let minMin = 8;
 		bar.children('.marker').each((i, m)=>{
 			let ix = gix($(m));
 			p[i] = tlist[ix] / totalLength * w;
@@ -142,6 +144,10 @@ var Timeline = function(elem, options) {
 		});
 	}
 
+	setInterval(()=>{
+		if (_requireRefresh) refreshMarkers();
+	}, 100);
+
 	function refreshSc() {
 
 		scBar.empty();
@@ -151,8 +157,6 @@ var Timeline = function(elem, options) {
 		let t = Math.ceil(Math.floor(Math.floor(_range[0] / k) * k) / 2) * 2;
 		let step = Math.ceil((_range[1] - _range[0]) / 60);
 		let ofs = 0;
-
-		//if (t % 2 == 1) t += 1;
 
 		while (t < _range[1]) {
 			t += step;
@@ -175,7 +179,7 @@ var Timeline = function(elem, options) {
 				if (ix == selectIndex) selectMarkerA(-1);
 				m.remove();
 
-				refreshMarkers();
+				_requireRefresh = true;
 
 				if (This.options.onDelete) This.options.onDelete(ix);
 			}
@@ -212,7 +216,7 @@ var Timeline = function(elem, options) {
 		var m = $(e.target);
 		if (m.hasClass('marker')) {
 			setCursor(tlist[gix(m)]);
-			refreshMarkers();
+			_requireRefresh = true;
 		} else setCursor((e.pageX - bar.offset().left) / width() * totalLength);
 	}
 
@@ -465,12 +469,16 @@ var Timeline = function(elem, options) {
 
       	if (totalLength == 0) totalLength = maxTime;
 
-		let maxRange = totalLength < 60?totalLength:60;
+		minRangeDelta = totalLength * 40 / slider.width();
+		let maxRange = totalLength < 60?totalLength:minRangeDelta;
+
 		slider.slider({max: totalLength, values: [0, maxRange]});
 		applyRange([0, maxRange]);
 	}
 
-	this.refresh = refreshMarkers;
+	this.refresh = function() {
+		_requireRefresh = true;
+	}
 
 	this.getList = function() {
 		return tlist;
@@ -569,9 +577,7 @@ var Timeline = function(elem, options) {
     	return false;
 	});
 
-	$(window).resize(()=>{
-		refreshMarkers();
-	})
+	$(window).resize(()=>{_requireRefresh = true;})
 
 	//$(window).on('onChangeIndex', onChangeIndex);
 }

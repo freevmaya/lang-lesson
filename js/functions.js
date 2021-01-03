@@ -193,9 +193,12 @@ $(window).ready(()=>{
 });
 
 function scrollTo(elem) {
-  $('html, body').animate({
-      scrollTop: elem.offset().top - $('nav').outerHeight()
-  }, 500);
+
+  if (!$.isNumeric(elem)) {
+    $('html, body').animate({
+        scrollTop: elem.offset().top - $('nav').outerHeight()
+    }, 500);
+  }
 }
 
 $(window).on('onAppError', (e, error)=>{
