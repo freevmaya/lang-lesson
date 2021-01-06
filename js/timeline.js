@@ -89,7 +89,8 @@ var Timeline = function(elem, options) {
     }
 
     function onChangeSlider(event, ui) {
-    	applyRange(ui.values);
+    	if (ui.values[1] - ui.values[0] >= _rangeMin) applyRange(ui.values);
+    	else return false;
     }
 
 	function width() {
@@ -573,7 +574,7 @@ var Timeline = function(elem, options) {
 
 	bar.parent().on('mousedown', onBarDown);
 	elem.on('wheel', (e)=>{
-		let delta = Math.sign(event.deltaY);
+		let delta = Math.sign(event.deltaY) * 2;
 		let range = slider.slider('values');
 
 		range[0] = Math.min(Math.max(0, range[0] - delta), totalLength);
