@@ -182,11 +182,11 @@ TransText.Editor = function(parent, onChange) {
   var layer = $(
     '<div>' +
       '<div>' +
-        '<input type="text" name="lang-text" class="text" placeholder="Original phrase"/>' +
+        '<input type="text" name="lang-text" class="text" placeholder="Original phrase" autocomplete="off"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
-        '<input type="text" name="transfer-text" placeholder="Translated" data-locale="translated"/>' +
+        '<input type="text" name="transfer-text" placeholder="Translated" data-locale="translated" autocomplete="off"/>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');
