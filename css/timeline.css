@@ -116,3 +116,9 @@
     border-color: #000000ba;
     height: 8px;
 }
+
+.ui-slider-range {
+    z-index: 5 !important;
+    background-color: #9ea7ae !important;
+    border: 1px solid #8080804f !important;
+}
