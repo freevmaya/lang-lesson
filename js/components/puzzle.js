@@ -438,15 +438,15 @@ CPuzzle.Editor = function(parent, onChange) {
 	var layer = $(
     '<div class="CPuzzleEdit">' +
       '<div>' +
-      	'<input type="text" class="text" placeholder="Phrase" data-locale="phrase"/>' +
+      	'<input type="text" class="text" placeholder="Phrase" data-locale="phrase" autocomplete="off"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div>' +
-      	'<input type="text" class="trans" placeholder="Translation" data-locale="translated"/>' +
+      	'<input type="text" class="trans" placeholder="Translation" data-locale="translated" autocomplete="off"/>' +
       '</div>' +
       '<div class="separate"></div>' +
       '<div class="ftable">' +
-        '<input type="text" name="words" placeholder="Translation words"/>' +
+        '<input type="text" name="words" placeholder="Translation words" autocomplete="off"/>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');

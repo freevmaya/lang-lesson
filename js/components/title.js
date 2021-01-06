@@ -37,7 +37,7 @@ CTitle.Editor = function(parent, onChange) {
 	var layer = $(
     '<div>' +
       '<div class="ftable">' +
-        '<input type="text" class="input"/>' +
+        '<input type="text" class="input" autocomplete="off"/>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');

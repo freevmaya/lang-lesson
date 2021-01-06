@@ -37,7 +37,7 @@ CDescription.Editor = function(parent, onChange) {
 	var layer = $(
     '<div>' +
       '<div class="ftable">' +
-        '<textarea class="input"></textarea>' +
+        '<textarea class="input" autocomplete="off"></textarea>' +
         '<input type="button" class="btn-primary send" value="Set"></input>' +
       '</div>' +
     '</div>');
