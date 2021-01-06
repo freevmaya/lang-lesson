@@ -18,10 +18,10 @@ var Timeline = function(elem, options) {
   	this.options = options;
 
   	var slider = elem.find('.slider').slider({range	: true, slide: onChangeSlider});
-  	var minRangeDelta = 0;
 	var rangeHandle = elem.find('.ui-slider-range');
 	var rangeDrag = false;
 	var nextIndex = 0;
+	var _rangeMin;
 	var _range;
 	var _requireRefresh = false;
 
@@ -49,13 +49,19 @@ var Timeline = function(elem, options) {
     	range[0] = Math.round(range[0]);
     	range[1] = Math.round(range[1]);
     	let d = range[1] - range[0];
+    	if (d < _rangeMin) {
+    		let ad = _rangeMin - d;
+    		d += ad;
+    		if (range[1] + ad < totalLength) range[1] += ad;
+    		else range[0] -= ad;
+    	}
+
     	var k = outerBar.width() / d;
     	bar.parent().css({"margin-left": -range[0] * k, "margin-right": (range[1] - totalLength) * k});
 		cursor.css('margin-left', cursorTime / totalLength * width());
 
-		if (!_range || (d != _range[1] - _range[0])) _requireRefresh = true;
 		_range = range;
-		refreshSc();
+		_requireRefresh = true;
     }
 
     function calcRange(left) {
@@ -83,8 +89,7 @@ var Timeline = function(elem, options) {
     }
 
     function onChangeSlider(event, ui) {
-    	if (ui.values[1] - ui.values[0] > minRangeDelta) applyRange(ui.values);
-    	else return false;
+    	applyRange(ui.values);
     }
 
 	function width() {
@@ -142,11 +147,13 @@ var Timeline = function(elem, options) {
 			m.css({width: Math.floor(markerWidth), top: -(5 + i * 15)});
 			sl(i, m, p[i]);
 		});
+		refreshSc();
+		_requireRefresh = false;
 	}
 
 	setInterval(()=>{
 		if (_requireRefresh) refreshMarkers();
-	}, 100);
+	}, 20);
 
 	function refreshSc() {
 
@@ -469,8 +476,8 @@ var Timeline = function(elem, options) {
 
       	if (totalLength == 0) totalLength = maxTime;
 
-		minRangeDelta = totalLength * 40 / slider.width();
-		let maxRange = totalLength < 60?totalLength:minRangeDelta;
+		_rangeMin = 60;
+		let maxRange = totalLength < _rangeMin ? totalLength : _rangeMin;
 
 		slider.slider({max: totalLength, values: [0, maxRange]});
 		applyRange([0, maxRange]);
@@ -570,7 +577,7 @@ var Timeline = function(elem, options) {
 		let range = slider.slider('values');
 
 		range[0] = Math.min(Math.max(0, range[0] - delta), totalLength);
-		range[1] = Math.max(Math.min(totalLength, range[1] + delta), range[0]);
+		range[1] = Math.max(Math.min(totalLength, range[1] + delta), range[0] + 1);
 		slider.slider({values: range});		
     	applyRange(range);
     	e.stopPropagation();
