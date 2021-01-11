@@ -70,9 +70,11 @@ var internal = function(container, vdata, options) {
 			source.attr('src', '/video/' + doc.vid + '.mp4');
 		},
 		destroy: ()=>{
-			container.off('onCreateEditor', onCreateEditor);
-			player.remove();
-			player = null;
+			if (player) {
+				container.off('onCreateEditor', onCreateEditor);
+				player.remove();
+				player = null;
+			}
 		}
 	});
 }
